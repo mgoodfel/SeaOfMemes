@@ -1,0 +1,34 @@
+<options
+  platform = ""
+  graphicsTiming = "true"
+  fullscreen = "false"
+  multisample = "true"
+
+  dpi="0"
+  fov="60"
+  windowX = "100"
+  windowY = "100"
+  windowWidth = "800"
+  windowHeight = "600"
+
+  planet-xmin = "docs\textures\Planet256-xmin.bmp"
+  planet-xmax = "docs\textures\Planet256-xmax.bmp"
+  planet-ymin = "docs\textures\Planet256-ymin.bmp"
+  planet-ymax = "docs\textures\Planet256-ymax.bmp"
+  planet-zmin = "docs\textures\Planet256-zmin.bmp"
+  planet-zmax = "docs\textures\Planet256-zmax.bmp"
+
+  clouds-xmin = "docs\textures\Clouds256-xmin.bmp"
+  clouds-xmax = "docs\textures\Clouds256-xmax.bmp"
+  clouds-ymin = "docs\textures\Clouds256-ymin.bmp"
+  clouds-ymax = "docs\textures\Clouds256-ymax.bmp"
+  clouds-zmin = "docs\textures\Clouds256-zmin.bmp"
+  clouds-zmax = "docs\textures\Clouds256-zmax.bmp"
+
+  planetVertexShader = "docs\shaders\planet.vs"
+  planetFragmentShader = "docs\shaders\planet.fs"
+
+  cursor = "docs\cursors\arrowCursor.xml"
+  fontList = "docs\ui\fonts.xml"
+  helpFile = "docs\ui\help.xml"
+/>

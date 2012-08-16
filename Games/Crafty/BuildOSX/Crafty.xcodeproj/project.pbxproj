@@ -1,0 +1,488 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		90B23A4B15D0093B00A39C00 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90B23A4A15D0093B00A39C00 /* IOKit.framework */; };
+		90C4E0F61500F4160038EC82 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C4E0F51500F4160038EC82 /* Cocoa.framework */; };
+		90C4E1001500F4160038EC82 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 90C4E0FE1500F4160038EC82 /* InfoPlist.strings */; };
+		90C4E1061500F4160038EC82 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 90C4E1041500F4160038EC82 /* Credits.rtf */; };
+		90C4E1091500F4160038EC82 /* CraftyAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 90C4E1081500F4160038EC82 /* CraftyAppDelegate.m */; };
+		90C4E10C1500F4160038EC82 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90C4E10A1500F4160038EC82 /* MainMenu.xib */; };
+		90C4E1171500F4440038EC82 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C4E1161500F4440038EC82 /* OpenGL.framework */; };
+		90C4E11A1500F45B0038EC82 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C4E1191500F45B0038EC82 /* QuartzCore.framework */; };
+		90C4E1471500F4B50038EC82 /* BrickBlob.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C4E1211500F4B50038EC82 /* BrickBlob.cpp */; };
+		90C4E1481500F4B50038EC82 /* BrickBlobFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C4E1231500F4B50038EC82 /* BrickBlobFloat.cpp */; };
+		90C4E1491500F4B50038EC82 /* BrickBlobInt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C4E1251500F4B50038EC82 /* BrickBlobInt.cpp */; };
+		90C4E14A1500F4B50038EC82 /* BrickSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C4E1271500F4B50038EC82 /* BrickSet.cpp */; };
+		90C4E14B1500F4B50038EC82 /* BrickSetFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C4E1291500F4B50038EC82 /* BrickSetFile.cpp */; };
+		90C4E14C1500F4B50038EC82 /* ShapeFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C4E12C1500F4B50038EC82 /* ShapeFile.cpp */; };
+		90C4E14D1500F4B50038EC82 /* VertexCubeFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C4E12E1500F4B50038EC82 /* VertexCubeFloat.cpp */; };
+		90C4E14E1500F4B50038EC82 /* VertexCubeInt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C4E1301500F4B50038EC82 /* VertexCubeInt.cpp */; };
+		90C4E14F1500F4B50038EC82 /* VertexShapeFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C4E1321500F4B50038EC82 /* VertexShapeFloat.cpp */; };
+		90C4E1501500F4B50038EC82 /* VertexShapeInt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C4E1341500F4B50038EC82 /* VertexShapeInt.cpp */; };
+		90C4E1511500F4B50038EC82 /* ChunkList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C4E1371500F4B50038EC82 /* ChunkList.cpp */; };
+		90C4E1521500F4B50038EC82 /* ChunkObj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C4E1391500F4B50038EC82 /* ChunkObj.cpp */; };
+		90C4E1531500F4B50038EC82 /* ChunkWorld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C4E13B1500F4B50038EC82 /* ChunkWorld.cpp */; };
+		90C4E1541500F4B50038EC82 /* Crafty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C4E13D1500F4B50038EC82 /* Crafty.cpp */; };
+		90C4E1551500F4B50038EC82 /* MovementApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C4E13F1500F4B50038EC82 /* MovementApp.cpp */; };
+		90C4E1561500F4B50038EC82 /* StarrySky.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C4E1411500F4B50038EC82 /* StarrySky.cpp */; };
+		90C4E1571500F4B50038EC82 /* stdafx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C4E1431500F4B50038EC82 /* stdafx.cpp */; };
+		90C4E1581500F4B50038EC82 /* VertexSky.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C4E1451500F4B50038EC82 /* VertexSky.cpp */; };
+		90D1964F15A14FF200145D8D /* HelpUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90D1964D15A14FF200145D8D /* HelpUI.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		90B23A4A15D0093B00A39C00 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		90C4E0F11500F4160038EC82 /* Crafty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crafty.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		90C4E0F51500F4160038EC82 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		90C4E0F81500F4160038EC82 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		90C4E0F91500F4160038EC82 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		90C4E0FA1500F4160038EC82 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		90C4E0FD1500F4160038EC82 /* Crafty-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Crafty-Info.plist"; sourceTree = "<group>"; };
+		90C4E0FF1500F4160038EC82 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		90C4E1031500F4160038EC82 /* Crafty-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Crafty-Prefix.pch"; sourceTree = "<group>"; };
+		90C4E1051500F4160038EC82 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		90C4E1071500F4160038EC82 /* CraftyAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CraftyAppDelegate.h; sourceTree = "<group>"; };
+		90C4E1081500F4160038EC82 /* CraftyAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CraftyAppDelegate.m; sourceTree = "<group>"; };
+		90C4E10B1500F4160038EC82 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		90C4E1161500F4440038EC82 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		90C4E1191500F45B0038EC82 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		90C4E1211500F4B50038EC82 /* BrickBlob.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BrickBlob.cpp; sourceTree = "<group>"; };
+		90C4E1221500F4B50038EC82 /* BrickBlob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrickBlob.h; sourceTree = "<group>"; };
+		90C4E1231500F4B50038EC82 /* BrickBlobFloat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BrickBlobFloat.cpp; sourceTree = "<group>"; };
+		90C4E1241500F4B50038EC82 /* BrickBlobFloat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrickBlobFloat.h; sourceTree = "<group>"; };
+		90C4E1251500F4B50038EC82 /* BrickBlobInt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BrickBlobInt.cpp; sourceTree = "<group>"; };
+		90C4E1261500F4B50038EC82 /* BrickBlobInt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrickBlobInt.h; sourceTree = "<group>"; };
+		90C4E1271500F4B50038EC82 /* BrickSet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BrickSet.cpp; sourceTree = "<group>"; };
+		90C4E1281500F4B50038EC82 /* BrickSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrickSet.h; sourceTree = "<group>"; };
+		90C4E1291500F4B50038EC82 /* BrickSetFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BrickSetFile.cpp; sourceTree = "<group>"; };
+		90C4E12A1500F4B50038EC82 /* BrickSetFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrickSetFile.h; sourceTree = "<group>"; };
+		90C4E12B1500F4B50038EC82 /* ShapeDefn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapeDefn.h; sourceTree = "<group>"; };
+		90C4E12C1500F4B50038EC82 /* ShapeFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShapeFile.cpp; sourceTree = "<group>"; };
+		90C4E12D1500F4B50038EC82 /* ShapeFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapeFile.h; sourceTree = "<group>"; };
+		90C4E12E1500F4B50038EC82 /* VertexCubeFloat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VertexCubeFloat.cpp; sourceTree = "<group>"; };
+		90C4E12F1500F4B50038EC82 /* VertexCubeFloat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertexCubeFloat.h; sourceTree = "<group>"; };
+		90C4E1301500F4B50038EC82 /* VertexCubeInt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VertexCubeInt.cpp; sourceTree = "<group>"; };
+		90C4E1311500F4B50038EC82 /* VertexCubeInt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertexCubeInt.h; sourceTree = "<group>"; };
+		90C4E1321500F4B50038EC82 /* VertexShapeFloat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VertexShapeFloat.cpp; sourceTree = "<group>"; };
+		90C4E1331500F4B50038EC82 /* VertexShapeFloat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertexShapeFloat.h; sourceTree = "<group>"; };
+		90C4E1341500F4B50038EC82 /* VertexShapeInt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VertexShapeInt.cpp; sourceTree = "<group>"; };
+		90C4E1351500F4B50038EC82 /* VertexShapeInt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertexShapeInt.h; sourceTree = "<group>"; };
+		90C4E1371500F4B50038EC82 /* ChunkList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ChunkList.cpp; sourceTree = "<group>"; };
+		90C4E1381500F4B50038EC82 /* ChunkList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChunkList.h; sourceTree = "<group>"; };
+		90C4E1391500F4B50038EC82 /* ChunkObj.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ChunkObj.cpp; sourceTree = "<group>"; };
+		90C4E13A1500F4B50038EC82 /* ChunkObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChunkObj.h; sourceTree = "<group>"; };
+		90C4E13B1500F4B50038EC82 /* ChunkWorld.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ChunkWorld.cpp; sourceTree = "<group>"; };
+		90C4E13C1500F4B50038EC82 /* ChunkWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChunkWorld.h; sourceTree = "<group>"; };
+		90C4E13D1500F4B50038EC82 /* Crafty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Crafty.cpp; sourceTree = "<group>"; };
+		90C4E13E1500F4B50038EC82 /* Crafty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crafty.h; sourceTree = "<group>"; };
+		90C4E13F1500F4B50038EC82 /* MovementApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MovementApp.cpp; sourceTree = "<group>"; };
+		90C4E1401500F4B50038EC82 /* MovementApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovementApp.h; sourceTree = "<group>"; };
+		90C4E1411500F4B50038EC82 /* StarrySky.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StarrySky.cpp; sourceTree = "<group>"; };
+		90C4E1421500F4B50038EC82 /* StarrySky.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarrySky.h; sourceTree = "<group>"; };
+		90C4E1431500F4B50038EC82 /* stdafx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = stdafx.cpp; sourceTree = "<group>"; };
+		90C4E1441500F4B50038EC82 /* stdafx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stdafx.h; sourceTree = "<group>"; };
+		90C4E1451500F4B50038EC82 /* VertexSky.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VertexSky.cpp; sourceTree = "<group>"; };
+		90C4E1461500F4B50038EC82 /* VertexSky.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertexSky.h; sourceTree = "<group>"; };
+		90D1964D15A14FF200145D8D /* HelpUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HelpUI.cpp; sourceTree = "<group>"; };
+		90D1964E15A14FF200145D8D /* HelpUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpUI.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		90C4E0EE1500F4160038EC82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90B23A4B15D0093B00A39C00 /* IOKit.framework in Frameworks */,
+				90C4E11A1500F45B0038EC82 /* QuartzCore.framework in Frameworks */,
+				90C4E1171500F4440038EC82 /* OpenGL.framework in Frameworks */,
+				90C4E0F61500F4160038EC82 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		90C4E0E61500F4160038EC82 = {
+			isa = PBXGroup;
+			children = (
+				90B23A4A15D0093B00A39C00 /* IOKit.framework */,
+				90C4E11F1500F4B50038EC82 /* Source */,
+				90C4E1191500F45B0038EC82 /* QuartzCore.framework */,
+				90C4E1161500F4440038EC82 /* OpenGL.framework */,
+				90C4E0FB1500F4160038EC82 /* Crafty */,
+				90C4E0F41500F4160038EC82 /* Frameworks */,
+				90C4E0F21500F4160038EC82 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		90C4E0F21500F4160038EC82 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				90C4E0F11500F4160038EC82 /* Crafty.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		90C4E0F41500F4160038EC82 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				90C4E0F51500F4160038EC82 /* Cocoa.framework */,
+				90C4E0F71500F4160038EC82 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		90C4E0F71500F4160038EC82 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				90C4E0F81500F4160038EC82 /* AppKit.framework */,
+				90C4E0F91500F4160038EC82 /* CoreData.framework */,
+				90C4E0FA1500F4160038EC82 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		90C4E0FB1500F4160038EC82 /* Crafty */ = {
+			isa = PBXGroup;
+			children = (
+				90C4E1071500F4160038EC82 /* CraftyAppDelegate.h */,
+				90C4E1081500F4160038EC82 /* CraftyAppDelegate.m */,
+				90C4E10A1500F4160038EC82 /* MainMenu.xib */,
+				90C4E0FC1500F4160038EC82 /* Supporting Files */,
+			);
+			path = Crafty;
+			sourceTree = "<group>";
+		};
+		90C4E0FC1500F4160038EC82 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				90C4E0FD1500F4160038EC82 /* Crafty-Info.plist */,
+				90C4E0FE1500F4160038EC82 /* InfoPlist.strings */,
+				90C4E1031500F4160038EC82 /* Crafty-Prefix.pch */,
+				90C4E1041500F4160038EC82 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		90C4E11F1500F4B50038EC82 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				90D1964D15A14FF200145D8D /* HelpUI.cpp */,
+				90D1964E15A14FF200145D8D /* HelpUI.h */,
+				90C4E1201500F4B50038EC82 /* Bricks */,
+				90C4E1361500F4B50038EC82 /* Chunks */,
+				90C4E13D1500F4B50038EC82 /* Crafty.cpp */,
+				90C4E13E1500F4B50038EC82 /* Crafty.h */,
+				90C4E13F1500F4B50038EC82 /* MovementApp.cpp */,
+				90C4E1401500F4B50038EC82 /* MovementApp.h */,
+				90C4E1411500F4B50038EC82 /* StarrySky.cpp */,
+				90C4E1421500F4B50038EC82 /* StarrySky.h */,
+				90C4E1431500F4B50038EC82 /* stdafx.cpp */,
+				90C4E1441500F4B50038EC82 /* stdafx.h */,
+				90C4E1451500F4B50038EC82 /* VertexSky.cpp */,
+				90C4E1461500F4B50038EC82 /* VertexSky.h */,
+			);
+			name = Source;
+			path = ../Source;
+			sourceTree = "<group>";
+		};
+		90C4E1201500F4B50038EC82 /* Bricks */ = {
+			isa = PBXGroup;
+			children = (
+				90C4E1211500F4B50038EC82 /* BrickBlob.cpp */,
+				90C4E1221500F4B50038EC82 /* BrickBlob.h */,
+				90C4E1231500F4B50038EC82 /* BrickBlobFloat.cpp */,
+				90C4E1241500F4B50038EC82 /* BrickBlobFloat.h */,
+				90C4E1251500F4B50038EC82 /* BrickBlobInt.cpp */,
+				90C4E1261500F4B50038EC82 /* BrickBlobInt.h */,
+				90C4E1271500F4B50038EC82 /* BrickSet.cpp */,
+				90C4E1281500F4B50038EC82 /* BrickSet.h */,
+				90C4E1291500F4B50038EC82 /* BrickSetFile.cpp */,
+				90C4E12A1500F4B50038EC82 /* BrickSetFile.h */,
+				90C4E12B1500F4B50038EC82 /* ShapeDefn.h */,
+				90C4E12C1500F4B50038EC82 /* ShapeFile.cpp */,
+				90C4E12D1500F4B50038EC82 /* ShapeFile.h */,
+				90C4E12E1500F4B50038EC82 /* VertexCubeFloat.cpp */,
+				90C4E12F1500F4B50038EC82 /* VertexCubeFloat.h */,
+				90C4E1301500F4B50038EC82 /* VertexCubeInt.cpp */,
+				90C4E1311500F4B50038EC82 /* VertexCubeInt.h */,
+				90C4E1321500F4B50038EC82 /* VertexShapeFloat.cpp */,
+				90C4E1331500F4B50038EC82 /* VertexShapeFloat.h */,
+				90C4E1341500F4B50038EC82 /* VertexShapeInt.cpp */,
+				90C4E1351500F4B50038EC82 /* VertexShapeInt.h */,
+			);
+			path = Bricks;
+			sourceTree = "<group>";
+		};
+		90C4E1361500F4B50038EC82 /* Chunks */ = {
+			isa = PBXGroup;
+			children = (
+				90C4E1371500F4B50038EC82 /* ChunkList.cpp */,
+				90C4E1381500F4B50038EC82 /* ChunkList.h */,
+				90C4E1391500F4B50038EC82 /* ChunkObj.cpp */,
+				90C4E13A1500F4B50038EC82 /* ChunkObj.h */,
+				90C4E13B1500F4B50038EC82 /* ChunkWorld.cpp */,
+				90C4E13C1500F4B50038EC82 /* ChunkWorld.h */,
+			);
+			path = Chunks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		90C4E0F01500F4160038EC82 /* Crafty */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 90C4E10F1500F4160038EC82 /* Build configuration list for PBXNativeTarget "Crafty" */;
+			buildPhases = (
+				90C4E0ED1500F4160038EC82 /* Sources */,
+				90C4E0EE1500F4160038EC82 /* Frameworks */,
+				90C4E0EF1500F4160038EC82 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Crafty;
+			productName = Crafty;
+			productReference = 90C4E0F11500F4160038EC82 /* Crafty.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		90C4E0E81500F4160038EC82 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 90C4E0EB1500F4160038EC82 /* Build configuration list for PBXProject "Crafty" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 90C4E0E61500F4160038EC82;
+			productRefGroup = 90C4E0F21500F4160038EC82 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				90C4E0F01500F4160038EC82 /* Crafty */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		90C4E0EF1500F4160038EC82 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90C4E1001500F4160038EC82 /* InfoPlist.strings in Resources */,
+				90C4E1061500F4160038EC82 /* Credits.rtf in Resources */,
+				90C4E10C1500F4160038EC82 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		90C4E0ED1500F4160038EC82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90C4E1091500F4160038EC82 /* CraftyAppDelegate.m in Sources */,
+				90C4E1471500F4B50038EC82 /* BrickBlob.cpp in Sources */,
+				90C4E1481500F4B50038EC82 /* BrickBlobFloat.cpp in Sources */,
+				90C4E1491500F4B50038EC82 /* BrickBlobInt.cpp in Sources */,
+				90C4E14A1500F4B50038EC82 /* BrickSet.cpp in Sources */,
+				90C4E14B1500F4B50038EC82 /* BrickSetFile.cpp in Sources */,
+				90C4E14C1500F4B50038EC82 /* ShapeFile.cpp in Sources */,
+				90C4E14D1500F4B50038EC82 /* VertexCubeFloat.cpp in Sources */,
+				90C4E14E1500F4B50038EC82 /* VertexCubeInt.cpp in Sources */,
+				90C4E14F1500F4B50038EC82 /* VertexShapeFloat.cpp in Sources */,
+				90C4E1501500F4B50038EC82 /* VertexShapeInt.cpp in Sources */,
+				90C4E1511500F4B50038EC82 /* ChunkList.cpp in Sources */,
+				90C4E1521500F4B50038EC82 /* ChunkObj.cpp in Sources */,
+				90C4E1531500F4B50038EC82 /* ChunkWorld.cpp in Sources */,
+				90C4E1541500F4B50038EC82 /* Crafty.cpp in Sources */,
+				90C4E1551500F4B50038EC82 /* MovementApp.cpp in Sources */,
+				90C4E1561500F4B50038EC82 /* StarrySky.cpp in Sources */,
+				90C4E1571500F4B50038EC82 /* stdafx.cpp in Sources */,
+				90C4E1581500F4B50038EC82 /* VertexSky.cpp in Sources */,
+				90D1964F15A14FF200145D8D /* HelpUI.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		90C4E0FE1500F4160038EC82 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				90C4E0FF1500F4160038EC82 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		90C4E1041500F4160038EC82 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				90C4E1051500F4160038EC82 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		90C4E10A1500F4160038EC82 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				90C4E10B1500F4160038EC82 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		90C4E10D1500F4160038EC82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		90C4E10E1500F4160038EC82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		90C4E1101500F4160038EC82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(CONFIGURATION)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Crafty/Crafty-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				HEADER_SEARCH_PATHS = (
+					../Source,
+					../../../Milligram/,
+				);
+				INFOPLIST_FILE = "Crafty/Crafty-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Milligram/BuildOSX/$(CONFIGURATION)\"",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OTHER_LDFLAGS = (
+					"-lmgPlatform",
+					"-lmg2D",
+					"-lmg3D",
+					"-lmgGUI",
+					"-lmgUtil",
+					"-lFreeType",
+					"-lJpegLib",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		90C4E1111500F4160038EC82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(CONFIGURATION)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Crafty/Crafty-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				HEADER_SEARCH_PATHS = (
+					../Source,
+					../../../Milligram/,
+				);
+				INFOPLIST_FILE = "Crafty/Crafty-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Milligram/BuildOSX/$(CONFIGURATION)\"",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OTHER_LDFLAGS = (
+					"-lmgPlatform",
+					"-lmg2D",
+					"-lmg3D",
+					"-lmgGUI",
+					"-lmgUtil",
+					"-lFreeType",
+					"-lJpegLib",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		90C4E0EB1500F4160038EC82 /* Build configuration list for PBXProject "Crafty" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90C4E10D1500F4160038EC82 /* Debug */,
+				90C4E10E1500F4160038EC82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		90C4E10F1500F4160038EC82 /* Build configuration list for PBXNativeTarget "Crafty" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90C4E1101500F4160038EC82 /* Debug */,
+				90C4E1111500F4160038EC82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 90C4E0E81500F4160038EC82 /* Project object */;
+}

@@ -1,0 +1,784 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		900D17BA15DCAB270059DA97 /* mgDebugPane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 900D17B915DCAB270059DA97 /* mgDebugPane.cpp */; };
+		900D17BC15DCAB3F0059DA97 /* mgDebugPane.h in Headers */ = {isa = PBXBuildFile; fileRef = 900D17BB15DCAB3F0059DA97 /* mgDebugPane.h */; };
+		9041B303159EC5B600D7BCC5 /* mgFormPane.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B26E159EC5B600D7BCC5 /* mgFormPane.h */; };
+		9041B304159EC5B600D7BCC5 /* mgFormParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B26F159EC5B600D7BCC5 /* mgFormParser.h */; };
+		9041B30D159EC5B600D7BCC5 /* mgActionListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B27A159EC5B600D7BCC5 /* mgActionListener.h */; };
+		9041B30E159EC5B600D7BCC5 /* mgButtonControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B27B159EC5B600D7BCC5 /* mgButtonControl.h */; };
+		9041B30F159EC5B600D7BCC5 /* mgChangeListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B27C159EC5B600D7BCC5 /* mgChangeListener.h */; };
+		9041B310159EC5B600D7BCC5 /* mgCheckboxControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B27D159EC5B600D7BCC5 /* mgCheckboxControl.h */; };
+		9041B311159EC5B600D7BCC5 /* mgColumnLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B27E159EC5B600D7BCC5 /* mgColumnLayout.h */; };
+		9041B312159EC5B600D7BCC5 /* mgConsoleControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B27F159EC5B600D7BCC5 /* mgConsoleControl.h */; };
+		9041B313159EC5B600D7BCC5 /* mgControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B280159EC5B600D7BCC5 /* mgControl.h */; };
+		9041B314159EC5B600D7BCC5 /* mgControlListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B281159EC5B600D7BCC5 /* mgControlListener.h */; };
+		9041B315159EC5B600D7BCC5 /* mgDropListControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B282159EC5B600D7BCC5 /* mgDropListControl.h */; };
+		9041B316159EC5B600D7BCC5 /* mgFieldControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B283159EC5B600D7BCC5 /* mgFieldControl.h */; };
+		9041B317159EC5B600D7BCC5 /* mgFocusListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B284159EC5B600D7BCC5 /* mgFocusListener.h */; };
+		9041B318159EC5B600D7BCC5 /* mgFormControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B285159EC5B600D7BCC5 /* mgFormControl.h */; };
+		9041B319159EC5B600D7BCC5 /* mgFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B286159EC5B600D7BCC5 /* mgFrame.h */; };
+		9041B31A159EC5B600D7BCC5 /* mgKeyListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B287159EC5B600D7BCC5 /* mgKeyListener.h */; };
+		9041B31B159EC5B600D7BCC5 /* mgLabelBoxControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B288159EC5B600D7BCC5 /* mgLabelBoxControl.h */; };
+		9041B31C159EC5B600D7BCC5 /* mgLabelControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B289159EC5B600D7BCC5 /* mgLabelControl.h */; };
+		9041B31D159EC5B600D7BCC5 /* mgLayoutManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B28A159EC5B600D7BCC5 /* mgLayoutManager.h */; };
+		9041B31E159EC5B600D7BCC5 /* mgListControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B28B159EC5B600D7BCC5 /* mgListControl.h */; };
+		9041B31F159EC5B600D7BCC5 /* mgMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B28C159EC5B600D7BCC5 /* mgMenu.h */; };
+		9041B320159EC5B600D7BCC5 /* mgMenuBarControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B28D159EC5B600D7BCC5 /* mgMenuBarControl.h */; };
+		9041B321159EC5B600D7BCC5 /* mgMouseListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B28E159EC5B600D7BCC5 /* mgMouseListener.h */; };
+		9041B322159EC5B600D7BCC5 /* mgPaint.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B28F159EC5B600D7BCC5 /* mgPaint.h */; };
+		9041B323159EC5B600D7BCC5 /* mgRadioControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B290159EC5B600D7BCC5 /* mgRadioControl.h */; };
+		9041B324159EC5B600D7BCC5 /* mgRectFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B291159EC5B600D7BCC5 /* mgRectFrame.h */; };
+		9041B325159EC5B600D7BCC5 /* mgScrollbarControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B292159EC5B600D7BCC5 /* mgScrollbarControl.h */; };
+		9041B326159EC5B600D7BCC5 /* mgScrolled.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B293159EC5B600D7BCC5 /* mgScrolled.h */; };
+		9041B327159EC5B600D7BCC5 /* mgScroller.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B294159EC5B600D7BCC5 /* mgScroller.h */; };
+		9041B328159EC5B600D7BCC5 /* mgScrollListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B295159EC5B600D7BCC5 /* mgScrollListener.h */; };
+		9041B329159EC5B600D7BCC5 /* mgScrollPaneControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B296159EC5B600D7BCC5 /* mgScrollPaneControl.h */; };
+		9041B32A159EC5B600D7BCC5 /* mgSelectListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B297159EC5B600D7BCC5 /* mgSelectListener.h */; };
+		9041B32B159EC5B600D7BCC5 /* mgSolidPaint.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B298159EC5B600D7BCC5 /* mgSolidPaint.h */; };
+		9041B32C159EC5B600D7BCC5 /* mgStackControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B299159EC5B600D7BCC5 /* mgStackControl.h */; };
+		9041B32D159EC5B600D7BCC5 /* mgStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B29A159EC5B600D7BCC5 /* mgStyle.h */; };
+		9041B32E159EC5B600D7BCC5 /* mgTableLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B29B159EC5B600D7BCC5 /* mgTableLayout.h */; };
+		9041B32F159EC5B600D7BCC5 /* mgTimeListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B29C159EC5B600D7BCC5 /* mgTimeListener.h */; };
+		9041B330159EC5B600D7BCC5 /* mgToolkit.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B29D159EC5B600D7BCC5 /* mgToolkit.h */; };
+		9041B331159EC5B600D7BCC5 /* mgTopControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B29E159EC5B600D7BCC5 /* mgTopControl.h */; };
+		9041B332159EC5B600D7BCC5 /* mgTreeListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B29F159EC5B600D7BCC5 /* mgTreeListener.h */; };
+		9041B333159EC5B600D7BCC5 /* mgInputEvents.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2A0159EC5B600D7BCC5 /* mgInputEvents.h */; };
+		9041B334159EC5B600D7BCC5 /* mgTextBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2A2159EC5B600D7BCC5 /* mgTextBuffer.h */; };
+		9041B335159EC5B600D7BCC5 /* mgTextDraw.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2A3159EC5B600D7BCC5 /* mgTextDraw.h */; };
+		9041B336159EC5B600D7BCC5 /* mgTextFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2A4159EC5B600D7BCC5 /* mgTextFormat.h */; };
+		9041B337159EC5B600D7BCC5 /* mgTextMeasure.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2A5159EC5B600D7BCC5 /* mgTextMeasure.h */; };
+		9041B338159EC5B600D7BCC5 /* mgTextPage.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2A6159EC5B600D7BCC5 /* mgTextPage.h */; };
+		9041B339159EC5B600D7BCC5 /* mgTextScan.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2A7159EC5B600D7BCC5 /* mgTextScan.h */; };
+		9041B33A159EC5B600D7BCC5 /* mgUglyButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2A9159EC5B600D7BCC5 /* mgUglyButton.h */; };
+		9041B33B159EC5B600D7BCC5 /* mgUglyCheckbox.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2AA159EC5B600D7BCC5 /* mgUglyCheckbox.h */; };
+		9041B33C159EC5B600D7BCC5 /* mgUglyConsole.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2AB159EC5B600D7BCC5 /* mgUglyConsole.h */; };
+		9041B33D159EC5B600D7BCC5 /* mgUglyField.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2AC159EC5B600D7BCC5 /* mgUglyField.h */; };
+		9041B33E159EC5B600D7BCC5 /* mgUglyLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2AD159EC5B600D7BCC5 /* mgUglyLabel.h */; };
+		9041B33F159EC5B600D7BCC5 /* mgUglyList.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2AE159EC5B600D7BCC5 /* mgUglyList.h */; };
+		9041B341159EC5B600D7BCC5 /* mgUglyScrollbar.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2B0159EC5B600D7BCC5 /* mgUglyScrollbar.h */; };
+		9041B343159EC5B600D7BCC5 /* mgUglyStack.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2B2159EC5B600D7BCC5 /* mgUglyStack.h */; };
+		9041B344159EC5B600D7BCC5 /* mgUglyStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2B3159EC5B600D7BCC5 /* mgUglyStyle.h */; };
+		9041B346159EC5B600D7BCC5 /* mgBlockTag.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2B7159EC5B600D7BCC5 /* mgBlockTag.cpp */; };
+		9041B347159EC5B600D7BCC5 /* mgBlockTag.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2B8159EC5B600D7BCC5 /* mgBlockTag.h */; };
+		9041B348159EC5B600D7BCC5 /* mgBreakTag.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2B9159EC5B600D7BCC5 /* mgBreakTag.cpp */; };
+		9041B349159EC5B600D7BCC5 /* mgBreakTag.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2BA159EC5B600D7BCC5 /* mgBreakTag.h */; };
+		9041B34A159EC5B600D7BCC5 /* mgButtonTag.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2BB159EC5B600D7BCC5 /* mgButtonTag.cpp */; };
+		9041B34B159EC5B600D7BCC5 /* mgButtonTag.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2BC159EC5B600D7BCC5 /* mgButtonTag.h */; };
+		9041B34C159EC5B600D7BCC5 /* mgCheckboxTag.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2BD159EC5B600D7BCC5 /* mgCheckboxTag.cpp */; };
+		9041B34D159EC5B600D7BCC5 /* mgCheckboxTag.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2BE159EC5B600D7BCC5 /* mgCheckboxTag.h */; };
+		9041B34E159EC5B600D7BCC5 /* mgConsoleTag.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2BF159EC5B600D7BCC5 /* mgConsoleTag.cpp */; };
+		9041B34F159EC5B600D7BCC5 /* mgConsoleTag.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2C0159EC5B600D7BCC5 /* mgConsoleTag.h */; };
+		9041B350159EC5B600D7BCC5 /* mgFieldTag.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2C1159EC5B600D7BCC5 /* mgFieldTag.cpp */; };
+		9041B351159EC5B600D7BCC5 /* mgFieldTag.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2C2159EC5B600D7BCC5 /* mgFieldTag.h */; };
+		9041B352159EC5B600D7BCC5 /* mgFormPane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2C3159EC5B600D7BCC5 /* mgFormPane.cpp */; };
+		9041B353159EC5B600D7BCC5 /* mgFormParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2C4159EC5B600D7BCC5 /* mgFormParser.cpp */; };
+		9041B354159EC5B600D7BCC5 /* mgFormTag.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2C5159EC5B600D7BCC5 /* mgFormTag.cpp */; };
+		9041B355159EC5B600D7BCC5 /* mgFormTag.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2C6159EC5B600D7BCC5 /* mgFormTag.h */; };
+		9041B356159EC5B600D7BCC5 /* mgHeadingTag.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2C7159EC5B600D7BCC5 /* mgHeadingTag.cpp */; };
+		9041B357159EC5B600D7BCC5 /* mgHeadingTag.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2C8159EC5B600D7BCC5 /* mgHeadingTag.h */; };
+		9041B358159EC5B600D7BCC5 /* mgLabelTag.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2C9159EC5B600D7BCC5 /* mgLabelTag.cpp */; };
+		9041B359159EC5B600D7BCC5 /* mgLabelTag.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2CA159EC5B600D7BCC5 /* mgLabelTag.h */; };
+		9041B35A159EC5B600D7BCC5 /* mgListItemTag.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2CB159EC5B600D7BCC5 /* mgListItemTag.cpp */; };
+		9041B35B159EC5B600D7BCC5 /* mgListItemTag.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2CC159EC5B600D7BCC5 /* mgListItemTag.h */; };
+		9041B35C159EC5B600D7BCC5 /* mgListTag.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2CD159EC5B600D7BCC5 /* mgListTag.cpp */; };
+		9041B35D159EC5B600D7BCC5 /* mgListTag.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2CE159EC5B600D7BCC5 /* mgListTag.h */; };
+		9041B35E159EC5B600D7BCC5 /* mgParaTag.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2CF159EC5B600D7BCC5 /* mgParaTag.cpp */; };
+		9041B35F159EC5B600D7BCC5 /* mgParaTag.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2D0159EC5B600D7BCC5 /* mgParaTag.h */; };
+		9041B360159EC5B600D7BCC5 /* mgPreTag.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2D1159EC5B600D7BCC5 /* mgPreTag.cpp */; };
+		9041B361159EC5B600D7BCC5 /* mgPreTag.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2D2159EC5B600D7BCC5 /* mgPreTag.h */; };
+		9041B362159EC5B600D7BCC5 /* mgRuleTag.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2D3159EC5B600D7BCC5 /* mgRuleTag.cpp */; };
+		9041B363159EC5B600D7BCC5 /* mgRuleTag.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2D4159EC5B600D7BCC5 /* mgRuleTag.h */; };
+		9041B364159EC5B600D7BCC5 /* mgTableColTag.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2D5159EC5B600D7BCC5 /* mgTableColTag.cpp */; };
+		9041B365159EC5B600D7BCC5 /* mgTableColTag.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2D6159EC5B600D7BCC5 /* mgTableColTag.h */; };
+		9041B366159EC5B600D7BCC5 /* mgTableRowTag.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2D7159EC5B600D7BCC5 /* mgTableRowTag.cpp */; };
+		9041B367159EC5B600D7BCC5 /* mgTableRowTag.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2D8159EC5B600D7BCC5 /* mgTableRowTag.h */; };
+		9041B368159EC5B600D7BCC5 /* mgTableTag.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2D9159EC5B600D7BCC5 /* mgTableTag.cpp */; };
+		9041B369159EC5B600D7BCC5 /* mgTableTag.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2DA159EC5B600D7BCC5 /* mgTableTag.h */; };
+		9041B36A159EC5B600D7BCC5 /* mgTextTag.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2DB159EC5B600D7BCC5 /* mgTextTag.cpp */; };
+		9041B36B159EC5B600D7BCC5 /* mgTextTag.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2DC159EC5B600D7BCC5 /* mgTextTag.h */; };
+		9041B372159EC5B600D7BCC5 /* mgColumnLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2E5159EC5B600D7BCC5 /* mgColumnLayout.cpp */; };
+		9041B373159EC5B600D7BCC5 /* mgControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2E6159EC5B600D7BCC5 /* mgControl.cpp */; };
+		9041B374159EC5B600D7BCC5 /* mgFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2E7159EC5B600D7BCC5 /* mgFrame.cpp */; };
+		9041B375159EC5B600D7BCC5 /* mgRectFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2E8159EC5B600D7BCC5 /* mgRectFrame.cpp */; };
+		9041B376159EC5B600D7BCC5 /* mgSolidPaint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2E9159EC5B600D7BCC5 /* mgSolidPaint.cpp */; };
+		9041B377159EC5B600D7BCC5 /* mgStyle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2EA159EC5B600D7BCC5 /* mgStyle.cpp */; };
+		9041B379159EC5B600D7BCC5 /* mgTableLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2EC159EC5B600D7BCC5 /* mgTableLayout.cpp */; };
+		9041B37A159EC5B600D7BCC5 /* mgTopControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2ED159EC5B600D7BCC5 /* mgTopControl.cpp */; };
+		9041B37C159EC5B600D7BCC5 /* stdafx.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2EF159EC5B600D7BCC5 /* stdafx.h */; };
+		9041B37D159EC5B600D7BCC5 /* mgTextBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2F1159EC5B600D7BCC5 /* mgTextBuffer.cpp */; };
+		9041B37E159EC5B600D7BCC5 /* mgTextDraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2F2159EC5B600D7BCC5 /* mgTextDraw.cpp */; };
+		9041B37F159EC5B600D7BCC5 /* mgTextFormat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2F3159EC5B600D7BCC5 /* mgTextFormat.cpp */; };
+		9041B380159EC5B600D7BCC5 /* mgTextMeasure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2F4159EC5B600D7BCC5 /* mgTextMeasure.cpp */; };
+		9041B381159EC5B600D7BCC5 /* mgTextScan.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2F5159EC5B600D7BCC5 /* mgTextScan.cpp */; };
+		9041B382159EC5B600D7BCC5 /* mgUglyButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2F7159EC5B600D7BCC5 /* mgUglyButton.cpp */; };
+		9041B383159EC5B600D7BCC5 /* mgUglyCheckbox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2F8159EC5B600D7BCC5 /* mgUglyCheckbox.cpp */; };
+		9041B384159EC5B600D7BCC5 /* mgUglyConsole.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2F9159EC5B600D7BCC5 /* mgUglyConsole.cpp */; };
+		9041B385159EC5B600D7BCC5 /* mgUglyField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2FA159EC5B600D7BCC5 /* mgUglyField.cpp */; };
+		9041B386159EC5B600D7BCC5 /* mgUglyLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2FB159EC5B600D7BCC5 /* mgUglyLabel.cpp */; };
+		9041B387159EC5B600D7BCC5 /* mgUglyList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2FC159EC5B600D7BCC5 /* mgUglyList.cpp */; };
+		9041B389159EC5B600D7BCC5 /* mgUglyScrollbar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2FE159EC5B600D7BCC5 /* mgUglyScrollbar.cpp */; };
+		9041B38B159EC5B600D7BCC5 /* mgUglyStack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B300159EC5B600D7BCC5 /* mgUglyStack.cpp */; };
+		9041B38C159EC5B600D7BCC5 /* mgUglyStyle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B301159EC5B600D7BCC5 /* mgUglyStyle.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		900D17B915DCAB270059DA97 /* mgDebugPane.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mgDebugPane.cpp; path = Util/mgDebugPane.cpp; sourceTree = "<group>"; };
+		900D17BB15DCAB3F0059DA97 /* mgDebugPane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mgDebugPane.h; path = Util/mgDebugPane.h; sourceTree = "<group>"; };
+		9041B262159EC55C00D7BCC5 /* libmgGUI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libmgGUI.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9041B26E159EC5B600D7BCC5 /* mgFormPane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgFormPane.h; sourceTree = "<group>"; };
+		9041B26F159EC5B600D7BCC5 /* mgFormParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgFormParser.h; sourceTree = "<group>"; };
+		9041B27A159EC5B600D7BCC5 /* mgActionListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgActionListener.h; sourceTree = "<group>"; };
+		9041B27B159EC5B600D7BCC5 /* mgButtonControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgButtonControl.h; sourceTree = "<group>"; };
+		9041B27C159EC5B600D7BCC5 /* mgChangeListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgChangeListener.h; sourceTree = "<group>"; };
+		9041B27D159EC5B600D7BCC5 /* mgCheckboxControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgCheckboxControl.h; sourceTree = "<group>"; };
+		9041B27E159EC5B600D7BCC5 /* mgColumnLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgColumnLayout.h; sourceTree = "<group>"; };
+		9041B27F159EC5B600D7BCC5 /* mgConsoleControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgConsoleControl.h; sourceTree = "<group>"; };
+		9041B280159EC5B600D7BCC5 /* mgControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgControl.h; sourceTree = "<group>"; };
+		9041B281159EC5B600D7BCC5 /* mgControlListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgControlListener.h; sourceTree = "<group>"; };
+		9041B282159EC5B600D7BCC5 /* mgDropListControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgDropListControl.h; sourceTree = "<group>"; };
+		9041B283159EC5B600D7BCC5 /* mgFieldControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgFieldControl.h; sourceTree = "<group>"; };
+		9041B284159EC5B600D7BCC5 /* mgFocusListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgFocusListener.h; sourceTree = "<group>"; };
+		9041B285159EC5B600D7BCC5 /* mgFormControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgFormControl.h; sourceTree = "<group>"; };
+		9041B286159EC5B600D7BCC5 /* mgFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgFrame.h; sourceTree = "<group>"; };
+		9041B287159EC5B600D7BCC5 /* mgKeyListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgKeyListener.h; sourceTree = "<group>"; };
+		9041B288159EC5B600D7BCC5 /* mgLabelBoxControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgLabelBoxControl.h; sourceTree = "<group>"; };
+		9041B289159EC5B600D7BCC5 /* mgLabelControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgLabelControl.h; sourceTree = "<group>"; };
+		9041B28A159EC5B600D7BCC5 /* mgLayoutManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgLayoutManager.h; sourceTree = "<group>"; };
+		9041B28B159EC5B600D7BCC5 /* mgListControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgListControl.h; sourceTree = "<group>"; };
+		9041B28C159EC5B600D7BCC5 /* mgMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgMenu.h; sourceTree = "<group>"; };
+		9041B28D159EC5B600D7BCC5 /* mgMenuBarControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgMenuBarControl.h; sourceTree = "<group>"; };
+		9041B28E159EC5B600D7BCC5 /* mgMouseListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgMouseListener.h; sourceTree = "<group>"; };
+		9041B28F159EC5B600D7BCC5 /* mgPaint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgPaint.h; sourceTree = "<group>"; };
+		9041B290159EC5B600D7BCC5 /* mgRadioControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgRadioControl.h; sourceTree = "<group>"; };
+		9041B291159EC5B600D7BCC5 /* mgRectFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgRectFrame.h; sourceTree = "<group>"; };
+		9041B292159EC5B600D7BCC5 /* mgScrollbarControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgScrollbarControl.h; sourceTree = "<group>"; };
+		9041B293159EC5B600D7BCC5 /* mgScrolled.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgScrolled.h; sourceTree = "<group>"; };
+		9041B294159EC5B600D7BCC5 /* mgScroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgScroller.h; sourceTree = "<group>"; };
+		9041B295159EC5B600D7BCC5 /* mgScrollListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgScrollListener.h; sourceTree = "<group>"; };
+		9041B296159EC5B600D7BCC5 /* mgScrollPaneControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgScrollPaneControl.h; sourceTree = "<group>"; };
+		9041B297159EC5B600D7BCC5 /* mgSelectListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgSelectListener.h; sourceTree = "<group>"; };
+		9041B298159EC5B600D7BCC5 /* mgSolidPaint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgSolidPaint.h; sourceTree = "<group>"; };
+		9041B299159EC5B600D7BCC5 /* mgStackControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgStackControl.h; sourceTree = "<group>"; };
+		9041B29A159EC5B600D7BCC5 /* mgStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgStyle.h; sourceTree = "<group>"; };
+		9041B29B159EC5B600D7BCC5 /* mgTableLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgTableLayout.h; sourceTree = "<group>"; };
+		9041B29C159EC5B600D7BCC5 /* mgTimeListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgTimeListener.h; sourceTree = "<group>"; };
+		9041B29D159EC5B600D7BCC5 /* mgToolkit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgToolkit.h; sourceTree = "<group>"; };
+		9041B29E159EC5B600D7BCC5 /* mgTopControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgTopControl.h; sourceTree = "<group>"; };
+		9041B29F159EC5B600D7BCC5 /* mgTreeListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgTreeListener.h; sourceTree = "<group>"; };
+		9041B2A0159EC5B600D7BCC5 /* mgInputEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgInputEvents.h; sourceTree = "<group>"; };
+		9041B2A2159EC5B600D7BCC5 /* mgTextBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgTextBuffer.h; sourceTree = "<group>"; };
+		9041B2A3159EC5B600D7BCC5 /* mgTextDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgTextDraw.h; sourceTree = "<group>"; };
+		9041B2A4159EC5B600D7BCC5 /* mgTextFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgTextFormat.h; sourceTree = "<group>"; };
+		9041B2A5159EC5B600D7BCC5 /* mgTextMeasure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgTextMeasure.h; sourceTree = "<group>"; };
+		9041B2A6159EC5B600D7BCC5 /* mgTextPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgTextPage.h; sourceTree = "<group>"; };
+		9041B2A7159EC5B600D7BCC5 /* mgTextScan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgTextScan.h; sourceTree = "<group>"; };
+		9041B2A9159EC5B600D7BCC5 /* mgUglyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgUglyButton.h; sourceTree = "<group>"; };
+		9041B2AA159EC5B600D7BCC5 /* mgUglyCheckbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgUglyCheckbox.h; sourceTree = "<group>"; };
+		9041B2AB159EC5B600D7BCC5 /* mgUglyConsole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgUglyConsole.h; sourceTree = "<group>"; };
+		9041B2AC159EC5B600D7BCC5 /* mgUglyField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgUglyField.h; sourceTree = "<group>"; };
+		9041B2AD159EC5B600D7BCC5 /* mgUglyLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgUglyLabel.h; sourceTree = "<group>"; };
+		9041B2AE159EC5B600D7BCC5 /* mgUglyList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgUglyList.h; sourceTree = "<group>"; };
+		9041B2B0159EC5B600D7BCC5 /* mgUglyScrollbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgUglyScrollbar.h; sourceTree = "<group>"; };
+		9041B2B2159EC5B600D7BCC5 /* mgUglyStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgUglyStack.h; sourceTree = "<group>"; };
+		9041B2B3159EC5B600D7BCC5 /* mgUglyStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgUglyStyle.h; sourceTree = "<group>"; };
+		9041B2B7159EC5B600D7BCC5 /* mgBlockTag.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgBlockTag.cpp; sourceTree = "<group>"; };
+		9041B2B8159EC5B600D7BCC5 /* mgBlockTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgBlockTag.h; sourceTree = "<group>"; };
+		9041B2B9159EC5B600D7BCC5 /* mgBreakTag.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgBreakTag.cpp; sourceTree = "<group>"; };
+		9041B2BA159EC5B600D7BCC5 /* mgBreakTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgBreakTag.h; sourceTree = "<group>"; };
+		9041B2BB159EC5B600D7BCC5 /* mgButtonTag.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgButtonTag.cpp; sourceTree = "<group>"; };
+		9041B2BC159EC5B600D7BCC5 /* mgButtonTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgButtonTag.h; sourceTree = "<group>"; };
+		9041B2BD159EC5B600D7BCC5 /* mgCheckboxTag.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgCheckboxTag.cpp; sourceTree = "<group>"; };
+		9041B2BE159EC5B600D7BCC5 /* mgCheckboxTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgCheckboxTag.h; sourceTree = "<group>"; };
+		9041B2BF159EC5B600D7BCC5 /* mgConsoleTag.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgConsoleTag.cpp; sourceTree = "<group>"; };
+		9041B2C0159EC5B600D7BCC5 /* mgConsoleTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgConsoleTag.h; sourceTree = "<group>"; };
+		9041B2C1159EC5B600D7BCC5 /* mgFieldTag.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgFieldTag.cpp; sourceTree = "<group>"; };
+		9041B2C2159EC5B600D7BCC5 /* mgFieldTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgFieldTag.h; sourceTree = "<group>"; };
+		9041B2C3159EC5B600D7BCC5 /* mgFormPane.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgFormPane.cpp; sourceTree = "<group>"; };
+		9041B2C4159EC5B600D7BCC5 /* mgFormParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgFormParser.cpp; sourceTree = "<group>"; };
+		9041B2C5159EC5B600D7BCC5 /* mgFormTag.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgFormTag.cpp; sourceTree = "<group>"; };
+		9041B2C6159EC5B600D7BCC5 /* mgFormTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgFormTag.h; sourceTree = "<group>"; };
+		9041B2C7159EC5B600D7BCC5 /* mgHeadingTag.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgHeadingTag.cpp; sourceTree = "<group>"; };
+		9041B2C8159EC5B600D7BCC5 /* mgHeadingTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgHeadingTag.h; sourceTree = "<group>"; };
+		9041B2C9159EC5B600D7BCC5 /* mgLabelTag.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgLabelTag.cpp; sourceTree = "<group>"; };
+		9041B2CA159EC5B600D7BCC5 /* mgLabelTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgLabelTag.h; sourceTree = "<group>"; };
+		9041B2CB159EC5B600D7BCC5 /* mgListItemTag.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgListItemTag.cpp; sourceTree = "<group>"; };
+		9041B2CC159EC5B600D7BCC5 /* mgListItemTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgListItemTag.h; sourceTree = "<group>"; };
+		9041B2CD159EC5B600D7BCC5 /* mgListTag.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgListTag.cpp; sourceTree = "<group>"; };
+		9041B2CE159EC5B600D7BCC5 /* mgListTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgListTag.h; sourceTree = "<group>"; };
+		9041B2CF159EC5B600D7BCC5 /* mgParaTag.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgParaTag.cpp; sourceTree = "<group>"; };
+		9041B2D0159EC5B600D7BCC5 /* mgParaTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgParaTag.h; sourceTree = "<group>"; };
+		9041B2D1159EC5B600D7BCC5 /* mgPreTag.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgPreTag.cpp; sourceTree = "<group>"; };
+		9041B2D2159EC5B600D7BCC5 /* mgPreTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgPreTag.h; sourceTree = "<group>"; };
+		9041B2D3159EC5B600D7BCC5 /* mgRuleTag.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgRuleTag.cpp; sourceTree = "<group>"; };
+		9041B2D4159EC5B600D7BCC5 /* mgRuleTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgRuleTag.h; sourceTree = "<group>"; };
+		9041B2D5159EC5B600D7BCC5 /* mgTableColTag.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgTableColTag.cpp; sourceTree = "<group>"; };
+		9041B2D6159EC5B600D7BCC5 /* mgTableColTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgTableColTag.h; sourceTree = "<group>"; };
+		9041B2D7159EC5B600D7BCC5 /* mgTableRowTag.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgTableRowTag.cpp; sourceTree = "<group>"; };
+		9041B2D8159EC5B600D7BCC5 /* mgTableRowTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgTableRowTag.h; sourceTree = "<group>"; };
+		9041B2D9159EC5B600D7BCC5 /* mgTableTag.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgTableTag.cpp; sourceTree = "<group>"; };
+		9041B2DA159EC5B600D7BCC5 /* mgTableTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgTableTag.h; sourceTree = "<group>"; };
+		9041B2DB159EC5B600D7BCC5 /* mgTextTag.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgTextTag.cpp; sourceTree = "<group>"; };
+		9041B2DC159EC5B600D7BCC5 /* mgTextTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgTextTag.h; sourceTree = "<group>"; };
+		9041B2E5159EC5B600D7BCC5 /* mgColumnLayout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgColumnLayout.cpp; sourceTree = "<group>"; };
+		9041B2E6159EC5B600D7BCC5 /* mgControl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgControl.cpp; sourceTree = "<group>"; };
+		9041B2E7159EC5B600D7BCC5 /* mgFrame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgFrame.cpp; sourceTree = "<group>"; };
+		9041B2E8159EC5B600D7BCC5 /* mgRectFrame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgRectFrame.cpp; sourceTree = "<group>"; };
+		9041B2E9159EC5B600D7BCC5 /* mgSolidPaint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgSolidPaint.cpp; sourceTree = "<group>"; };
+		9041B2EA159EC5B600D7BCC5 /* mgStyle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgStyle.cpp; sourceTree = "<group>"; };
+		9041B2EC159EC5B600D7BCC5 /* mgTableLayout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgTableLayout.cpp; sourceTree = "<group>"; };
+		9041B2ED159EC5B600D7BCC5 /* mgTopControl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgTopControl.cpp; sourceTree = "<group>"; };
+		9041B2EF159EC5B600D7BCC5 /* stdafx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stdafx.h; sourceTree = "<group>"; };
+		9041B2F1159EC5B600D7BCC5 /* mgTextBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgTextBuffer.cpp; sourceTree = "<group>"; };
+		9041B2F2159EC5B600D7BCC5 /* mgTextDraw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgTextDraw.cpp; sourceTree = "<group>"; };
+		9041B2F3159EC5B600D7BCC5 /* mgTextFormat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgTextFormat.cpp; sourceTree = "<group>"; };
+		9041B2F4159EC5B600D7BCC5 /* mgTextMeasure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgTextMeasure.cpp; sourceTree = "<group>"; };
+		9041B2F5159EC5B600D7BCC5 /* mgTextScan.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgTextScan.cpp; sourceTree = "<group>"; };
+		9041B2F7159EC5B600D7BCC5 /* mgUglyButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgUglyButton.cpp; sourceTree = "<group>"; };
+		9041B2F8159EC5B600D7BCC5 /* mgUglyCheckbox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgUglyCheckbox.cpp; sourceTree = "<group>"; };
+		9041B2F9159EC5B600D7BCC5 /* mgUglyConsole.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgUglyConsole.cpp; sourceTree = "<group>"; };
+		9041B2FA159EC5B600D7BCC5 /* mgUglyField.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgUglyField.cpp; sourceTree = "<group>"; };
+		9041B2FB159EC5B600D7BCC5 /* mgUglyLabel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgUglyLabel.cpp; sourceTree = "<group>"; };
+		9041B2FC159EC5B600D7BCC5 /* mgUglyList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgUglyList.cpp; sourceTree = "<group>"; };
+		9041B2FE159EC5B600D7BCC5 /* mgUglyScrollbar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgUglyScrollbar.cpp; sourceTree = "<group>"; };
+		9041B300159EC5B600D7BCC5 /* mgUglyStack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgUglyStack.cpp; sourceTree = "<group>"; };
+		9041B301159EC5B600D7BCC5 /* mgUglyStyle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgUglyStyle.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9041B25F159EC55C00D7BCC5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		900D17B615DCAB000059DA97 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				900D17BB15DCAB3F0059DA97 /* mgDebugPane.h */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		900D17B815DCAB0A0059DA97 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				900D17B915DCAB270059DA97 /* mgDebugPane.cpp */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		9041B257159EC55C00D7BCC5 = {
+			isa = PBXGroup;
+			children = (
+				9041B26C159EC5B600D7BCC5 /* Include */,
+				9041B2B5159EC5B600D7BCC5 /* Source */,
+				9041B263159EC55C00D7BCC5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9041B263159EC55C00D7BCC5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9041B262159EC55C00D7BCC5 /* libmgGUI.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9041B26C159EC5B600D7BCC5 /* Include */ = {
+			isa = PBXGroup;
+			children = (
+				900D17B615DCAB000059DA97 /* Util */,
+				9041B26D159EC5B600D7BCC5 /* Form */,
+				9041B279159EC5B600D7BCC5 /* GUI */,
+				9041B2A0159EC5B600D7BCC5 /* mgInputEvents.h */,
+				9041B2A1159EC5B600D7BCC5 /* TextFormatter */,
+				9041B2A8159EC5B600D7BCC5 /* UglyStyle */,
+			);
+			name = Include;
+			path = ../Include;
+			sourceTree = "<group>";
+		};
+		9041B26D159EC5B600D7BCC5 /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				9041B26E159EC5B600D7BCC5 /* mgFormPane.h */,
+				9041B26F159EC5B600D7BCC5 /* mgFormParser.h */,
+			);
+			path = Form;
+			sourceTree = "<group>";
+		};
+		9041B279159EC5B600D7BCC5 /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				9041B27A159EC5B600D7BCC5 /* mgActionListener.h */,
+				9041B27B159EC5B600D7BCC5 /* mgButtonControl.h */,
+				9041B27C159EC5B600D7BCC5 /* mgChangeListener.h */,
+				9041B27D159EC5B600D7BCC5 /* mgCheckboxControl.h */,
+				9041B27E159EC5B600D7BCC5 /* mgColumnLayout.h */,
+				9041B27F159EC5B600D7BCC5 /* mgConsoleControl.h */,
+				9041B280159EC5B600D7BCC5 /* mgControl.h */,
+				9041B281159EC5B600D7BCC5 /* mgControlListener.h */,
+				9041B282159EC5B600D7BCC5 /* mgDropListControl.h */,
+				9041B283159EC5B600D7BCC5 /* mgFieldControl.h */,
+				9041B284159EC5B600D7BCC5 /* mgFocusListener.h */,
+				9041B285159EC5B600D7BCC5 /* mgFormControl.h */,
+				9041B286159EC5B600D7BCC5 /* mgFrame.h */,
+				9041B287159EC5B600D7BCC5 /* mgKeyListener.h */,
+				9041B288159EC5B600D7BCC5 /* mgLabelBoxControl.h */,
+				9041B289159EC5B600D7BCC5 /* mgLabelControl.h */,
+				9041B28A159EC5B600D7BCC5 /* mgLayoutManager.h */,
+				9041B28B159EC5B600D7BCC5 /* mgListControl.h */,
+				9041B28C159EC5B600D7BCC5 /* mgMenu.h */,
+				9041B28D159EC5B600D7BCC5 /* mgMenuBarControl.h */,
+				9041B28E159EC5B600D7BCC5 /* mgMouseListener.h */,
+				9041B28F159EC5B600D7BCC5 /* mgPaint.h */,
+				9041B290159EC5B600D7BCC5 /* mgRadioControl.h */,
+				9041B291159EC5B600D7BCC5 /* mgRectFrame.h */,
+				9041B292159EC5B600D7BCC5 /* mgScrollbarControl.h */,
+				9041B293159EC5B600D7BCC5 /* mgScrolled.h */,
+				9041B294159EC5B600D7BCC5 /* mgScroller.h */,
+				9041B295159EC5B600D7BCC5 /* mgScrollListener.h */,
+				9041B296159EC5B600D7BCC5 /* mgScrollPaneControl.h */,
+				9041B297159EC5B600D7BCC5 /* mgSelectListener.h */,
+				9041B298159EC5B600D7BCC5 /* mgSolidPaint.h */,
+				9041B299159EC5B600D7BCC5 /* mgStackControl.h */,
+				9041B29A159EC5B600D7BCC5 /* mgStyle.h */,
+				9041B29B159EC5B600D7BCC5 /* mgTableLayout.h */,
+				9041B29C159EC5B600D7BCC5 /* mgTimeListener.h */,
+				9041B29D159EC5B600D7BCC5 /* mgToolkit.h */,
+				9041B29E159EC5B600D7BCC5 /* mgTopControl.h */,
+				9041B29F159EC5B600D7BCC5 /* mgTreeListener.h */,
+			);
+			path = GUI;
+			sourceTree = "<group>";
+		};
+		9041B2A1159EC5B600D7BCC5 /* TextFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				9041B2A2159EC5B600D7BCC5 /* mgTextBuffer.h */,
+				9041B2A3159EC5B600D7BCC5 /* mgTextDraw.h */,
+				9041B2A4159EC5B600D7BCC5 /* mgTextFormat.h */,
+				9041B2A5159EC5B600D7BCC5 /* mgTextMeasure.h */,
+				9041B2A6159EC5B600D7BCC5 /* mgTextPage.h */,
+				9041B2A7159EC5B600D7BCC5 /* mgTextScan.h */,
+			);
+			path = TextFormatter;
+			sourceTree = "<group>";
+		};
+		9041B2A8159EC5B600D7BCC5 /* UglyStyle */ = {
+			isa = PBXGroup;
+			children = (
+				9041B2A9159EC5B600D7BCC5 /* mgUglyButton.h */,
+				9041B2AA159EC5B600D7BCC5 /* mgUglyCheckbox.h */,
+				9041B2AB159EC5B600D7BCC5 /* mgUglyConsole.h */,
+				9041B2AC159EC5B600D7BCC5 /* mgUglyField.h */,
+				9041B2AD159EC5B600D7BCC5 /* mgUglyLabel.h */,
+				9041B2AE159EC5B600D7BCC5 /* mgUglyList.h */,
+				9041B2B0159EC5B600D7BCC5 /* mgUglyScrollbar.h */,
+				9041B2B2159EC5B600D7BCC5 /* mgUglyStack.h */,
+				9041B2B3159EC5B600D7BCC5 /* mgUglyStyle.h */,
+			);
+			path = UglyStyle;
+			sourceTree = "<group>";
+		};
+		9041B2B5159EC5B600D7BCC5 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				900D17B815DCAB0A0059DA97 /* Util */,
+				9041B2B6159EC5B600D7BCC5 /* Form */,
+				9041B2E4159EC5B600D7BCC5 /* GUI */,
+				9041B2EF159EC5B600D7BCC5 /* stdafx.h */,
+				9041B2F0159EC5B600D7BCC5 /* TextFormatter */,
+				9041B2F6159EC5B600D7BCC5 /* UglyStyle */,
+			);
+			name = Source;
+			path = ../Source;
+			sourceTree = "<group>";
+		};
+		9041B2B6159EC5B600D7BCC5 /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				9041B2B7159EC5B600D7BCC5 /* mgBlockTag.cpp */,
+				9041B2B8159EC5B600D7BCC5 /* mgBlockTag.h */,
+				9041B2B9159EC5B600D7BCC5 /* mgBreakTag.cpp */,
+				9041B2BA159EC5B600D7BCC5 /* mgBreakTag.h */,
+				9041B2BB159EC5B600D7BCC5 /* mgButtonTag.cpp */,
+				9041B2BC159EC5B600D7BCC5 /* mgButtonTag.h */,
+				9041B2BD159EC5B600D7BCC5 /* mgCheckboxTag.cpp */,
+				9041B2BE159EC5B600D7BCC5 /* mgCheckboxTag.h */,
+				9041B2BF159EC5B600D7BCC5 /* mgConsoleTag.cpp */,
+				9041B2C0159EC5B600D7BCC5 /* mgConsoleTag.h */,
+				9041B2C1159EC5B600D7BCC5 /* mgFieldTag.cpp */,
+				9041B2C2159EC5B600D7BCC5 /* mgFieldTag.h */,
+				9041B2C3159EC5B600D7BCC5 /* mgFormPane.cpp */,
+				9041B2C4159EC5B600D7BCC5 /* mgFormParser.cpp */,
+				9041B2C5159EC5B600D7BCC5 /* mgFormTag.cpp */,
+				9041B2C6159EC5B600D7BCC5 /* mgFormTag.h */,
+				9041B2C7159EC5B600D7BCC5 /* mgHeadingTag.cpp */,
+				9041B2C8159EC5B600D7BCC5 /* mgHeadingTag.h */,
+				9041B2C9159EC5B600D7BCC5 /* mgLabelTag.cpp */,
+				9041B2CA159EC5B600D7BCC5 /* mgLabelTag.h */,
+				9041B2CB159EC5B600D7BCC5 /* mgListItemTag.cpp */,
+				9041B2CC159EC5B600D7BCC5 /* mgListItemTag.h */,
+				9041B2CD159EC5B600D7BCC5 /* mgListTag.cpp */,
+				9041B2CE159EC5B600D7BCC5 /* mgListTag.h */,
+				9041B2CF159EC5B600D7BCC5 /* mgParaTag.cpp */,
+				9041B2D0159EC5B600D7BCC5 /* mgParaTag.h */,
+				9041B2D1159EC5B600D7BCC5 /* mgPreTag.cpp */,
+				9041B2D2159EC5B600D7BCC5 /* mgPreTag.h */,
+				9041B2D3159EC5B600D7BCC5 /* mgRuleTag.cpp */,
+				9041B2D4159EC5B600D7BCC5 /* mgRuleTag.h */,
+				9041B2D5159EC5B600D7BCC5 /* mgTableColTag.cpp */,
+				9041B2D6159EC5B600D7BCC5 /* mgTableColTag.h */,
+				9041B2D7159EC5B600D7BCC5 /* mgTableRowTag.cpp */,
+				9041B2D8159EC5B600D7BCC5 /* mgTableRowTag.h */,
+				9041B2D9159EC5B600D7BCC5 /* mgTableTag.cpp */,
+				9041B2DA159EC5B600D7BCC5 /* mgTableTag.h */,
+				9041B2DB159EC5B600D7BCC5 /* mgTextTag.cpp */,
+				9041B2DC159EC5B600D7BCC5 /* mgTextTag.h */,
+			);
+			path = Form;
+			sourceTree = "<group>";
+		};
+		9041B2E4159EC5B600D7BCC5 /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				9041B2E5159EC5B600D7BCC5 /* mgColumnLayout.cpp */,
+				9041B2E6159EC5B600D7BCC5 /* mgControl.cpp */,
+				9041B2E7159EC5B600D7BCC5 /* mgFrame.cpp */,
+				9041B2E8159EC5B600D7BCC5 /* mgRectFrame.cpp */,
+				9041B2E9159EC5B600D7BCC5 /* mgSolidPaint.cpp */,
+				9041B2EA159EC5B600D7BCC5 /* mgStyle.cpp */,
+				9041B2EC159EC5B600D7BCC5 /* mgTableLayout.cpp */,
+				9041B2ED159EC5B600D7BCC5 /* mgTopControl.cpp */,
+			);
+			path = GUI;
+			sourceTree = "<group>";
+		};
+		9041B2F0159EC5B600D7BCC5 /* TextFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				9041B2F1159EC5B600D7BCC5 /* mgTextBuffer.cpp */,
+				9041B2F2159EC5B600D7BCC5 /* mgTextDraw.cpp */,
+				9041B2F3159EC5B600D7BCC5 /* mgTextFormat.cpp */,
+				9041B2F4159EC5B600D7BCC5 /* mgTextMeasure.cpp */,
+				9041B2F5159EC5B600D7BCC5 /* mgTextScan.cpp */,
+			);
+			path = TextFormatter;
+			sourceTree = "<group>";
+		};
+		9041B2F6159EC5B600D7BCC5 /* UglyStyle */ = {
+			isa = PBXGroup;
+			children = (
+				9041B2F7159EC5B600D7BCC5 /* mgUglyButton.cpp */,
+				9041B2F8159EC5B600D7BCC5 /* mgUglyCheckbox.cpp */,
+				9041B2F9159EC5B600D7BCC5 /* mgUglyConsole.cpp */,
+				9041B2FA159EC5B600D7BCC5 /* mgUglyField.cpp */,
+				9041B2FB159EC5B600D7BCC5 /* mgUglyLabel.cpp */,
+				9041B2FC159EC5B600D7BCC5 /* mgUglyList.cpp */,
+				9041B2FE159EC5B600D7BCC5 /* mgUglyScrollbar.cpp */,
+				9041B300159EC5B600D7BCC5 /* mgUglyStack.cpp */,
+				9041B301159EC5B600D7BCC5 /* mgUglyStyle.cpp */,
+			);
+			path = UglyStyle;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		9041B260159EC55C00D7BCC5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9041B303159EC5B600D7BCC5 /* mgFormPane.h in Headers */,
+				9041B304159EC5B600D7BCC5 /* mgFormParser.h in Headers */,
+				9041B30D159EC5B600D7BCC5 /* mgActionListener.h in Headers */,
+				9041B30E159EC5B600D7BCC5 /* mgButtonControl.h in Headers */,
+				9041B30F159EC5B600D7BCC5 /* mgChangeListener.h in Headers */,
+				9041B310159EC5B600D7BCC5 /* mgCheckboxControl.h in Headers */,
+				9041B311159EC5B600D7BCC5 /* mgColumnLayout.h in Headers */,
+				9041B312159EC5B600D7BCC5 /* mgConsoleControl.h in Headers */,
+				9041B313159EC5B600D7BCC5 /* mgControl.h in Headers */,
+				9041B314159EC5B600D7BCC5 /* mgControlListener.h in Headers */,
+				9041B315159EC5B600D7BCC5 /* mgDropListControl.h in Headers */,
+				9041B316159EC5B600D7BCC5 /* mgFieldControl.h in Headers */,
+				9041B317159EC5B600D7BCC5 /* mgFocusListener.h in Headers */,
+				9041B318159EC5B600D7BCC5 /* mgFormControl.h in Headers */,
+				9041B319159EC5B600D7BCC5 /* mgFrame.h in Headers */,
+				9041B31A159EC5B600D7BCC5 /* mgKeyListener.h in Headers */,
+				9041B31B159EC5B600D7BCC5 /* mgLabelBoxControl.h in Headers */,
+				9041B31C159EC5B600D7BCC5 /* mgLabelControl.h in Headers */,
+				9041B31D159EC5B600D7BCC5 /* mgLayoutManager.h in Headers */,
+				9041B31E159EC5B600D7BCC5 /* mgListControl.h in Headers */,
+				9041B31F159EC5B600D7BCC5 /* mgMenu.h in Headers */,
+				9041B320159EC5B600D7BCC5 /* mgMenuBarControl.h in Headers */,
+				9041B321159EC5B600D7BCC5 /* mgMouseListener.h in Headers */,
+				9041B322159EC5B600D7BCC5 /* mgPaint.h in Headers */,
+				9041B323159EC5B600D7BCC5 /* mgRadioControl.h in Headers */,
+				9041B324159EC5B600D7BCC5 /* mgRectFrame.h in Headers */,
+				9041B325159EC5B600D7BCC5 /* mgScrollbarControl.h in Headers */,
+				9041B326159EC5B600D7BCC5 /* mgScrolled.h in Headers */,
+				9041B327159EC5B600D7BCC5 /* mgScroller.h in Headers */,
+				9041B328159EC5B600D7BCC5 /* mgScrollListener.h in Headers */,
+				9041B329159EC5B600D7BCC5 /* mgScrollPaneControl.h in Headers */,
+				9041B32A159EC5B600D7BCC5 /* mgSelectListener.h in Headers */,
+				9041B32B159EC5B600D7BCC5 /* mgSolidPaint.h in Headers */,
+				9041B32C159EC5B600D7BCC5 /* mgStackControl.h in Headers */,
+				9041B32D159EC5B600D7BCC5 /* mgStyle.h in Headers */,
+				9041B32E159EC5B600D7BCC5 /* mgTableLayout.h in Headers */,
+				9041B32F159EC5B600D7BCC5 /* mgTimeListener.h in Headers */,
+				9041B330159EC5B600D7BCC5 /* mgToolkit.h in Headers */,
+				9041B331159EC5B600D7BCC5 /* mgTopControl.h in Headers */,
+				9041B332159EC5B600D7BCC5 /* mgTreeListener.h in Headers */,
+				9041B333159EC5B600D7BCC5 /* mgInputEvents.h in Headers */,
+				9041B334159EC5B600D7BCC5 /* mgTextBuffer.h in Headers */,
+				9041B335159EC5B600D7BCC5 /* mgTextDraw.h in Headers */,
+				9041B336159EC5B600D7BCC5 /* mgTextFormat.h in Headers */,
+				9041B337159EC5B600D7BCC5 /* mgTextMeasure.h in Headers */,
+				9041B338159EC5B600D7BCC5 /* mgTextPage.h in Headers */,
+				9041B339159EC5B600D7BCC5 /* mgTextScan.h in Headers */,
+				9041B33A159EC5B600D7BCC5 /* mgUglyButton.h in Headers */,
+				9041B33B159EC5B600D7BCC5 /* mgUglyCheckbox.h in Headers */,
+				9041B33C159EC5B600D7BCC5 /* mgUglyConsole.h in Headers */,
+				9041B33D159EC5B600D7BCC5 /* mgUglyField.h in Headers */,
+				9041B33E159EC5B600D7BCC5 /* mgUglyLabel.h in Headers */,
+				9041B33F159EC5B600D7BCC5 /* mgUglyList.h in Headers */,
+				9041B341159EC5B600D7BCC5 /* mgUglyScrollbar.h in Headers */,
+				9041B343159EC5B600D7BCC5 /* mgUglyStack.h in Headers */,
+				9041B344159EC5B600D7BCC5 /* mgUglyStyle.h in Headers */,
+				9041B347159EC5B600D7BCC5 /* mgBlockTag.h in Headers */,
+				9041B349159EC5B600D7BCC5 /* mgBreakTag.h in Headers */,
+				9041B34B159EC5B600D7BCC5 /* mgButtonTag.h in Headers */,
+				9041B34D159EC5B600D7BCC5 /* mgCheckboxTag.h in Headers */,
+				9041B34F159EC5B600D7BCC5 /* mgConsoleTag.h in Headers */,
+				9041B351159EC5B600D7BCC5 /* mgFieldTag.h in Headers */,
+				9041B355159EC5B600D7BCC5 /* mgFormTag.h in Headers */,
+				9041B357159EC5B600D7BCC5 /* mgHeadingTag.h in Headers */,
+				9041B359159EC5B600D7BCC5 /* mgLabelTag.h in Headers */,
+				9041B35B159EC5B600D7BCC5 /* mgListItemTag.h in Headers */,
+				9041B35D159EC5B600D7BCC5 /* mgListTag.h in Headers */,
+				9041B35F159EC5B600D7BCC5 /* mgParaTag.h in Headers */,
+				9041B361159EC5B600D7BCC5 /* mgPreTag.h in Headers */,
+				9041B363159EC5B600D7BCC5 /* mgRuleTag.h in Headers */,
+				9041B365159EC5B600D7BCC5 /* mgTableColTag.h in Headers */,
+				9041B367159EC5B600D7BCC5 /* mgTableRowTag.h in Headers */,
+				9041B369159EC5B600D7BCC5 /* mgTableTag.h in Headers */,
+				9041B36B159EC5B600D7BCC5 /* mgTextTag.h in Headers */,
+				9041B37C159EC5B600D7BCC5 /* stdafx.h in Headers */,
+				900D17BC15DCAB3F0059DA97 /* mgDebugPane.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		9041B261159EC55C00D7BCC5 /* mgGUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9041B266159EC55C00D7BCC5 /* Build configuration list for PBXNativeTarget "mgGUI" */;
+			buildPhases = (
+				9041B25E159EC55C00D7BCC5 /* Sources */,
+				9041B25F159EC55C00D7BCC5 /* Frameworks */,
+				9041B260159EC55C00D7BCC5 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mgGUI;
+			productName = mgGUI;
+			productReference = 9041B262159EC55C00D7BCC5 /* libmgGUI.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9041B259159EC55C00D7BCC5 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 9041B25C159EC55C00D7BCC5 /* Build configuration list for PBXProject "mgGUI" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9041B257159EC55C00D7BCC5;
+			productRefGroup = 9041B263159EC55C00D7BCC5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9041B261159EC55C00D7BCC5 /* mgGUI */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9041B25E159EC55C00D7BCC5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9041B346159EC5B600D7BCC5 /* mgBlockTag.cpp in Sources */,
+				9041B348159EC5B600D7BCC5 /* mgBreakTag.cpp in Sources */,
+				9041B34A159EC5B600D7BCC5 /* mgButtonTag.cpp in Sources */,
+				9041B34C159EC5B600D7BCC5 /* mgCheckboxTag.cpp in Sources */,
+				9041B34E159EC5B600D7BCC5 /* mgConsoleTag.cpp in Sources */,
+				9041B350159EC5B600D7BCC5 /* mgFieldTag.cpp in Sources */,
+				9041B352159EC5B600D7BCC5 /* mgFormPane.cpp in Sources */,
+				9041B353159EC5B600D7BCC5 /* mgFormParser.cpp in Sources */,
+				9041B354159EC5B600D7BCC5 /* mgFormTag.cpp in Sources */,
+				9041B356159EC5B600D7BCC5 /* mgHeadingTag.cpp in Sources */,
+				9041B358159EC5B600D7BCC5 /* mgLabelTag.cpp in Sources */,
+				9041B35A159EC5B600D7BCC5 /* mgListItemTag.cpp in Sources */,
+				9041B35C159EC5B600D7BCC5 /* mgListTag.cpp in Sources */,
+				9041B35E159EC5B600D7BCC5 /* mgParaTag.cpp in Sources */,
+				9041B360159EC5B600D7BCC5 /* mgPreTag.cpp in Sources */,
+				9041B362159EC5B600D7BCC5 /* mgRuleTag.cpp in Sources */,
+				9041B364159EC5B600D7BCC5 /* mgTableColTag.cpp in Sources */,
+				9041B366159EC5B600D7BCC5 /* mgTableRowTag.cpp in Sources */,
+				9041B368159EC5B600D7BCC5 /* mgTableTag.cpp in Sources */,
+				9041B36A159EC5B600D7BCC5 /* mgTextTag.cpp in Sources */,
+				9041B372159EC5B600D7BCC5 /* mgColumnLayout.cpp in Sources */,
+				9041B373159EC5B600D7BCC5 /* mgControl.cpp in Sources */,
+				9041B374159EC5B600D7BCC5 /* mgFrame.cpp in Sources */,
+				9041B375159EC5B600D7BCC5 /* mgRectFrame.cpp in Sources */,
+				9041B376159EC5B600D7BCC5 /* mgSolidPaint.cpp in Sources */,
+				9041B377159EC5B600D7BCC5 /* mgStyle.cpp in Sources */,
+				9041B379159EC5B600D7BCC5 /* mgTableLayout.cpp in Sources */,
+				9041B37A159EC5B600D7BCC5 /* mgTopControl.cpp in Sources */,
+				9041B37D159EC5B600D7BCC5 /* mgTextBuffer.cpp in Sources */,
+				9041B37E159EC5B600D7BCC5 /* mgTextDraw.cpp in Sources */,
+				9041B37F159EC5B600D7BCC5 /* mgTextFormat.cpp in Sources */,
+				9041B380159EC5B600D7BCC5 /* mgTextMeasure.cpp in Sources */,
+				9041B381159EC5B600D7BCC5 /* mgTextScan.cpp in Sources */,
+				9041B382159EC5B600D7BCC5 /* mgUglyButton.cpp in Sources */,
+				9041B383159EC5B600D7BCC5 /* mgUglyCheckbox.cpp in Sources */,
+				9041B384159EC5B600D7BCC5 /* mgUglyConsole.cpp in Sources */,
+				9041B385159EC5B600D7BCC5 /* mgUglyField.cpp in Sources */,
+				9041B386159EC5B600D7BCC5 /* mgUglyLabel.cpp in Sources */,
+				9041B387159EC5B600D7BCC5 /* mgUglyList.cpp in Sources */,
+				9041B389159EC5B600D7BCC5 /* mgUglyScrollbar.cpp in Sources */,
+				9041B38B159EC5B600D7BCC5 /* mgUglyStack.cpp in Sources */,
+				9041B38C159EC5B600D7BCC5 /* mgUglyStyle.cpp in Sources */,
+				900D17BA15DCAB270059DA97 /* mgDebugPane.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		9041B264159EC55C00D7BCC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		9041B265159EC55C00D7BCC5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		9041B267159EC55C00D7BCC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = ../../BuildOSX/Debug;
+				EXECUTABLE_PREFIX = lib;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				HEADER_SEARCH_PATHS = (
+					../Include,
+					../Source,
+					../../,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9041B268159EC55C00D7BCC5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = ../../BuildOSX/Release;
+				EXECUTABLE_PREFIX = lib;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				HEADER_SEARCH_PATHS = (
+					../Include,
+					../Source,
+					../../,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9041B25C159EC55C00D7BCC5 /* Build configuration list for PBXProject "mgGUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9041B264159EC55C00D7BCC5 /* Debug */,
+				9041B265159EC55C00D7BCC5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9041B266159EC55C00D7BCC5 /* Build configuration list for PBXNativeTarget "mgGUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9041B267159EC55C00D7BCC5 /* Debug */,
+				9041B268159EC55C00D7BCC5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9041B259159EC55C00D7BCC5 /* Project object */;
+}

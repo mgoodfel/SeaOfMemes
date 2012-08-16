@@ -1,0 +1,389 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		90B23A6715D009D100A39C00 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90B23A6615D009D100A39C00 /* IOKit.framework */; };
+		90D196D215A179D900145D8D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90D196D115A179D900145D8D /* Cocoa.framework */; };
+		90D196DC15A179D900145D8D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 90D196DA15A179D900145D8D /* InfoPlist.strings */; };
+		90D196E215A179D900145D8D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 90D196E015A179D900145D8D /* Credits.rtf */; };
+		90D196E515A179D900145D8D /* GuiTestGLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D196E415A179D900145D8D /* GuiTestGLAppDelegate.m */; };
+		90D196E815A179D900145D8D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90D196E615A179D900145D8D /* MainMenu.xib */; };
+		90D196EF15A179EB00145D8D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90D196EE15A179EB00145D8D /* QuartzCore.framework */; };
+		90D196F115A179F400145D8D /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90D196F015A179F400145D8D /* OpenGL.framework */; };
+		90D1970115A17A1000145D8D /* GuiTestGL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90D196F315A17A1000145D8D /* GuiTestGL.cpp */; };
+		90D1970215A17A1000145D8D /* mgCursorDefn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90D196F515A17A1000145D8D /* mgCursorDefn.cpp */; };
+		90D1970315A17A1000145D8D /* mgFontList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90D196F715A17A1000145D8D /* mgFontList.cpp */; };
+		90D1970415A17A1000145D8D /* Planet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90D196F915A17A1000145D8D /* Planet.cpp */; };
+		90D1970515A17A1000145D8D /* SampleUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90D196FB15A17A1000145D8D /* SampleUI.cpp */; };
+		90D1970615A17A1000145D8D /* stdafx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90D196FD15A17A1000145D8D /* stdafx.cpp */; };
+		90D1970715A17A1000145D8D /* TextureSurface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90D196FF15A17A1000145D8D /* TextureSurface.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		90B23A6615D009D100A39C00 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		90D196CD15A179D900145D8D /* GuiTestGL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuiTestGL.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		90D196D115A179D900145D8D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		90D196D415A179D900145D8D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		90D196D515A179D900145D8D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		90D196D615A179D900145D8D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		90D196D915A179D900145D8D /* GuiTestGL-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GuiTestGL-Info.plist"; sourceTree = "<group>"; };
+		90D196DB15A179D900145D8D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		90D196DF15A179D900145D8D /* GuiTestGL-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GuiTestGL-Prefix.pch"; sourceTree = "<group>"; };
+		90D196E115A179D900145D8D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		90D196E315A179D900145D8D /* GuiTestGLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuiTestGLAppDelegate.h; sourceTree = "<group>"; };
+		90D196E415A179D900145D8D /* GuiTestGLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuiTestGLAppDelegate.m; sourceTree = "<group>"; };
+		90D196E715A179D900145D8D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		90D196EE15A179EB00145D8D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		90D196F015A179F400145D8D /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		90D196F315A17A1000145D8D /* GuiTestGL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GuiTestGL.cpp; path = ../Source/GuiTestGL.cpp; sourceTree = "<group>"; };
+		90D196F415A17A1000145D8D /* GuiTestGL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GuiTestGL.h; path = ../Source/GuiTestGL.h; sourceTree = "<group>"; };
+		90D196F515A17A1000145D8D /* mgCursorDefn.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mgCursorDefn.cpp; path = ../Source/mgCursorDefn.cpp; sourceTree = "<group>"; };
+		90D196F615A17A1000145D8D /* mgCursorDefn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mgCursorDefn.h; path = ../Source/mgCursorDefn.h; sourceTree = "<group>"; };
+		90D196F715A17A1000145D8D /* mgFontList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mgFontList.cpp; path = ../Source/mgFontList.cpp; sourceTree = "<group>"; };
+		90D196F815A17A1000145D8D /* mgFontList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mgFontList.h; path = ../Source/mgFontList.h; sourceTree = "<group>"; };
+		90D196F915A17A1000145D8D /* Planet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Planet.cpp; path = ../Source/Planet.cpp; sourceTree = "<group>"; };
+		90D196FA15A17A1000145D8D /* Planet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Planet.h; path = ../Source/Planet.h; sourceTree = "<group>"; };
+		90D196FB15A17A1000145D8D /* SampleUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SampleUI.cpp; path = ../Source/SampleUI.cpp; sourceTree = "<group>"; };
+		90D196FC15A17A1000145D8D /* SampleUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SampleUI.h; path = ../Source/SampleUI.h; sourceTree = "<group>"; };
+		90D196FD15A17A1000145D8D /* stdafx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = stdafx.cpp; path = ../Source/stdafx.cpp; sourceTree = "<group>"; };
+		90D196FE15A17A1000145D8D /* stdafx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stdafx.h; path = ../Source/stdafx.h; sourceTree = "<group>"; };
+		90D196FF15A17A1000145D8D /* TextureSurface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TextureSurface.cpp; path = ../Source/TextureSurface.cpp; sourceTree = "<group>"; };
+		90D1970015A17A1000145D8D /* TextureSurface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TextureSurface.h; path = ../Source/TextureSurface.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		90D196CA15A179D900145D8D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90B23A6715D009D100A39C00 /* IOKit.framework in Frameworks */,
+				90D196F115A179F400145D8D /* OpenGL.framework in Frameworks */,
+				90D196EF15A179EB00145D8D /* QuartzCore.framework in Frameworks */,
+				90D196D215A179D900145D8D /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		90D196C215A179D900145D8D = {
+			isa = PBXGroup;
+			children = (
+				90B23A6615D009D100A39C00 /* IOKit.framework */,
+				90D196F215A179FC00145D8D /* Source */,
+				90D196F015A179F400145D8D /* OpenGL.framework */,
+				90D196EE15A179EB00145D8D /* QuartzCore.framework */,
+				90D196D715A179D900145D8D /* GuiTestGL */,
+				90D196D015A179D900145D8D /* Frameworks */,
+				90D196CE15A179D900145D8D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		90D196CE15A179D900145D8D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				90D196CD15A179D900145D8D /* GuiTestGL.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		90D196D015A179D900145D8D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				90D196D115A179D900145D8D /* Cocoa.framework */,
+				90D196D315A179D900145D8D /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		90D196D315A179D900145D8D /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				90D196D415A179D900145D8D /* AppKit.framework */,
+				90D196D515A179D900145D8D /* CoreData.framework */,
+				90D196D615A179D900145D8D /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		90D196D715A179D900145D8D /* GuiTestGL */ = {
+			isa = PBXGroup;
+			children = (
+				90D196E315A179D900145D8D /* GuiTestGLAppDelegate.h */,
+				90D196E415A179D900145D8D /* GuiTestGLAppDelegate.m */,
+				90D196E615A179D900145D8D /* MainMenu.xib */,
+				90D196D815A179D900145D8D /* Supporting Files */,
+			);
+			path = GuiTestGL;
+			sourceTree = "<group>";
+		};
+		90D196D815A179D900145D8D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				90D196D915A179D900145D8D /* GuiTestGL-Info.plist */,
+				90D196DA15A179D900145D8D /* InfoPlist.strings */,
+				90D196DF15A179D900145D8D /* GuiTestGL-Prefix.pch */,
+				90D196E015A179D900145D8D /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		90D196F215A179FC00145D8D /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				90D196F315A17A1000145D8D /* GuiTestGL.cpp */,
+				90D196F415A17A1000145D8D /* GuiTestGL.h */,
+				90D196F515A17A1000145D8D /* mgCursorDefn.cpp */,
+				90D196F615A17A1000145D8D /* mgCursorDefn.h */,
+				90D196F715A17A1000145D8D /* mgFontList.cpp */,
+				90D196F815A17A1000145D8D /* mgFontList.h */,
+				90D196F915A17A1000145D8D /* Planet.cpp */,
+				90D196FA15A17A1000145D8D /* Planet.h */,
+				90D196FB15A17A1000145D8D /* SampleUI.cpp */,
+				90D196FC15A17A1000145D8D /* SampleUI.h */,
+				90D196FD15A17A1000145D8D /* stdafx.cpp */,
+				90D196FE15A17A1000145D8D /* stdafx.h */,
+				90D196FF15A17A1000145D8D /* TextureSurface.cpp */,
+				90D1970015A17A1000145D8D /* TextureSurface.h */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		90D196CC15A179D900145D8D /* GuiTestGL */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 90D196EB15A179D900145D8D /* Build configuration list for PBXNativeTarget "GuiTestGL" */;
+			buildPhases = (
+				90D196C915A179D900145D8D /* Sources */,
+				90D196CA15A179D900145D8D /* Frameworks */,
+				90D196CB15A179D900145D8D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GuiTestGL;
+			productName = GuiTestGL;
+			productReference = 90D196CD15A179D900145D8D /* GuiTestGL.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		90D196C415A179D900145D8D /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 90D196C715A179D900145D8D /* Build configuration list for PBXProject "GuiTestGL" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 90D196C215A179D900145D8D;
+			productRefGroup = 90D196CE15A179D900145D8D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				90D196CC15A179D900145D8D /* GuiTestGL */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		90D196CB15A179D900145D8D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90D196DC15A179D900145D8D /* InfoPlist.strings in Resources */,
+				90D196E215A179D900145D8D /* Credits.rtf in Resources */,
+				90D196E815A179D900145D8D /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		90D196C915A179D900145D8D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90D196E515A179D900145D8D /* GuiTestGLAppDelegate.m in Sources */,
+				90D1970115A17A1000145D8D /* GuiTestGL.cpp in Sources */,
+				90D1970215A17A1000145D8D /* mgCursorDefn.cpp in Sources */,
+				90D1970315A17A1000145D8D /* mgFontList.cpp in Sources */,
+				90D1970415A17A1000145D8D /* Planet.cpp in Sources */,
+				90D1970515A17A1000145D8D /* SampleUI.cpp in Sources */,
+				90D1970615A17A1000145D8D /* stdafx.cpp in Sources */,
+				90D1970715A17A1000145D8D /* TextureSurface.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		90D196DA15A179D900145D8D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				90D196DB15A179D900145D8D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		90D196E015A179D900145D8D /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				90D196E115A179D900145D8D /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		90D196E615A179D900145D8D /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				90D196E715A179D900145D8D /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		90D196E915A179D900145D8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		90D196EA15A179D900145D8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		90D196EC15A179D900145D8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(CONFIGURATION)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GuiTestGL/GuiTestGL-Prefix.pch";
+				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				HEADER_SEARCH_PATHS = (
+					../Source,
+					../../../Milligram,
+				);
+				INFOPLIST_FILE = "GuiTestGL/GuiTestGL-Info.plist";
+				LIBRARY_SEARCH_PATHS = "../../../Milligram/BuildOSX/$(CONFIGURATION)";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OTHER_LDFLAGS = (
+					"-lmgPlatform",
+					"-lmg2D",
+					"-lmg3D",
+					"-lmgGUI",
+					"-lmgUtil",
+					"-lFreeType",
+					"-lJpegLib",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		90D196ED15A179D900145D8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(CONFIGURATION)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GuiTestGL/GuiTestGL-Prefix.pch";
+				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				HEADER_SEARCH_PATHS = (
+					../Source,
+					../../../Milligram,
+				);
+				INFOPLIST_FILE = "GuiTestGL/GuiTestGL-Info.plist";
+				LIBRARY_SEARCH_PATHS = "../../../Milligram/BuildOSX/$(CONFIGURATION)";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OTHER_LDFLAGS = (
+					"-lmgPlatform",
+					"-lmg2D",
+					"-lmg3D",
+					"-lmgGUI",
+					"-lmgUtil",
+					"-lFreeType",
+					"-lJpegLib",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		90D196C715A179D900145D8D /* Build configuration list for PBXProject "GuiTestGL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90D196E915A179D900145D8D /* Debug */,
+				90D196EA15A179D900145D8D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		90D196EB15A179D900145D8D /* Build configuration list for PBXNativeTarget "GuiTestGL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90D196EC15A179D900145D8D /* Debug */,
+				90D196ED15A179D900145D8D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 90D196C415A179D900145D8D /* Project object */;
+}

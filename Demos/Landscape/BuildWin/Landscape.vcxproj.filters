@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\Source\Landscape.cpp" />
+    <ClCompile Include="..\Source\stdafx.cpp" />
+    <ClCompile Include="..\Source\StarrySky.cpp" />
+    <ClCompile Include="..\Source\Terrain.cpp" />
+    <ClCompile Include="..\Source\VertexTerrain.cpp" />
+    <ClCompile Include="..\Source\MovementApp.cpp" />
+    <ClCompile Include="..\Source\VertexSky.cpp" />
+    <ClCompile Include="..\Source\HelpUI.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Source\Landscape.h" />
+    <ClInclude Include="..\Source\stdafx.h" />
+    <ClInclude Include="..\Source\StarrySky.h" />
+    <ClInclude Include="..\Source\Terrain.h" />
+    <ClInclude Include="..\Source\VertexTerrain.h" />
+    <ClInclude Include="..\Source\MovementApp.h" />
+    <ClInclude Include="..\Source\VertexSky.h" />
+    <ClInclude Include="..\Source\HelpUI.h" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="DebugMemory|Win32">
+      <Configuration>DebugMemory</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Distrib|Win32">
+      <Configuration>Distrib</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Include\Graphics3D\mgIndexBuffer.h" />
+    <ClInclude Include="..\Include\Graphics3D\mgTextureSurface.h" />
+    <ClInclude Include="..\Include\Graphics3D\mgVertexAttrib.h" />
+    <ClInclude Include="..\Include\Graphics3D\mgVertexBuffer.h" />
+    <ClInclude Include="..\Include\Graphics3D\mgVertexTypes.h" />
+    <ClInclude Include="..\Include\mg3D.h" />
+    <ClInclude Include="..\Include\mgDisplayServices.h" />
+    <ClInclude Include="..\Include\Util3D\mg3DErrorTable.h" />
+    <ClInclude Include="..\Include\Util3D\mgCursorDefn.h" />
+    <ClInclude Include="..\Source\Graphics3D\DX9\mgDX9DevMode.h" />
+    <ClInclude Include="..\Source\Graphics3D\DX9\mgDX9Indexes.h" />
+    <ClInclude Include="..\Source\Graphics3D\DX9\mgDX9Services.h" />
+    <ClInclude Include="..\Source\Graphics3D\DX9\mgDX9State.h" />
+    <ClInclude Include="..\Source\Graphics3D\DX9\mgDX9Textures.h" />
+    <ClInclude Include="..\Source\Graphics3D\GL21\mgGL21IndexBuffer.h" />
+    <ClInclude Include="..\Source\Graphics3D\GL21\mgGL21Misc.h" />
+    <ClInclude Include="..\Source\Graphics3D\GL21\mgGL21Services.h" />
+    <ClInclude Include="..\Source\Graphics3D\GL21\mgGL21Types.h" />
+    <ClInclude Include="..\Source\Graphics3D\GL21\mgGL21VertexBuffer.h" />
+    <ClInclude Include="..\Source\Graphics3D\GL33\mgGL33IndexBuffer.h" />
+    <ClInclude Include="..\Source\Graphics3D\GL33\mgGL33Misc.h" />
+    <ClInclude Include="..\Source\Graphics3D\GL33\mgGL33Services.h" />
+    <ClInclude Include="..\Source\Graphics3D\GL33\mgGL33Types.h" />
+    <ClInclude Include="..\Source\Graphics3D\GL33\mgGL33VertexBuffer.h" />
+    <ClInclude Include="..\Source\stdafx.h" />
+    <ClInclude Include="..\Source\Util3D\mgFontList.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Source\Graphics3D\DX9\mgDX9DevMode.cpp" />
+    <ClCompile Include="..\Source\Graphics3D\DX9\mgDX9Indexes.cpp" />
+    <ClCompile Include="..\Source\Graphics3D\DX9\mgDX9Services.cpp" />
+    <ClCompile Include="..\Source\Graphics3D\DX9\mgDX9Textures.cpp" />
+    <ClCompile Include="..\Source\Graphics3D\GL21\mgGL21IndexBuffer.cpp" />
+    <ClCompile Include="..\Source\Graphics3D\GL21\mgGL21Misc.cpp" />
+    <ClCompile Include="..\Source\Graphics3D\GL21\mgGL21Services.cpp" />
+    <ClCompile Include="..\Source\Graphics3D\GL21\mgGL21VertexBuffer.cpp" />
+    <ClCompile Include="..\Source\Graphics3D\GL33\mgGL33IndexBuffer.cpp" />
+    <ClCompile Include="..\Source\Graphics3D\GL33\mgGL33Misc.cpp" />
+    <ClCompile Include="..\Source\Graphics3D\GL33\mgGL33Services.cpp" />
+    <ClCompile Include="..\Source\Graphics3D\GL33\mgGL33VertexBuffer.cpp" />
+    <ClCompile Include="..\Source\Graphics3D\mgIndexBuffer.cpp" />
+    <ClCompile Include="..\Source\Graphics3D\mgTextureSurface.cpp" />
+    <ClCompile Include="..\Source\Graphics3D\mgVertexBuffer.cpp" />
+    <ClCompile Include="..\Source\Graphics3D\mgVertexTypes.cpp" />
+    <ClCompile Include="..\Source\mgDisplayServices.cpp" />
+    <ClCompile Include="..\Source\stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='DebugMemory|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Distrib|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\Source\Util3D\mg3DErrorTable.cpp" />
+    <ClCompile Include="..\Source\Util3D\mgCursorDefn.cpp" />
+    <ClCompile Include="..\Source\Util3D\mgFontList.cpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7915797B-1DFC-4038-A00B-C597390BEB15}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>mg3D</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMemory|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Distrib|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugMemory|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Distrib|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMemory|Win32'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMemory|Win32'">
+    <OutDir>..\..\BuildWin\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\..\BuildWin\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Distrib|Win32'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Distrib|Win32'">
+    <OutDir>..\..\BuildWin\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\..\BuildWin\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>GLEW_STATIC;WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;../Include;../Source;../../</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugMemory|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>DEBUG_MEMORY;GLEW_STATIC;WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;../Include;../Source;../../</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PreprocessorDefinitions>GLEW_STATIC;WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;../Include;../Source;../../</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Distrib|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>GLEW_STATIC;WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;../Include;../Source;../../</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

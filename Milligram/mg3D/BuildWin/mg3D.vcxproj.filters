@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Include">
+      <UniqueIdentifier>{9c3708b8-6919-4f9c-ac7a-09e25192ce95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{fed0ebdd-dbdd-49ae-b3b6-67788c8ca818}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Graphics3D">
+      <UniqueIdentifier>{92e255ed-dd92-44f4-9387-4caea339450e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Graphics3D">
+      <UniqueIdentifier>{0adc8a79-98f9-44ab-8bbb-30884838668a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Graphics3D\DX9">
+      <UniqueIdentifier>{fc71dc95-f7c6-4079-a254-57a23e2daade}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Graphics3D\GL21">
+      <UniqueIdentifier>{7bc5ea47-e18f-4c0a-8ced-d183f837a6fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Graphics3D\GL33">
+      <UniqueIdentifier>{fc8539fc-adc9-4541-a261-0babcd0cc6a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Util3D">
+      <UniqueIdentifier>{4c29ef87-f7a7-4162-aed8-b141c12ecfbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Util3D">
+      <UniqueIdentifier>{1b90c3f6-1bfb-42dc-b51e-9e0e12ee19f4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Include\mg3D.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\stdafx.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Graphics3D\mgIndexBuffer.h">
+      <Filter>Include\Graphics3D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Graphics3D\mgVertexAttrib.h">
+      <Filter>Include\Graphics3D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Graphics3D\mgVertexBuffer.h">
+      <Filter>Include\Graphics3D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Graphics3D\mgVertexTypes.h">
+      <Filter>Include\Graphics3D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Graphics3D\DX9\mgDX9DevMode.h">
+      <Filter>Source\Graphics3D\DX9</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Graphics3D\DX9\mgDX9Indexes.h">
+      <Filter>Source\Graphics3D\DX9</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Graphics3D\DX9\mgDX9Services.h">
+      <Filter>Source\Graphics3D\DX9</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Graphics3D\DX9\mgDX9State.h">
+      <Filter>Source\Graphics3D\DX9</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Graphics3D\DX9\mgDX9Textures.h">
+      <Filter>Source\Graphics3D\DX9</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Graphics3D\GL21\mgGL21IndexBuffer.h">
+      <Filter>Source\Graphics3D\GL21</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Graphics3D\GL21\mgGL21Misc.h">
+      <Filter>Source\Graphics3D\GL21</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Graphics3D\GL21\mgGL21Services.h">
+      <Filter>Source\Graphics3D\GL21</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Graphics3D\GL21\mgGL21Types.h">
+      <Filter>Source\Graphics3D\GL21</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Graphics3D\GL21\mgGL21VertexBuffer.h">
+      <Filter>Source\Graphics3D\GL21</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Graphics3D\GL33\mgGL33IndexBuffer.h">
+      <Filter>Source\Graphics3D\GL33</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Graphics3D\GL33\mgGL33Misc.h">
+      <Filter>Source\Graphics3D\GL33</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Graphics3D\GL33\mgGL33Services.h">
+      <Filter>Source\Graphics3D\GL33</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Graphics3D\GL33\mgGL33Types.h">
+      <Filter>Source\Graphics3D\GL33</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Graphics3D\GL33\mgGL33VertexBuffer.h">
+      <Filter>Source\Graphics3D\GL33</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Graphics3D\mgTextureSurface.h">
+      <Filter>Include\Graphics3D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Util3D\mg3DErrorTable.h">
+      <Filter>Include\Util3D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Util3D\mgCursorDefn.h">
+      <Filter>Include\Util3D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\mgDisplayServices.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Util3D\mgFontList.h">
+      <Filter>Source\Util3D</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Source\stdafx.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Graphics3D\mgIndexBuffer.cpp">
+      <Filter>Source\Graphics3D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Graphics3D\mgVertexBuffer.cpp">
+      <Filter>Source\Graphics3D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Graphics3D\mgVertexTypes.cpp">
+      <Filter>Source\Graphics3D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Graphics3D\DX9\mgDX9DevMode.cpp">
+      <Filter>Source\Graphics3D\DX9</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Graphics3D\DX9\mgDX9Indexes.cpp">
+      <Filter>Source\Graphics3D\DX9</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Graphics3D\DX9\mgDX9Services.cpp">
+      <Filter>Source\Graphics3D\DX9</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Graphics3D\DX9\mgDX9Textures.cpp">
+      <Filter>Source\Graphics3D\DX9</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Graphics3D\GL21\mgGL21IndexBuffer.cpp">
+      <Filter>Source\Graphics3D\GL21</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Graphics3D\GL21\mgGL21Misc.cpp">
+      <Filter>Source\Graphics3D\GL21</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Graphics3D\GL21\mgGL21Services.cpp">
+      <Filter>Source\Graphics3D\GL21</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Graphics3D\GL21\mgGL21VertexBuffer.cpp">
+      <Filter>Source\Graphics3D\GL21</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Graphics3D\GL33\mgGL33IndexBuffer.cpp">
+      <Filter>Source\Graphics3D\GL33</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Graphics3D\GL33\mgGL33Misc.cpp">
+      <Filter>Source\Graphics3D\GL33</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Graphics3D\GL33\mgGL33Services.cpp">
+      <Filter>Source\Graphics3D\GL33</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Graphics3D\GL33\mgGL33VertexBuffer.cpp">
+      <Filter>Source\Graphics3D\GL33</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Graphics3D\mgTextureSurface.cpp">
+      <Filter>Source\Graphics3D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Util3D\mg3DErrorTable.cpp">
+      <Filter>Source\Util3D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Util3D\mgCursorDefn.cpp">
+      <Filter>Source\Util3D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\mgDisplayServices.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Util3D\mgFontList.cpp">
+      <Filter>Source\Util3D</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,4 @@
+<options
+  loghost = "ec2-50-18-153-37.us-west-1.compute.amazonaws.com:8080"
+  action="always"
+/>

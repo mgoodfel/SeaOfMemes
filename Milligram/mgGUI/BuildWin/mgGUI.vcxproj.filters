@@ -1,0 +1,420 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Include">
+      <UniqueIdentifier>{73f9e12b-0b36-4614-aab4-17fab5982596}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{eaf6efc2-a82e-4d39-951c-e27644ece727}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Form">
+      <UniqueIdentifier>{7e0bd279-e89b-4599-a85d-32049cb48eed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\GUI">
+      <UniqueIdentifier>{9e7f2a30-649c-4d52-bfaf-f5ca10d3223d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\TextFormatter">
+      <UniqueIdentifier>{37acb318-f225-4d89-9f78-038fc3524ab7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\UglyStyle">
+      <UniqueIdentifier>{d68ee557-239b-4a1c-96a3-7a32cdab6374}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Form">
+      <UniqueIdentifier>{d83ee6bf-2f01-4bf8-a78d-a5866ddadb6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\GUI">
+      <UniqueIdentifier>{5f76dfa0-9172-43a4-8117-0755b50cc036}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\UglyStyle">
+      <UniqueIdentifier>{8cafbf50-0fab-47f8-b3f0-091f20899936}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\TextFormatter">
+      <UniqueIdentifier>{d4c9d90e-34b0-45a9-8c87-ee1e4b4b2027}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Util">
+      <UniqueIdentifier>{0f692ba6-9043-465c-b2d7-42c1ac470f53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Util">
+      <UniqueIdentifier>{338925c4-2647-4059-b9e9-817db76b2d24}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Include\Form\mgFormPane.h">
+      <Filter>Include\Form</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Form\mgFormParser.h">
+      <Filter>Include\Form</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgActionListener.h">
+      <Filter>Include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgButtonControl.h">
+      <Filter>Include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgChangeListener.h">
+      <Filter>Include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgCheckboxControl.h">
+      <Filter>Include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgColumnLayout.h">
+      <Filter>Include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgControl.h">
+      <Filter>Include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgControlListener.h">
+      <Filter>Include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgDropListControl.h">
+      <Filter>Include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgFocusListener.h">
+      <Filter>Include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgFrame.h">
+      <Filter>Include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgKeyListener.h">
+      <Filter>Include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgLabelControl.h">
+      <Filter>Include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgLayoutManager.h">
+      <Filter>Include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgMenu.h">
+      <Filter>Include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgMenuBarControl.h">
+      <Filter>Include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgMouseListener.h">
+      <Filter>Include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgPaint.h">
+      <Filter>Include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgRadioControl.h">
+      <Filter>Include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgRectFrame.h">
+      <Filter>Include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgScrolled.h">
+      <Filter>Include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgScroller.h">
+      <Filter>Include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgScrollListener.h">
+      <Filter>Include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgScrollPaneControl.h">
+      <Filter>Include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgSelectListener.h">
+      <Filter>Include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgSolidPaint.h">
+      <Filter>Include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgStyle.h">
+      <Filter>Include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgTableLayout.h">
+      <Filter>Include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgTimeListener.h">
+      <Filter>Include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgToolkit.h">
+      <Filter>Include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgTopControl.h">
+      <Filter>Include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgTreeListener.h">
+      <Filter>Include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\TextFormatter\mgTextBuffer.h">
+      <Filter>Include\TextFormatter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\TextFormatter\mgTextDraw.h">
+      <Filter>Include\TextFormatter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\TextFormatter\mgTextFormat.h">
+      <Filter>Include\TextFormatter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\TextFormatter\mgTextMeasure.h">
+      <Filter>Include\TextFormatter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\TextFormatter\mgTextPage.h">
+      <Filter>Include\TextFormatter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\TextFormatter\mgTextScan.h">
+      <Filter>Include\TextFormatter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Form\mgBlockTag.h">
+      <Filter>Source\Form</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Form\mgBreakTag.h">
+      <Filter>Source\Form</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Form\mgFormTag.h">
+      <Filter>Source\Form</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Form\mgHeadingTag.h">
+      <Filter>Source\Form</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Form\mgListItemTag.h">
+      <Filter>Source\Form</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Form\mgListTag.h">
+      <Filter>Source\Form</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Form\mgParaTag.h">
+      <Filter>Source\Form</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Form\mgPreTag.h">
+      <Filter>Source\Form</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Form\mgRuleTag.h">
+      <Filter>Source\Form</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Form\mgTableColTag.h">
+      <Filter>Source\Form</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Form\mgTableRowTag.h">
+      <Filter>Source\Form</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Form\mgTableTag.h">
+      <Filter>Source\Form</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Form\mgTextTag.h">
+      <Filter>Source\Form</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\stdafx.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\UglyStyle\mgUglyButton.h">
+      <Filter>Include\UglyStyle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\UglyStyle\mgUglyLabel.h">
+      <Filter>Include\UglyStyle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\UglyStyle\mgUglyStyle.h">
+      <Filter>Include\UglyStyle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\UglyStyle\mgUglyCheckbox.h">
+      <Filter>Include\UglyStyle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\UglyStyle\mgUglyConsole.h">
+      <Filter>Include\UglyStyle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgConsoleControl.h">
+      <Filter>Include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\UglyStyle\mgUglyStack.h">
+      <Filter>Include\UglyStyle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgStackControl.h">
+      <Filter>Include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\UglyStyle\mgUglyField.h">
+      <Filter>Include\UglyStyle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgFieldControl.h">
+      <Filter>Include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\mgInputEvents.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgFormControl.h">
+      <Filter>Include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Form\mgButtonTag.h">
+      <Filter>Source\Form</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Form\mgCheckboxTag.h">
+      <Filter>Source\Form</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Form\mgFieldTag.h">
+      <Filter>Source\Form</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Form\mgLabelTag.h">
+      <Filter>Source\Form</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgLabelBoxControl.h">
+      <Filter>Include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Form\mgConsoleTag.h">
+      <Filter>Source\Form</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\UglyStyle\mgUglyScrollbar.h">
+      <Filter>Include\UglyStyle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgScrollbarControl.h">
+      <Filter>Include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\UglyStyle\mgUglyList.h">
+      <Filter>Include\UglyStyle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgListControl.h">
+      <Filter>Include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\UglyStyle\mgUglyTabs.h">
+      <Filter>Include\UglyStyle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\UglyStyle\mgUglySplit.h">
+      <Filter>Include\UglyStyle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\mgGUI.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Util\mgDebugPane.h">
+      <Filter>Include\Util</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Source\Form\mgBlockTag.cpp">
+      <Filter>Source\Form</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Form\mgBreakTag.cpp">
+      <Filter>Source\Form</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Form\mgFormPane.cpp">
+      <Filter>Source\Form</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Form\mgFormParser.cpp">
+      <Filter>Source\Form</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Form\mgFormTag.cpp">
+      <Filter>Source\Form</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Form\mgHeadingTag.cpp">
+      <Filter>Source\Form</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Form\mgListItemTag.cpp">
+      <Filter>Source\Form</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Form\mgListTag.cpp">
+      <Filter>Source\Form</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Form\mgParaTag.cpp">
+      <Filter>Source\Form</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Form\mgPreTag.cpp">
+      <Filter>Source\Form</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Form\mgRuleTag.cpp">
+      <Filter>Source\Form</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Form\mgTableColTag.cpp">
+      <Filter>Source\Form</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Form\mgTableRowTag.cpp">
+      <Filter>Source\Form</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Form\mgTableTag.cpp">
+      <Filter>Source\Form</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Form\mgTextTag.cpp">
+      <Filter>Source\Form</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\GUI\mgColumnLayout.cpp">
+      <Filter>Source\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\GUI\mgControl.cpp">
+      <Filter>Source\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\GUI\mgFrame.cpp">
+      <Filter>Source\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\GUI\mgRectFrame.cpp">
+      <Filter>Source\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\GUI\mgSolidPaint.cpp">
+      <Filter>Source\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\GUI\mgTableLayout.cpp">
+      <Filter>Source\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\GUI\mgTopControl.cpp">
+      <Filter>Source\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\TextFormatter\mgTextBuffer.cpp">
+      <Filter>Source\TextFormatter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\TextFormatter\mgTextDraw.cpp">
+      <Filter>Source\TextFormatter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\TextFormatter\mgTextFormat.cpp">
+      <Filter>Source\TextFormatter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\TextFormatter\mgTextMeasure.cpp">
+      <Filter>Source\TextFormatter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\TextFormatter\mgTextScan.cpp">
+      <Filter>Source\TextFormatter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\stdafx.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\UglyStyle\mgUglyButton.cpp">
+      <Filter>Source\UglyStyle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\UglyStyle\mgUglyLabel.cpp">
+      <Filter>Source\UglyStyle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\UglyStyle\mgUglyStyle.cpp">
+      <Filter>Source\UglyStyle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\UglyStyle\mgUglyCheckbox.cpp">
+      <Filter>Source\UglyStyle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\UglyStyle\mgUglyConsole.cpp">
+      <Filter>Source\UglyStyle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\UglyStyle\mgUglyStack.cpp">
+      <Filter>Source\UglyStyle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\UglyStyle\mgUglyField.cpp">
+      <Filter>Source\UglyStyle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Form\mgButtonTag.cpp">
+      <Filter>Source\Form</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Form\mgCheckboxTag.cpp">
+      <Filter>Source\Form</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Form\mgFieldTag.cpp">
+      <Filter>Source\Form</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Form\mgLabelTag.cpp">
+      <Filter>Source\Form</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Form\mgConsoleTag.cpp">
+      <Filter>Source\Form</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\GUI\mgStyle.cpp">
+      <Filter>Source\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\UglyStyle\mgUglyScrollbar.cpp">
+      <Filter>Source\UglyStyle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\UglyStyle\mgUglyList.cpp">
+      <Filter>Source\UglyStyle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\UglyStyle\mgUglyTabs.cpp">
+      <Filter>Source\UglyStyle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\UglyStyle\mgUglySplit.cpp">
+      <Filter>Source\UglyStyle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Util\mgDebugPane.cpp">
+      <Filter>Source\Util</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

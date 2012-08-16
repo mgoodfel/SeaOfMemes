@@ -1,0 +1,26 @@
+<options
+  platform = ""
+  graphicsTiming = "true"
+  writeCaps = "false"
+  fullscreen = "false"
+  multisample = "true"
+
+  dpi="0"
+  fov="60"
+  windowX = "100"
+  windowY = "100"
+  windowWidth = "800"
+  windowHeight = "600"
+
+  shaderDir = "docs/shaders"
+  movecursor = "docs/cursors/crossCursor.xml"
+  deskcursor = "docs/cursors/arrowCursor.xml"
+
+  ground = "docs/textures/ground.jpg"
+  sky = "docs/textures/sky.jpg"
+  leafUnused = "docs/textures/leaf-unused.jpg"
+  leafUsed = "docs/textures/leaf-used.jpg"
+  branch = "docs/textures/branch.jpg"
+
+  helpFile = "docs/ui/help.xml"
+/>

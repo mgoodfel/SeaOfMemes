@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GuiTestGL", "GuiTestGL.vcxproj", "{2D1BB1D7-287E-4C1E-ADF3-11051CBE787C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		DebugMemory|Win32 = DebugMemory|Win32
+		Distrib|Win32 = Distrib|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D1BB1D7-287E-4C1E-ADF3-11051CBE787C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2D1BB1D7-287E-4C1E-ADF3-11051CBE787C}.Debug|Win32.Build.0 = Debug|Win32
+		{2D1BB1D7-287E-4C1E-ADF3-11051CBE787C}.DebugMemory|Win32.ActiveCfg = DebugMemory|Win32
+		{2D1BB1D7-287E-4C1E-ADF3-11051CBE787C}.DebugMemory|Win32.Build.0 = DebugMemory|Win32
+		{2D1BB1D7-287E-4C1E-ADF3-11051CBE787C}.Distrib|Win32.ActiveCfg = Distrib|Win32
+		{2D1BB1D7-287E-4C1E-ADF3-11051CBE787C}.Distrib|Win32.Build.0 = Distrib|Win32
+		{2D1BB1D7-287E-4C1E-ADF3-11051CBE787C}.Release|Win32.ActiveCfg = Release|Win32
+		{2D1BB1D7-287E-4C1E-ADF3-11051CBE787C}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

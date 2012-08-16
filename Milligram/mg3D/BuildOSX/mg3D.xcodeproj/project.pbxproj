@@ -1,0 +1,462 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9041B3CB159EC76700D7BCC5 /* mgIndexBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B395159EC76700D7BCC5 /* mgIndexBuffer.h */; };
+		9041B3CC159EC76700D7BCC5 /* mgTextureSurface.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B396159EC76700D7BCC5 /* mgTextureSurface.h */; };
+		9041B3CD159EC76700D7BCC5 /* mgVertexAttrib.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B397159EC76700D7BCC5 /* mgVertexAttrib.h */; };
+		9041B3CE159EC76700D7BCC5 /* mgVertexBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B398159EC76700D7BCC5 /* mgVertexBuffer.h */; };
+		9041B3CF159EC76700D7BCC5 /* mgVertexTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B399159EC76700D7BCC5 /* mgVertexTypes.h */; };
+		9041B3D0159EC76700D7BCC5 /* mg3D.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B39A159EC76700D7BCC5 /* mg3D.h */; };
+		9041B3D1159EC76700D7BCC5 /* mgDisplayServices.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B39B159EC76700D7BCC5 /* mgDisplayServices.h */; };
+		9041B3D2159EC76700D7BCC5 /* mg3DErrorTable.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B39D159EC76700D7BCC5 /* mg3DErrorTable.h */; };
+		9041B3D3159EC76700D7BCC5 /* mgCursorDefn.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B39E159EC76700D7BCC5 /* mgCursorDefn.h */; };
+		9041B3D4159EC76700D7BCC5 /* mgDX9DevMode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B3A2159EC76700D7BCC5 /* mgDX9DevMode.cpp */; };
+		9041B3D5159EC76700D7BCC5 /* mgDX9DevMode.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B3A3159EC76700D7BCC5 /* mgDX9DevMode.h */; };
+		9041B3D6159EC76700D7BCC5 /* mgDX9Indexes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B3A4159EC76700D7BCC5 /* mgDX9Indexes.cpp */; };
+		9041B3D7159EC76700D7BCC5 /* mgDX9Indexes.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B3A5159EC76700D7BCC5 /* mgDX9Indexes.h */; };
+		9041B3D8159EC76700D7BCC5 /* mgDX9Services.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B3A6159EC76700D7BCC5 /* mgDX9Services.cpp */; };
+		9041B3D9159EC76700D7BCC5 /* mgDX9Services.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B3A7159EC76700D7BCC5 /* mgDX9Services.h */; };
+		9041B3DA159EC76700D7BCC5 /* mgDX9State.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B3A8159EC76700D7BCC5 /* mgDX9State.h */; };
+		9041B3DB159EC76700D7BCC5 /* mgDX9Textures.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B3A9159EC76700D7BCC5 /* mgDX9Textures.cpp */; };
+		9041B3DC159EC76700D7BCC5 /* mgDX9Textures.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B3AA159EC76700D7BCC5 /* mgDX9Textures.h */; };
+		9041B3DD159EC76700D7BCC5 /* mgGL21IndexBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B3AC159EC76700D7BCC5 /* mgGL21IndexBuffer.cpp */; };
+		9041B3DE159EC76700D7BCC5 /* mgGL21IndexBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B3AD159EC76700D7BCC5 /* mgGL21IndexBuffer.h */; };
+		9041B3DF159EC76700D7BCC5 /* mgGL21Misc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B3AE159EC76700D7BCC5 /* mgGL21Misc.cpp */; };
+		9041B3E0159EC76700D7BCC5 /* mgGL21Misc.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B3AF159EC76700D7BCC5 /* mgGL21Misc.h */; };
+		9041B3E1159EC76700D7BCC5 /* mgGL21Services.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B3B0159EC76700D7BCC5 /* mgGL21Services.cpp */; };
+		9041B3E2159EC76700D7BCC5 /* mgGL21Services.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B3B1159EC76700D7BCC5 /* mgGL21Services.h */; };
+		9041B3E3159EC76700D7BCC5 /* mgGL21Types.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B3B2159EC76700D7BCC5 /* mgGL21Types.h */; };
+		9041B3E4159EC76700D7BCC5 /* mgGL21VertexBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B3B3159EC76700D7BCC5 /* mgGL21VertexBuffer.cpp */; };
+		9041B3E5159EC76700D7BCC5 /* mgGL21VertexBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B3B4159EC76700D7BCC5 /* mgGL21VertexBuffer.h */; };
+		9041B3E6159EC76700D7BCC5 /* mgGL33IndexBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B3B6159EC76700D7BCC5 /* mgGL33IndexBuffer.cpp */; };
+		9041B3E7159EC76700D7BCC5 /* mgGL33IndexBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B3B7159EC76700D7BCC5 /* mgGL33IndexBuffer.h */; };
+		9041B3E8159EC76700D7BCC5 /* mgGL33Misc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B3B8159EC76700D7BCC5 /* mgGL33Misc.cpp */; };
+		9041B3E9159EC76700D7BCC5 /* mgGL33Misc.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B3B9159EC76700D7BCC5 /* mgGL33Misc.h */; };
+		9041B3EA159EC76700D7BCC5 /* mgGL33Services.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B3BA159EC76700D7BCC5 /* mgGL33Services.cpp */; };
+		9041B3EB159EC76700D7BCC5 /* mgGL33Services.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B3BB159EC76700D7BCC5 /* mgGL33Services.h */; };
+		9041B3EC159EC76700D7BCC5 /* mgGL33Types.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B3BC159EC76700D7BCC5 /* mgGL33Types.h */; };
+		9041B3ED159EC76700D7BCC5 /* mgGL33VertexBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B3BD159EC76700D7BCC5 /* mgGL33VertexBuffer.cpp */; };
+		9041B3EE159EC76700D7BCC5 /* mgGL33VertexBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B3BE159EC76700D7BCC5 /* mgGL33VertexBuffer.h */; };
+		9041B3EF159EC76700D7BCC5 /* mgIndexBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B3BF159EC76700D7BCC5 /* mgIndexBuffer.cpp */; };
+		9041B3F0159EC76700D7BCC5 /* mgTextureSurface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B3C0159EC76700D7BCC5 /* mgTextureSurface.cpp */; };
+		9041B3F1159EC76700D7BCC5 /* mgVertexBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B3C1159EC76700D7BCC5 /* mgVertexBuffer.cpp */; };
+		9041B3F2159EC76700D7BCC5 /* mgVertexTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B3C2159EC76700D7BCC5 /* mgVertexTypes.cpp */; };
+		9041B3F3159EC76700D7BCC5 /* mgDisplayServices.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B3C3159EC76700D7BCC5 /* mgDisplayServices.cpp */; };
+		9041B3F5159EC76700D7BCC5 /* stdafx.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B3C5159EC76700D7BCC5 /* stdafx.h */; };
+		9041B3F6159EC76700D7BCC5 /* mg3DErrorTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B3C7159EC76700D7BCC5 /* mg3DErrorTable.cpp */; };
+		9041B3F7159EC76700D7BCC5 /* mgCursorDefn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B3C8159EC76700D7BCC5 /* mgCursorDefn.cpp */; };
+		9041B3F8159EC76700D7BCC5 /* mgFontList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B3C9159EC76700D7BCC5 /* mgFontList.cpp */; };
+		9041B3F9159EC76700D7BCC5 /* mgFontList.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B3CA159EC76700D7BCC5 /* mgFontList.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9016C7E614FF90EC005F20C5 /* libmg3D.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libmg3D.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9041B395159EC76700D7BCC5 /* mgIndexBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgIndexBuffer.h; sourceTree = "<group>"; };
+		9041B396159EC76700D7BCC5 /* mgTextureSurface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgTextureSurface.h; sourceTree = "<group>"; };
+		9041B397159EC76700D7BCC5 /* mgVertexAttrib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgVertexAttrib.h; sourceTree = "<group>"; };
+		9041B398159EC76700D7BCC5 /* mgVertexBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgVertexBuffer.h; sourceTree = "<group>"; };
+		9041B399159EC76700D7BCC5 /* mgVertexTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgVertexTypes.h; sourceTree = "<group>"; };
+		9041B39A159EC76700D7BCC5 /* mg3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mg3D.h; sourceTree = "<group>"; };
+		9041B39B159EC76700D7BCC5 /* mgDisplayServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgDisplayServices.h; sourceTree = "<group>"; };
+		9041B39D159EC76700D7BCC5 /* mg3DErrorTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mg3DErrorTable.h; sourceTree = "<group>"; };
+		9041B39E159EC76700D7BCC5 /* mgCursorDefn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgCursorDefn.h; sourceTree = "<group>"; };
+		9041B3A2159EC76700D7BCC5 /* mgDX9DevMode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgDX9DevMode.cpp; sourceTree = "<group>"; };
+		9041B3A3159EC76700D7BCC5 /* mgDX9DevMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgDX9DevMode.h; sourceTree = "<group>"; };
+		9041B3A4159EC76700D7BCC5 /* mgDX9Indexes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgDX9Indexes.cpp; sourceTree = "<group>"; };
+		9041B3A5159EC76700D7BCC5 /* mgDX9Indexes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgDX9Indexes.h; sourceTree = "<group>"; };
+		9041B3A6159EC76700D7BCC5 /* mgDX9Services.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgDX9Services.cpp; sourceTree = "<group>"; };
+		9041B3A7159EC76700D7BCC5 /* mgDX9Services.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgDX9Services.h; sourceTree = "<group>"; };
+		9041B3A8159EC76700D7BCC5 /* mgDX9State.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgDX9State.h; sourceTree = "<group>"; };
+		9041B3A9159EC76700D7BCC5 /* mgDX9Textures.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgDX9Textures.cpp; sourceTree = "<group>"; };
+		9041B3AA159EC76700D7BCC5 /* mgDX9Textures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgDX9Textures.h; sourceTree = "<group>"; };
+		9041B3AC159EC76700D7BCC5 /* mgGL21IndexBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgGL21IndexBuffer.cpp; sourceTree = "<group>"; };
+		9041B3AD159EC76700D7BCC5 /* mgGL21IndexBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgGL21IndexBuffer.h; sourceTree = "<group>"; };
+		9041B3AE159EC76700D7BCC5 /* mgGL21Misc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgGL21Misc.cpp; sourceTree = "<group>"; };
+		9041B3AF159EC76700D7BCC5 /* mgGL21Misc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgGL21Misc.h; sourceTree = "<group>"; };
+		9041B3B0159EC76700D7BCC5 /* mgGL21Services.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgGL21Services.cpp; sourceTree = "<group>"; };
+		9041B3B1159EC76700D7BCC5 /* mgGL21Services.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgGL21Services.h; sourceTree = "<group>"; };
+		9041B3B2159EC76700D7BCC5 /* mgGL21Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgGL21Types.h; sourceTree = "<group>"; };
+		9041B3B3159EC76700D7BCC5 /* mgGL21VertexBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgGL21VertexBuffer.cpp; sourceTree = "<group>"; };
+		9041B3B4159EC76700D7BCC5 /* mgGL21VertexBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgGL21VertexBuffer.h; sourceTree = "<group>"; };
+		9041B3B6159EC76700D7BCC5 /* mgGL33IndexBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgGL33IndexBuffer.cpp; sourceTree = "<group>"; };
+		9041B3B7159EC76700D7BCC5 /* mgGL33IndexBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgGL33IndexBuffer.h; sourceTree = "<group>"; };
+		9041B3B8159EC76700D7BCC5 /* mgGL33Misc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgGL33Misc.cpp; sourceTree = "<group>"; };
+		9041B3B9159EC76700D7BCC5 /* mgGL33Misc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgGL33Misc.h; sourceTree = "<group>"; };
+		9041B3BA159EC76700D7BCC5 /* mgGL33Services.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgGL33Services.cpp; sourceTree = "<group>"; };
+		9041B3BB159EC76700D7BCC5 /* mgGL33Services.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgGL33Services.h; sourceTree = "<group>"; };
+		9041B3BC159EC76700D7BCC5 /* mgGL33Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgGL33Types.h; sourceTree = "<group>"; };
+		9041B3BD159EC76700D7BCC5 /* mgGL33VertexBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgGL33VertexBuffer.cpp; sourceTree = "<group>"; };
+		9041B3BE159EC76700D7BCC5 /* mgGL33VertexBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgGL33VertexBuffer.h; sourceTree = "<group>"; };
+		9041B3BF159EC76700D7BCC5 /* mgIndexBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgIndexBuffer.cpp; sourceTree = "<group>"; };
+		9041B3C0159EC76700D7BCC5 /* mgTextureSurface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgTextureSurface.cpp; sourceTree = "<group>"; };
+		9041B3C1159EC76700D7BCC5 /* mgVertexBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgVertexBuffer.cpp; sourceTree = "<group>"; };
+		9041B3C2159EC76700D7BCC5 /* mgVertexTypes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgVertexTypes.cpp; sourceTree = "<group>"; };
+		9041B3C3159EC76700D7BCC5 /* mgDisplayServices.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgDisplayServices.cpp; sourceTree = "<group>"; };
+		9041B3C5159EC76700D7BCC5 /* stdafx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stdafx.h; sourceTree = "<group>"; };
+		9041B3C7159EC76700D7BCC5 /* mg3DErrorTable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mg3DErrorTable.cpp; sourceTree = "<group>"; };
+		9041B3C8159EC76700D7BCC5 /* mgCursorDefn.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgCursorDefn.cpp; sourceTree = "<group>"; };
+		9041B3C9159EC76700D7BCC5 /* mgFontList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgFontList.cpp; sourceTree = "<group>"; };
+		9041B3CA159EC76700D7BCC5 /* mgFontList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgFontList.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9016C7E314FF90EC005F20C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9016C7DB14FF90EC005F20C5 = {
+			isa = PBXGroup;
+			children = (
+				9041B393159EC76700D7BCC5 /* Include */,
+				9041B39F159EC76700D7BCC5 /* Source */,
+				9016C7E714FF90EC005F20C5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9016C7E714FF90EC005F20C5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9016C7E614FF90EC005F20C5 /* libmg3D.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9041B393159EC76700D7BCC5 /* Include */ = {
+			isa = PBXGroup;
+			children = (
+				9041B394159EC76700D7BCC5 /* Graphics3D */,
+				9041B39A159EC76700D7BCC5 /* mg3D.h */,
+				9041B39B159EC76700D7BCC5 /* mgDisplayServices.h */,
+				9041B39C159EC76700D7BCC5 /* Util3D */,
+			);
+			name = Include;
+			path = ../Include;
+			sourceTree = "<group>";
+		};
+		9041B394159EC76700D7BCC5 /* Graphics3D */ = {
+			isa = PBXGroup;
+			children = (
+				9041B395159EC76700D7BCC5 /* mgIndexBuffer.h */,
+				9041B396159EC76700D7BCC5 /* mgTextureSurface.h */,
+				9041B397159EC76700D7BCC5 /* mgVertexAttrib.h */,
+				9041B398159EC76700D7BCC5 /* mgVertexBuffer.h */,
+				9041B399159EC76700D7BCC5 /* mgVertexTypes.h */,
+			);
+			path = Graphics3D;
+			sourceTree = "<group>";
+		};
+		9041B39C159EC76700D7BCC5 /* Util3D */ = {
+			isa = PBXGroup;
+			children = (
+				9041B39D159EC76700D7BCC5 /* mg3DErrorTable.h */,
+				9041B39E159EC76700D7BCC5 /* mgCursorDefn.h */,
+			);
+			path = Util3D;
+			sourceTree = "<group>";
+		};
+		9041B39F159EC76700D7BCC5 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				9041B3A0159EC76700D7BCC5 /* Graphics3D */,
+				9041B3C3159EC76700D7BCC5 /* mgDisplayServices.cpp */,
+				9041B3C5159EC76700D7BCC5 /* stdafx.h */,
+				9041B3C6159EC76700D7BCC5 /* Util3D */,
+			);
+			name = Source;
+			path = ../Source;
+			sourceTree = "<group>";
+		};
+		9041B3A0159EC76700D7BCC5 /* Graphics3D */ = {
+			isa = PBXGroup;
+			children = (
+				9041B3A1159EC76700D7BCC5 /* DX9 */,
+				9041B3AB159EC76700D7BCC5 /* GL21 */,
+				9041B3B5159EC76700D7BCC5 /* GL33 */,
+				9041B3BF159EC76700D7BCC5 /* mgIndexBuffer.cpp */,
+				9041B3C0159EC76700D7BCC5 /* mgTextureSurface.cpp */,
+				9041B3C1159EC76700D7BCC5 /* mgVertexBuffer.cpp */,
+				9041B3C2159EC76700D7BCC5 /* mgVertexTypes.cpp */,
+			);
+			path = Graphics3D;
+			sourceTree = "<group>";
+		};
+		9041B3A1159EC76700D7BCC5 /* DX9 */ = {
+			isa = PBXGroup;
+			children = (
+				9041B3A2159EC76700D7BCC5 /* mgDX9DevMode.cpp */,
+				9041B3A3159EC76700D7BCC5 /* mgDX9DevMode.h */,
+				9041B3A4159EC76700D7BCC5 /* mgDX9Indexes.cpp */,
+				9041B3A5159EC76700D7BCC5 /* mgDX9Indexes.h */,
+				9041B3A6159EC76700D7BCC5 /* mgDX9Services.cpp */,
+				9041B3A7159EC76700D7BCC5 /* mgDX9Services.h */,
+				9041B3A8159EC76700D7BCC5 /* mgDX9State.h */,
+				9041B3A9159EC76700D7BCC5 /* mgDX9Textures.cpp */,
+				9041B3AA159EC76700D7BCC5 /* mgDX9Textures.h */,
+			);
+			path = DX9;
+			sourceTree = "<group>";
+		};
+		9041B3AB159EC76700D7BCC5 /* GL21 */ = {
+			isa = PBXGroup;
+			children = (
+				9041B3AC159EC76700D7BCC5 /* mgGL21IndexBuffer.cpp */,
+				9041B3AD159EC76700D7BCC5 /* mgGL21IndexBuffer.h */,
+				9041B3AE159EC76700D7BCC5 /* mgGL21Misc.cpp */,
+				9041B3AF159EC76700D7BCC5 /* mgGL21Misc.h */,
+				9041B3B0159EC76700D7BCC5 /* mgGL21Services.cpp */,
+				9041B3B1159EC76700D7BCC5 /* mgGL21Services.h */,
+				9041B3B2159EC76700D7BCC5 /* mgGL21Types.h */,
+				9041B3B3159EC76700D7BCC5 /* mgGL21VertexBuffer.cpp */,
+				9041B3B4159EC76700D7BCC5 /* mgGL21VertexBuffer.h */,
+			);
+			path = GL21;
+			sourceTree = "<group>";
+		};
+		9041B3B5159EC76700D7BCC5 /* GL33 */ = {
+			isa = PBXGroup;
+			children = (
+				9041B3B6159EC76700D7BCC5 /* mgGL33IndexBuffer.cpp */,
+				9041B3B7159EC76700D7BCC5 /* mgGL33IndexBuffer.h */,
+				9041B3B8159EC76700D7BCC5 /* mgGL33Misc.cpp */,
+				9041B3B9159EC76700D7BCC5 /* mgGL33Misc.h */,
+				9041B3BA159EC76700D7BCC5 /* mgGL33Services.cpp */,
+				9041B3BB159EC76700D7BCC5 /* mgGL33Services.h */,
+				9041B3BC159EC76700D7BCC5 /* mgGL33Types.h */,
+				9041B3BD159EC76700D7BCC5 /* mgGL33VertexBuffer.cpp */,
+				9041B3BE159EC76700D7BCC5 /* mgGL33VertexBuffer.h */,
+			);
+			path = GL33;
+			sourceTree = "<group>";
+		};
+		9041B3C6159EC76700D7BCC5 /* Util3D */ = {
+			isa = PBXGroup;
+			children = (
+				9041B3C7159EC76700D7BCC5 /* mg3DErrorTable.cpp */,
+				9041B3C8159EC76700D7BCC5 /* mgCursorDefn.cpp */,
+				9041B3C9159EC76700D7BCC5 /* mgFontList.cpp */,
+				9041B3CA159EC76700D7BCC5 /* mgFontList.h */,
+			);
+			path = Util3D;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		9016C7E414FF90EC005F20C5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9041B3CB159EC76700D7BCC5 /* mgIndexBuffer.h in Headers */,
+				9041B3CC159EC76700D7BCC5 /* mgTextureSurface.h in Headers */,
+				9041B3CD159EC76700D7BCC5 /* mgVertexAttrib.h in Headers */,
+				9041B3CE159EC76700D7BCC5 /* mgVertexBuffer.h in Headers */,
+				9041B3CF159EC76700D7BCC5 /* mgVertexTypes.h in Headers */,
+				9041B3D0159EC76700D7BCC5 /* mg3D.h in Headers */,
+				9041B3D1159EC76700D7BCC5 /* mgDisplayServices.h in Headers */,
+				9041B3D2159EC76700D7BCC5 /* mg3DErrorTable.h in Headers */,
+				9041B3D3159EC76700D7BCC5 /* mgCursorDefn.h in Headers */,
+				9041B3D5159EC76700D7BCC5 /* mgDX9DevMode.h in Headers */,
+				9041B3D7159EC76700D7BCC5 /* mgDX9Indexes.h in Headers */,
+				9041B3D9159EC76700D7BCC5 /* mgDX9Services.h in Headers */,
+				9041B3DA159EC76700D7BCC5 /* mgDX9State.h in Headers */,
+				9041B3DC159EC76700D7BCC5 /* mgDX9Textures.h in Headers */,
+				9041B3DE159EC76700D7BCC5 /* mgGL21IndexBuffer.h in Headers */,
+				9041B3E0159EC76700D7BCC5 /* mgGL21Misc.h in Headers */,
+				9041B3E2159EC76700D7BCC5 /* mgGL21Services.h in Headers */,
+				9041B3E3159EC76700D7BCC5 /* mgGL21Types.h in Headers */,
+				9041B3E5159EC76700D7BCC5 /* mgGL21VertexBuffer.h in Headers */,
+				9041B3E7159EC76700D7BCC5 /* mgGL33IndexBuffer.h in Headers */,
+				9041B3E9159EC76700D7BCC5 /* mgGL33Misc.h in Headers */,
+				9041B3EB159EC76700D7BCC5 /* mgGL33Services.h in Headers */,
+				9041B3EC159EC76700D7BCC5 /* mgGL33Types.h in Headers */,
+				9041B3EE159EC76700D7BCC5 /* mgGL33VertexBuffer.h in Headers */,
+				9041B3F5159EC76700D7BCC5 /* stdafx.h in Headers */,
+				9041B3F9159EC76700D7BCC5 /* mgFontList.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		9016C7E514FF90EC005F20C5 /* mg3D */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9016C7EA14FF90EC005F20C5 /* Build configuration list for PBXNativeTarget "mg3D" */;
+			buildPhases = (
+				9016C7E214FF90EC005F20C5 /* Sources */,
+				9016C7E314FF90EC005F20C5 /* Frameworks */,
+				9016C7E414FF90EC005F20C5 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mg3D;
+			productName = mg3D;
+			productReference = 9016C7E614FF90EC005F20C5 /* libmg3D.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9016C7DD14FF90EC005F20C5 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 9016C7E014FF90EC005F20C5 /* Build configuration list for PBXProject "mg3D" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9016C7DB14FF90EC005F20C5;
+			productRefGroup = 9016C7E714FF90EC005F20C5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9016C7E514FF90EC005F20C5 /* mg3D */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9016C7E214FF90EC005F20C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9041B3D4159EC76700D7BCC5 /* mgDX9DevMode.cpp in Sources */,
+				9041B3D6159EC76700D7BCC5 /* mgDX9Indexes.cpp in Sources */,
+				9041B3D8159EC76700D7BCC5 /* mgDX9Services.cpp in Sources */,
+				9041B3DB159EC76700D7BCC5 /* mgDX9Textures.cpp in Sources */,
+				9041B3DD159EC76700D7BCC5 /* mgGL21IndexBuffer.cpp in Sources */,
+				9041B3DF159EC76700D7BCC5 /* mgGL21Misc.cpp in Sources */,
+				9041B3E1159EC76700D7BCC5 /* mgGL21Services.cpp in Sources */,
+				9041B3E4159EC76700D7BCC5 /* mgGL21VertexBuffer.cpp in Sources */,
+				9041B3E6159EC76700D7BCC5 /* mgGL33IndexBuffer.cpp in Sources */,
+				9041B3E8159EC76700D7BCC5 /* mgGL33Misc.cpp in Sources */,
+				9041B3EA159EC76700D7BCC5 /* mgGL33Services.cpp in Sources */,
+				9041B3ED159EC76700D7BCC5 /* mgGL33VertexBuffer.cpp in Sources */,
+				9041B3EF159EC76700D7BCC5 /* mgIndexBuffer.cpp in Sources */,
+				9041B3F0159EC76700D7BCC5 /* mgTextureSurface.cpp in Sources */,
+				9041B3F1159EC76700D7BCC5 /* mgVertexBuffer.cpp in Sources */,
+				9041B3F2159EC76700D7BCC5 /* mgVertexTypes.cpp in Sources */,
+				9041B3F3159EC76700D7BCC5 /* mgDisplayServices.cpp in Sources */,
+				9041B3F6159EC76700D7BCC5 /* mg3DErrorTable.cpp in Sources */,
+				9041B3F7159EC76700D7BCC5 /* mgCursorDefn.cpp in Sources */,
+				9041B3F8159EC76700D7BCC5 /* mgFontList.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		9016C7E814FF90EC005F20C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		9016C7E914FF90EC005F20C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		9016C7EB14FF90EC005F20C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = ../../BuildOSX/Debug;
+				EXECUTABLE_PREFIX = lib;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				HEADER_SEARCH_PATHS = (
+					../Source,
+					../Include,
+					../../,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9016C7EC14FF90EC005F20C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = ../../BuildOSX/Release;
+				EXECUTABLE_PREFIX = lib;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				HEADER_SEARCH_PATHS = (
+					../Source,
+					../Include,
+					../../,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9016C7E014FF90EC005F20C5 /* Build configuration list for PBXProject "mg3D" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9016C7E814FF90EC005F20C5 /* Debug */,
+				9016C7E914FF90EC005F20C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9016C7EA14FF90EC005F20C5 /* Build configuration list for PBXNativeTarget "mg3D" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9016C7EB14FF90EC005F20C5 /* Debug */,
+				9016C7EC14FF90EC005F20C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9016C7DD14FF90EC005F20C5 /* Project object */;
+}

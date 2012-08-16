@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'Crafty' target in the 'Crafty' project
+//
+
+#ifdef __OBJC__
+  #import <Cocoa/Cocoa.h>
+#endif

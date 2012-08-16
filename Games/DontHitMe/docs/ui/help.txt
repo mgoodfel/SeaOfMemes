@@ -1,0 +1,18 @@
+F1 to remove help.
+
+M - toggle map mode.
+G - cycle grid styles.
++/= - increase speed
+- - decrease speed
+
+ESC to toggle arrow cursor/cross cursor.
+
+W,S,A,D - move forward, back, left, right.
+up arrow, down arrow - move forward, back.
+left arrow, right arrow - turn left/right.
+
+PageUp/PageDown - move up, down.
+' ' and 'X' - move up, down.
+
+Cross cursor: mouse turns eye.
+Arrow cursor: left or right drag turns eye.

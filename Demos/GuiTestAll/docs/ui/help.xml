@@ -1,0 +1,28 @@
+<form>
+<h1>Help</h1>
+<p>
+Hit <b>F1</b> to toggle help.<br/>
+Hit <b>`</b> or <b>~</b> to toggle console.<br/>
+</p>
+<p>
+Use the controls at right, and see their actions logged in the console.
+</p>
+<p>
+Application controls are:
+<ul>
+<li>ESC to toggle cursor from desktop to game mode.</li>
+<li>W,S for forwards and back.</li>
+<li>A,D for left and right.</li>
+<li>blank, X for up and down.</li>
+</ul>
+In game mode (cross cursor):
+<ul>
+<li>Turn eye on mouse.</li>
+</ul>
+In desktop mode (arrow cursor):
+<ul>
+<li>Turn eye on mouse <i>down</i>.</li>
+<li>Forwards on both buttons.</li>
+</ul>
+</p>
+</form>

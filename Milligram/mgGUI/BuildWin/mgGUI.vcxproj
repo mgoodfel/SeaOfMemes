@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="DebugMemory|Win32">
+      <Configuration>DebugMemory</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Distrib|Win32">
+      <Configuration>Distrib</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Include\Form\mgFormPane.h" />
+    <ClInclude Include="..\Include\Form\mgFormParser.h" />
+    <ClInclude Include="..\Include\GUI\mgActionListener.h" />
+    <ClInclude Include="..\Include\GUI\mgButtonControl.h" />
+    <ClInclude Include="..\Include\GUI\mgChangeListener.h" />
+    <ClInclude Include="..\Include\GUI\mgCheckboxControl.h" />
+    <ClInclude Include="..\Include\GUI\mgColumnLayout.h" />
+    <ClInclude Include="..\Include\GUI\mgConsoleControl.h" />
+    <ClInclude Include="..\Include\GUI\mgControl.h" />
+    <ClInclude Include="..\Include\GUI\mgControlListener.h" />
+    <ClInclude Include="..\Include\GUI\mgDropListControl.h" />
+    <ClInclude Include="..\Include\GUI\mgFieldControl.h" />
+    <ClInclude Include="..\Include\GUI\mgFocusListener.h" />
+    <ClInclude Include="..\Include\GUI\mgFrame.h" />
+    <ClInclude Include="..\Include\GUI\mgKeyListener.h" />
+    <ClInclude Include="..\Include\GUI\mgLabelBoxControl.h" />
+    <ClInclude Include="..\Include\GUI\mgLabelControl.h" />
+    <ClInclude Include="..\Include\GUI\mgLayoutManager.h" />
+    <ClInclude Include="..\Include\GUI\mgListControl.h" />
+    <ClInclude Include="..\Include\GUI\mgMenu.h" />
+    <ClInclude Include="..\Include\GUI\mgMenuBarControl.h" />
+    <ClInclude Include="..\Include\GUI\mgMouseListener.h" />
+    <ClInclude Include="..\Include\GUI\mgPaint.h" />
+    <ClInclude Include="..\Include\GUI\mgRadioControl.h" />
+    <ClInclude Include="..\Include\GUI\mgRectFrame.h" />
+    <ClInclude Include="..\Include\GUI\mgScrollbarControl.h" />
+    <ClInclude Include="..\Include\GUI\mgScrolled.h" />
+    <ClInclude Include="..\Include\GUI\mgScroller.h" />
+    <ClInclude Include="..\Include\GUI\mgScrollListener.h" />
+    <ClInclude Include="..\Include\GUI\mgScrollPaneControl.h" />
+    <ClInclude Include="..\Include\GUI\mgSelectListener.h" />
+    <ClInclude Include="..\Include\GUI\mgSolidPaint.h" />
+    <ClInclude Include="..\Include\GUI\mgStackControl.h" />
+    <ClInclude Include="..\Include\GUI\mgStyle.h" />
+    <ClInclude Include="..\Include\GUI\mgTableLayout.h" />
+    <ClInclude Include="..\Include\GUI\mgFormControl.h" />
+    <ClInclude Include="..\Include\GUI\mgTimeListener.h" />
+    <ClInclude Include="..\Include\GUI\mgToolkit.h" />
+    <ClInclude Include="..\Include\GUI\mgTopControl.h" />
+    <ClInclude Include="..\Include\GUI\mgTreeListener.h" />
+    <ClInclude Include="..\Include\mgGUI.h" />
+    <ClInclude Include="..\Include\mgInputEvents.h" />
+    <ClInclude Include="..\Include\TextFormatter\mgTextBuffer.h" />
+    <ClInclude Include="..\Include\TextFormatter\mgTextDraw.h" />
+    <ClInclude Include="..\Include\TextFormatter\mgTextFormat.h" />
+    <ClInclude Include="..\Include\TextFormatter\mgTextMeasure.h" />
+    <ClInclude Include="..\Include\TextFormatter\mgTextPage.h" />
+    <ClInclude Include="..\Include\TextFormatter\mgTextScan.h" />
+    <ClInclude Include="..\Include\UglyStyle\mgUglyButton.h" />
+    <ClInclude Include="..\Include\UglyStyle\mgUglyCheckbox.h" />
+    <ClInclude Include="..\Include\UglyStyle\mgUglyConsole.h" />
+    <ClInclude Include="..\Include\UglyStyle\mgUglyField.h" />
+    <ClInclude Include="..\Include\UglyStyle\mgUglyLabel.h" />
+    <ClInclude Include="..\Include\UglyStyle\mgUglyList.h" />
+    <ClInclude Include="..\Include\UglyStyle\mgUglyScrollbar.h" />
+    <ClInclude Include="..\Include\UglyStyle\mgUglySplit.h" />
+    <ClInclude Include="..\Include\UglyStyle\mgUglyStack.h" />
+    <ClInclude Include="..\Include\UglyStyle\mgUglyStyle.h" />
+    <ClInclude Include="..\Include\UglyStyle\mgUglyTabs.h" />
+    <ClInclude Include="..\Include\Util\mgDebugPane.h" />
+    <ClInclude Include="..\Source\Form\mgBlockTag.h" />
+    <ClInclude Include="..\Source\Form\mgBreakTag.h" />
+    <ClInclude Include="..\Source\Form\mgButtonTag.h" />
+    <ClInclude Include="..\Source\Form\mgCheckboxTag.h" />
+    <ClInclude Include="..\Source\Form\mgConsoleTag.h" />
+    <ClInclude Include="..\Source\Form\mgFieldTag.h" />
+    <ClInclude Include="..\Source\Form\mgFormTag.h" />
+    <ClInclude Include="..\Source\Form\mgHeadingTag.h" />
+    <ClInclude Include="..\Source\Form\mgLabelTag.h" />
+    <ClInclude Include="..\Source\Form\mgListItemTag.h" />
+    <ClInclude Include="..\Source\Form\mgListTag.h" />
+    <ClInclude Include="..\Source\Form\mgParaTag.h" />
+    <ClInclude Include="..\Source\Form\mgPreTag.h" />
+    <ClInclude Include="..\Source\Form\mgRuleTag.h" />
+    <ClInclude Include="..\Source\Form\mgTableColTag.h" />
+    <ClInclude Include="..\Source\Form\mgTableRowTag.h" />
+    <ClInclude Include="..\Source\Form\mgTableTag.h" />
+    <ClInclude Include="..\Source\Form\mgTextTag.h" />
+    <ClInclude Include="..\Source\stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Source\Form\mgBlockTag.cpp" />
+    <ClCompile Include="..\Source\Form\mgBreakTag.cpp" />
+    <ClCompile Include="..\Source\Form\mgButtonTag.cpp" />
+    <ClCompile Include="..\Source\Form\mgCheckboxTag.cpp" />
+    <ClCompile Include="..\Source\Form\mgConsoleTag.cpp" />
+    <ClCompile Include="..\Source\Form\mgFieldTag.cpp" />
+    <ClCompile Include="..\Source\Form\mgFormPane.cpp" />
+    <ClCompile Include="..\Source\Form\mgFormParser.cpp" />
+    <ClCompile Include="..\Source\Form\mgFormTag.cpp" />
+    <ClCompile Include="..\Source\Form\mgHeadingTag.cpp" />
+    <ClCompile Include="..\Source\Form\mgLabelTag.cpp" />
+    <ClCompile Include="..\Source\Form\mgListItemTag.cpp" />
+    <ClCompile Include="..\Source\Form\mgListTag.cpp" />
+    <ClCompile Include="..\Source\Form\mgParaTag.cpp" />
+    <ClCompile Include="..\Source\Form\mgPreTag.cpp" />
+    <ClCompile Include="..\Source\Form\mgRuleTag.cpp" />
+    <ClCompile Include="..\Source\Form\mgTableColTag.cpp" />
+    <ClCompile Include="..\Source\Form\mgTableRowTag.cpp" />
+    <ClCompile Include="..\Source\Form\mgTableTag.cpp" />
+    <ClCompile Include="..\Source\Form\mgTextTag.cpp" />
+    <ClCompile Include="..\Source\GUI\mgColumnLayout.cpp" />
+    <ClCompile Include="..\Source\GUI\mgControl.cpp" />
+    <ClCompile Include="..\Source\GUI\mgFrame.cpp" />
+    <ClCompile Include="..\Source\GUI\mgRectFrame.cpp" />
+    <ClCompile Include="..\Source\GUI\mgSolidPaint.cpp" />
+    <ClCompile Include="..\Source\GUI\mgStyle.cpp" />
+    <ClCompile Include="..\Source\GUI\mgTableLayout.cpp" />
+    <ClCompile Include="..\Source\GUI\mgTopControl.cpp" />
+    <ClCompile Include="..\Source\stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='DebugMemory|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Distrib|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\Source\TextFormatter\mgTextBuffer.cpp" />
+    <ClCompile Include="..\Source\TextFormatter\mgTextDraw.cpp" />
+    <ClCompile Include="..\Source\TextFormatter\mgTextFormat.cpp" />
+    <ClCompile Include="..\Source\TextFormatter\mgTextMeasure.cpp" />
+    <ClCompile Include="..\Source\TextFormatter\mgTextScan.cpp" />
+    <ClCompile Include="..\Source\UglyStyle\mgUglyButton.cpp" />
+    <ClCompile Include="..\Source\UglyStyle\mgUglyCheckbox.cpp" />
+    <ClCompile Include="..\Source\UglyStyle\mgUglyConsole.cpp" />
+    <ClCompile Include="..\Source\UglyStyle\mgUglyField.cpp" />
+    <ClCompile Include="..\Source\UglyStyle\mgUglyLabel.cpp" />
+    <ClCompile Include="..\Source\UglyStyle\mgUglyList.cpp" />
+    <ClCompile Include="..\Source\UglyStyle\mgUglyScrollbar.cpp" />
+    <ClCompile Include="..\Source\UglyStyle\mgUglySplit.cpp" />
+    <ClCompile Include="..\Source\UglyStyle\mgUglyStack.cpp" />
+    <ClCompile Include="..\Source\UglyStyle\mgUglyStyle.cpp" />
+    <ClCompile Include="..\Source\UglyStyle\mgUglyTabs.cpp" />
+    <ClCompile Include="..\Source\Util\mgDebugPane.cpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C05DC949-EC55-4348-8044-A7DF88CDF8D9}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>mgGUI</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMemory|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Distrib|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugMemory|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Distrib|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMemory|Win32'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMemory|Win32'">
+    <OutDir>..\..\BuildWin\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\..\BuildWin\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Distrib|Win32'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Distrib|Win32'">
+    <OutDir>..\..\BuildWin\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\..\BuildWin\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;../Include;../Source;../../</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugMemory|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>DEBUG_MEMORY;WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;../Include;../Source;../../</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;../Include;../Source;../../</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Distrib|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;../Include;../Source;../../</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

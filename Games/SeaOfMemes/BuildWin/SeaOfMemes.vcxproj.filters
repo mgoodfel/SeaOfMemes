@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\Source\SeaOfMemes.cpp" />
+    <ClCompile Include="..\Source\stdafx.cpp" />
+    <ClCompile Include="..\Source\SolarSystem\NebulaSky.cpp">
+      <Filter>SolarSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\SolarSystem\Planet.cpp">
+      <Filter>SolarSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\SolarSystem\Moon.cpp">
+      <Filter>SolarSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\SolarSystem\Asteroid.cpp">
+      <Filter>SolarSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\SolarSystem\SolarSystem.cpp">
+      <Filter>SolarSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\SolarSystem\Ring.cpp">
+      <Filter>SolarSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\SolarSystem\Belt.cpp">
+      <Filter>SolarSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Util\VertexTerrain.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\SolarSystem\Habitat.cpp">
+      <Filter>SolarSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Landscape\Landscape.cpp">
+      <Filter>Landscape</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Landscape\TerrainCell.cpp">
+      <Filter>Landscape</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Landscape\PlanetTerrain.cpp">
+      <Filter>Landscape</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Landscape\PlanetLandscape.cpp">
+      <Filter>Landscape</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\SolarSystem\Earth.cpp">
+      <Filter>SolarSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\SolarSystem\VertexPlanet.cpp">
+      <Filter>SolarSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\GUI\HelpUI.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\GUI\SpeedUI.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Source\SeaOfMemes.h" />
+    <ClInclude Include="..\Source\stdafx.h" />
+    <ClInclude Include="..\Source\SolarSystem\NebulaSky.h">
+      <Filter>SolarSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\SolarSystem\Planet.h">
+      <Filter>SolarSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\SolarSystem\Moon.h">
+      <Filter>SolarSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\SolarSystem\Asteroid.h">
+      <Filter>SolarSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\SolarSystem\SolarSystem.h">
+      <Filter>SolarSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\SolarSystem\Ring.h">
+      <Filter>SolarSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\SolarSystem\Belt.h">
+      <Filter>SolarSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Util\VertexTerrain.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\SolarSystem\Habitat.h">
+      <Filter>SolarSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Landscape\Landscape.h">
+      <Filter>Landscape</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Landscape\TerrainCell.h">
+      <Filter>Landscape</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Landscape\PlanetTerrain.h">
+      <Filter>Landscape</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Landscape\PlanetLandscape.h">
+      <Filter>Landscape</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\SolarSystem\Earth.h">
+      <Filter>SolarSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\SolarSystem\VertexPlanet.h">
+      <Filter>SolarSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\GUI\HelpUI.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\GUI\SpeedUI.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Util">
+      <UniqueIdentifier>{8ebb8908-d412-4f3f-8502-6594f9979660}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SolarSystem">
+      <UniqueIdentifier>{e40198cf-7c72-4fc0-9d85-413d27167915}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Landscape">
+      <UniqueIdentifier>{10386e68-51d5-4161-853b-95bdb467d44e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GUI">
+      <UniqueIdentifier>{cf556cbe-d080-4a6d-a2bc-985a973dd8d0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

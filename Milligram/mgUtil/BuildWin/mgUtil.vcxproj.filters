@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Include">
+      <UniqueIdentifier>{00913c3d-d602-4dc4-a556-c5b35a42b55a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{7e8aa474-105c-4a17-b1e8-431ba2ada30c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\ImageUtil">
+      <UniqueIdentifier>{545092a9-baa1-4e4e-83af-0e8b0f4d724f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Util">
+      <UniqueIdentifier>{8b3ae6d8-2bf9-4e35-a138-77cda8e28266}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\XMLParser">
+      <UniqueIdentifier>{9df34b4d-5986-42f2-9ffe-642d171ea482}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\OS">
+      <UniqueIdentifier>{ed935953-f97a-4f0e-ae65-c69ae00547c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Util">
+      <UniqueIdentifier>{50b89b5f-26b4-40d9-a7e4-cee2a532a01f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\ImageUtil">
+      <UniqueIdentifier>{b259daab-e1d9-4b42-b476-507aa959a850}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\OS">
+      <UniqueIdentifier>{9d73ca88-8aea-4f49-b3fc-3e8f54f41320}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\XMLParser">
+      <UniqueIdentifier>{a3dabe8b-e5d4-4c4e-8b68-65d6db11badd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\OS\Windows">
+      <UniqueIdentifier>{6aff3363-5cdb-49db-a31e-05a68cd563d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\OS\OSX">
+      <UniqueIdentifier>{88cb49f4-77f9-4829-9dcd-b0487d8befe2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\OS\Linux">
+      <UniqueIdentifier>{76fa9330-be67-4710-af0d-1250eef29c12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Audio">
+      <UniqueIdentifier>{4f0ba32f-6acf-4ab9-9d9c-41557e866f1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Audio">
+      <UniqueIdentifier>{7cf5fa86-298f-4185-81e3-9e63cfeb213d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\GraphicsUtil">
+      <UniqueIdentifier>{9ce662d3-7cf0-4e86-b032-86ab69288b87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\GraphicsUtil">
+      <UniqueIdentifier>{9e5c1b08-085b-45c0-968c-1d9ec90bd971}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Include\mgUtil.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\ImageUtil\mgImageUtil.h">
+      <Filter>Include\ImageUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\OS\mgLinuxMisc.h">
+      <Filter>Include\OS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\OS\mgOSEvent.h">
+      <Filter>Include\OS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\OS\mgOSFileUtil.h">
+      <Filter>Include\OS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\OS\mgOSLinux.h">
+      <Filter>Include\OS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\OS\mgOSLock.h">
+      <Filter>Include\OS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\OS\mgOSOSX.h">
+      <Filter>Include\OS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\OS\mgOSThread.h">
+      <Filter>Include\OS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\OS\mgOSTimer.h">
+      <Filter>Include\OS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\OS\mgOSWindows.h">
+      <Filter>Include\OS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\OS\mgOSXMisc.h">
+      <Filter>Include\OS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\XMLParser\mgXMLParser.h">
+      <Filter>Include\XMLParser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\XMLParser\mgXMLScanner.h">
+      <Filter>Include\XMLParser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\XMLParser\mgXMLTag.h">
+      <Filter>Include\XMLParser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Util\mgBlockPool.h">
+      <Filter>Include\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Util\mgDebug.h">
+      <Filter>Include\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Util\mgDebugMemory.h">
+      <Filter>Include\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Util\mgDWordArray.h">
+      <Filter>Include\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Util\mgErrorMsg.h">
+      <Filter>Include\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Util\mgErrorTable.h">
+      <Filter>Include\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Util\mgException.h">
+      <Filter>Include\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Util\mgMapDWordToPtr.h">
+      <Filter>Include\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Util\mgMapPtrToPtr.h">
+      <Filter>Include\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Util\mgMapStringToDouble.h">
+      <Filter>Include\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Util\mgMapStringToDWord.h">
+      <Filter>Include\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Util\mgMapStringToPtr.h">
+      <Filter>Include\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Util\mgMapStringToString.h">
+      <Filter>Include\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Util\mgMapXYZToPtr.h">
+      <Filter>Include\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Util\mgMatrix.h">
+      <Filter>Include\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Util\mgOptionsFile.h">
+      <Filter>Include\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Util\mgPtrArray.h">
+      <Filter>Include\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Util\mgString.h">
+      <Filter>Include\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Util\mgStringArray.h">
+      <Filter>Include\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Util\mgUtilErrorTable.h">
+      <Filter>Include\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\ImageUtil\mgDiffuse.h">
+      <Filter>Source\ImageUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\ImageUtil\mgGIF3.h">
+      <Filter>Source\ImageUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\ImageUtil\mgImageIO.h">
+      <Filter>Source\ImageUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\ImageUtil\mgLZW.h">
+      <Filter>Source\ImageUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\OS\Linux\mgLinuxEvent.h">
+      <Filter>Source\OS\Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\OS\Linux\mgLinuxLock.h">
+      <Filter>Source\OS\Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\OS\Linux\mgLinuxThread.h">
+      <Filter>Source\OS\Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\OS\OSX\mgOSXEvent.h">
+      <Filter>Source\OS\OSX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\OS\OSX\mgOSXLock.h">
+      <Filter>Source\OS\OSX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\OS\OSX\mgOSXThread.h">
+      <Filter>Source\OS\OSX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\OS\Windows\mgWinEvent.h">
+      <Filter>Source\OS\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\OS\Windows\mgWinLock.h">
+      <Filter>Source\OS\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\OS\Windows\mgWinThread.h">
+      <Filter>Source\OS\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\stdafx.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\OS\mgMiscUtil.h">
+      <Filter>Include\OS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Audio\mgAudioAL.h">
+      <Filter>Source\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Audio\mgAudioWin.h">
+      <Filter>Source\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Audio\mgAudio.h">
+      <Filter>Include\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Audio\mgVorbisRead.h">
+      <Filter>Source\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GraphicsUtil\mgBezier.h">
+      <Filter>Include\GraphicsUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GraphicsUtil\mgSimplexNoise.h">
+      <Filter>Include\GraphicsUtil</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Source\ImageUtil\mgDiffuse.cpp">
+      <Filter>Source\ImageUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\ImageUtil\mgGIF3.cpp">
+      <Filter>Source\ImageUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\ImageUtil\mgImageIO.cpp">
+      <Filter>Source\ImageUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\ImageUtil\mgImageUtil.cpp">
+      <Filter>Source\ImageUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\ImageUtil\mgLZW.cpp">
+      <Filter>Source\ImageUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\XMLParser\mgXMLParser.cpp">
+      <Filter>Source\XMLParser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\XMLParser\mgXMLScanner.cpp">
+      <Filter>Source\XMLParser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\XMLParser\mgXMLTag.cpp">
+      <Filter>Source\XMLParser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Util\mgBlockPool.cpp">
+      <Filter>Source\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Util\mgDebug.cpp">
+      <Filter>Source\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Util\mgDebugMemory.cpp">
+      <Filter>Source\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Util\mgDWordArray.cpp">
+      <Filter>Source\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Util\mgErrorMsg.cpp">
+      <Filter>Source\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Util\mgErrorTable.cpp">
+      <Filter>Source\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Util\mgException.cpp">
+      <Filter>Source\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Util\mgMapDWordToPtr.cpp">
+      <Filter>Source\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Util\mgMapPtrToPtr.cpp">
+      <Filter>Source\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Util\mgMapStringToDouble.cpp">
+      <Filter>Source\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Util\mgMapStringToDWord.cpp">
+      <Filter>Source\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Util\mgMapStringToPtr.cpp">
+      <Filter>Source\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Util\mgMapStringToString.cpp">
+      <Filter>Source\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Util\mgMapXYZToPtr.cpp">
+      <Filter>Source\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Util\mgMatrix.cpp">
+      <Filter>Source\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Util\mgOptionsFile.cpp">
+      <Filter>Source\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Util\mgPtrArray.cpp">
+      <Filter>Source\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Util\mgString.cpp">
+      <Filter>Source\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Util\mgStringArray.cpp">
+      <Filter>Source\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Util\mgUtilErrorTable.cpp">
+      <Filter>Source\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\OS\Linux\mgLinuxEvent.cpp">
+      <Filter>Source\OS\Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\OS\Linux\mgLinuxFileUtil.cpp">
+      <Filter>Source\OS\Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\OS\Linux\mgLinuxLock.cpp">
+      <Filter>Source\OS\Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\OS\Linux\mgLinuxMisc.cpp">
+      <Filter>Source\OS\Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\OS\Linux\mgLinuxThread.cpp">
+      <Filter>Source\OS\Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\OS\Linux\mgLinuxTimer.cpp">
+      <Filter>Source\OS\Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\OS\OSX\mgOSXEvent.cpp">
+      <Filter>Source\OS\OSX</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\OS\OSX\mgOSXFileUtil.cpp">
+      <Filter>Source\OS\OSX</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\OS\OSX\mgOSXLock.cpp">
+      <Filter>Source\OS\OSX</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\OS\OSX\mgOSXMisc.cpp">
+      <Filter>Source\OS\OSX</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\OS\OSX\mgOSXThread.cpp">
+      <Filter>Source\OS\OSX</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\OS\OSX\mgOSXTimer.cpp">
+      <Filter>Source\OS\OSX</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\OS\Windows\mgWinEvent.cpp">
+      <Filter>Source\OS\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\OS\Windows\mgWinFileUtil.cpp">
+      <Filter>Source\OS\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\OS\Windows\mgWinLock.cpp">
+      <Filter>Source\OS\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\OS\Windows\mgWinThread.cpp">
+      <Filter>Source\OS\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\OS\Windows\mgWinTimer.cpp">
+      <Filter>Source\OS\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\stdafx.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\OS\mgOSCreate.cpp">
+      <Filter>Source\OS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\OS\mgMiscUtil.cpp">
+      <Filter>Source\OS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Audio\mgAudio.cpp">
+      <Filter>Source\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Audio\mgAudioAL.cpp">
+      <Filter>Source\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Audio\mgAudioWin.cpp">
+      <Filter>Source\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Audio\mgVorbisRead.cpp">
+      <Filter>Source\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\OS\Windows\strptime.cpp">
+      <Filter>Source\OS\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\GraphicsUtil\mgBezier.cpp">
+      <Filter>Source\GraphicsUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\GraphicsUtil\mgSimplexNoise.cpp">
+      <Filter>Source\GraphicsUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\OS\Windows\mgWinSendLog.cpp">
+      <Filter>Source\OS\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\OS\Linux\mgLinuxSendLog.cpp">
+      <Filter>Source\OS\Linux</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

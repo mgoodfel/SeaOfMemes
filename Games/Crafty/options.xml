@@ -1,0 +1,43 @@
+<options
+  platform = ""
+  graphicsTiming = "true"
+  writeCaps = "false"
+  fullscreen = "false"
+  multisample = "true"
+
+  fov="60"
+  windowX = "100"
+  windowY = "100"
+  windowWidth = "1024"
+  windowHeight = "768"
+
+  shaderDir = "docs/shaders"
+  deskcursor = "docs/cursors/arrowCursor.xml"
+  movecursor = "docs/cursors/crossCursor.xml"
+
+  viewDistance = "160"
+
+  displayMemory = "200"
+  systemMemory = "400"
+  threadCount = "1"
+
+  matColor = "1.0 1.0 1.0"
+  sunlightColor = "0.8 0.8 0.8"
+  moonlightColor = "0.1 0.1 0.1"
+  torchlightColor = "1.0 1.0 0.0"
+
+  brickSet = "docs/bricks/mcbricks.xml"
+
+  starTexture = "docs/textures/starpatch.jpg;docs/textures/brightStarsAlpha.jpg"
+  moonTexture = "docs/textures/moon.jpg;docs/textures/moonAlpha.jpg"
+  sunTexture = "docs/textures/sun.jpg;docs/textures/sunAlpha.gif"
+  skybox-xmin = "docs/textures/sky-xmin.jpg"
+  skybox-xmax = "docs/textures/sky-xmax.jpg"
+  skybox-ymin = "docs/textures/sky-ymin.jpg"
+  skybox-ymax = "docs/textures/sky-ymax.jpg"
+  skybox-zmin = "docs/textures/sky-zmin.jpg"
+  skybox-zmax = "docs/textures/sky-zmax.jpg"
+
+  helpFile = "docs/ui/help.xml"
+/>
+

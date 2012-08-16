@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\Source\Saucer.cpp" />
+    <ClCompile Include="..\Source\stdafx.cpp" />
+    <ClCompile Include="..\Source\StarrySky.cpp" />
+    <ClCompile Include="..\Source\VertexSky.cpp" />
+    <ClCompile Include="..\Source\DeathRay.cpp" />
+    <ClCompile Include="..\Source\SaucerMovie.cpp" />
+    <ClCompile Include="..\Source\MovementApp.cpp" />
+    <ClCompile Include="..\Source\HelpUI.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Source\Saucer.h" />
+    <ClInclude Include="..\Source\stdafx.h" />
+    <ClInclude Include="..\Source\StarrySky.h" />
+    <ClInclude Include="..\Source\VertexSky.h" />
+    <ClInclude Include="..\Source\DeathRay.h" />
+    <ClInclude Include="..\Source\SaucerMovie.h" />
+    <ClInclude Include="..\Source\MovementApp.h" />
+    <ClInclude Include="..\Source\HelpUI.h" />
+  </ItemGroup>
+</Project>

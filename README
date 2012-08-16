@@ -1,0 +1,27 @@
+The SeaOfMemes repo contains several projects:
+
+Demos     -- various algorithm demonstrations and test programs.
+Games     -- parts of the main project or spinoffs.
+Milligram -- my multiplatform framework.
+
+To build:
+
+At the top, find BuildLinux, BuildOSX or BuildWin.  The make files here
+will build the entire project, starting with the Milligram framework, 
+then the demos, then the games.
+
+Inside Demos, Games and Milligram, you will also find Build* directories
+which rebuild all projects in the directory.  And in each leaf project such 
+as Games/SeaOfMemes, you will also find Build* directories to build that
+project.
+
+BuildLinux* requires the standard gnu programming tools.  Execution of 
+  the programs under Linux requires several packages.  See the ReadMe.
+
+BuildOSX* requires XCode 4.1 or better, with command line tools installed.
+
+BuildWin* requires Visual Studio 2010 Express or better, with the Windows 7 SDK
+and DirectX SDK.
+
+Go to http://www.sea-of-memes.com for the project blog.
+

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\Source\DontHitMe.cpp" />
+    <ClCompile Include="..\Source\stdafx.cpp" />
+    <ClCompile Include="..\Source\Planet.cpp" />
+    <ClCompile Include="..\Source\Prickle.cpp" />
+    <ClCompile Include="..\Source\Saucer.cpp" />
+    <ClCompile Include="..\Source\StarrySky.cpp" />
+    <ClCompile Include="..\Source\VertexSky.cpp" />
+    <ClCompile Include="..\Source\Tube.cpp" />
+    <ClCompile Include="..\Source\Wreck.cpp" />
+    <ClCompile Include="..\Source\Tower.cpp" />
+    <ClCompile Include="..\Source\Intro.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Source\DontHitMe.h" />
+    <ClInclude Include="..\Source\stdafx.h" />
+    <ClInclude Include="..\Source\Planet.h" />
+    <ClInclude Include="..\Source\Prickle.h" />
+    <ClInclude Include="..\Source\Saucer.h" />
+    <ClInclude Include="..\Source\StarrySky.h" />
+    <ClInclude Include="..\Source\VertexSky.h" />
+    <ClInclude Include="..\Source\Tube.h" />
+    <ClInclude Include="..\Source\Wreck.h" />
+    <ClInclude Include="..\Source\Tower.h" />
+    <ClInclude Include="..\Source\Intro.h" />
+  </ItemGroup>
+</Project>

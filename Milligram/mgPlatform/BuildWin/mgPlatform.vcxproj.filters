@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Include">
+      <UniqueIdentifier>{e1c46321-c782-4ed6-97db-cca6d76bf211}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{a817c234-37fb-4c2d-adfa-7d5646eff8bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Windows">
+      <UniqueIdentifier>{3a1cb58e-586a-4409-81ad-6700e1cd8b60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Linux">
+      <UniqueIdentifier>{5e6094b0-daeb-49e5-a39c-ae8fe8efd74e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\OSX">
+      <UniqueIdentifier>{faa8bb32-fc72-4897-83e5-4efbc834a7b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Windows">
+      <UniqueIdentifier>{a341afac-4fd8-4d1e-91e1-d7c3ccfb9bd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Linux">
+      <UniqueIdentifier>{f0cd9356-eb6d-460b-af95-68060231794a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\OSX">
+      <UniqueIdentifier>{b600ade7-87c1-46e7-93f7-bbd47345a215}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Include\mgApplication.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\mgInputEvents.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\stdafx.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Windows\wglew.h">
+      <Filter>Source\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\OSX\mgDisplayLink.h">
+      <Filter>Source\OSX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\OSX\MgOpenGLView.h">
+      <Filter>Source\OSX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Linux\glxew.h">
+      <Filter>Source\Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\mgPlatformErrorTable.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\mgPlatformServices.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Windows\mgWinServices.h">
+      <Filter>Source\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Linux\mgLinuxServices.h">
+      <Filter>Source\Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\OSX\mgOSXServices.h">
+      <Filter>Source\OSX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\linux\linux_glew.h">
+      <Filter>Include\Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\windows\win_glew.h">
+      <Filter>Include\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\mgPlatform.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\mgCursorDefn.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\mgDisplaySupport.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Linux\mgLinuxGL21Support.h">
+      <Filter>Source\Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Linux\mgLinuxGL33Support.h">
+      <Filter>Source\Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Windows\mgWinGL21Support.h">
+      <Filter>Source\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Windows\mgWinGL33Support.h">
+      <Filter>Source\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Windows\mgWinGLinit.h">
+      <Filter>Source\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\OSX\mgOSXGL21Support.h">
+      <Filter>Source\OSX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\OSX\mgOSXGL33Support.h">
+      <Filter>Source\OSX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Linux\mgFontConfParser.h">
+      <Filter>Source\Linux</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Source\stdafx.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Linux\linux_glew.c">
+      <Filter>Source\Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\mgPlatformErrorTable.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Windows\mgWinServices.cpp">
+      <Filter>Source\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Linux\mgLinuxServices.cpp">
+      <Filter>Source\Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\OSX\mgOSXServices.cpp">
+      <Filter>Source\OSX</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Windows\win_glew.c">
+      <Filter>Source\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\mgCursorDefn.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Windows\mgWinGL21Support.cpp">
+      <Filter>Source\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Windows\mgWinGL33Support.cpp">
+      <Filter>Source\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Windows\mgWinGLinit.cpp">
+      <Filter>Source\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Linux\mgLinuxGL33Support.cpp">
+      <Filter>Source\Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Linux\mgLinuxGL21Support.cpp">
+      <Filter>Source\Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\OSX\mgOSXGL21Support.cpp">
+      <Filter>Source\OSX</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\OSX\mgOSXGL33Support.cpp">
+      <Filter>Source\OSX</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Linux\mgFontConfParser.cpp">
+      <Filter>Source\Linux</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Source\OSX\mgDisplayLink.m">
+      <Filter>Source\OSX</Filter>
+    </None>
+    <None Include="..\Source\OSX\mgMain.mm">
+      <Filter>Source\OSX</Filter>
+    </None>
+    <None Include="..\Source\OSX\MgOpenGLView.mm">
+      <Filter>Source\OSX</Filter>
+    </None>
+  </ItemGroup>
+</Project>

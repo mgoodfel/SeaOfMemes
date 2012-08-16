@@ -1,0 +1,691 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		908C00931505F6D900F0BFF2 /* mgAudio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 908C008C1505F6D900F0BFF2 /* mgAudio.cpp */; };
+		908C00941505F6D900F0BFF2 /* mgAudioAL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 908C008D1505F6D900F0BFF2 /* mgAudioAL.cpp */; };
+		908C00951505F6D900F0BFF2 /* mgAudioAL.h in Headers */ = {isa = PBXBuildFile; fileRef = 908C008E1505F6D900F0BFF2 /* mgAudioAL.h */; };
+		908C00961505F6D900F0BFF2 /* mgAudioWin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 908C008F1505F6D900F0BFF2 /* mgAudioWin.cpp */; };
+		908C00971505F6D900F0BFF2 /* mgAudioWin.h in Headers */ = {isa = PBXBuildFile; fileRef = 908C00901505F6D900F0BFF2 /* mgAudioWin.h */; };
+		908C00981505F6D900F0BFF2 /* mgVorbisRead.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 908C00911505F6D900F0BFF2 /* mgVorbisRead.cpp */; };
+		908C00991505F6D900F0BFF2 /* mgVorbisRead.h in Headers */ = {isa = PBXBuildFile; fileRef = 908C00921505F6D900F0BFF2 /* mgVorbisRead.h */; };
+		90B23A3E15D0049100A39C00 /* mgOSXSendLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90B23A3D15D0049100A39C00 /* mgOSXSendLog.cpp */; };
+		90C2D9EE14FF8F810073081C /* mgDiffuse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C2D96D14FF8F810073081C /* mgDiffuse.cpp */; };
+		90C2D9EF14FF8F810073081C /* mgDiffuse.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C2D96E14FF8F810073081C /* mgDiffuse.h */; };
+		90C2D9F014FF8F810073081C /* mgGIF3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C2D96F14FF8F810073081C /* mgGIF3.cpp */; };
+		90C2D9F114FF8F810073081C /* mgGIF3.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C2D97014FF8F810073081C /* mgGIF3.h */; };
+		90C2D9F214FF8F810073081C /* mgImageIO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C2D97114FF8F810073081C /* mgImageIO.cpp */; };
+		90C2D9F314FF8F810073081C /* mgImageIO.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C2D97214FF8F810073081C /* mgImageIO.h */; };
+		90C2D9F414FF8F810073081C /* mgImageUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C2D97314FF8F810073081C /* mgImageUtil.cpp */; };
+		90C2D9F514FF8F810073081C /* mgLZW.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C2D97414FF8F810073081C /* mgLZW.cpp */; };
+		90C2D9F614FF8F810073081C /* mgLZW.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C2D97514FF8F810073081C /* mgLZW.h */; };
+		90C2DA3D14FF8F810073081C /* mgOSCreate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C2D9BF14FF8F810073081C /* mgOSCreate.cpp */; };
+		90C2DA3E14FF8F810073081C /* mgOSXEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C2D9C114FF8F810073081C /* mgOSXEvent.cpp */; };
+		90C2DA3F14FF8F810073081C /* mgOSXEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C2D9C214FF8F810073081C /* mgOSXEvent.h */; };
+		90C2DA4014FF8F810073081C /* mgOSXFileUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C2D9C314FF8F810073081C /* mgOSXFileUtil.cpp */; };
+		90C2DA4114FF8F810073081C /* mgOSXLock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C2D9C414FF8F810073081C /* mgOSXLock.cpp */; };
+		90C2DA4214FF8F810073081C /* mgOSXLock.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C2D9C514FF8F810073081C /* mgOSXLock.h */; };
+		90C2DA4314FF8F810073081C /* mgOSXMisc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C2D9C614FF8F810073081C /* mgOSXMisc.cpp */; };
+		90C2DA4414FF8F810073081C /* mgOSXThread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C2D9C714FF8F810073081C /* mgOSXThread.cpp */; };
+		90C2DA4514FF8F810073081C /* mgOSXThread.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C2D9C814FF8F810073081C /* mgOSXThread.h */; };
+		90C2DA4614FF8F810073081C /* mgOSXTimer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C2D9C914FF8F810073081C /* mgOSXTimer.cpp */; };
+		90C2DA4F14FF8F810073081C /* stdafx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C2D9D314FF8F810073081C /* stdafx.cpp */; };
+		90C2DA5014FF8F810073081C /* stdafx.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C2D9D414FF8F810073081C /* stdafx.h */; };
+		90C2DA5114FF8F810073081C /* mgBlockPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C2D9D614FF8F810073081C /* mgBlockPool.cpp */; };
+		90C2DA5214FF8F810073081C /* mgDebug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C2D9D714FF8F810073081C /* mgDebug.cpp */; };
+		90C2DA5314FF8F810073081C /* mgDebugMemory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C2D9D814FF8F810073081C /* mgDebugMemory.cpp */; };
+		90C2DA5414FF8F810073081C /* mgDWordArray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C2D9D914FF8F810073081C /* mgDWordArray.cpp */; };
+		90C2DA5514FF8F810073081C /* mgErrorMsg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C2D9DA14FF8F810073081C /* mgErrorMsg.cpp */; };
+		90C2DA5614FF8F810073081C /* mgErrorTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C2D9DB14FF8F810073081C /* mgErrorTable.cpp */; };
+		90C2DA5714FF8F810073081C /* mgException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C2D9DC14FF8F810073081C /* mgException.cpp */; };
+		90C2DA5814FF8F810073081C /* mgMapDWordToPtr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C2D9DD14FF8F810073081C /* mgMapDWordToPtr.cpp */; };
+		90C2DA5914FF8F810073081C /* mgMapPtrToPtr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C2D9DE14FF8F810073081C /* mgMapPtrToPtr.cpp */; };
+		90C2DA5A14FF8F810073081C /* mgMapStringToDouble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C2D9DF14FF8F810073081C /* mgMapStringToDouble.cpp */; };
+		90C2DA5B14FF8F810073081C /* mgMapStringToDWord.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C2D9E014FF8F810073081C /* mgMapStringToDWord.cpp */; };
+		90C2DA5C14FF8F810073081C /* mgMapStringToPtr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C2D9E114FF8F810073081C /* mgMapStringToPtr.cpp */; };
+		90C2DA5D14FF8F810073081C /* mgMapStringToString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C2D9E214FF8F810073081C /* mgMapStringToString.cpp */; };
+		90C2DA5E14FF8F810073081C /* mgMapXYZToPtr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C2D9E314FF8F810073081C /* mgMapXYZToPtr.cpp */; };
+		90C2DA5F14FF8F810073081C /* mgMatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C2D9E414FF8F810073081C /* mgMatrix.cpp */; };
+		90C2DA6014FF8F810073081C /* mgOptionsFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C2D9E514FF8F810073081C /* mgOptionsFile.cpp */; };
+		90C2DA6114FF8F810073081C /* mgPtrArray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C2D9E614FF8F810073081C /* mgPtrArray.cpp */; };
+		90C2DA6214FF8F810073081C /* mgString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C2D9E714FF8F810073081C /* mgString.cpp */; };
+		90C2DA6314FF8F810073081C /* mgStringArray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C2D9E814FF8F810073081C /* mgStringArray.cpp */; };
+		90C2DA6414FF8F810073081C /* mgUtilErrorTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C2D9E914FF8F810073081C /* mgUtilErrorTable.cpp */; };
+		90C2DA6514FF8F810073081C /* mgXMLParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C2D9EB14FF8F810073081C /* mgXMLParser.cpp */; };
+		90C2DA6614FF8F810073081C /* mgXMLScanner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C2D9EC14FF8F810073081C /* mgXMLScanner.cpp */; };
+		90C2DA6714FF8F810073081C /* mgXMLTag.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C2D9ED14FF8F810073081C /* mgXMLTag.cpp */; };
+		90C2DA9114FF8FB20073081C /* mgImageUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C2DA6B14FF8FB20073081C /* mgImageUtil.h */; };
+		90C2DA9214FF8FB20073081C /* mgUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C2DA6C14FF8FB20073081C /* mgUtil.h */; };
+		90C2DA9414FF8FB20073081C /* mgOSEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C2DA6F14FF8FB20073081C /* mgOSEvent.h */; };
+		90C2DA9514FF8FB20073081C /* mgOSFileUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C2DA7014FF8FB20073081C /* mgOSFileUtil.h */; };
+		90C2DA9614FF8FB20073081C /* mgOSLinux.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C2DA7114FF8FB20073081C /* mgOSLinux.h */; };
+		90C2DA9714FF8FB20073081C /* mgOSLock.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C2DA7214FF8FB20073081C /* mgOSLock.h */; };
+		90C2DA9814FF8FB20073081C /* mgOSOSX.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C2DA7314FF8FB20073081C /* mgOSOSX.h */; };
+		90C2DA9914FF8FB20073081C /* mgOSThread.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C2DA7414FF8FB20073081C /* mgOSThread.h */; };
+		90C2DA9A14FF8FB20073081C /* mgOSTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C2DA7514FF8FB20073081C /* mgOSTimer.h */; };
+		90C2DA9C14FF8FB20073081C /* mgOSXMisc.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C2DA7714FF8FB20073081C /* mgOSXMisc.h */; };
+		90C2DA9D14FF8FB20073081C /* mgBlockPool.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C2DA7914FF8FB20073081C /* mgBlockPool.h */; };
+		90C2DA9E14FF8FB20073081C /* mgDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C2DA7A14FF8FB20073081C /* mgDebug.h */; };
+		90C2DA9F14FF8FB20073081C /* mgDebugMemory.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C2DA7B14FF8FB20073081C /* mgDebugMemory.h */; };
+		90C2DAA014FF8FB20073081C /* mgDWordArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C2DA7C14FF8FB20073081C /* mgDWordArray.h */; };
+		90C2DAA114FF8FB20073081C /* mgErrorMsg.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C2DA7D14FF8FB20073081C /* mgErrorMsg.h */; };
+		90C2DAA214FF8FB20073081C /* mgErrorTable.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C2DA7E14FF8FB20073081C /* mgErrorTable.h */; };
+		90C2DAA314FF8FB20073081C /* mgException.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C2DA7F14FF8FB20073081C /* mgException.h */; };
+		90C2DAA414FF8FB20073081C /* mgMapDWordToPtr.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C2DA8014FF8FB20073081C /* mgMapDWordToPtr.h */; };
+		90C2DAA514FF8FB20073081C /* mgMapPtrToPtr.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C2DA8114FF8FB20073081C /* mgMapPtrToPtr.h */; };
+		90C2DAA614FF8FB20073081C /* mgMapStringToDouble.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C2DA8214FF8FB20073081C /* mgMapStringToDouble.h */; };
+		90C2DAA714FF8FB20073081C /* mgMapStringToDWord.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C2DA8314FF8FB20073081C /* mgMapStringToDWord.h */; };
+		90C2DAA814FF8FB20073081C /* mgMapStringToPtr.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C2DA8414FF8FB20073081C /* mgMapStringToPtr.h */; };
+		90C2DAA914FF8FB20073081C /* mgMapStringToString.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C2DA8514FF8FB20073081C /* mgMapStringToString.h */; };
+		90C2DAAA14FF8FB20073081C /* mgMapXYZToPtr.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C2DA8614FF8FB20073081C /* mgMapXYZToPtr.h */; };
+		90C2DAAB14FF8FB20073081C /* mgMatrix.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C2DA8714FF8FB20073081C /* mgMatrix.h */; };
+		90C2DAAC14FF8FB20073081C /* mgOptionsFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C2DA8814FF8FB20073081C /* mgOptionsFile.h */; };
+		90C2DAAD14FF8FB20073081C /* mgPtrArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C2DA8914FF8FB20073081C /* mgPtrArray.h */; };
+		90C2DAAE14FF8FB20073081C /* mgString.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C2DA8A14FF8FB20073081C /* mgString.h */; };
+		90C2DAAF14FF8FB20073081C /* mgStringArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C2DA8B14FF8FB20073081C /* mgStringArray.h */; };
+		90C2DAB014FF8FB20073081C /* mgUtilErrorTable.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C2DA8C14FF8FB20073081C /* mgUtilErrorTable.h */; };
+		90C2DAB114FF8FB20073081C /* mgXMLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C2DA8E14FF8FB20073081C /* mgXMLParser.h */; };
+		90C2DAB214FF8FB20073081C /* mgXMLScanner.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C2DA8F14FF8FB20073081C /* mgXMLScanner.h */; };
+		90C2DAB314FF8FB20073081C /* mgXMLTag.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C2DA9014FF8FB20073081C /* mgXMLTag.h */; };
+		90C4E0601500EB400038EC82 /* mgMiscUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C4E05F1500EB400038EC82 /* mgMiscUtil.cpp */; };
+		90CA97221518E63D002A8A1F /* mgBezier.h in Headers */ = {isa = PBXBuildFile; fileRef = 90CA97201518E63D002A8A1F /* mgBezier.h */; };
+		90CA97231518E63D002A8A1F /* mgSimplexNoise.h in Headers */ = {isa = PBXBuildFile; fileRef = 90CA97211518E63D002A8A1F /* mgSimplexNoise.h */; };
+		90CA97281518E649002A8A1F /* mgBezier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90CA97261518E649002A8A1F /* mgBezier.cpp */; };
+		90CA97291518E649002A8A1F /* mgSimplexNoise.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90CA97271518E649002A8A1F /* mgSimplexNoise.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		908C008C1505F6D900F0BFF2 /* mgAudio.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgAudio.cpp; sourceTree = "<group>"; };
+		908C008D1505F6D900F0BFF2 /* mgAudioAL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgAudioAL.cpp; sourceTree = "<group>"; };
+		908C008E1505F6D900F0BFF2 /* mgAudioAL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgAudioAL.h; sourceTree = "<group>"; };
+		908C008F1505F6D900F0BFF2 /* mgAudioWin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgAudioWin.cpp; sourceTree = "<group>"; };
+		908C00901505F6D900F0BFF2 /* mgAudioWin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgAudioWin.h; sourceTree = "<group>"; };
+		908C00911505F6D900F0BFF2 /* mgVorbisRead.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgVorbisRead.cpp; sourceTree = "<group>"; };
+		908C00921505F6D900F0BFF2 /* mgVorbisRead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgVorbisRead.h; sourceTree = "<group>"; };
+		90B23A3D15D0049100A39C00 /* mgOSXSendLog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgOSXSendLog.cpp; sourceTree = "<group>"; };
+		90C2D96114FF8F390073081C /* libmgUtil.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libmgUtil.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		90C2D96D14FF8F810073081C /* mgDiffuse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgDiffuse.cpp; sourceTree = "<group>"; };
+		90C2D96E14FF8F810073081C /* mgDiffuse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgDiffuse.h; sourceTree = "<group>"; };
+		90C2D96F14FF8F810073081C /* mgGIF3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgGIF3.cpp; sourceTree = "<group>"; };
+		90C2D97014FF8F810073081C /* mgGIF3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgGIF3.h; sourceTree = "<group>"; };
+		90C2D97114FF8F810073081C /* mgImageIO.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgImageIO.cpp; sourceTree = "<group>"; };
+		90C2D97214FF8F810073081C /* mgImageIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgImageIO.h; sourceTree = "<group>"; };
+		90C2D97314FF8F810073081C /* mgImageUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgImageUtil.cpp; sourceTree = "<group>"; };
+		90C2D97414FF8F810073081C /* mgLZW.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgLZW.cpp; sourceTree = "<group>"; };
+		90C2D97514FF8F810073081C /* mgLZW.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgLZW.h; sourceTree = "<group>"; };
+		90C2D9BF14FF8F810073081C /* mgOSCreate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgOSCreate.cpp; sourceTree = "<group>"; };
+		90C2D9C114FF8F810073081C /* mgOSXEvent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgOSXEvent.cpp; sourceTree = "<group>"; };
+		90C2D9C214FF8F810073081C /* mgOSXEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgOSXEvent.h; sourceTree = "<group>"; };
+		90C2D9C314FF8F810073081C /* mgOSXFileUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgOSXFileUtil.cpp; sourceTree = "<group>"; };
+		90C2D9C414FF8F810073081C /* mgOSXLock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgOSXLock.cpp; sourceTree = "<group>"; };
+		90C2D9C514FF8F810073081C /* mgOSXLock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgOSXLock.h; sourceTree = "<group>"; };
+		90C2D9C614FF8F810073081C /* mgOSXMisc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgOSXMisc.cpp; sourceTree = "<group>"; };
+		90C2D9C714FF8F810073081C /* mgOSXThread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgOSXThread.cpp; sourceTree = "<group>"; };
+		90C2D9C814FF8F810073081C /* mgOSXThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgOSXThread.h; sourceTree = "<group>"; };
+		90C2D9C914FF8F810073081C /* mgOSXTimer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgOSXTimer.cpp; sourceTree = "<group>"; };
+		90C2D9D314FF8F810073081C /* stdafx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = stdafx.cpp; sourceTree = "<group>"; };
+		90C2D9D414FF8F810073081C /* stdafx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stdafx.h; sourceTree = "<group>"; };
+		90C2D9D614FF8F810073081C /* mgBlockPool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgBlockPool.cpp; sourceTree = "<group>"; };
+		90C2D9D714FF8F810073081C /* mgDebug.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgDebug.cpp; sourceTree = "<group>"; };
+		90C2D9D814FF8F810073081C /* mgDebugMemory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgDebugMemory.cpp; sourceTree = "<group>"; };
+		90C2D9D914FF8F810073081C /* mgDWordArray.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgDWordArray.cpp; sourceTree = "<group>"; };
+		90C2D9DA14FF8F810073081C /* mgErrorMsg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgErrorMsg.cpp; sourceTree = "<group>"; };
+		90C2D9DB14FF8F810073081C /* mgErrorTable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgErrorTable.cpp; sourceTree = "<group>"; };
+		90C2D9DC14FF8F810073081C /* mgException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgException.cpp; sourceTree = "<group>"; };
+		90C2D9DD14FF8F810073081C /* mgMapDWordToPtr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgMapDWordToPtr.cpp; sourceTree = "<group>"; };
+		90C2D9DE14FF8F810073081C /* mgMapPtrToPtr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgMapPtrToPtr.cpp; sourceTree = "<group>"; };
+		90C2D9DF14FF8F810073081C /* mgMapStringToDouble.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgMapStringToDouble.cpp; sourceTree = "<group>"; };
+		90C2D9E014FF8F810073081C /* mgMapStringToDWord.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgMapStringToDWord.cpp; sourceTree = "<group>"; };
+		90C2D9E114FF8F810073081C /* mgMapStringToPtr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgMapStringToPtr.cpp; sourceTree = "<group>"; };
+		90C2D9E214FF8F810073081C /* mgMapStringToString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgMapStringToString.cpp; sourceTree = "<group>"; };
+		90C2D9E314FF8F810073081C /* mgMapXYZToPtr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgMapXYZToPtr.cpp; sourceTree = "<group>"; };
+		90C2D9E414FF8F810073081C /* mgMatrix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgMatrix.cpp; sourceTree = "<group>"; };
+		90C2D9E514FF8F810073081C /* mgOptionsFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgOptionsFile.cpp; sourceTree = "<group>"; };
+		90C2D9E614FF8F810073081C /* mgPtrArray.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgPtrArray.cpp; sourceTree = "<group>"; };
+		90C2D9E714FF8F810073081C /* mgString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgString.cpp; sourceTree = "<group>"; };
+		90C2D9E814FF8F810073081C /* mgStringArray.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgStringArray.cpp; sourceTree = "<group>"; };
+		90C2D9E914FF8F810073081C /* mgUtilErrorTable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgUtilErrorTable.cpp; sourceTree = "<group>"; };
+		90C2D9EB14FF8F810073081C /* mgXMLParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgXMLParser.cpp; sourceTree = "<group>"; };
+		90C2D9EC14FF8F810073081C /* mgXMLScanner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgXMLScanner.cpp; sourceTree = "<group>"; };
+		90C2D9ED14FF8F810073081C /* mgXMLTag.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgXMLTag.cpp; sourceTree = "<group>"; };
+		90C2DA6B14FF8FB20073081C /* mgImageUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgImageUtil.h; sourceTree = "<group>"; };
+		90C2DA6C14FF8FB20073081C /* mgUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgUtil.h; sourceTree = "<group>"; };
+		90C2DA6F14FF8FB20073081C /* mgOSEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgOSEvent.h; sourceTree = "<group>"; };
+		90C2DA7014FF8FB20073081C /* mgOSFileUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgOSFileUtil.h; sourceTree = "<group>"; };
+		90C2DA7114FF8FB20073081C /* mgOSLinux.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgOSLinux.h; sourceTree = "<group>"; };
+		90C2DA7214FF8FB20073081C /* mgOSLock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgOSLock.h; sourceTree = "<group>"; };
+		90C2DA7314FF8FB20073081C /* mgOSOSX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgOSOSX.h; sourceTree = "<group>"; };
+		90C2DA7414FF8FB20073081C /* mgOSThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgOSThread.h; sourceTree = "<group>"; };
+		90C2DA7514FF8FB20073081C /* mgOSTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgOSTimer.h; sourceTree = "<group>"; };
+		90C2DA7714FF8FB20073081C /* mgOSXMisc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgOSXMisc.h; sourceTree = "<group>"; };
+		90C2DA7914FF8FB20073081C /* mgBlockPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgBlockPool.h; sourceTree = "<group>"; };
+		90C2DA7A14FF8FB20073081C /* mgDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgDebug.h; sourceTree = "<group>"; };
+		90C2DA7B14FF8FB20073081C /* mgDebugMemory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgDebugMemory.h; sourceTree = "<group>"; };
+		90C2DA7C14FF8FB20073081C /* mgDWordArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgDWordArray.h; sourceTree = "<group>"; };
+		90C2DA7D14FF8FB20073081C /* mgErrorMsg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgErrorMsg.h; sourceTree = "<group>"; };
+		90C2DA7E14FF8FB20073081C /* mgErrorTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgErrorTable.h; sourceTree = "<group>"; };
+		90C2DA7F14FF8FB20073081C /* mgException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgException.h; sourceTree = "<group>"; };
+		90C2DA8014FF8FB20073081C /* mgMapDWordToPtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgMapDWordToPtr.h; sourceTree = "<group>"; };
+		90C2DA8114FF8FB20073081C /* mgMapPtrToPtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgMapPtrToPtr.h; sourceTree = "<group>"; };
+		90C2DA8214FF8FB20073081C /* mgMapStringToDouble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgMapStringToDouble.h; sourceTree = "<group>"; };
+		90C2DA8314FF8FB20073081C /* mgMapStringToDWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgMapStringToDWord.h; sourceTree = "<group>"; };
+		90C2DA8414FF8FB20073081C /* mgMapStringToPtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgMapStringToPtr.h; sourceTree = "<group>"; };
+		90C2DA8514FF8FB20073081C /* mgMapStringToString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgMapStringToString.h; sourceTree = "<group>"; };
+		90C2DA8614FF8FB20073081C /* mgMapXYZToPtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgMapXYZToPtr.h; sourceTree = "<group>"; };
+		90C2DA8714FF8FB20073081C /* mgMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgMatrix.h; sourceTree = "<group>"; };
+		90C2DA8814FF8FB20073081C /* mgOptionsFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgOptionsFile.h; sourceTree = "<group>"; };
+		90C2DA8914FF8FB20073081C /* mgPtrArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgPtrArray.h; sourceTree = "<group>"; };
+		90C2DA8A14FF8FB20073081C /* mgString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgString.h; sourceTree = "<group>"; };
+		90C2DA8B14FF8FB20073081C /* mgStringArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgStringArray.h; sourceTree = "<group>"; };
+		90C2DA8C14FF8FB20073081C /* mgUtilErrorTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgUtilErrorTable.h; sourceTree = "<group>"; };
+		90C2DA8E14FF8FB20073081C /* mgXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgXMLParser.h; sourceTree = "<group>"; };
+		90C2DA8F14FF8FB20073081C /* mgXMLScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgXMLScanner.h; sourceTree = "<group>"; };
+		90C2DA9014FF8FB20073081C /* mgXMLTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgXMLTag.h; sourceTree = "<group>"; };
+		90C4E05F1500EB400038EC82 /* mgMiscUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgMiscUtil.cpp; sourceTree = "<group>"; };
+		90CA97201518E63D002A8A1F /* mgBezier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgBezier.h; sourceTree = "<group>"; };
+		90CA97211518E63D002A8A1F /* mgSimplexNoise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgSimplexNoise.h; sourceTree = "<group>"; };
+		90CA97261518E649002A8A1F /* mgBezier.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgBezier.cpp; sourceTree = "<group>"; };
+		90CA97271518E649002A8A1F /* mgSimplexNoise.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgSimplexNoise.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		90C2D95E14FF8F390073081C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		908C008B1505F6D900F0BFF2 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				908C008C1505F6D900F0BFF2 /* mgAudio.cpp */,
+				908C008D1505F6D900F0BFF2 /* mgAudioAL.cpp */,
+				908C008E1505F6D900F0BFF2 /* mgAudioAL.h */,
+				908C008F1505F6D900F0BFF2 /* mgAudioWin.cpp */,
+				908C00901505F6D900F0BFF2 /* mgAudioWin.h */,
+				908C00911505F6D900F0BFF2 /* mgVorbisRead.cpp */,
+				908C00921505F6D900F0BFF2 /* mgVorbisRead.h */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		90C2D95614FF8F380073081C = {
+			isa = PBXGroup;
+			children = (
+				90C2DA6914FF8FB20073081C /* Include */,
+				90C2D96B14FF8F810073081C /* Source */,
+				90C2D96214FF8F390073081C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		90C2D96214FF8F390073081C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				90C2D96114FF8F390073081C /* libmgUtil.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		90C2D96B14FF8F810073081C /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				90CA97251518E649002A8A1F /* GraphicsUtil */,
+				908C008B1505F6D900F0BFF2 /* Audio */,
+				90C2D96C14FF8F810073081C /* ImageUtil */,
+				90C2D9B414FF8F810073081C /* OS */,
+				90C2D9D314FF8F810073081C /* stdafx.cpp */,
+				90C2D9D414FF8F810073081C /* stdafx.h */,
+				90C2D9D514FF8F810073081C /* Util */,
+				90C2D9EA14FF8F810073081C /* XMLParser */,
+			);
+			name = Source;
+			path = ../Source;
+			sourceTree = "<group>";
+		};
+		90C2D96C14FF8F810073081C /* ImageUtil */ = {
+			isa = PBXGroup;
+			children = (
+				90C2D96D14FF8F810073081C /* mgDiffuse.cpp */,
+				90C2D96E14FF8F810073081C /* mgDiffuse.h */,
+				90C2D96F14FF8F810073081C /* mgGIF3.cpp */,
+				90C2D97014FF8F810073081C /* mgGIF3.h */,
+				90C2D97114FF8F810073081C /* mgImageIO.cpp */,
+				90C2D97214FF8F810073081C /* mgImageIO.h */,
+				90C2D97314FF8F810073081C /* mgImageUtil.cpp */,
+				90C2D97414FF8F810073081C /* mgLZW.cpp */,
+				90C2D97514FF8F810073081C /* mgLZW.h */,
+			);
+			path = ImageUtil;
+			sourceTree = "<group>";
+		};
+		90C2D9B414FF8F810073081C /* OS */ = {
+			isa = PBXGroup;
+			children = (
+				90C4E05F1500EB400038EC82 /* mgMiscUtil.cpp */,
+				90C2D9BF14FF8F810073081C /* mgOSCreate.cpp */,
+				90C2D9C014FF8F810073081C /* OSX */,
+			);
+			path = OS;
+			sourceTree = "<group>";
+		};
+		90C2D9C014FF8F810073081C /* OSX */ = {
+			isa = PBXGroup;
+			children = (
+				90C2D9C114FF8F810073081C /* mgOSXEvent.cpp */,
+				90C2D9C214FF8F810073081C /* mgOSXEvent.h */,
+				90B23A3D15D0049100A39C00 /* mgOSXSendLog.cpp */,
+				90C2D9C314FF8F810073081C /* mgOSXFileUtil.cpp */,
+				90C2D9C414FF8F810073081C /* mgOSXLock.cpp */,
+				90C2D9C514FF8F810073081C /* mgOSXLock.h */,
+				90C2D9C614FF8F810073081C /* mgOSXMisc.cpp */,
+				90C2D9C714FF8F810073081C /* mgOSXThread.cpp */,
+				90C2D9C814FF8F810073081C /* mgOSXThread.h */,
+				90C2D9C914FF8F810073081C /* mgOSXTimer.cpp */,
+			);
+			path = OSX;
+			sourceTree = "<group>";
+		};
+		90C2D9D514FF8F810073081C /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				90C2D9D614FF8F810073081C /* mgBlockPool.cpp */,
+				90C2D9D714FF8F810073081C /* mgDebug.cpp */,
+				90C2D9D814FF8F810073081C /* mgDebugMemory.cpp */,
+				90C2D9D914FF8F810073081C /* mgDWordArray.cpp */,
+				90C2D9DA14FF8F810073081C /* mgErrorMsg.cpp */,
+				90C2D9DB14FF8F810073081C /* mgErrorTable.cpp */,
+				90C2D9DC14FF8F810073081C /* mgException.cpp */,
+				90C2D9DD14FF8F810073081C /* mgMapDWordToPtr.cpp */,
+				90C2D9DE14FF8F810073081C /* mgMapPtrToPtr.cpp */,
+				90C2D9DF14FF8F810073081C /* mgMapStringToDouble.cpp */,
+				90C2D9E014FF8F810073081C /* mgMapStringToDWord.cpp */,
+				90C2D9E114FF8F810073081C /* mgMapStringToPtr.cpp */,
+				90C2D9E214FF8F810073081C /* mgMapStringToString.cpp */,
+				90C2D9E314FF8F810073081C /* mgMapXYZToPtr.cpp */,
+				90C2D9E414FF8F810073081C /* mgMatrix.cpp */,
+				90C2D9E514FF8F810073081C /* mgOptionsFile.cpp */,
+				90C2D9E614FF8F810073081C /* mgPtrArray.cpp */,
+				90C2D9E714FF8F810073081C /* mgString.cpp */,
+				90C2D9E814FF8F810073081C /* mgStringArray.cpp */,
+				90C2D9E914FF8F810073081C /* mgUtilErrorTable.cpp */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		90C2D9EA14FF8F810073081C /* XMLParser */ = {
+			isa = PBXGroup;
+			children = (
+				90C2D9EB14FF8F810073081C /* mgXMLParser.cpp */,
+				90C2D9EC14FF8F810073081C /* mgXMLScanner.cpp */,
+				90C2D9ED14FF8F810073081C /* mgXMLTag.cpp */,
+			);
+			path = XMLParser;
+			sourceTree = "<group>";
+		};
+		90C2DA6914FF8FB20073081C /* Include */ = {
+			isa = PBXGroup;
+			children = (
+				90CA971F1518E63D002A8A1F /* GraphicsUtil */,
+				90C2DA6A14FF8FB20073081C /* ImageUtil */,
+				90C2DA6C14FF8FB20073081C /* mgUtil.h */,
+				90C2DA6D14FF8FB20073081C /* OS */,
+				90C2DA7814FF8FB20073081C /* Util */,
+				90C2DA8D14FF8FB20073081C /* XMLParser */,
+			);
+			name = Include;
+			path = ../Include;
+			sourceTree = "<group>";
+		};
+		90C2DA6A14FF8FB20073081C /* ImageUtil */ = {
+			isa = PBXGroup;
+			children = (
+				90C2DA6B14FF8FB20073081C /* mgImageUtil.h */,
+			);
+			path = ImageUtil;
+			sourceTree = "<group>";
+		};
+		90C2DA6D14FF8FB20073081C /* OS */ = {
+			isa = PBXGroup;
+			children = (
+				90C2DA6F14FF8FB20073081C /* mgOSEvent.h */,
+				90C2DA7014FF8FB20073081C /* mgOSFileUtil.h */,
+				90C2DA7114FF8FB20073081C /* mgOSLinux.h */,
+				90C2DA7214FF8FB20073081C /* mgOSLock.h */,
+				90C2DA7314FF8FB20073081C /* mgOSOSX.h */,
+				90C2DA7414FF8FB20073081C /* mgOSThread.h */,
+				90C2DA7514FF8FB20073081C /* mgOSTimer.h */,
+				90C2DA7714FF8FB20073081C /* mgOSXMisc.h */,
+			);
+			path = OS;
+			sourceTree = "<group>";
+		};
+		90C2DA7814FF8FB20073081C /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				90C2DA7914FF8FB20073081C /* mgBlockPool.h */,
+				90C2DA7A14FF8FB20073081C /* mgDebug.h */,
+				90C2DA7B14FF8FB20073081C /* mgDebugMemory.h */,
+				90C2DA7C14FF8FB20073081C /* mgDWordArray.h */,
+				90C2DA7D14FF8FB20073081C /* mgErrorMsg.h */,
+				90C2DA7E14FF8FB20073081C /* mgErrorTable.h */,
+				90C2DA7F14FF8FB20073081C /* mgException.h */,
+				90C2DA8014FF8FB20073081C /* mgMapDWordToPtr.h */,
+				90C2DA8114FF8FB20073081C /* mgMapPtrToPtr.h */,
+				90C2DA8214FF8FB20073081C /* mgMapStringToDouble.h */,
+				90C2DA8314FF8FB20073081C /* mgMapStringToDWord.h */,
+				90C2DA8414FF8FB20073081C /* mgMapStringToPtr.h */,
+				90C2DA8514FF8FB20073081C /* mgMapStringToString.h */,
+				90C2DA8614FF8FB20073081C /* mgMapXYZToPtr.h */,
+				90C2DA8714FF8FB20073081C /* mgMatrix.h */,
+				90C2DA8814FF8FB20073081C /* mgOptionsFile.h */,
+				90C2DA8914FF8FB20073081C /* mgPtrArray.h */,
+				90C2DA8A14FF8FB20073081C /* mgString.h */,
+				90C2DA8B14FF8FB20073081C /* mgStringArray.h */,
+				90C2DA8C14FF8FB20073081C /* mgUtilErrorTable.h */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		90C2DA8D14FF8FB20073081C /* XMLParser */ = {
+			isa = PBXGroup;
+			children = (
+				90C2DA8E14FF8FB20073081C /* mgXMLParser.h */,
+				90C2DA8F14FF8FB20073081C /* mgXMLScanner.h */,
+				90C2DA9014FF8FB20073081C /* mgXMLTag.h */,
+			);
+			path = XMLParser;
+			sourceTree = "<group>";
+		};
+		90CA971F1518E63D002A8A1F /* GraphicsUtil */ = {
+			isa = PBXGroup;
+			children = (
+				90CA97201518E63D002A8A1F /* mgBezier.h */,
+				90CA97211518E63D002A8A1F /* mgSimplexNoise.h */,
+			);
+			path = GraphicsUtil;
+			sourceTree = "<group>";
+		};
+		90CA97251518E649002A8A1F /* GraphicsUtil */ = {
+			isa = PBXGroup;
+			children = (
+				90CA97261518E649002A8A1F /* mgBezier.cpp */,
+				90CA97271518E649002A8A1F /* mgSimplexNoise.cpp */,
+			);
+			path = GraphicsUtil;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		90C2D95F14FF8F390073081C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90C2D9EF14FF8F810073081C /* mgDiffuse.h in Headers */,
+				90C2D9F114FF8F810073081C /* mgGIF3.h in Headers */,
+				90C2D9F314FF8F810073081C /* mgImageIO.h in Headers */,
+				90C2D9F614FF8F810073081C /* mgLZW.h in Headers */,
+				90C2DA3F14FF8F810073081C /* mgOSXEvent.h in Headers */,
+				90C2DA4214FF8F810073081C /* mgOSXLock.h in Headers */,
+				90C2DA4514FF8F810073081C /* mgOSXThread.h in Headers */,
+				90C2DA5014FF8F810073081C /* stdafx.h in Headers */,
+				90C2DA9114FF8FB20073081C /* mgImageUtil.h in Headers */,
+				90C2DA9214FF8FB20073081C /* mgUtil.h in Headers */,
+				90C2DA9414FF8FB20073081C /* mgOSEvent.h in Headers */,
+				90C2DA9514FF8FB20073081C /* mgOSFileUtil.h in Headers */,
+				90C2DA9614FF8FB20073081C /* mgOSLinux.h in Headers */,
+				90C2DA9714FF8FB20073081C /* mgOSLock.h in Headers */,
+				90C2DA9814FF8FB20073081C /* mgOSOSX.h in Headers */,
+				90C2DA9914FF8FB20073081C /* mgOSThread.h in Headers */,
+				90C2DA9A14FF8FB20073081C /* mgOSTimer.h in Headers */,
+				90C2DA9C14FF8FB20073081C /* mgOSXMisc.h in Headers */,
+				90C2DA9D14FF8FB20073081C /* mgBlockPool.h in Headers */,
+				90C2DA9E14FF8FB20073081C /* mgDebug.h in Headers */,
+				90C2DA9F14FF8FB20073081C /* mgDebugMemory.h in Headers */,
+				90C2DAA014FF8FB20073081C /* mgDWordArray.h in Headers */,
+				90C2DAA114FF8FB20073081C /* mgErrorMsg.h in Headers */,
+				90C2DAA214FF8FB20073081C /* mgErrorTable.h in Headers */,
+				90C2DAA314FF8FB20073081C /* mgException.h in Headers */,
+				90C2DAA414FF8FB20073081C /* mgMapDWordToPtr.h in Headers */,
+				90C2DAA514FF8FB20073081C /* mgMapPtrToPtr.h in Headers */,
+				90C2DAA614FF8FB20073081C /* mgMapStringToDouble.h in Headers */,
+				90C2DAA714FF8FB20073081C /* mgMapStringToDWord.h in Headers */,
+				90C2DAA814FF8FB20073081C /* mgMapStringToPtr.h in Headers */,
+				90C2DAA914FF8FB20073081C /* mgMapStringToString.h in Headers */,
+				90C2DAAA14FF8FB20073081C /* mgMapXYZToPtr.h in Headers */,
+				90C2DAAB14FF8FB20073081C /* mgMatrix.h in Headers */,
+				90C2DAAC14FF8FB20073081C /* mgOptionsFile.h in Headers */,
+				90C2DAAD14FF8FB20073081C /* mgPtrArray.h in Headers */,
+				90C2DAAE14FF8FB20073081C /* mgString.h in Headers */,
+				90C2DAAF14FF8FB20073081C /* mgStringArray.h in Headers */,
+				90C2DAB014FF8FB20073081C /* mgUtilErrorTable.h in Headers */,
+				90C2DAB114FF8FB20073081C /* mgXMLParser.h in Headers */,
+				90C2DAB214FF8FB20073081C /* mgXMLScanner.h in Headers */,
+				90C2DAB314FF8FB20073081C /* mgXMLTag.h in Headers */,
+				908C00951505F6D900F0BFF2 /* mgAudioAL.h in Headers */,
+				908C00971505F6D900F0BFF2 /* mgAudioWin.h in Headers */,
+				908C00991505F6D900F0BFF2 /* mgVorbisRead.h in Headers */,
+				90CA97221518E63D002A8A1F /* mgBezier.h in Headers */,
+				90CA97231518E63D002A8A1F /* mgSimplexNoise.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		90C2D96014FF8F390073081C /* mgUtil */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 90C2D96514FF8F390073081C /* Build configuration list for PBXNativeTarget "mgUtil" */;
+			buildPhases = (
+				90C2D95D14FF8F390073081C /* Sources */,
+				90C2D95E14FF8F390073081C /* Frameworks */,
+				90C2D95F14FF8F390073081C /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mgUtil;
+			productName = mgUtil;
+			productReference = 90C2D96114FF8F390073081C /* libmgUtil.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		90C2D95814FF8F380073081C /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 90C2D95B14FF8F380073081C /* Build configuration list for PBXProject "mgUtil" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 90C2D95614FF8F380073081C;
+			productRefGroup = 90C2D96214FF8F390073081C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				90C2D96014FF8F390073081C /* mgUtil */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		90C2D95D14FF8F390073081C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90C2D9EE14FF8F810073081C /* mgDiffuse.cpp in Sources */,
+				90C2D9F014FF8F810073081C /* mgGIF3.cpp in Sources */,
+				90C2D9F214FF8F810073081C /* mgImageIO.cpp in Sources */,
+				90C2D9F414FF8F810073081C /* mgImageUtil.cpp in Sources */,
+				90C2D9F514FF8F810073081C /* mgLZW.cpp in Sources */,
+				90C2DA3D14FF8F810073081C /* mgOSCreate.cpp in Sources */,
+				90C2DA3E14FF8F810073081C /* mgOSXEvent.cpp in Sources */,
+				90C2DA4014FF8F810073081C /* mgOSXFileUtil.cpp in Sources */,
+				90C2DA4114FF8F810073081C /* mgOSXLock.cpp in Sources */,
+				90C2DA4314FF8F810073081C /* mgOSXMisc.cpp in Sources */,
+				90C2DA4414FF8F810073081C /* mgOSXThread.cpp in Sources */,
+				90C2DA4614FF8F810073081C /* mgOSXTimer.cpp in Sources */,
+				90C2DA4F14FF8F810073081C /* stdafx.cpp in Sources */,
+				90C2DA5114FF8F810073081C /* mgBlockPool.cpp in Sources */,
+				90C2DA5214FF8F810073081C /* mgDebug.cpp in Sources */,
+				90C2DA5314FF8F810073081C /* mgDebugMemory.cpp in Sources */,
+				90C2DA5414FF8F810073081C /* mgDWordArray.cpp in Sources */,
+				90C2DA5514FF8F810073081C /* mgErrorMsg.cpp in Sources */,
+				90C2DA5614FF8F810073081C /* mgErrorTable.cpp in Sources */,
+				90C2DA5714FF8F810073081C /* mgException.cpp in Sources */,
+				90C2DA5814FF8F810073081C /* mgMapDWordToPtr.cpp in Sources */,
+				90C2DA5914FF8F810073081C /* mgMapPtrToPtr.cpp in Sources */,
+				90C2DA5A14FF8F810073081C /* mgMapStringToDouble.cpp in Sources */,
+				90C2DA5B14FF8F810073081C /* mgMapStringToDWord.cpp in Sources */,
+				90C2DA5C14FF8F810073081C /* mgMapStringToPtr.cpp in Sources */,
+				90C2DA5D14FF8F810073081C /* mgMapStringToString.cpp in Sources */,
+				90C2DA5E14FF8F810073081C /* mgMapXYZToPtr.cpp in Sources */,
+				90C2DA5F14FF8F810073081C /* mgMatrix.cpp in Sources */,
+				90C2DA6014FF8F810073081C /* mgOptionsFile.cpp in Sources */,
+				90C2DA6114FF8F810073081C /* mgPtrArray.cpp in Sources */,
+				90C2DA6214FF8F810073081C /* mgString.cpp in Sources */,
+				90C2DA6314FF8F810073081C /* mgStringArray.cpp in Sources */,
+				90C2DA6414FF8F810073081C /* mgUtilErrorTable.cpp in Sources */,
+				90C2DA6514FF8F810073081C /* mgXMLParser.cpp in Sources */,
+				90C2DA6614FF8F810073081C /* mgXMLScanner.cpp in Sources */,
+				90C2DA6714FF8F810073081C /* mgXMLTag.cpp in Sources */,
+				90C4E0601500EB400038EC82 /* mgMiscUtil.cpp in Sources */,
+				908C00931505F6D900F0BFF2 /* mgAudio.cpp in Sources */,
+				908C00941505F6D900F0BFF2 /* mgAudioAL.cpp in Sources */,
+				908C00961505F6D900F0BFF2 /* mgAudioWin.cpp in Sources */,
+				908C00981505F6D900F0BFF2 /* mgVorbisRead.cpp in Sources */,
+				90CA97281518E649002A8A1F /* mgBezier.cpp in Sources */,
+				90CA97291518E649002A8A1F /* mgSimplexNoise.cpp in Sources */,
+				90B23A3E15D0049100A39C00 /* mgOSXSendLog.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		90C2D96314FF8F390073081C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../Source,
+					../Include,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		90C2D96414FF8F390073081C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../Source,
+					../Include,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		90C2D96614FF8F390073081C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = ../../BuildOSX/Debug;
+				EXECUTABLE_PREFIX = lib;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				HEADER_SEARCH_PATHS = (
+					../Source,
+					../Include,
+					../../,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SHARED_PRECOMPS_DIR = build;
+			};
+			name = Debug;
+		};
+		90C2D96714FF8F390073081C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = ../../BuildOSX/Release;
+				EXECUTABLE_PREFIX = lib;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				HEADER_SEARCH_PATHS = (
+					../Source,
+					../Include,
+					../../,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SHARED_PRECOMPS_DIR = build;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		90C2D95B14FF8F380073081C /* Build configuration list for PBXProject "mgUtil" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90C2D96314FF8F390073081C /* Debug */,
+				90C2D96414FF8F390073081C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		90C2D96514FF8F390073081C /* Build configuration list for PBXNativeTarget "mgUtil" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90C2D96614FF8F390073081C /* Debug */,
+				90C2D96714FF8F390073081C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 90C2D95814FF8F380073081C /* Project object */;
+}

@@ -1,0 +1,19 @@
+<form>
+<h1>Help</h1>
+<p>
+Hit <b>F1</b> to toggle help.<br/>
+Hit <b>`</b> or <b>~</b> to toggle console.<br/>
+</p>
+<p>
+Use the controls at right, and see their actions logged in the console.
+</p>
+<p>
+For the map:
+<ul>
+<li>Use the arrow keys to turn and move.</li>
+<li>Use PageUp to zoom in, PageDown to zoom out.</li>
+<li>Click with the mouse to recenter the map.</li>
+<li>Drag with the mouse to move the map.</li>
+</ul>
+</p>
+</form>

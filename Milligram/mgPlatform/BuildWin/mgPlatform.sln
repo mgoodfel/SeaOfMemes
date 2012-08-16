@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mgPlatform", "mgPlatform.vcxproj", "{FDF8FD8D-1F58-4A6A-B30B-5D18AC13DB3F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		DebugMemory|Win32 = DebugMemory|Win32
+		Distrib|Win32 = Distrib|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FDF8FD8D-1F58-4A6A-B30B-5D18AC13DB3F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FDF8FD8D-1F58-4A6A-B30B-5D18AC13DB3F}.Debug|Win32.Build.0 = Debug|Win32
+		{FDF8FD8D-1F58-4A6A-B30B-5D18AC13DB3F}.DebugMemory|Win32.ActiveCfg = DebugMemory|Win32
+		{FDF8FD8D-1F58-4A6A-B30B-5D18AC13DB3F}.DebugMemory|Win32.Build.0 = DebugMemory|Win32
+		{FDF8FD8D-1F58-4A6A-B30B-5D18AC13DB3F}.Distrib|Win32.ActiveCfg = Distrib|Win32
+		{FDF8FD8D-1F58-4A6A-B30B-5D18AC13DB3F}.Distrib|Win32.Build.0 = Distrib|Win32
+		{FDF8FD8D-1F58-4A6A-B30B-5D18AC13DB3F}.Release|Win32.ActiveCfg = Release|Win32
+		{FDF8FD8D-1F58-4A6A-B30B-5D18AC13DB3F}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

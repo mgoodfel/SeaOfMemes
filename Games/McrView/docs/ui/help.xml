@@ -1,0 +1,25 @@
+<form>
+<p>
+F1 to remove help.<br/>
+ESC to toggle arrow cursor/cross cursor.
+</p>
+<p>
+N - toggle day/night.<br/>
+F - toggle fog.<br/>
++/= - move faster.<br/>
+- - move slower.
+</p>
+<p>
+W,S,A,D - move forward, back, left, right.<br/>
+up arrow, down arrow - move forward, back.<br/>
+left arrow, right arrow - turn left/right.
+</p>
+<p>
+PageUp/PageDown - move up, down.<br/>
+Space, X - move up, down.
+</p>
+<p>
+Cross cursor: mouse turns eye.<br/>
+Arrow cursor: left or right drag turns eye.
+</p>
+</form>

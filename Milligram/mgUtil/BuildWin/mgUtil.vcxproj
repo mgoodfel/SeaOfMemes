@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="DebugMemory|Win32">
+      <Configuration>DebugMemory</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Distrib|Win32">
+      <Configuration>Distrib</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Include\Audio\mgAudio.h" />
+    <ClInclude Include="..\Include\GraphicsUtil\mgBezier.h" />
+    <ClInclude Include="..\Include\GraphicsUtil\mgSimplexNoise.h" />
+    <ClInclude Include="..\Include\ImageUtil\mgImageUtil.h" />
+    <ClInclude Include="..\Include\mgUtil.h" />
+    <ClInclude Include="..\Include\OS\mgLinuxMisc.h" />
+    <ClInclude Include="..\Include\OS\mgMiscUtil.h" />
+    <ClInclude Include="..\Include\OS\mgOSEvent.h" />
+    <ClInclude Include="..\Include\OS\mgOSFileUtil.h" />
+    <ClInclude Include="..\Include\OS\mgOSLinux.h" />
+    <ClInclude Include="..\Include\OS\mgOSLock.h" />
+    <ClInclude Include="..\Include\OS\mgOSOSX.h" />
+    <ClInclude Include="..\Include\OS\mgOSThread.h" />
+    <ClInclude Include="..\Include\OS\mgOSTimer.h" />
+    <ClInclude Include="..\Include\OS\mgOSWindows.h" />
+    <ClInclude Include="..\Include\OS\mgOSXMisc.h" />
+    <ClInclude Include="..\Include\Util\mgBlockPool.h" />
+    <ClInclude Include="..\Include\Util\mgDebug.h" />
+    <ClInclude Include="..\Include\Util\mgDebugMemory.h" />
+    <ClInclude Include="..\Include\Util\mgDWordArray.h" />
+    <ClInclude Include="..\Include\Util\mgErrorMsg.h" />
+    <ClInclude Include="..\Include\Util\mgErrorTable.h" />
+    <ClInclude Include="..\Include\Util\mgException.h" />
+    <ClInclude Include="..\Include\Util\mgMapDWordToPtr.h" />
+    <ClInclude Include="..\Include\Util\mgMapPtrToPtr.h" />
+    <ClInclude Include="..\Include\Util\mgMapStringToDouble.h" />
+    <ClInclude Include="..\Include\Util\mgMapStringToDWord.h" />
+    <ClInclude Include="..\Include\Util\mgMapStringToPtr.h" />
+    <ClInclude Include="..\Include\Util\mgMapStringToString.h" />
+    <ClInclude Include="..\Include\Util\mgMapXYZToPtr.h" />
+    <ClInclude Include="..\Include\Util\mgMatrix.h" />
+    <ClInclude Include="..\Include\Util\mgOptionsFile.h" />
+    <ClInclude Include="..\Include\Util\mgPtrArray.h" />
+    <ClInclude Include="..\Include\Util\mgString.h" />
+    <ClInclude Include="..\Include\Util\mgStringArray.h" />
+    <ClInclude Include="..\Include\Util\mgUtilErrorTable.h" />
+    <ClInclude Include="..\Include\XMLParser\mgXMLParser.h" />
+    <ClInclude Include="..\Include\XMLParser\mgXMLScanner.h" />
+    <ClInclude Include="..\Include\XMLParser\mgXMLTag.h" />
+    <ClInclude Include="..\Source\Audio\mgAudioAL.h" />
+    <ClInclude Include="..\Source\Audio\mgAudioWin.h" />
+    <ClInclude Include="..\Source\Audio\mgVorbisRead.h" />
+    <ClInclude Include="..\Source\ImageUtil\mgDiffuse.h" />
+    <ClInclude Include="..\Source\ImageUtil\mgGIF3.h" />
+    <ClInclude Include="..\Source\ImageUtil\mgImageIO.h" />
+    <ClInclude Include="..\Source\ImageUtil\mgLZW.h" />
+    <ClInclude Include="..\Source\OS\Linux\mgLinuxEvent.h" />
+    <ClInclude Include="..\Source\OS\Linux\mgLinuxLock.h" />
+    <ClInclude Include="..\Source\OS\Linux\mgLinuxThread.h" />
+    <ClInclude Include="..\Source\OS\OSX\mgOSXEvent.h" />
+    <ClInclude Include="..\Source\OS\OSX\mgOSXLock.h" />
+    <ClInclude Include="..\Source\OS\OSX\mgOSXThread.h" />
+    <ClInclude Include="..\Source\OS\Windows\mgWinEvent.h" />
+    <ClInclude Include="..\Source\OS\Windows\mgWinLock.h" />
+    <ClInclude Include="..\Source\OS\Windows\mgWinThread.h" />
+    <ClInclude Include="..\Source\stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Source\Audio\mgAudio.cpp" />
+    <ClCompile Include="..\Source\Audio\mgAudioAL.cpp" />
+    <ClCompile Include="..\Source\Audio\mgAudioWin.cpp" />
+    <ClCompile Include="..\Source\Audio\mgVorbisRead.cpp" />
+    <ClCompile Include="..\Source\GraphicsUtil\mgBezier.cpp" />
+    <ClCompile Include="..\Source\GraphicsUtil\mgSimplexNoise.cpp" />
+    <ClCompile Include="..\Source\ImageUtil\mgDiffuse.cpp" />
+    <ClCompile Include="..\Source\ImageUtil\mgGIF3.cpp" />
+    <ClCompile Include="..\Source\ImageUtil\mgImageIO.cpp" />
+    <ClCompile Include="..\Source\ImageUtil\mgImageUtil.cpp" />
+    <ClCompile Include="..\Source\ImageUtil\mgLZW.cpp" />
+    <ClCompile Include="..\Source\OS\Linux\mgLinuxEvent.cpp" />
+    <ClCompile Include="..\Source\OS\Linux\mgLinuxFileUtil.cpp" />
+    <ClCompile Include="..\Source\OS\Linux\mgLinuxLock.cpp" />
+    <ClCompile Include="..\Source\OS\Linux\mgLinuxMisc.cpp" />
+    <ClCompile Include="..\Source\OS\Linux\mgLinuxSendLog.cpp" />
+    <ClCompile Include="..\Source\OS\Linux\mgLinuxThread.cpp" />
+    <ClCompile Include="..\Source\OS\Linux\mgLinuxTimer.cpp" />
+    <ClCompile Include="..\Source\OS\mgMiscUtil.cpp" />
+    <ClCompile Include="..\Source\OS\mgOSCreate.cpp" />
+    <ClCompile Include="..\Source\OS\OSX\mgOSXEvent.cpp" />
+    <ClCompile Include="..\Source\OS\OSX\mgOSXFileUtil.cpp" />
+    <ClCompile Include="..\Source\OS\OSX\mgOSXLock.cpp" />
+    <ClCompile Include="..\Source\OS\OSX\mgOSXMisc.cpp" />
+    <ClCompile Include="..\Source\OS\OSX\mgOSXThread.cpp" />
+    <ClCompile Include="..\Source\OS\OSX\mgOSXTimer.cpp" />
+    <ClCompile Include="..\Source\OS\Windows\mgWinEvent.cpp" />
+    <ClCompile Include="..\Source\OS\Windows\mgWinFileUtil.cpp" />
+    <ClCompile Include="..\Source\OS\Windows\mgWinLock.cpp" />
+    <ClCompile Include="..\Source\OS\Windows\mgWinSendLog.cpp" />
+    <ClCompile Include="..\Source\OS\Windows\mgWinThread.cpp" />
+    <ClCompile Include="..\Source\OS\Windows\mgWinTimer.cpp" />
+    <ClCompile Include="..\Source\OS\Windows\strptime.cpp" />
+    <ClCompile Include="..\Source\stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='DebugMemory|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Distrib|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\Source\Util\mgBlockPool.cpp" />
+    <ClCompile Include="..\Source\Util\mgDebug.cpp" />
+    <ClCompile Include="..\Source\Util\mgDebugMemory.cpp" />
+    <ClCompile Include="..\Source\Util\mgDWordArray.cpp" />
+    <ClCompile Include="..\Source\Util\mgErrorMsg.cpp" />
+    <ClCompile Include="..\Source\Util\mgErrorTable.cpp" />
+    <ClCompile Include="..\Source\Util\mgException.cpp" />
+    <ClCompile Include="..\Source\Util\mgMapDWordToPtr.cpp" />
+    <ClCompile Include="..\Source\Util\mgMapPtrToPtr.cpp" />
+    <ClCompile Include="..\Source\Util\mgMapStringToDouble.cpp" />
+    <ClCompile Include="..\Source\Util\mgMapStringToDWord.cpp" />
+    <ClCompile Include="..\Source\Util\mgMapStringToPtr.cpp" />
+    <ClCompile Include="..\Source\Util\mgMapStringToString.cpp" />
+    <ClCompile Include="..\Source\Util\mgMapXYZToPtr.cpp" />
+    <ClCompile Include="..\Source\Util\mgMatrix.cpp" />
+    <ClCompile Include="..\Source\Util\mgOptionsFile.cpp" />
+    <ClCompile Include="..\Source\Util\mgPtrArray.cpp" />
+    <ClCompile Include="..\Source\Util\mgString.cpp" />
+    <ClCompile Include="..\Source\Util\mgStringArray.cpp" />
+    <ClCompile Include="..\Source\Util\mgUtilErrorTable.cpp" />
+    <ClCompile Include="..\Source\XMLParser\mgXMLParser.cpp" />
+    <ClCompile Include="..\Source\XMLParser\mgXMLScanner.cpp" />
+    <ClCompile Include="..\Source\XMLParser\mgXMLTag.cpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6EC8DE6C-A2D4-4A44-99E2-1E0674C06F34}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>mgUtil</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMemory|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Distrib|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugMemory|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Distrib|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMemory|Win32'">
+    <OutDir>..\..\BuildWin\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\..\BuildWin\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Distrib|Win32'">
+    <OutDir>..\..\BuildWin\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\..\BuildWin\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;../Include;../Source;../../</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugMemory|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>DEBUG_MEMORY;WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;../Include;../Source;../../</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;../Include;../Source;../../</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Distrib|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;../Include;../Source;../../</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

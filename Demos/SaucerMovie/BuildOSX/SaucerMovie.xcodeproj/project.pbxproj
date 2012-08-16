@@ -1,0 +1,408 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9016C9BA14FF948B005F20C5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9016C9B914FF948B005F20C5 /* Cocoa.framework */; };
+		9016C9C414FF948B005F20C5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9016C9C214FF948B005F20C5 /* InfoPlist.strings */; };
+		9016C9CA14FF948B005F20C5 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9016C9C814FF948B005F20C5 /* Credits.rtf */; };
+		9016C9CD14FF948B005F20C5 /* SaucerMovieAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9016C9CC14FF948B005F20C5 /* SaucerMovieAppDelegate.m */; };
+		9016C9D014FF948B005F20C5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9016C9CE14FF948B005F20C5 /* MainMenu.xib */; };
+		9016C9F014FF94C7005F20C5 /* DeathRay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9016C9E114FF94C7005F20C5 /* DeathRay.cpp */; };
+		9016C9F114FF94C7005F20C5 /* Saucer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9016C9E314FF94C7005F20C5 /* Saucer.cpp */; };
+		9016C9F214FF94C7005F20C5 /* SaucerMovie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9016C9E514FF94C7005F20C5 /* SaucerMovie.cpp */; };
+		9016C9F414FF94C7005F20C5 /* StarrySky.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9016C9E914FF94C7005F20C5 /* StarrySky.cpp */; };
+		9016C9F514FF94C7005F20C5 /* stdafx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9016C9EB14FF94C7005F20C5 /* stdafx.cpp */; };
+		9016C9F614FF94C7005F20C5 /* VertexSky.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9016C9ED14FF94C7005F20C5 /* VertexSky.cpp */; };
+		9016C9F914FF94EB005F20C5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9016C9F814FF94EB005F20C5 /* QuartzCore.framework */; };
+		9016C9FC14FF94FE005F20C5 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9016C9FA14FF94FE005F20C5 /* OpenAL.framework */; };
+		9016C9FD14FF94FE005F20C5 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9016C9FB14FF94FE005F20C5 /* OpenGL.framework */; };
+		90B23A7515D009F700A39C00 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90B23A7415D009F700A39C00 /* IOKit.framework */; };
+		90BF4828150BADF800C6ADF8 /* MovementApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90BF4824150BADF800C6ADF8 /* MovementApp.cpp */; };
+		90D1963C15A1467B00145D8D /* HelpUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90D1963A15A1467B00145D8D /* HelpUI.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9016C9B514FF948B005F20C5 /* SaucerMovie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaucerMovie.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9016C9B914FF948B005F20C5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		9016C9BC14FF948B005F20C5 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		9016C9BD14FF948B005F20C5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		9016C9BE14FF948B005F20C5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9016C9C114FF948B005F20C5 /* SaucerMovie-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SaucerMovie-Info.plist"; sourceTree = "<group>"; };
+		9016C9C314FF948B005F20C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9016C9C714FF948B005F20C5 /* SaucerMovie-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SaucerMovie-Prefix.pch"; sourceTree = "<group>"; };
+		9016C9C914FF948B005F20C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		9016C9CB14FF948B005F20C5 /* SaucerMovieAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SaucerMovieAppDelegate.h; sourceTree = "<group>"; };
+		9016C9CC14FF948B005F20C5 /* SaucerMovieAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SaucerMovieAppDelegate.m; sourceTree = "<group>"; };
+		9016C9CF14FF948B005F20C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		9016C9E114FF94C7005F20C5 /* DeathRay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DeathRay.cpp; sourceTree = "<group>"; };
+		9016C9E214FF94C7005F20C5 /* DeathRay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeathRay.h; sourceTree = "<group>"; };
+		9016C9E314FF94C7005F20C5 /* Saucer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Saucer.cpp; sourceTree = "<group>"; };
+		9016C9E414FF94C7005F20C5 /* Saucer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Saucer.h; sourceTree = "<group>"; };
+		9016C9E514FF94C7005F20C5 /* SaucerMovie.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SaucerMovie.cpp; sourceTree = "<group>"; };
+		9016C9E614FF94C7005F20C5 /* SaucerMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaucerMovie.h; sourceTree = "<group>"; };
+		9016C9E914FF94C7005F20C5 /* StarrySky.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StarrySky.cpp; sourceTree = "<group>"; };
+		9016C9EA14FF94C7005F20C5 /* StarrySky.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarrySky.h; sourceTree = "<group>"; };
+		9016C9EB14FF94C7005F20C5 /* stdafx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = stdafx.cpp; sourceTree = "<group>"; };
+		9016C9EC14FF94C7005F20C5 /* stdafx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stdafx.h; sourceTree = "<group>"; };
+		9016C9ED14FF94C7005F20C5 /* VertexSky.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VertexSky.cpp; sourceTree = "<group>"; };
+		9016C9EE14FF94C7005F20C5 /* VertexSky.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertexSky.h; sourceTree = "<group>"; };
+		9016C9F814FF94EB005F20C5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9016C9FA14FF94FE005F20C5 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
+		9016C9FB14FF94FE005F20C5 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		90B23A7415D009F700A39C00 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		90BF4824150BADF800C6ADF8 /* MovementApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MovementApp.cpp; sourceTree = "<group>"; };
+		90BF4825150BADF800C6ADF8 /* MovementApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovementApp.h; sourceTree = "<group>"; };
+		90D1963A15A1467B00145D8D /* HelpUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HelpUI.cpp; sourceTree = "<group>"; };
+		90D1963B15A1467B00145D8D /* HelpUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpUI.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9016C9B214FF948B005F20C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90B23A7515D009F700A39C00 /* IOKit.framework in Frameworks */,
+				9016C9FC14FF94FE005F20C5 /* OpenAL.framework in Frameworks */,
+				9016C9FD14FF94FE005F20C5 /* OpenGL.framework in Frameworks */,
+				9016C9F914FF94EB005F20C5 /* QuartzCore.framework in Frameworks */,
+				9016C9BA14FF948B005F20C5 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9016C9AA14FF948B005F20C5 = {
+			isa = PBXGroup;
+			children = (
+				90B23A7415D009F700A39C00 /* IOKit.framework */,
+				9016C9FA14FF94FE005F20C5 /* OpenAL.framework */,
+				9016C9FB14FF94FE005F20C5 /* OpenGL.framework */,
+				9016C9F814FF94EB005F20C5 /* QuartzCore.framework */,
+				9016C9DE14FF94C7005F20C5 /* Source */,
+				9016C9BF14FF948B005F20C5 /* SaucerMovie */,
+				9016C9B814FF948B005F20C5 /* Frameworks */,
+				9016C9B614FF948B005F20C5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9016C9B614FF948B005F20C5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9016C9B514FF948B005F20C5 /* SaucerMovie.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9016C9B814FF948B005F20C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9016C9B914FF948B005F20C5 /* Cocoa.framework */,
+				9016C9BB14FF948B005F20C5 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9016C9BB14FF948B005F20C5 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9016C9BC14FF948B005F20C5 /* AppKit.framework */,
+				9016C9BD14FF948B005F20C5 /* CoreData.framework */,
+				9016C9BE14FF948B005F20C5 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		9016C9BF14FF948B005F20C5 /* SaucerMovie */ = {
+			isa = PBXGroup;
+			children = (
+				9016C9CB14FF948B005F20C5 /* SaucerMovieAppDelegate.h */,
+				9016C9CC14FF948B005F20C5 /* SaucerMovieAppDelegate.m */,
+				9016C9CE14FF948B005F20C5 /* MainMenu.xib */,
+				9016C9C014FF948B005F20C5 /* Supporting Files */,
+			);
+			path = SaucerMovie;
+			sourceTree = "<group>";
+		};
+		9016C9C014FF948B005F20C5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9016C9C114FF948B005F20C5 /* SaucerMovie-Info.plist */,
+				9016C9C214FF948B005F20C5 /* InfoPlist.strings */,
+				9016C9C714FF948B005F20C5 /* SaucerMovie-Prefix.pch */,
+				9016C9C814FF948B005F20C5 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9016C9DE14FF94C7005F20C5 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				90D1963A15A1467B00145D8D /* HelpUI.cpp */,
+				90D1963B15A1467B00145D8D /* HelpUI.h */,
+				90BF4824150BADF800C6ADF8 /* MovementApp.cpp */,
+				90BF4825150BADF800C6ADF8 /* MovementApp.h */,
+				9016C9E114FF94C7005F20C5 /* DeathRay.cpp */,
+				9016C9E214FF94C7005F20C5 /* DeathRay.h */,
+				9016C9E314FF94C7005F20C5 /* Saucer.cpp */,
+				9016C9E414FF94C7005F20C5 /* Saucer.h */,
+				9016C9E514FF94C7005F20C5 /* SaucerMovie.cpp */,
+				9016C9E614FF94C7005F20C5 /* SaucerMovie.h */,
+				9016C9E914FF94C7005F20C5 /* StarrySky.cpp */,
+				9016C9EA14FF94C7005F20C5 /* StarrySky.h */,
+				9016C9EB14FF94C7005F20C5 /* stdafx.cpp */,
+				9016C9EC14FF94C7005F20C5 /* stdafx.h */,
+				9016C9ED14FF94C7005F20C5 /* VertexSky.cpp */,
+				9016C9EE14FF94C7005F20C5 /* VertexSky.h */,
+			);
+			name = Source;
+			path = ../Source;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9016C9B414FF948B005F20C5 /* SaucerMovie */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9016C9D314FF948B005F20C5 /* Build configuration list for PBXNativeTarget "SaucerMovie" */;
+			buildPhases = (
+				9016C9B114FF948B005F20C5 /* Sources */,
+				9016C9B214FF948B005F20C5 /* Frameworks */,
+				9016C9B314FF948B005F20C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SaucerMovie;
+			productName = SaucerMovie;
+			productReference = 9016C9B514FF948B005F20C5 /* SaucerMovie.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9016C9AC14FF948B005F20C5 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 9016C9AF14FF948B005F20C5 /* Build configuration list for PBXProject "SaucerMovie" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9016C9AA14FF948B005F20C5;
+			productRefGroup = 9016C9B614FF948B005F20C5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9016C9B414FF948B005F20C5 /* SaucerMovie */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9016C9B314FF948B005F20C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9016C9C414FF948B005F20C5 /* InfoPlist.strings in Resources */,
+				9016C9CA14FF948B005F20C5 /* Credits.rtf in Resources */,
+				9016C9D014FF948B005F20C5 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9016C9B114FF948B005F20C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9016C9CD14FF948B005F20C5 /* SaucerMovieAppDelegate.m in Sources */,
+				9016C9F014FF94C7005F20C5 /* DeathRay.cpp in Sources */,
+				9016C9F114FF94C7005F20C5 /* Saucer.cpp in Sources */,
+				9016C9F214FF94C7005F20C5 /* SaucerMovie.cpp in Sources */,
+				9016C9F414FF94C7005F20C5 /* StarrySky.cpp in Sources */,
+				9016C9F514FF94C7005F20C5 /* stdafx.cpp in Sources */,
+				9016C9F614FF94C7005F20C5 /* VertexSky.cpp in Sources */,
+				90BF4828150BADF800C6ADF8 /* MovementApp.cpp in Sources */,
+				90D1963C15A1467B00145D8D /* HelpUI.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9016C9C214FF948B005F20C5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9016C9C314FF948B005F20C5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		9016C9C814FF948B005F20C5 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9016C9C914FF948B005F20C5 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		9016C9CE14FF948B005F20C5 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9016C9CF14FF948B005F20C5 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9016C9D114FF948B005F20C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		9016C9D214FF948B005F20C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		9016C9D414FF948B005F20C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(CONFIGURATION)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SaucerMovie/SaucerMovie-Prefix.pch";
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				HEADER_SEARCH_PATHS = (
+					../Source,
+					../../../Milligram,
+				);
+				INFOPLIST_FILE = "SaucerMovie/SaucerMovie-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Milligram/BuildOSX/$(CONFIGURATION)\"",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OTHER_LDFLAGS = (
+					"-lmgPlatform",
+					"-lmg2D",
+					"-lmg3D",
+					"-lmgGUI",
+					"-lmgUtil",
+					"-lFreeType",
+					"-lJpegLib",
+					"-lVorbis",
+					"-lOgg",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9016C9D514FF948B005F20C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(CONFIGURATION)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SaucerMovie/SaucerMovie-Prefix.pch";
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				HEADER_SEARCH_PATHS = (
+					../Source,
+					../../../Milligram,
+				);
+				INFOPLIST_FILE = "SaucerMovie/SaucerMovie-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Milligram/BuildOSX/$(CONFIGURATION)\"",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OTHER_LDFLAGS = (
+					"-lmgPlatform",
+					"-lmg2D",
+					"-lmg3D",
+					"-lmgGUI",
+					"-lmgUtil",
+					"-lFreeType",
+					"-lJpegLib",
+					"-lVorbis",
+					"-lOgg",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9016C9AF14FF948B005F20C5 /* Build configuration list for PBXProject "SaucerMovie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9016C9D114FF948B005F20C5 /* Debug */,
+				9016C9D214FF948B005F20C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9016C9D314FF948B005F20C5 /* Build configuration list for PBXNativeTarget "SaucerMovie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9016C9D414FF948B005F20C5 /* Debug */,
+				9016C9D514FF948B005F20C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9016C9AC14FF948B005F20C5 /* Project object */;
+}

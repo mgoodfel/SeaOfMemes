@@ -1,0 +1,319 @@
+<!-- 
+
+brick attributes are top, bottom, left, right, front, back or
+  sides for all but top and bottom, or 
+  all for all sides
+
+Set the brick icon with the 'icon' attribute.  Default is top texture.
+-->
+
+<brickset>
+<brick code="0100" all="stone.jpg" />
+<brick code="0200" top="grass_top.jpg" bottom="dirt.jpg" sides="grass_side.jpg" />
+<brick code="0300" all="dirt.jpg" />
+<brick code="0400" all="cobblestone.jpg" />
+<brick code="0500" all="wood_plank.jpg" />
+<brick code="0600" all="sapling.jpg" />  <!-- sapling -->
+<brick code="0700" all="bedrock.jpg" />
+<brick code="0800" all="water.jpg;waterAlpha.gif" />
+<brick code="0900" all="water.jpg;waterAlpha.gif" />  <!-- stationary water -->
+<brick code="0A00" all="lava.jpg" light="true" />
+<brick code="0B00" all="lava.jpg" light="true" />  <!-- stationary lava -->
+<brick code="0C00" all="sand.jpg" />
+<brick code="0D00" all="gravel.jpg" />
+<brick code="0E00" all="gold_ore.jpg" />
+<brick code="0F00" all="iron_ore.jpg" />
+<brick code="1000" all="coal_ore.jpg" />
+<brick code="1100" all="normal_wood.jpg" top="wood_top.jpg" bottom="wood_top.jpg" />
+<brick code="1101" all="spruce_wood.jpg" top="wood_top.jpg" bottom="wood_top.jpg" />
+<brick code="1102" all="birch_wood.jpg" top="wood_top.jpg" bottom="wood_top.jpg" />
+<brick code="1200" all="normal_leaves.jpg;normal_leavesAlpha.gif" />
+<brick code="1201" all="spruce_leaves.jpg;spruce_leavesAlpha.gif" />
+<brick code="1202" all="birch_leaves.jpg;birch_leavesAlpha.gif" />
+<brick code="1300" all="sponge.jpg" />
+<brick code="1400" all="glass.jpg;glassAlpha.gif" />
+<brick code="1500" all="lapis_lazuli_ore.jpg" />
+<brick code="1600" all="lapis_lazuli.jpg" />
+<brick code="1700" all="dispenser.jpg" />
+<brick code="1800" all="sandstone.jpg" />
+<brick code="1900" all="note_block.jpg" /> 
+<brick code="1A00" shape="bed_head.xml" mat0="gold.jpg" mat2="wool_green.jpg" mat1="wool_white.jpg" dir="0" />
+<brick code="1A01" shape="bed_head.xml" dir="1" />
+<brick code="1A02" shape="bed_head.xml" dir="2" />
+<brick code="1A03" shape="bed_head.xml" dir="3" />
+<brick code="1A08" shape="bed_foot.xml" dir="0" mat1="gold.jpg" mat0="wool_green.jpg" />
+<brick code="1A09" shape="bed_foot.xml" dir="1" mat1="gold.jpg" mat0="wool_green.jpg" />
+<brick code="1A0A" shape="bed_foot.xml" dir="2" mat1="gold.jpg" mat0="wool_green.jpg" />
+<brick code="1A0B" shape="bed_foot.xml" dir="3" mat1="gold.jpg" mat0="wool_green.jpg" />
+<brick code="1B00" shape="low_rails.xml" mat1="rust.jpg" mat0="wood_dark.jpg" />  <!-- 1B00 powered rail -->
+<brick code="1B01" dir="1" shape="low_rails.xml" mat1="rust.jpg" mat0="wood_dark.jpg" /> 
+  
+<brick code="1B02" dir="1" shape="low_rails_up.xml" mat1="rust.jpg" mat0="wood_dark.jpg" /> 
+<brick code="1B03" dir="3" shape="low_rails_up.xml" mat1="rust.jpg" mat0="wood_dark.jpg" /> 
+<brick code="1B04" dir="0" shape="low_rails_up.xml" mat1="rust.jpg" mat0="wood_dark.jpg" /> 
+<brick code="1B05" dir="2" shape="low_rails_up.xml" mat1="rust.jpg" mat0="wood_dark.jpg" /> 
+  
+<brick code="1B06" dir="2" shape="low_rails_corner.xml" mat1="rust.jpg" mat0="wood_dark.jpg" /> 
+<brick code="1B07" dir="3" shape="low_rails_corner.xml" mat1="rust.jpg" mat0="wood_dark.jpg" /> 
+<brick code="1B08" dir="0" shape="low_rails_corner.xml" mat1="rust.jpg" mat0="wood_dark.jpg" /> 
+<brick code="1B09" dir="1" shape="low_rails_corner.xml" mat1="rust.jpg" mat0="wood_dark.jpg" /> 
+  
+<brick code="1C00" shape="low_rails.xml" mat1="rust.jpg" mat0="wood_dark.jpg" />  <!-- 1C00 detector rail -->
+<brick code="1C01" dir="1" shape="low_rails.xml" mat1="rust.jpg" mat0="wood_dark.jpg" /> 
+  
+<brick code="1C02" dir="1" shape="low_rails_up.xml" mat1="rust.jpg" mat0="wood_dark.jpg" /> 
+<brick code="1C03" dir="3" shape="low_rails_up.xml" mat1="rust.jpg" mat0="wood_dark.jpg" /> 
+<brick code="1C04" dir="0" shape="low_rails_up.xml" mat1="rust.jpg" mat0="wood_dark.jpg" /> 
+<brick code="1C05" dir="2" shape="low_rails_up.xml" mat1="rust.jpg" mat0="wood_dark.jpg" /> 
+  
+<brick code="1C06" dir="2" shape="low_rails_corner.xml" mat1="rust.jpg" mat0="wood_dark.jpg" /> 
+<brick code="1C07" dir="3" shape="low_rails_corner.xml" mat1="rust.jpg" mat0="wood_dark.jpg" /> 
+<brick code="1C08" dir="0" shape="low_rails_corner.xml" mat1="rust.jpg" mat0="wood_dark.jpg" /> 
+<brick code="1C09" dir="1" shape="low_rails_corner.xml" mat1="rust.jpg" mat0="wood_dark.jpg" /> 
+<brick code="1D00" all="sticky_piston.jpg" /> <!-- 1D00 sticky piston -->
+<brick code="1E00" all="cobweb.jpg" /> <!-- 1E00 cobweb -->
+<brick code="1F00" shape="dead_bush.xml" mat0="wool_brown.jpg" /> 
+<brick code="1F01" shape="alan_tall_grass2.xml" mat0="alan_tall_grass2y.jpg" /> 
+<brick code="1F02" all="fern.jpg" /> 
+<brick code="1F04" dir="1" shape="dead_bush.xml" mat0="wool_brown.jpg" /> 
+<brick code="1F05" dir="1" shape="alan_tall_grass2.xml" mat0="alan_tall_grass2y.jpg" /> 
+<brick code="1F06" dir="1" all="fern.jpg" /> 
+<brick code="1F08" dir="2" shape="dead_bush.xml" mat0="wool_brown.jpg" /> 
+<brick code="1F09" dir="2" shape="alan_tall_grass2.xml" mat0="alan_tall_grass2y.jpg" /> 
+<brick code="1F0A" dir="2" all="fern.jpg" /> 
+<brick code="1F0C" dir="3" shape="dead_bush.xml" mat0="wool_brown.jpg" /> 
+<brick code="1F0D" dir="3" shape="alan_tall_grass2.xml" mat0="alan_tall_grass2y.jpg" /> 
+<brick code="1F0E" dir="3" all="fern.jpg" /> 
+<brick code="2000" shape="dead_bush.xml" mat0="wool_brown.jpg" />  <!-- 2000 dead shrubs -->
+<brick code="2100" all="piston.jpg" /><!-- 2100 piston -->
+<brick code="2200" all="piston_extension.jpg" /><!-- 2200 piston extension -->
+<brick code="2300" all="wool_white.jpg" />
+<brick code="2301" all="wool_orange.jpg" />
+<brick code="2302" all="wool_magenta.jpg" />
+<brick code="2303" all="wool_lightblue.jpg" />
+<brick code="2304" all="wool_yellow.jpg" />
+<brick code="2305" all="wool_lime.jpg" />
+<brick code="2306" all="wool_pink.jpg" />
+<brick code="2307" all="wool_gray.jpg" />
+<brick code="2308" all="wool_lightgray.jpg" />
+<brick code="2309" all="wool_cyan.jpg" />
+<brick code="230A" all="wool_purple.jpg" />
+<brick code="230B" all="wool_blue.jpg" />
+<brick code="230C" all="wool_brown.jpg" />
+<brick code="230D" all="wool_green.jpg" />
+<brick code="230E" all="wool_red.jpg" />
+<brick code="230F" all="wool_black.jpg" />
+<brick code="2400" all="piston_block.jpg" /> <!-- 2400 block moved by piston -->
+<brick code="2500" shape="alan_dandelion.xml" mat0="alan_foliage.jpg" mat1="alan_blossom.jpg" />  <!-- dandelion -->
+<brick code="2501" dir="1" />  
+<brick code="2502" dir="2" />  
+<brick code="2503" dir="3" />  
+<brick code="2600" shape="alan_rose.xml" mat0="alan_rose.jpg" />  <!-- rose -->
+<brick code="2601" dir="1" />  
+<brick code="2602" dir="2" />  
+<brick code="2603" dir="3" />  
+<brick code="2700" shape="mushroom.xml" mat0="mushroom_brown.jpg" /> 
+<brick code="2701" dir="1" />
+<brick code="2702" dir="2" />
+<brick code="2703" dir="3" />
+<brick code="2800" shape="mushroom.xml" mat0="mushroom_red.jpg" /> 
+<brick code="2801" dir="1" />
+<brick code="2802" dir="2" />
+<brick code="2803" dir="3" />
+<brick code="2900" all="gold.jpg" />
+<brick code="2A00" all="iron.jpg" />
+<brick code="2B00" all="doubleslab.jpg" top="slab_top.jpg" bottom="slab_top.jpg"/>
+<brick code="2C00" shape="slab" sides="slab.jpg" top="slab_top.jpg" bottom="slab_top.jpg"/>
+<brick code="2C01" shape="slab" all="sandstone.jpg"/>
+<brick code="2C02" shape="slab" all="wood_plank.jpg"/>
+<brick code="2C03" shape="slab" all="cobblestone.jpg"/>
+<brick code="2C04" shape="slab" all="brick.jpg"/>
+<brick code="2C05" shape="slab" all="stone_brick.jpg" />
+<brick code="2C06" shape="slab" sides="slab.jpg" top="slab_top.jpg" bottom="slab_top.jpg"/>
+<brick code="2D00" all="brick.jpg" />
+<brick code="2E00" all="TNT.jpg" />
+<brick code="2F00" shape="bookshelf.xml" mat0="wood_light.jpg" mat1="wool_green.jpg" mat2="wool_gray.jpg" />
+<brick code="2F02" dir="1" />
+<brick code="2F03" dir="3" />
+<brick code="2F04" dir="0" />
+<brick code="2F05" dir="2" />
+<brick code="3000" all="moss.jpg" />
+<brick code="3100" all="obsidian.jpg" />
+<brick code="3200" shape="torch_floor.xml" mat0="yellowLamp.jpg" mat1="wood_light.jpg" light="true"/>
+<brick code="3201" shape="torch_side.xml" dir="2" />
+<brick code="3202" shape="torch_side.xml" dir="0" />
+<brick code="3203" shape="torch_side.xml" dir="3" />
+<brick code="3204" shape="torch_side.xml" dir="1"/>
+<brick code="3205" shape="torch_floor.xml" />
+<brick code="3300" light="true" all="fire.jpg;fireAlpha.gif" />  <!-- code=3300 fire -->
+<brick code="3400" all="monster_spawner.jpg" />
+<brick code="3500" shape="stair" all="wood_plank.jpg" dir="2" /> 
+<brick code="3501" dir="0" /> 
+<brick code="3502" dir="3" /> 
+<brick code="3503" dir="1" /> 
+<brick code="3600" shape="chest.xml" mat0="wood_dark.jpg" mat1="wood_light.jpg" mat2="obsidian.jpg" />
+<brick code="3602" dir="1" />
+<brick code="3603" dir="3" />
+<brick code="3604" dir="0" />
+<brick code="3605" dir="2" />
+<brick code="3700" shape="redstone_wire.xml" mat0="redstone_wire.jpg" /> 
+<brick code="3800" all="diamond_ore.jpg" />
+<brick code="3900" all="diamond.jpg;diamondAlpha.gif" />
+<brick code="3A00" shape="crafting_table.xml" mat0="wood_dark.jpg" mat1="wool_lightblue.jpg" />
+<brick code="3B00" all="seeds.jpg" /> <!-- code=3B00 seeds -->
+<brick code="3C00" all="farmland.jpg" />
+<brick code="3D00" shape="furnace.xml" mat0="brick.jpg" mat1="netherrack.jpg" />
+<brick code="3D02" dir="1" />
+<brick code="3D03" dir="3" />
+<brick code="3D04" dir="0" />
+<brick code="3D05" dir="2" />
+<brick code="3E00" shape="furnace.xml" mat0="brick.jpg" mat1="yellowlamp.jpg" />
+<brick code="3E02" dir="1" />
+<brick code="3E03" dir="3" />
+<brick code="3E04" dir="0" />
+<brick code="3E05" dir="2" />
+<brick code="3F00" dir="3" shape="sign_0.xml" mat0="wood_light.jpg" mat1="wood_light.jpg" mat2="sign.jpg" /> 
+<brick code="3F04" dir="0" shape="sign_0.xml" mat0="wood_light.jpg" mat1="wood_light.jpg" mat2="sign.jpg" /> 
+<brick code="3F08" dir="1" shape="sign_0.xml" mat0="wood_light.jpg" mat1="wood_light.jpg" mat2="sign.jpg" /> 
+<brick code="3F0C" dir="2" shape="sign_0.xml" mat0="wood_light.jpg" mat1="wood_light.jpg" mat2="sign.jpg" /> 
+<brick code="3F02" dir="0" shape="sign_45.xml" mat0="wood_light.jpg" mat1="wood_light.jpg" mat2="sign.jpg" />
+<brick code="3F06" dir="1" shape="sign_45.xml" mat0="wood_light.jpg" mat1="wood_light.jpg" mat2="sign.jpg" />
+<brick code="3F0A" dir="2" shape="sign_45.xml" mat0="wood_light.jpg" mat1="wood_light.jpg" mat2="sign.jpg" />
+<brick code="3F0E" dir="3" shape="sign_45.xml" mat0="wood_light.jpg" mat1="wood_light.jpg" mat2="sign.jpg" />
+<brick code="3F01" dir="3" shape="sign_22.xml" mat0="wood_light.jpg" mat1="wood_light.jpg" mat2="sign.jpg" /> 
+<brick code="3F03" dir="0" shape="sign_22.xml" mat0="wood_light.jpg" mat1="wood_light.jpg" mat2="sign.jpg" /> 
+<brick code="3F05" dir="1" shape="sign_22.xml" mat0="wood_light.jpg" mat1="wood_light.jpg" mat2="sign.jpg" /> 
+<brick code="3F07" dir="2" shape="sign_22.xml" mat0="wood_light.jpg" mat1="wood_light.jpg" mat2="sign.jpg" /> 
+<brick code="3F09" dir="0" shape="sign_67.xml" mat0="wood_light.jpg" mat1="wood_light.jpg" mat2="sign.jpg" />
+<brick code="3F0B" dir="1" shape="sign_67.xml" mat0="wood_light.jpg" mat1="wood_light.jpg" mat2="sign.jpg" />
+<brick code="3F0D" dir="2" shape="sign_67.xml" mat0="wood_light.jpg" mat1="wood_light.jpg" mat2="sign.jpg" />
+<brick code="3F0F" dir="3" shape="sign_67.xml" mat0="wood_light.jpg" mat1="wood_light.jpg" mat2="sign.jpg" />
+
+<brick code="4000" shape="door_bottom.xml" mat0="wood_dark.jpg" mat1="wood_light.jpg" dir="2" />
+<brick code="4001" shape="door_bottom.xml" mat0="wood_dark.jpg" mat1="wood_light.jpg" dir="3" />
+<brick code="4002" shape="door_bottom.xml" mat0="wood_dark.jpg" mat1="wood_light.jpg" dir="0" />
+<brick code="4003" shape="door_bottom.xml" mat0="wood_dark.jpg" mat1="wood_light.jpg" dir="1" />
+<brick code="4004" shape="door_bottom.xml" mat0="wood_dark.jpg" mat1="wood_light.jpg" dir="3" />
+<brick code="4005" shape="door_bottom.xml" mat0="wood_dark.jpg" mat1="wood_light.jpg" dir="0" />
+<brick code="4006" shape="door_bottom.xml" mat0="wood_dark.jpg" mat1="wood_light.jpg" dir="1" />
+<brick code="4007" shape="door_bottom.xml" mat0="wood_dark.jpg" mat1="wood_light.jpg" dir="2" />
+<brick code="4008" shape="door_top.xml" mat0="wood_dark.jpg"  dir="2" />
+<brick code="4009" shape="door_top.xml" mat0="wood_dark.jpg"  dir="3" />
+<brick code="400A" shape="door_top.xml" mat0="wood_dark.jpg"  dir="0" />
+<brick code="400B" shape="door_top.xml" mat0="wood_dark.jpg"  dir="1" />
+<brick code="400C" shape="door_top.xml" mat0="wood_dark.jpg"  dir="3" />
+<brick code="400D" shape="door_top.xml" mat0="wood_dark.jpg"  dir="0" />
+<brick code="400E" shape="door_top.xml" mat0="wood_dark.jpg"  dir="1" />
+<brick code="400F" shape="door_top.xml" mat0="wood_dark.jpg"  dir="2" />
+<brick code="4100" shape="low_ladder.xml" mat0="wood_light.jpg" /> 
+<brick code="4102" dir="1" /> 
+<brick code="4103" dir="3" /> 
+<brick code="4104" dir="0" /> 
+<brick code="4105" dir="2" /> 
+<brick code="4200" shape="low_rails.xml" mat1="rust.jpg" mat0="wood_dark.jpg" />  <!-- code=4200 rails -->
+<brick code="4201" dir="1" shape="low_rails.xml" mat1="rust.jpg" mat0="wood_dark.jpg" /> 
+  
+<brick code="4202" dir="1" shape="low_rails_up.xml" mat1="rust.jpg" mat0="wood_dark.jpg" /> 
+<brick code="4203" dir="3" shape="low_rails_up.xml" mat1="rust.jpg" mat0="wood_dark.jpg" /> 
+<brick code="4204" dir="0" shape="low_rails_up.xml" mat1="rust.jpg" mat0="wood_dark.jpg" /> 
+<brick code="4205" dir="2" shape="low_rails_up.xml" mat1="rust.jpg" mat0="wood_dark.jpg" /> 
+  
+<brick code="4206" dir="2" shape="low_rails_corner.xml" mat1="rust.jpg" mat0="wood_dark.jpg" /> 
+<brick code="4207" dir="3" shape="low_rails_corner.xml" mat1="rust.jpg" mat0="wood_dark.jpg" /> 
+<brick code="4208" dir="0" shape="low_rails_corner.xml" mat1="rust.jpg" mat0="wood_dark.jpg" /> 
+<brick code="4209" dir="1" shape="low_rails_corner.xml" mat1="rust.jpg" mat0="wood_dark.jpg" /> 
+  
+<brick code="4300" shape="stair" all="cobblestone.jpg" dir="2" /> 
+<brick code="4301" dir="0" />  
+<brick code="4302" dir="3" />  
+<brick code="4303" dir="1"/>  
+<brick code="4400" shape="sign_wall.xml" mat0="wood_light.jpg" mat1="wood_light.jpg" mat2="sign.jpg" /> <!-- code=4400 wall sign -->
+<brick code="4402" dir="1" /> 
+<brick code="4403" dir="3" /> 
+<brick code="4404" dir="0" /> 
+<brick code="4405" dir="2" /> 
+<brick code="4500" all="lever.jpg" /> <!-- code=4500 lever -->
+<brick code="4600" shape="cap" all="stone.jpg" /><!-- code=4600 stone pressure plate -->
+<brick code="4700" shape="door_bottom.xml" mat0="wood_dark.jpg" mat1="wood_light.jpg" dir="2" />
+<brick code="4701" shape="door_bottom.xml" mat0="wood_dark.jpg" mat1="wood_light.jpg" dir="3" />
+<brick code="4702" shape="door_bottom.xml" mat0="wood_dark.jpg" mat1="wood_light.jpg" dir="0" />
+<brick code="4703" shape="door_bottom.xml" mat0="wood_dark.jpg" mat1="wood_light.jpg" dir="1" />
+<brick code="4704" shape="door_bottom.xml" mat0="wood_dark.jpg" mat1="wood_light.jpg" dir="3" />
+<brick code="4705" shape="door_bottom.xml" mat0="wood_dark.jpg" mat1="wood_light.jpg" dir="0" />
+<brick code="4706" shape="door_bottom.xml" mat0="wood_dark.jpg" mat1="wood_light.jpg" dir="1" />
+<brick code="4707" shape="door_bottom.xml" mat0="wood_dark.jpg" mat1="wood_light.jpg" dir="2" />
+<brick code="4708" shape="door_top.xml" mat0="wood_dark.jpg"  dir="2" />
+<brick code="4709" shape="door_top.xml" mat0="wood_dark.jpg"  dir="3" />
+<brick code="470A" shape="door_top.xml" mat0="wood_dark.jpg"  dir="0" />
+<brick code="470B" shape="door_top.xml" mat0="wood_dark.jpg"  dir="1" />
+<brick code="470C" shape="door_top.xml" mat0="wood_dark.jpg"  dir="3" />
+<brick code="470D" shape="door_top.xml" mat0="wood_dark.jpg"  dir="0" />
+<brick code="470E" shape="door_top.xml" mat0="wood_dark.jpg"  dir="1" />
+<brick code="470F" shape="door_top.xml" mat0="wood_dark.jpg"  dir="2" />
+<brick code="4800" shape="cap" all="wood_light.jpg" /><!-- code=4800 wooden pressure plate -->
+<brick code="4900" all="redstone_ore.jpg" />
+<brick code="4A00" all="glowing_redstone_ore.jpg" light="true"/>
+<brick code="4B00" shape="redstone_torch.xml" mat0="redstone_wire.jpg" />
+<brick code="4B01" shape="redstone_torch_side.xml" dir="2" />
+<brick code="4B02" shape="redstone_torch_side.xml" dir="0" />
+<brick code="4B03" shape="redstone_torch_side.xml" dir="3" />
+<brick code="4B04" shape="redstone_torch_side.xml" dir="1"/>
+<brick code="4B05" shape="redstone_torch.xml" />
+<brick code="4C00" shape="redstone_torch.xml" mat0="redstone_wire.jpg" light="true"/>
+<brick code="4C01" shape="redstone_torch_side.xml" dir="2" />
+<brick code="4C02" shape="redstone_torch_side.xml" dir="0" />
+<brick code="4C03" shape="redstone_torch_side.xml" dir="3" />
+<brick code="4C04" shape="redstone_torch_side.xml" dir="1"/>
+<brick code="4C05" shape="redstone_torch.xml" />
+<brick code="4D00" all="button.jpg" /><!-- code=4D00 stone button -->
+<brick code="4E00" shape="cap" all="snow_cover.jpg" />
+<brick code="4F00" all="ice.jpg;iceAlpha.gif" />
+<brick code="5000" all="snow.jpg" />
+<brick code="5100" shape="alan_cactus.xml" mat0="alan_cactus.jpg" />
+<brick code="5200" all="clay.jpg" />
+<brick code="5300" shape="sugar_cane.xml" mat0="sugar_cane.jpg" />
+<brick code="5400" all="jukebox.jpg" />  <!-- code=5400 jukebox -->
+<brick code="5500" shape="column" all="railing.jpg" />
+<brick code="5600" all="pumpkin.jpg" />
+<brick code="5700" all="netherrack.jpg" />
+<brick code="5800" all="soul_sand.jpg" />
+<brick code="5900" all="glowstone.jpg" light="true"/>
+<brick code="5A00" all="portal.jpg" />  <!-- code=5A00 portal -->
+<brick code="5B00" all="jack-o-lantern.jpg" light="true"/>
+<brick code="5C00" all="cake.jpg" /> <!-- code=5C00 cake block -->
+<brick code="5D00" all="redstone_repeater.jpg" /><!-- code=5D00 redstone repeater (off) -->
+<brick code="5E00" all="redstone_repeater.jpg" /><!-- code=5E00 redstone repeater (on) -->
+<brick code="5F00" shape="chest.xml" mat0="wood_dark.jpg" mat1="wood_light.jpg" mat2="obsidian.jpg" />  <!-- locked chest -->
+<brick code="5F02" dir="1" />
+<brick code="5F03" dir="3" />
+<brick code="5F04" dir="0" />
+<brick code="5F05" dir="2" />
+<brick code="6000" all="trapdoor.jpg" /> <!-- code=6000 trapdoor -->
+<brick code="6100" all="silverfish.jpg" />
+<brick code="6200" all="stone_brick.jpg" />
+<brick code="6300" shape="mushroom.xml" mat0="mushroom_brown.jpg" /> <!-- code=6300 huge brown mushroom -->
+<brick code="6400" shape="mushroom.xml" mat0="mushroom_red.jpg" /> <!-- code=6400 huge red mushroom -->
+<brick code="6500" all="iron_bars.jpg" /> <!-- code=6500 iron bars -->
+<brick code="6600" all="glass.jpg;glassAlpha.gif" /> <!-- code=6600 glass pane -->
+<brick code="6700" all="melon.jpg" /> <!-- code=6700 melon -->
+<brick code="6800" all="pumpkin_stem.jpg" /> <!-- code=6800 pumpkin stem -->
+<brick code="6900" all="melon_stem.jpg" /> <!-- code=6900 melon stem -->
+<brick code="6A00" all="vines.jpg" /> <!-- code=6A00 vines -->
+<brick code="6B00" all="fence_gate.jpg" /> <!-- code=6B00 fence gate -->
+<brick code="6C00" shape="stair" all="brick.jpg" dir="2" /> 
+<brick code="6C01" dir="0" />  
+<brick code="6C02" dir="3" />  
+<brick code="6C03" dir="1" />  
+<brick code="6D00" shape="stair" all="stone_brick.jpg" dir="2" />  
+<brick code="6D01" dir="0" /> 
+<brick code="6D02" dir="3" /> 
+<brick code="6D03" dir="1" /> 
+<brick code="6E00" all="mycelium.jpg" /> 
+<brick code="6F00" all="lily_pad.jpg" /> 
+<brick code="7000" all="nether_brick.jpg" /> 
+<brick code="7100" all="nether_fence.jpg" /> 
+<brick code="7200" all="nether_stairs.jpg" /> 
+<brick code="7300" all="nether_wart.jpg" /> 
+
+<brick code="FF00" all="unknown.jpg" />
+</brickset>

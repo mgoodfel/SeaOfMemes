@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Include">
+      <UniqueIdentifier>{204cfdb0-33d3-4458-ba23-60e6398d058c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{1235e522-c514-4f37-9292-50a231e1335b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\books">
+      <UniqueIdentifier>{d49c508b-f86b-40df-8470-8db3327b12ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\modes">
+      <UniqueIdentifier>{0c6b79f1-693a-4da1-9e44-bab01878691e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Include\codec.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\vorbisenc.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\vorbisfile.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\backends.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\bitrate.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\codebook.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\codec_internal.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\envelope.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\highlevel.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\lookup.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\lookup_data.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\lpc.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\lsp.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\masking.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\mdct.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\misc.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\os.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\psy.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\registry.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\scales.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\smallft.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\window.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\modes\floor_all.h">
+      <Filter>Source\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\modes\psych_8.h">
+      <Filter>Source\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\modes\psych_11.h">
+      <Filter>Source\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\modes\psych_16.h">
+      <Filter>Source\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\modes\psych_44.h">
+      <Filter>Source\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\modes\residue_8.h">
+      <Filter>Source\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\modes\residue_16.h">
+      <Filter>Source\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\modes\residue_44.h">
+      <Filter>Source\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\modes\residue_44p51.h">
+      <Filter>Source\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\modes\residue_44u.h">
+      <Filter>Source\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\modes\setup_8.h">
+      <Filter>Source\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\modes\setup_11.h">
+      <Filter>Source\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\modes\setup_16.h">
+      <Filter>Source\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\modes\setup_22.h">
+      <Filter>Source\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\modes\setup_32.h">
+      <Filter>Source\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\modes\setup_44.h">
+      <Filter>Source\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\modes\setup_44p51.h">
+      <Filter>Source\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\modes\setup_44u.h">
+      <Filter>Source\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\modes\setup_X.h">
+      <Filter>Source\modes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\books\coupled\res_books_stereo.h">
+      <Filter>Source\books</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\books\floor\floor_books.h">
+      <Filter>Source\books</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\books\uncoupled\res_books_uncoupled.h">
+      <Filter>Source\books</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Source\analysis.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\bitrate.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\block.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\codebook.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\envelope.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\floor0.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\floor1.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\info.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\lookup.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\lpc.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\lsp.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\mapping0.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\mdct.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\psy.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\registry.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\res0.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\sharedbook.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\smallft.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\synthesis.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\window.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

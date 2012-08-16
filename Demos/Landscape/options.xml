@@ -1,0 +1,39 @@
+<options
+  platform = ""
+  graphicsTiming = "true"
+  writeCaps = "false"
+  fullscreen = "false"
+  multisample = "true"
+
+  threadCount = "1"
+
+  dpi="0"
+  fov="60"
+  windowX = "100"
+  windowY = "100"
+  windowWidth = "1024"
+  windowHeight = "768"
+
+  shaderDir = "docs/shaders"
+  mapcursor = "docs/cursors/dotCursor.xml"
+  deskcursor = "docs/cursors/arrowCursor.xml"
+  movecursor = "docs/cursors/crossCursor.xml"
+
+  starTexture = "docs/textures/starpatch.jpg;docs/textures/brightStarsAlpha.jpg"
+  moonTexture = "docs/textures/moon.jpg;docs/textures/moonAlpha.jpg"
+  sunTexture = "docs/textures/sun.jpg;docs/textures/sunAlpha.gif"
+  skybox-xmin = "docs/textures/sky-xmin.jpg"
+  skybox-xmax = "docs/textures/sky-xmax.jpg"
+  skybox-ymin = "docs/textures/sky-ymin.jpg"
+  skybox-ymax = "docs/textures/sky-ymax.jpg"
+  skybox-zmin = "docs/textures/sky-zmin.jpg"
+  skybox-zmax = "docs/textures/sky-zmax.jpg"
+
+  waterTexture = "docs/textures/water.jpg;docs/textures/waterAlpha.gif"
+  terrainTexture = "docs/textures/ground.jpg"
+  gridTexture = "docs/textures/groundGrid.jpg"
+  highlightTexture = "docs/textures/newGrid.jpg"
+
+  helpFile = "docs/ui/help.xml"
+/>
+

@@ -1,0 +1,49 @@
+<options
+  platform = ""
+  graphicsTiming = "true"
+  writeCaps = "false"
+  fullscreen = "false"
+  multisample = "true"
+
+  dpi="0"
+  fov="60"
+  windowX = "100"
+  windowY = "100"
+  windowWidth = "800"
+  windowHeight = "600"
+
+  shaderDir = "docs/shaders"
+  deskcursor = "docs/cursors/arrowCursor.xml"
+  movecursor = "docs/cursors/crossCursor.xml"
+
+  planetImage = "docs/textures/earth.jpg;docs/textures/earthAlpha.gif"
+
+  ray = "docs/textures/ray.jpg;docs/textures/rayAlpha.gif"
+  raySound = "docs/sounds/laser.ogg"
+
+  skybox-xmin = "docs/textures/Nebula-xmin.jpg"
+  skybox-xmax = "docs/textures/Nebula-xmax.jpg"
+  skybox-ymin = "docs/textures/Nebula-ymin.jpg"
+  skybox-ymax = "docs/textures/Nebula-ymax.jpg"
+  skybox-zmin = "docs/textures/Nebula-zmin.jpg"
+  skybox-zmax = "docs/textures/Nebula-zmax.jpg"
+  sunTexture = "docs/textures/sun.jpg;docs/textures/sunAlpha.gif"
+  starTexture = "docs/textures/starpatch.jpg;docs/textures/brightStarsAlpha.jpg"
+
+  saucer0 = "docs/textures/saucer0.jpg"
+  saucer1 = "docs/textures/saucer1.jpg"
+  saucer2 = "docs/textures/saucer2.jpg"
+  saucer3 = "docs/textures/saucer3.jpg"
+  saucer4 = "docs/textures/saucer4.jpg"
+  saucer5 = "docs/textures/saucer5.jpg"
+  saucer6 = "docs/textures/saucer6.jpg"
+  saucer7 = "docs/textures/saucer7.jpg"
+  saucer8 = "docs/textures/saucer8.jpg"
+  saucer9 = "docs/textures/saucer9.jpg"
+  saucer10 = "docs/textures/saucer10.jpg"
+  saucerSound = "docs/sounds/saucer.ogg"
+
+  music="docs/sounds/Holst-Mars.ogg"
+
+  helpFile = "docs/ui/help.xml"
+/>

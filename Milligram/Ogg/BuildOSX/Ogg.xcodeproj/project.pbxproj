@@ -1,0 +1,235 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		908CFE771505F31D00F0BFF2 /* bitwise.c in Sources */ = {isa = PBXBuildFile; fileRef = 908CFE751505F31D00F0BFF2 /* bitwise.c */; };
+		908CFE781505F31D00F0BFF2 /* framing.c in Sources */ = {isa = PBXBuildFile; fileRef = 908CFE761505F31D00F0BFF2 /* framing.c */; };
+		908CFE7D1505F32500F0BFF2 /* ogg.h in Headers */ = {isa = PBXBuildFile; fileRef = 908CFE7B1505F32500F0BFF2 /* ogg.h */; };
+		908CFE7E1505F32500F0BFF2 /* os_types.h in Headers */ = {isa = PBXBuildFile; fileRef = 908CFE7C1505F32500F0BFF2 /* os_types.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		908CFE6A1505F30000F0BFF2 /* libOgg.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOgg.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		908CFE751505F31D00F0BFF2 /* bitwise.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bitwise.c; sourceTree = "<group>"; };
+		908CFE761505F31D00F0BFF2 /* framing.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = framing.c; sourceTree = "<group>"; };
+		908CFE7B1505F32500F0BFF2 /* ogg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ogg.h; sourceTree = "<group>"; };
+		908CFE7C1505F32500F0BFF2 /* os_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = os_types.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		908CFE671505F30000F0BFF2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		908CFE5F1505F30000F0BFF2 = {
+			isa = PBXGroup;
+			children = (
+				908CFE7A1505F32500F0BFF2 /* Include */,
+				908CFE741505F31D00F0BFF2 /* Source */,
+				908CFE6B1505F30000F0BFF2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		908CFE6B1505F30000F0BFF2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				908CFE6A1505F30000F0BFF2 /* libOgg.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		908CFE741505F31D00F0BFF2 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				908CFE751505F31D00F0BFF2 /* bitwise.c */,
+				908CFE761505F31D00F0BFF2 /* framing.c */,
+			);
+			name = Source;
+			path = ../Source;
+			sourceTree = "<group>";
+		};
+		908CFE7A1505F32500F0BFF2 /* Include */ = {
+			isa = PBXGroup;
+			children = (
+				908CFE7B1505F32500F0BFF2 /* ogg.h */,
+				908CFE7C1505F32500F0BFF2 /* os_types.h */,
+			);
+			name = Include;
+			path = ../Include;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		908CFE681505F30000F0BFF2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				908CFE7D1505F32500F0BFF2 /* ogg.h in Headers */,
+				908CFE7E1505F32500F0BFF2 /* os_types.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		908CFE691505F30000F0BFF2 /* Ogg */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 908CFE6E1505F30000F0BFF2 /* Build configuration list for PBXNativeTarget "Ogg" */;
+			buildPhases = (
+				908CFE661505F30000F0BFF2 /* Sources */,
+				908CFE671505F30000F0BFF2 /* Frameworks */,
+				908CFE681505F30000F0BFF2 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Ogg;
+			productName = Ogg;
+			productReference = 908CFE6A1505F30000F0BFF2 /* libOgg.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		908CFE611505F30000F0BFF2 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 908CFE641505F30000F0BFF2 /* Build configuration list for PBXProject "Ogg" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 908CFE5F1505F30000F0BFF2;
+			productRefGroup = 908CFE6B1505F30000F0BFF2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				908CFE691505F30000F0BFF2 /* Ogg */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		908CFE661505F30000F0BFF2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				908CFE771505F31D00F0BFF2 /* bitwise.c in Sources */,
+				908CFE781505F31D00F0BFF2 /* framing.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		908CFE6C1505F30000F0BFF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		908CFE6D1505F30000F0BFF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		908CFE6F1505F30000F0BFF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = ../../BuildOSX/Debug;
+				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = (
+					../Include,
+					../Source,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		908CFE701505F30000F0BFF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = ../../BuildOSX/Release;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = (
+					../Include,
+					../Source,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		908CFE641505F30000F0BFF2 /* Build configuration list for PBXProject "Ogg" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				908CFE6C1505F30000F0BFF2 /* Debug */,
+				908CFE6D1505F30000F0BFF2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		908CFE6E1505F30000F0BFF2 /* Build configuration list for PBXNativeTarget "Ogg" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				908CFE6F1505F30000F0BFF2 /* Debug */,
+				908CFE701505F30000F0BFF2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 908CFE611505F30000F0BFF2 /* Project object */;
+}

@@ -1,0 +1,509 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		908EA79415A1845B00E74D17 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908EA79315A1845B00E74D17 /* Cocoa.framework */; };
+		908EA79E15A1845B00E74D17 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 908EA79C15A1845B00E74D17 /* InfoPlist.strings */; };
+		908EA7A415A1845B00E74D17 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 908EA7A215A1845B00E74D17 /* Credits.rtf */; };
+		908EA7A715A1845B00E74D17 /* SeaOfMemesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 908EA7A615A1845B00E74D17 /* SeaOfMemesAppDelegate.m */; };
+		908EA7AA15A1845C00E74D17 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 908EA7A815A1845C00E74D17 /* MainMenu.xib */; };
+		908EA7E315A1848600E74D17 /* HelpUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 908EA7B215A1848600E74D17 /* HelpUI.cpp */; };
+		908EA7E415A1848600E74D17 /* SpeedUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 908EA7B415A1848600E74D17 /* SpeedUI.cpp */; };
+		908EA7E515A1848600E74D17 /* Landscape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 908EA7B715A1848600E74D17 /* Landscape.cpp */; };
+		908EA7E615A1848600E74D17 /* PlanetLandscape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 908EA7B915A1848600E74D17 /* PlanetLandscape.cpp */; };
+		908EA7E715A1848600E74D17 /* PlanetTerrain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 908EA7BB15A1848600E74D17 /* PlanetTerrain.cpp */; };
+		908EA7E815A1848600E74D17 /* TerrainCell.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 908EA7BD15A1848600E74D17 /* TerrainCell.cpp */; };
+		908EA7E915A1848600E74D17 /* SeaOfMemes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 908EA7BF15A1848600E74D17 /* SeaOfMemes.cpp */; };
+		908EA7EA15A1848600E74D17 /* Asteroid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 908EA7C215A1848600E74D17 /* Asteroid.cpp */; };
+		908EA7EB15A1848600E74D17 /* Belt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 908EA7C415A1848600E74D17 /* Belt.cpp */; };
+		908EA7EC15A1848600E74D17 /* Earth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 908EA7C615A1848600E74D17 /* Earth.cpp */; };
+		908EA7EF15A1848600E74D17 /* Moon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 908EA7CC15A1848600E74D17 /* Moon.cpp */; };
+		908EA7F015A1848600E74D17 /* NebulaSky.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 908EA7CE15A1848600E74D17 /* NebulaSky.cpp */; };
+		908EA7F115A1848600E74D17 /* Planet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 908EA7D015A1848600E74D17 /* Planet.cpp */; };
+		908EA7F215A1848600E74D17 /* Ring.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 908EA7D215A1848600E74D17 /* Ring.cpp */; };
+		908EA7F315A1848600E74D17 /* SolarSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 908EA7D415A1848600E74D17 /* SolarSystem.cpp */; };
+		908EA7F415A1848600E74D17 /* VertexPlanet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 908EA7D615A1848600E74D17 /* VertexPlanet.cpp */; };
+		908EA7F515A1848600E74D17 /* stdafx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 908EA7D815A1848600E74D17 /* stdafx.cpp */; };
+		908EA7F615A1848600E74D17 /* Octree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 908EA7DB15A1848600E74D17 /* Octree.cpp */; };
+		908EA7F715A1848600E74D17 /* Point3Array.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 908EA7DD15A1848600E74D17 /* Point3Array.cpp */; };
+		908EA7F815A1848600E74D17 /* PtrOctree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 908EA7DF15A1848600E74D17 /* PtrOctree.cpp */; };
+		908EA7F915A1848600E74D17 /* VertexTerrain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 908EA7E115A1848600E74D17 /* VertexTerrain.cpp */; };
+		908EA7FB15A184A100E74D17 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908EA7FA15A184A100E74D17 /* QuartzCore.framework */; };
+		908EA7FD15A184AA00E74D17 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908EA7FC15A184AA00E74D17 /* OpenGL.framework */; };
+		90B23A5915D0096A00A39C00 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90B23A5815D0096A00A39C00 /* IOKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		908EA78F15A1845B00E74D17 /* SeaOfMemes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeaOfMemes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		908EA79315A1845B00E74D17 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		908EA79615A1845B00E74D17 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		908EA79715A1845B00E74D17 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		908EA79815A1845B00E74D17 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		908EA79B15A1845B00E74D17 /* SeaOfMemes-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SeaOfMemes-Info.plist"; sourceTree = "<group>"; };
+		908EA79D15A1845B00E74D17 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		908EA7A115A1845B00E74D17 /* SeaOfMemes-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SeaOfMemes-Prefix.pch"; sourceTree = "<group>"; };
+		908EA7A315A1845B00E74D17 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		908EA7A515A1845B00E74D17 /* SeaOfMemesAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeaOfMemesAppDelegate.h; sourceTree = "<group>"; };
+		908EA7A615A1845B00E74D17 /* SeaOfMemesAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeaOfMemesAppDelegate.m; sourceTree = "<group>"; };
+		908EA7A915A1845C00E74D17 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		908EA7B215A1848600E74D17 /* HelpUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HelpUI.cpp; sourceTree = "<group>"; };
+		908EA7B315A1848600E74D17 /* HelpUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpUI.h; sourceTree = "<group>"; };
+		908EA7B415A1848600E74D17 /* SpeedUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpeedUI.cpp; sourceTree = "<group>"; };
+		908EA7B515A1848600E74D17 /* SpeedUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeedUI.h; sourceTree = "<group>"; };
+		908EA7B715A1848600E74D17 /* Landscape.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Landscape.cpp; sourceTree = "<group>"; };
+		908EA7B815A1848600E74D17 /* Landscape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Landscape.h; sourceTree = "<group>"; };
+		908EA7B915A1848600E74D17 /* PlanetLandscape.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlanetLandscape.cpp; sourceTree = "<group>"; };
+		908EA7BA15A1848600E74D17 /* PlanetLandscape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanetLandscape.h; sourceTree = "<group>"; };
+		908EA7BB15A1848600E74D17 /* PlanetTerrain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlanetTerrain.cpp; sourceTree = "<group>"; };
+		908EA7BC15A1848600E74D17 /* PlanetTerrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanetTerrain.h; sourceTree = "<group>"; };
+		908EA7BD15A1848600E74D17 /* TerrainCell.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TerrainCell.cpp; sourceTree = "<group>"; };
+		908EA7BE15A1848600E74D17 /* TerrainCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TerrainCell.h; sourceTree = "<group>"; };
+		908EA7BF15A1848600E74D17 /* SeaOfMemes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SeaOfMemes.cpp; path = ../Source/SeaOfMemes.cpp; sourceTree = "<group>"; };
+		908EA7C015A1848600E74D17 /* SeaOfMemes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SeaOfMemes.h; path = ../Source/SeaOfMemes.h; sourceTree = "<group>"; };
+		908EA7C215A1848600E74D17 /* Asteroid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Asteroid.cpp; sourceTree = "<group>"; };
+		908EA7C315A1848600E74D17 /* Asteroid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Asteroid.h; sourceTree = "<group>"; };
+		908EA7C415A1848600E74D17 /* Belt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Belt.cpp; sourceTree = "<group>"; };
+		908EA7C515A1848600E74D17 /* Belt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Belt.h; sourceTree = "<group>"; };
+		908EA7C615A1848600E74D17 /* Earth.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Earth.cpp; sourceTree = "<group>"; };
+		908EA7C715A1848600E74D17 /* Earth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Earth.h; sourceTree = "<group>"; };
+		908EA7CC15A1848600E74D17 /* Moon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Moon.cpp; sourceTree = "<group>"; };
+		908EA7CD15A1848600E74D17 /* Moon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Moon.h; sourceTree = "<group>"; };
+		908EA7CE15A1848600E74D17 /* NebulaSky.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NebulaSky.cpp; sourceTree = "<group>"; };
+		908EA7CF15A1848600E74D17 /* NebulaSky.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NebulaSky.h; sourceTree = "<group>"; };
+		908EA7D015A1848600E74D17 /* Planet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Planet.cpp; sourceTree = "<group>"; };
+		908EA7D115A1848600E74D17 /* Planet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Planet.h; sourceTree = "<group>"; };
+		908EA7D215A1848600E74D17 /* Ring.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ring.cpp; sourceTree = "<group>"; };
+		908EA7D315A1848600E74D17 /* Ring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ring.h; sourceTree = "<group>"; };
+		908EA7D415A1848600E74D17 /* SolarSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SolarSystem.cpp; sourceTree = "<group>"; };
+		908EA7D515A1848600E74D17 /* SolarSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SolarSystem.h; sourceTree = "<group>"; };
+		908EA7D615A1848600E74D17 /* VertexPlanet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VertexPlanet.cpp; sourceTree = "<group>"; };
+		908EA7D715A1848600E74D17 /* VertexPlanet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertexPlanet.h; sourceTree = "<group>"; };
+		908EA7D815A1848600E74D17 /* stdafx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = stdafx.cpp; path = ../Source/stdafx.cpp; sourceTree = "<group>"; };
+		908EA7D915A1848600E74D17 /* stdafx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stdafx.h; path = ../Source/stdafx.h; sourceTree = "<group>"; };
+		908EA7DB15A1848600E74D17 /* Octree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Octree.cpp; sourceTree = "<group>"; };
+		908EA7DC15A1848600E74D17 /* Octree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Octree.h; sourceTree = "<group>"; };
+		908EA7DD15A1848600E74D17 /* Point3Array.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Point3Array.cpp; sourceTree = "<group>"; };
+		908EA7DE15A1848600E74D17 /* Point3Array.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Point3Array.h; sourceTree = "<group>"; };
+		908EA7DF15A1848600E74D17 /* PtrOctree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PtrOctree.cpp; sourceTree = "<group>"; };
+		908EA7E015A1848600E74D17 /* PtrOctree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PtrOctree.h; sourceTree = "<group>"; };
+		908EA7E115A1848600E74D17 /* VertexTerrain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VertexTerrain.cpp; sourceTree = "<group>"; };
+		908EA7E215A1848600E74D17 /* VertexTerrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertexTerrain.h; sourceTree = "<group>"; };
+		908EA7FA15A184A100E74D17 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		908EA7FC15A184AA00E74D17 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		90B23A5815D0096A00A39C00 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		908EA78C15A1845B00E74D17 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90B23A5915D0096A00A39C00 /* IOKit.framework in Frameworks */,
+				908EA7FD15A184AA00E74D17 /* OpenGL.framework in Frameworks */,
+				908EA7FB15A184A100E74D17 /* QuartzCore.framework in Frameworks */,
+				908EA79415A1845B00E74D17 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		908EA78415A1845B00E74D17 = {
+			isa = PBXGroup;
+			children = (
+				90B23A5815D0096A00A39C00 /* IOKit.framework */,
+				908EA7FC15A184AA00E74D17 /* OpenGL.framework */,
+				908EA7FA15A184A100E74D17 /* QuartzCore.framework */,
+				908EA7B015A1846B00E74D17 /* Source */,
+				908EA79915A1845B00E74D17 /* SeaOfMemes */,
+				908EA79215A1845B00E74D17 /* Frameworks */,
+				908EA79015A1845B00E74D17 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		908EA79015A1845B00E74D17 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				908EA78F15A1845B00E74D17 /* SeaOfMemes.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		908EA79215A1845B00E74D17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				908EA79315A1845B00E74D17 /* Cocoa.framework */,
+				908EA79515A1845B00E74D17 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		908EA79515A1845B00E74D17 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				908EA79615A1845B00E74D17 /* AppKit.framework */,
+				908EA79715A1845B00E74D17 /* CoreData.framework */,
+				908EA79815A1845B00E74D17 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		908EA79915A1845B00E74D17 /* SeaOfMemes */ = {
+			isa = PBXGroup;
+			children = (
+				908EA7A515A1845B00E74D17 /* SeaOfMemesAppDelegate.h */,
+				908EA7A615A1845B00E74D17 /* SeaOfMemesAppDelegate.m */,
+				908EA7A815A1845C00E74D17 /* MainMenu.xib */,
+				908EA79A15A1845B00E74D17 /* Supporting Files */,
+			);
+			path = SeaOfMemes;
+			sourceTree = "<group>";
+		};
+		908EA79A15A1845B00E74D17 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				908EA79B15A1845B00E74D17 /* SeaOfMemes-Info.plist */,
+				908EA79C15A1845B00E74D17 /* InfoPlist.strings */,
+				908EA7A115A1845B00E74D17 /* SeaOfMemes-Prefix.pch */,
+				908EA7A215A1845B00E74D17 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		908EA7B015A1846B00E74D17 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				908EA7B115A1848600E74D17 /* GUI */,
+				908EA7B615A1848600E74D17 /* Landscape */,
+				908EA7BF15A1848600E74D17 /* SeaOfMemes.cpp */,
+				908EA7C015A1848600E74D17 /* SeaOfMemes.h */,
+				908EA7C115A1848600E74D17 /* SolarSystem */,
+				908EA7D815A1848600E74D17 /* stdafx.cpp */,
+				908EA7D915A1848600E74D17 /* stdafx.h */,
+				908EA7DA15A1848600E74D17 /* Util */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		908EA7B115A1848600E74D17 /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				908EA7B215A1848600E74D17 /* HelpUI.cpp */,
+				908EA7B315A1848600E74D17 /* HelpUI.h */,
+				908EA7B415A1848600E74D17 /* SpeedUI.cpp */,
+				908EA7B515A1848600E74D17 /* SpeedUI.h */,
+			);
+			name = GUI;
+			path = ../Source/GUI;
+			sourceTree = "<group>";
+		};
+		908EA7B615A1848600E74D17 /* Landscape */ = {
+			isa = PBXGroup;
+			children = (
+				908EA7B715A1848600E74D17 /* Landscape.cpp */,
+				908EA7B815A1848600E74D17 /* Landscape.h */,
+				908EA7B915A1848600E74D17 /* PlanetLandscape.cpp */,
+				908EA7BA15A1848600E74D17 /* PlanetLandscape.h */,
+				908EA7BB15A1848600E74D17 /* PlanetTerrain.cpp */,
+				908EA7BC15A1848600E74D17 /* PlanetTerrain.h */,
+				908EA7BD15A1848600E74D17 /* TerrainCell.cpp */,
+				908EA7BE15A1848600E74D17 /* TerrainCell.h */,
+			);
+			name = Landscape;
+			path = ../Source/Landscape;
+			sourceTree = "<group>";
+		};
+		908EA7C115A1848600E74D17 /* SolarSystem */ = {
+			isa = PBXGroup;
+			children = (
+				908EA7C215A1848600E74D17 /* Asteroid.cpp */,
+				908EA7C315A1848600E74D17 /* Asteroid.h */,
+				908EA7C415A1848600E74D17 /* Belt.cpp */,
+				908EA7C515A1848600E74D17 /* Belt.h */,
+				908EA7C615A1848600E74D17 /* Earth.cpp */,
+				908EA7C715A1848600E74D17 /* Earth.h */,
+				908EA7CC15A1848600E74D17 /* Moon.cpp */,
+				908EA7CD15A1848600E74D17 /* Moon.h */,
+				908EA7CE15A1848600E74D17 /* NebulaSky.cpp */,
+				908EA7CF15A1848600E74D17 /* NebulaSky.h */,
+				908EA7D015A1848600E74D17 /* Planet.cpp */,
+				908EA7D115A1848600E74D17 /* Planet.h */,
+				908EA7D215A1848600E74D17 /* Ring.cpp */,
+				908EA7D315A1848600E74D17 /* Ring.h */,
+				908EA7D415A1848600E74D17 /* SolarSystem.cpp */,
+				908EA7D515A1848600E74D17 /* SolarSystem.h */,
+				908EA7D615A1848600E74D17 /* VertexPlanet.cpp */,
+				908EA7D715A1848600E74D17 /* VertexPlanet.h */,
+			);
+			name = SolarSystem;
+			path = ../Source/SolarSystem;
+			sourceTree = "<group>";
+		};
+		908EA7DA15A1848600E74D17 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				908EA7DB15A1848600E74D17 /* Octree.cpp */,
+				908EA7DC15A1848600E74D17 /* Octree.h */,
+				908EA7DD15A1848600E74D17 /* Point3Array.cpp */,
+				908EA7DE15A1848600E74D17 /* Point3Array.h */,
+				908EA7DF15A1848600E74D17 /* PtrOctree.cpp */,
+				908EA7E015A1848600E74D17 /* PtrOctree.h */,
+				908EA7E115A1848600E74D17 /* VertexTerrain.cpp */,
+				908EA7E215A1848600E74D17 /* VertexTerrain.h */,
+			);
+			name = Util;
+			path = ../Source/Util;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		908EA78E15A1845B00E74D17 /* SeaOfMemes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 908EA7AD15A1845C00E74D17 /* Build configuration list for PBXNativeTarget "SeaOfMemes" */;
+			buildPhases = (
+				908EA78B15A1845B00E74D17 /* Sources */,
+				908EA78C15A1845B00E74D17 /* Frameworks */,
+				908EA78D15A1845B00E74D17 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SeaOfMemes;
+			productName = SeaOfMemes;
+			productReference = 908EA78F15A1845B00E74D17 /* SeaOfMemes.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		908EA78615A1845B00E74D17 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 908EA78915A1845B00E74D17 /* Build configuration list for PBXProject "SeaOfMemes" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 908EA78415A1845B00E74D17;
+			productRefGroup = 908EA79015A1845B00E74D17 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				908EA78E15A1845B00E74D17 /* SeaOfMemes */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		908EA78D15A1845B00E74D17 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				908EA79E15A1845B00E74D17 /* InfoPlist.strings in Resources */,
+				908EA7A415A1845B00E74D17 /* Credits.rtf in Resources */,
+				908EA7AA15A1845C00E74D17 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		908EA78B15A1845B00E74D17 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				908EA7A715A1845B00E74D17 /* SeaOfMemesAppDelegate.m in Sources */,
+				908EA7E315A1848600E74D17 /* HelpUI.cpp in Sources */,
+				908EA7E415A1848600E74D17 /* SpeedUI.cpp in Sources */,
+				908EA7E515A1848600E74D17 /* Landscape.cpp in Sources */,
+				908EA7E615A1848600E74D17 /* PlanetLandscape.cpp in Sources */,
+				908EA7E715A1848600E74D17 /* PlanetTerrain.cpp in Sources */,
+				908EA7E815A1848600E74D17 /* TerrainCell.cpp in Sources */,
+				908EA7E915A1848600E74D17 /* SeaOfMemes.cpp in Sources */,
+				908EA7EA15A1848600E74D17 /* Asteroid.cpp in Sources */,
+				908EA7EB15A1848600E74D17 /* Belt.cpp in Sources */,
+				908EA7EC15A1848600E74D17 /* Earth.cpp in Sources */,
+				908EA7EF15A1848600E74D17 /* Moon.cpp in Sources */,
+				908EA7F015A1848600E74D17 /* NebulaSky.cpp in Sources */,
+				908EA7F115A1848600E74D17 /* Planet.cpp in Sources */,
+				908EA7F215A1848600E74D17 /* Ring.cpp in Sources */,
+				908EA7F315A1848600E74D17 /* SolarSystem.cpp in Sources */,
+				908EA7F415A1848600E74D17 /* VertexPlanet.cpp in Sources */,
+				908EA7F515A1848600E74D17 /* stdafx.cpp in Sources */,
+				908EA7F615A1848600E74D17 /* Octree.cpp in Sources */,
+				908EA7F715A1848600E74D17 /* Point3Array.cpp in Sources */,
+				908EA7F815A1848600E74D17 /* PtrOctree.cpp in Sources */,
+				908EA7F915A1848600E74D17 /* VertexTerrain.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		908EA79C15A1845B00E74D17 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				908EA79D15A1845B00E74D17 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		908EA7A215A1845B00E74D17 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				908EA7A315A1845B00E74D17 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		908EA7A815A1845C00E74D17 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				908EA7A915A1845C00E74D17 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		908EA7AB15A1845C00E74D17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		908EA7AC15A1845C00E74D17 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		908EA7AE15A1845C00E74D17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(CONFIGURATION)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SeaOfMemes/SeaOfMemes-Prefix.pch";
+				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				HEADER_SEARCH_PATHS = (
+					../Source,
+					../../../Milligram,
+				);
+				INFOPLIST_FILE = "SeaOfMemes/SeaOfMemes-Info.plist";
+				LIBRARY_SEARCH_PATHS = "../../../Milligram/BuildOSX/$(CONFIGURATION)";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OTHER_LDFLAGS = (
+					"-lmgPlatform",
+					"-lmgUtil",
+					"-lmg2D",
+					"-lmg3D",
+					"-lmgGUI",
+					"-lFreeType",
+					"-lJpegLib",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		908EA7AF15A1845C00E74D17 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(CONFIGURATION)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SeaOfMemes/SeaOfMemes-Prefix.pch";
+				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				HEADER_SEARCH_PATHS = (
+					../Source,
+					../../../Milligram,
+				);
+				INFOPLIST_FILE = "SeaOfMemes/SeaOfMemes-Info.plist";
+				LIBRARY_SEARCH_PATHS = "../../../Milligram/BuildOSX/$(CONFIGURATION)";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OTHER_LDFLAGS = (
+					"-lmgPlatform",
+					"-lmgUtil",
+					"-lmg2D",
+					"-lmg3D",
+					"-lmgGUI",
+					"-lFreeType",
+					"-lJpegLib",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		908EA78915A1845B00E74D17 /* Build configuration list for PBXProject "SeaOfMemes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				908EA7AB15A1845C00E74D17 /* Debug */,
+				908EA7AC15A1845C00E74D17 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		908EA7AD15A1845C00E74D17 /* Build configuration list for PBXNativeTarget "SeaOfMemes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				908EA7AE15A1845C00E74D17 /* Debug */,
+				908EA7AF15A1845C00E74D17 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 908EA78615A1845B00E74D17 /* Project object */;
+}

@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\Source\McrView.cpp" />
+    <ClCompile Include="..\Source\StarrySky.cpp" />
+    <ClCompile Include="..\Source\stdafx.cpp" />
+    <ClCompile Include="..\Source\Bricks\BrickBlob.cpp">
+      <Filter>Bricks</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Bricks\VertexCubeFloat.cpp">
+      <Filter>Bricks</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Bricks\VertexCubeInt.cpp">
+      <Filter>Bricks</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Minecraft\MinecraftFile.cpp">
+      <Filter>Minecraft</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Minecraft\NBTFile.cpp">
+      <Filter>Minecraft</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Minecraft\MinecraftChunk.cpp">
+      <Filter>Minecraft</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Chunks\ChunkWorld.cpp">
+      <Filter>Chunks</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Chunks\ChunkList.cpp">
+      <Filter>Chunks</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Chunks\ChunkObj.cpp">
+      <Filter>Chunks</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Minecraft\MinecraftRegion.cpp">
+      <Filter>Minecraft</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Bricks\BrickBlobInt.cpp">
+      <Filter>Bricks</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Bricks\BrickBlobFloat.cpp">
+      <Filter>Bricks</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Bricks\BrickSetFile.cpp">
+      <Filter>Bricks</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Bricks\BrickSet.cpp">
+      <Filter>Bricks</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Bricks\ShapeFile.cpp">
+      <Filter>Bricks</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Bricks\VertexShapeFloat.cpp">
+      <Filter>Bricks</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Bricks\VertexShapeInt.cpp">
+      <Filter>Bricks</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\VertexSky.cpp" />
+    <ClCompile Include="..\Source\MovementApp.cpp" />
+    <ClCompile Include="..\Source\HelpUI.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Source\McrView.h" />
+    <ClInclude Include="..\Source\StarrySky.h" />
+    <ClInclude Include="..\Source\stdafx.h" />
+    <ClInclude Include="..\Source\Bricks\BrickBlob.h">
+      <Filter>Bricks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Bricks\VertexCubeFloat.h">
+      <Filter>Bricks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Bricks\VertexCubeInt.h">
+      <Filter>Bricks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Minecraft\MinecraftFile.h">
+      <Filter>Minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Minecraft\NBTFile.h">
+      <Filter>Minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Minecraft\MinecraftChunk.h">
+      <Filter>Minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Chunks\ChunkWorld.h">
+      <Filter>Chunks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Chunks\ChunkList.h">
+      <Filter>Chunks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Chunks\ChunkObj.h">
+      <Filter>Chunks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Minecraft\MinecraftRegion.h">
+      <Filter>Minecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Bricks\BrickBlobInt.h">
+      <Filter>Bricks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Bricks\BrickBlobFloat.h">
+      <Filter>Bricks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Bricks\BrickSetFile.h">
+      <Filter>Bricks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Bricks\BrickSet.h">
+      <Filter>Bricks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Bricks\ShapeFile.h">
+      <Filter>Bricks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Bricks\ShapeDefn.h">
+      <Filter>Bricks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Bricks\VertexShapeFloat.h">
+      <Filter>Bricks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Bricks\VertexShapeInt.h">
+      <Filter>Bricks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\VertexSky.h" />
+    <ClInclude Include="..\Source\MovementApp.h" />
+    <ClInclude Include="..\Source\HelpUI.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Bricks">
+      <UniqueIdentifier>{d9fb2a65-771c-4419-a474-5e6e2c7bf256}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Minecraft">
+      <UniqueIdentifier>{0c9caab6-a49e-4c40-969c-0d338d66c601}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Chunks">
+      <UniqueIdentifier>{b4d47421-2379-4da1-85be-6f74b14c7f1a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

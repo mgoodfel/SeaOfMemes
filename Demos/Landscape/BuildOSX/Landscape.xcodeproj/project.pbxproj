@@ -1,0 +1,387 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		900436F91518E8B50097DF79 /* VertexSky.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 900436F71518E8B50097DF79 /* VertexSky.cpp */; };
+		90B23A6E15D009E500A39C00 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90B23A6D15D009E500A39C00 /* IOKit.framework */; };
+		90C4E0E41500F2D70038EC82 /* MovementApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C4E0E01500F2D70038EC82 /* MovementApp.cpp */; };
+		90D1963415A145F100145D8D /* HelpUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90D1963215A145F100145D8D /* HelpUI.cpp */; };
+		90DB15C913EE108100181447 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90DB15C813EE108100181447 /* Cocoa.framework */; };
+		90DB15D313EE108100181447 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 90DB15D113EE108100181447 /* InfoPlist.strings */; };
+		90DB15D913EE108100181447 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 90DB15D713EE108100181447 /* Credits.rtf */; };
+		90DB15DC13EE108100181447 /* LandscapeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 90DB15DB13EE108100181447 /* LandscapeAppDelegate.m */; };
+		90DB15DF13EE108100181447 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90DB15DD13EE108100181447 /* MainMenu.xib */; };
+		90DB15EA13EE10B000181447 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90DB15E913EE10B000181447 /* OpenGL.framework */; };
+		90DB15ED13EE10BB00181447 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90DB15EC13EE10BB00181447 /* QuartzCore.framework */; };
+		90DB15FE13EE11E000181447 /* Landscape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90DB15F213EE11E000181447 /* Landscape.cpp */; };
+		90DB160013EE11E000181447 /* StarrySky.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90DB15F613EE11E000181447 /* StarrySky.cpp */; };
+		90DB160213EE11E000181447 /* Terrain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90DB15FA13EE11E000181447 /* Terrain.cpp */; };
+		90DB160313EE11E000181447 /* VertexTerrain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90DB15FC13EE11E000181447 /* VertexTerrain.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		900436F71518E8B50097DF79 /* VertexSky.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VertexSky.cpp; path = ../Source/VertexSky.cpp; sourceTree = "<group>"; };
+		900436F81518E8B50097DF79 /* VertexSky.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VertexSky.h; path = ../Source/VertexSky.h; sourceTree = "<group>"; };
+		90B23A6D15D009E500A39C00 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		90C4E0E01500F2D70038EC82 /* MovementApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MovementApp.cpp; path = ../Source/MovementApp.cpp; sourceTree = "<group>"; };
+		90C4E0E11500F2D70038EC82 /* MovementApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MovementApp.h; path = ../Source/MovementApp.h; sourceTree = "<group>"; };
+		90D1963215A145F100145D8D /* HelpUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HelpUI.cpp; path = ../Source/HelpUI.cpp; sourceTree = "<group>"; };
+		90D1963315A145F100145D8D /* HelpUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelpUI.h; path = ../Source/HelpUI.h; sourceTree = "<group>"; };
+		90DB15C413EE108100181447 /* Landscape.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Landscape.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		90DB15C813EE108100181447 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		90DB15CB13EE108100181447 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		90DB15CC13EE108100181447 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		90DB15CD13EE108100181447 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		90DB15D013EE108100181447 /* Landscape-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Landscape-Info.plist"; sourceTree = "<group>"; };
+		90DB15D213EE108100181447 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		90DB15D613EE108100181447 /* Landscape-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Landscape-Prefix.pch"; sourceTree = "<group>"; };
+		90DB15D813EE108100181447 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		90DB15DA13EE108100181447 /* LandscapeAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LandscapeAppDelegate.h; sourceTree = "<group>"; };
+		90DB15DB13EE108100181447 /* LandscapeAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LandscapeAppDelegate.m; sourceTree = "<group>"; };
+		90DB15DE13EE108100181447 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		90DB15E913EE10B000181447 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		90DB15EC13EE10BB00181447 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		90DB15F213EE11E000181447 /* Landscape.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Landscape.cpp; path = ../Source/Landscape.cpp; sourceTree = "<group>"; };
+		90DB15F313EE11E000181447 /* Landscape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Landscape.h; path = ../Source/Landscape.h; sourceTree = "<group>"; };
+		90DB15F613EE11E000181447 /* StarrySky.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = StarrySky.cpp; path = ../Source/StarrySky.cpp; sourceTree = "<group>"; };
+		90DB15F713EE11E000181447 /* StarrySky.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StarrySky.h; path = ../Source/StarrySky.h; sourceTree = "<group>"; };
+		90DB15F913EE11E000181447 /* stdafx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stdafx.h; path = ../Source/stdafx.h; sourceTree = "<group>"; };
+		90DB15FA13EE11E000181447 /* Terrain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Terrain.cpp; path = ../Source/Terrain.cpp; sourceTree = "<group>"; };
+		90DB15FB13EE11E000181447 /* Terrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Terrain.h; path = ../Source/Terrain.h; sourceTree = "<group>"; };
+		90DB15FC13EE11E000181447 /* VertexTerrain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VertexTerrain.cpp; path = ../Source/VertexTerrain.cpp; sourceTree = "<group>"; };
+		90DB15FD13EE11E000181447 /* VertexTerrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VertexTerrain.h; path = ../Source/VertexTerrain.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		90DB15C113EE108100181447 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90B23A6E15D009E500A39C00 /* IOKit.framework in Frameworks */,
+				90DB15ED13EE10BB00181447 /* QuartzCore.framework in Frameworks */,
+				90DB15EA13EE10B000181447 /* OpenGL.framework in Frameworks */,
+				90DB15C913EE108100181447 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		90DB15B913EE108100181447 = {
+			isa = PBXGroup;
+			children = (
+				90B23A6D15D009E500A39C00 /* IOKit.framework */,
+				90D1963215A145F100145D8D /* HelpUI.cpp */,
+				90D1963315A145F100145D8D /* HelpUI.h */,
+				900436F71518E8B50097DF79 /* VertexSky.cpp */,
+				900436F81518E8B50097DF79 /* VertexSky.h */,
+				90C4E0E01500F2D70038EC82 /* MovementApp.cpp */,
+				90C4E0E11500F2D70038EC82 /* MovementApp.h */,
+				90DB15F213EE11E000181447 /* Landscape.cpp */,
+				90DB15F313EE11E000181447 /* Landscape.h */,
+				90DB15F613EE11E000181447 /* StarrySky.cpp */,
+				90DB15F713EE11E000181447 /* StarrySky.h */,
+				90DB15F913EE11E000181447 /* stdafx.h */,
+				90DB15FA13EE11E000181447 /* Terrain.cpp */,
+				90DB15FB13EE11E000181447 /* Terrain.h */,
+				90DB15FC13EE11E000181447 /* VertexTerrain.cpp */,
+				90DB15FD13EE11E000181447 /* VertexTerrain.h */,
+				90DB15EC13EE10BB00181447 /* QuartzCore.framework */,
+				90DB15E913EE10B000181447 /* OpenGL.framework */,
+				90DB15CE13EE108100181447 /* Landscape */,
+				90DB15C713EE108100181447 /* Frameworks */,
+				90DB15C513EE108100181447 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		90DB15C513EE108100181447 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				90DB15C413EE108100181447 /* Landscape.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		90DB15C713EE108100181447 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				90DB15C813EE108100181447 /* Cocoa.framework */,
+				90DB15CA13EE108100181447 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		90DB15CA13EE108100181447 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				90DB15CB13EE108100181447 /* AppKit.framework */,
+				90DB15CC13EE108100181447 /* CoreData.framework */,
+				90DB15CD13EE108100181447 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		90DB15CE13EE108100181447 /* Landscape */ = {
+			isa = PBXGroup;
+			children = (
+				90DB15DA13EE108100181447 /* LandscapeAppDelegate.h */,
+				90DB15DB13EE108100181447 /* LandscapeAppDelegate.m */,
+				90DB15DD13EE108100181447 /* MainMenu.xib */,
+				90DB15CF13EE108100181447 /* Supporting Files */,
+			);
+			path = Landscape;
+			sourceTree = "<group>";
+		};
+		90DB15CF13EE108100181447 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				90DB15D013EE108100181447 /* Landscape-Info.plist */,
+				90DB15D113EE108100181447 /* InfoPlist.strings */,
+				90DB15D613EE108100181447 /* Landscape-Prefix.pch */,
+				90DB15D713EE108100181447 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		90DB15C313EE108100181447 /* Landscape */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 90DB15E213EE108100181447 /* Build configuration list for PBXNativeTarget "Landscape" */;
+			buildPhases = (
+				90DB15C013EE108100181447 /* Sources */,
+				90DB15C113EE108100181447 /* Frameworks */,
+				90DB15C213EE108100181447 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Landscape;
+			productName = Landscape;
+			productReference = 90DB15C413EE108100181447 /* Landscape.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		90DB15BB13EE108100181447 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 90DB15BE13EE108100181447 /* Build configuration list for PBXProject "Landscape" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 90DB15B913EE108100181447;
+			productRefGroup = 90DB15C513EE108100181447 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				90DB15C313EE108100181447 /* Landscape */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		90DB15C213EE108100181447 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90DB15D313EE108100181447 /* InfoPlist.strings in Resources */,
+				90DB15D913EE108100181447 /* Credits.rtf in Resources */,
+				90DB15DF13EE108100181447 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		90DB15C013EE108100181447 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90DB15DC13EE108100181447 /* LandscapeAppDelegate.m in Sources */,
+				90DB15FE13EE11E000181447 /* Landscape.cpp in Sources */,
+				90DB160013EE11E000181447 /* StarrySky.cpp in Sources */,
+				90DB160213EE11E000181447 /* Terrain.cpp in Sources */,
+				90DB160313EE11E000181447 /* VertexTerrain.cpp in Sources */,
+				90C4E0E41500F2D70038EC82 /* MovementApp.cpp in Sources */,
+				900436F91518E8B50097DF79 /* VertexSky.cpp in Sources */,
+				90D1963415A145F100145D8D /* HelpUI.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		90DB15D113EE108100181447 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				90DB15D213EE108100181447 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		90DB15D713EE108100181447 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				90DB15D813EE108100181447 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		90DB15DD13EE108100181447 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				90DB15DE13EE108100181447 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		90DB15E013EE108100181447 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		90DB15E113EE108100181447 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		90DB15E313EE108100181447 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(CONFIGURATION)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Landscape/Landscape-Prefix.pch";
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				HEADER_SEARCH_PATHS = (
+					../Source,
+					../../../Milligram,
+				);
+				INFOPLIST_FILE = "Landscape/Landscape-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Milligram/BuildOSX/$(CONFIGURATION)\"",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OTHER_LDFLAGS = (
+					"-lmgPlatform",
+					"-lmg2D",
+					"-lmg3D",
+					"-lmgGUI",
+					"-lmgUtil",
+					"-lFreeType",
+					"-lJpegLib",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		90DB15E413EE108100181447 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(CONFIGURATION)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Landscape/Landscape-Prefix.pch";
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				HEADER_SEARCH_PATHS = (
+					../Source,
+					../../../Milligram,
+				);
+				INFOPLIST_FILE = "Landscape/Landscape-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Milligram/BuildOSX/$(CONFIGURATION)\"",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OTHER_LDFLAGS = (
+					"-lmgPlatform",
+					"-lmg2D",
+					"-lmg3D",
+					"-lmgGUI",
+					"-lmgUtil",
+					"-lFreeType",
+					"-lJpegLib",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		90DB15BE13EE108100181447 /* Build configuration list for PBXProject "Landscape" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90DB15E013EE108100181447 /* Debug */,
+				90DB15E113EE108100181447 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		90DB15E213EE108100181447 /* Build configuration list for PBXNativeTarget "Landscape" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90DB15E313EE108100181447 /* Debug */,
+				90DB15E413EE108100181447 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 90DB15BB13EE108100181447 /* Project object */;
+}

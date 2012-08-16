@@ -1,0 +1,516 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		901A39EA141B0C15000237A7 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 901A39E9141B0C15000237A7 /* OpenGL.framework */; };
+		901A39EC141B0C26000237A7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 901A39EB141B0C26000237A7 /* QuartzCore.framework */; };
+		901A3A2A141B0C72000237A7 /* BrickBlob.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 901A39F0141B0C72000237A7 /* BrickBlob.cpp */; };
+		901A3A2B141B0C72000237A7 /* BrickBlobFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 901A39F2141B0C72000237A7 /* BrickBlobFloat.cpp */; };
+		901A3A2C141B0C72000237A7 /* BrickBlobInt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 901A39F4141B0C72000237A7 /* BrickBlobInt.cpp */; };
+		901A3A2D141B0C72000237A7 /* BrickSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 901A39F7141B0C72000237A7 /* BrickSet.cpp */; };
+		901A3A2E141B0C72000237A7 /* VertexCubeFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 901A39F9141B0C72000237A7 /* VertexCubeFloat.cpp */; };
+		901A3A2F141B0C72000237A7 /* VertexCubeInt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 901A39FB141B0C72000237A7 /* VertexCubeInt.cpp */; };
+		901A3A32141B0C72000237A7 /* ChunkList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 901A3A02141B0C72000237A7 /* ChunkList.cpp */; };
+		901A3A33141B0C72000237A7 /* ChunkObj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 901A3A04141B0C72000237A7 /* ChunkObj.cpp */; };
+		901A3A34141B0C72000237A7 /* ChunkWorld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 901A3A06141B0C72000237A7 /* ChunkWorld.cpp */; };
+		901A3A35141B0C72000237A7 /* McrView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 901A3A08141B0C72000237A7 /* McrView.cpp */; };
+		901A3A36141B0C72000237A7 /* MinecraftChunk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 901A3A0B141B0C72000237A7 /* MinecraftChunk.cpp */; };
+		901A3A37141B0C72000237A7 /* MinecraftFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 901A3A0D141B0C72000237A7 /* MinecraftFile.cpp */; };
+		901A3A38141B0C72000237A7 /* MinecraftRegion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 901A3A0F141B0C72000237A7 /* MinecraftRegion.cpp */; };
+		901A3A39141B0C72000237A7 /* NBTFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 901A3A11141B0C72000237A7 /* NBTFile.cpp */; };
+		901A3A3A141B0C72000237A7 /* StarrySky.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 901A3A13141B0C72000237A7 /* StarrySky.cpp */; };
+		901A3A3B141B0C72000237A7 /* stdafx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 901A3A15141B0C72000237A7 /* stdafx.cpp */; };
+		9090B9D7144AD03E0019BE0D /* VertexSky.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9090B9D5144AD03E0019BE0D /* VertexSky.cpp */; };
+		90B23A5215D0095200A39C00 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90B23A5115D0095200A39C00 /* IOKit.framework */; };
+		90B83FBD14300282004C1928 /* BrickSetFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90B83FB414300282004C1928 /* BrickSetFile.cpp */; };
+		90B83FBE14300282004C1928 /* ShapeFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90B83FB714300282004C1928 /* ShapeFile.cpp */; };
+		90B83FBF14300282004C1928 /* VertexShapeFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90B83FB914300282004C1928 /* VertexShapeFloat.cpp */; };
+		90B83FC014300282004C1928 /* VertexShapeInt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90B83FBB14300282004C1928 /* VertexShapeInt.cpp */; };
+		90D1966E15A151CA00145D8D /* HelpUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90D1966C15A151CA00145D8D /* HelpUI.cpp */; };
+		90DDE47514F8DEF5006076FF /* MovementApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90DDE47314F8DEF5006076FF /* MovementApp.cpp */; };
+		90E21473141B0BBE00B07FBB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90E21472141B0BBE00B07FBB /* Cocoa.framework */; };
+		90E2147D141B0BBE00B07FBB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 90E2147B141B0BBE00B07FBB /* InfoPlist.strings */; };
+		90E21483141B0BBE00B07FBB /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 90E21481141B0BBE00B07FBB /* Credits.rtf */; };
+		90E21486141B0BBE00B07FBB /* McrViewAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 90E21485141B0BBE00B07FBB /* McrViewAppDelegate.m */; };
+		90E21489141B0BBE00B07FBB /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90E21487141B0BBE00B07FBB /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		901A39E9141B0C15000237A7 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		901A39EB141B0C26000237A7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		901A39F0141B0C72000237A7 /* BrickBlob.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BrickBlob.cpp; sourceTree = "<group>"; };
+		901A39F1141B0C72000237A7 /* BrickBlob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrickBlob.h; sourceTree = "<group>"; };
+		901A39F2141B0C72000237A7 /* BrickBlobFloat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BrickBlobFloat.cpp; sourceTree = "<group>"; };
+		901A39F3141B0C72000237A7 /* BrickBlobFloat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrickBlobFloat.h; sourceTree = "<group>"; };
+		901A39F4141B0C72000237A7 /* BrickBlobInt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BrickBlobInt.cpp; sourceTree = "<group>"; };
+		901A39F5141B0C72000237A7 /* BrickBlobInt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrickBlobInt.h; sourceTree = "<group>"; };
+		901A39F7141B0C72000237A7 /* BrickSet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BrickSet.cpp; sourceTree = "<group>"; };
+		901A39F8141B0C72000237A7 /* BrickSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrickSet.h; sourceTree = "<group>"; };
+		901A39F9141B0C72000237A7 /* VertexCubeFloat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VertexCubeFloat.cpp; sourceTree = "<group>"; };
+		901A39FA141B0C72000237A7 /* VertexCubeFloat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertexCubeFloat.h; sourceTree = "<group>"; };
+		901A39FB141B0C72000237A7 /* VertexCubeInt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VertexCubeInt.cpp; sourceTree = "<group>"; };
+		901A39FC141B0C72000237A7 /* VertexCubeInt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertexCubeInt.h; sourceTree = "<group>"; };
+		901A3A02141B0C72000237A7 /* ChunkList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ChunkList.cpp; sourceTree = "<group>"; };
+		901A3A03141B0C72000237A7 /* ChunkList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChunkList.h; sourceTree = "<group>"; };
+		901A3A04141B0C72000237A7 /* ChunkObj.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ChunkObj.cpp; sourceTree = "<group>"; };
+		901A3A05141B0C72000237A7 /* ChunkObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChunkObj.h; sourceTree = "<group>"; };
+		901A3A06141B0C72000237A7 /* ChunkWorld.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ChunkWorld.cpp; sourceTree = "<group>"; };
+		901A3A07141B0C72000237A7 /* ChunkWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChunkWorld.h; sourceTree = "<group>"; };
+		901A3A08141B0C72000237A7 /* McrView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = McrView.cpp; path = ../../Source/McrView.cpp; sourceTree = "<group>"; };
+		901A3A09141B0C72000237A7 /* McrView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = McrView.h; path = ../../Source/McrView.h; sourceTree = "<group>"; };
+		901A3A0B141B0C72000237A7 /* MinecraftChunk.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MinecraftChunk.cpp; sourceTree = "<group>"; };
+		901A3A0C141B0C72000237A7 /* MinecraftChunk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MinecraftChunk.h; sourceTree = "<group>"; };
+		901A3A0D141B0C72000237A7 /* MinecraftFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MinecraftFile.cpp; sourceTree = "<group>"; };
+		901A3A0E141B0C72000237A7 /* MinecraftFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MinecraftFile.h; sourceTree = "<group>"; };
+		901A3A0F141B0C72000237A7 /* MinecraftRegion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MinecraftRegion.cpp; sourceTree = "<group>"; };
+		901A3A10141B0C72000237A7 /* MinecraftRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MinecraftRegion.h; sourceTree = "<group>"; };
+		901A3A11141B0C72000237A7 /* NBTFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NBTFile.cpp; sourceTree = "<group>"; };
+		901A3A12141B0C72000237A7 /* NBTFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBTFile.h; sourceTree = "<group>"; };
+		901A3A13141B0C72000237A7 /* StarrySky.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = StarrySky.cpp; path = ../../Source/StarrySky.cpp; sourceTree = "<group>"; };
+		901A3A14141B0C72000237A7 /* StarrySky.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StarrySky.h; path = ../../Source/StarrySky.h; sourceTree = "<group>"; };
+		901A3A15141B0C72000237A7 /* stdafx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = stdafx.cpp; path = ../../Source/stdafx.cpp; sourceTree = "<group>"; };
+		901A3A16141B0C72000237A7 /* stdafx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stdafx.h; path = ../../Source/stdafx.h; sourceTree = "<group>"; };
+		9090B9D5144AD03E0019BE0D /* VertexSky.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VertexSky.cpp; path = ../../Source/VertexSky.cpp; sourceTree = "<group>"; };
+		9090B9D6144AD03E0019BE0D /* VertexSky.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VertexSky.h; path = ../../Source/VertexSky.h; sourceTree = "<group>"; };
+		90B23A5115D0095200A39C00 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		90B83FB414300282004C1928 /* BrickSetFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BrickSetFile.cpp; sourceTree = "<group>"; };
+		90B83FB514300282004C1928 /* BrickSetFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrickSetFile.h; sourceTree = "<group>"; };
+		90B83FB614300282004C1928 /* ShapeDefn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapeDefn.h; sourceTree = "<group>"; };
+		90B83FB714300282004C1928 /* ShapeFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShapeFile.cpp; sourceTree = "<group>"; };
+		90B83FB814300282004C1928 /* ShapeFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapeFile.h; sourceTree = "<group>"; };
+		90B83FB914300282004C1928 /* VertexShapeFloat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VertexShapeFloat.cpp; sourceTree = "<group>"; };
+		90B83FBA14300282004C1928 /* VertexShapeFloat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertexShapeFloat.h; sourceTree = "<group>"; };
+		90B83FBB14300282004C1928 /* VertexShapeInt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VertexShapeInt.cpp; sourceTree = "<group>"; };
+		90B83FBC14300282004C1928 /* VertexShapeInt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertexShapeInt.h; sourceTree = "<group>"; };
+		90D1966C15A151CA00145D8D /* HelpUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HelpUI.cpp; path = ../../Source/HelpUI.cpp; sourceTree = "<group>"; };
+		90D1966D15A151CA00145D8D /* HelpUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelpUI.h; path = ../../Source/HelpUI.h; sourceTree = "<group>"; };
+		90DDE47314F8DEF5006076FF /* MovementApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MovementApp.cpp; path = ../../Source/MovementApp.cpp; sourceTree = "<group>"; };
+		90DDE47414F8DEF5006076FF /* MovementApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MovementApp.h; path = ../../Source/MovementApp.h; sourceTree = "<group>"; };
+		90E2146E141B0BBE00B07FBB /* McrView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = McrView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		90E21472141B0BBE00B07FBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		90E21475141B0BBE00B07FBB /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		90E21476141B0BBE00B07FBB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		90E21477141B0BBE00B07FBB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		90E2147A141B0BBE00B07FBB /* McrView-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "McrView-Info.plist"; sourceTree = "<group>"; };
+		90E2147C141B0BBE00B07FBB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		90E21480141B0BBE00B07FBB /* McrView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "McrView-Prefix.pch"; sourceTree = "<group>"; };
+		90E21482141B0BBE00B07FBB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		90E21484141B0BBE00B07FBB /* McrViewAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = McrViewAppDelegate.h; sourceTree = "<group>"; };
+		90E21485141B0BBE00B07FBB /* McrViewAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = McrViewAppDelegate.m; sourceTree = "<group>"; };
+		90E21488141B0BBE00B07FBB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		90E2146B141B0BBE00B07FBB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90B23A5215D0095200A39C00 /* IOKit.framework in Frameworks */,
+				901A39EC141B0C26000237A7 /* QuartzCore.framework in Frameworks */,
+				901A39EA141B0C15000237A7 /* OpenGL.framework in Frameworks */,
+				90E21473141B0BBE00B07FBB /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		901A39EF141B0C72000237A7 /* Bricks */ = {
+			isa = PBXGroup;
+			children = (
+				90B83FB414300282004C1928 /* BrickSetFile.cpp */,
+				90B83FB514300282004C1928 /* BrickSetFile.h */,
+				90B83FB614300282004C1928 /* ShapeDefn.h */,
+				90B83FB714300282004C1928 /* ShapeFile.cpp */,
+				90B83FB814300282004C1928 /* ShapeFile.h */,
+				90B83FB914300282004C1928 /* VertexShapeFloat.cpp */,
+				90B83FBA14300282004C1928 /* VertexShapeFloat.h */,
+				90B83FBB14300282004C1928 /* VertexShapeInt.cpp */,
+				90B83FBC14300282004C1928 /* VertexShapeInt.h */,
+				901A39F0141B0C72000237A7 /* BrickBlob.cpp */,
+				901A39F1141B0C72000237A7 /* BrickBlob.h */,
+				901A39F2141B0C72000237A7 /* BrickBlobFloat.cpp */,
+				901A39F3141B0C72000237A7 /* BrickBlobFloat.h */,
+				901A39F4141B0C72000237A7 /* BrickBlobInt.cpp */,
+				901A39F5141B0C72000237A7 /* BrickBlobInt.h */,
+				901A39F7141B0C72000237A7 /* BrickSet.cpp */,
+				901A39F8141B0C72000237A7 /* BrickSet.h */,
+				901A39F9141B0C72000237A7 /* VertexCubeFloat.cpp */,
+				901A39FA141B0C72000237A7 /* VertexCubeFloat.h */,
+				901A39FB141B0C72000237A7 /* VertexCubeInt.cpp */,
+				901A39FC141B0C72000237A7 /* VertexCubeInt.h */,
+			);
+			name = Bricks;
+			path = ../../Source/Bricks;
+			sourceTree = "<group>";
+		};
+		901A3A01141B0C72000237A7 /* Chunks */ = {
+			isa = PBXGroup;
+			children = (
+				901A3A02141B0C72000237A7 /* ChunkList.cpp */,
+				901A3A03141B0C72000237A7 /* ChunkList.h */,
+				901A3A04141B0C72000237A7 /* ChunkObj.cpp */,
+				901A3A05141B0C72000237A7 /* ChunkObj.h */,
+				901A3A06141B0C72000237A7 /* ChunkWorld.cpp */,
+				901A3A07141B0C72000237A7 /* ChunkWorld.h */,
+			);
+			name = Chunks;
+			path = ../../Source/Chunks;
+			sourceTree = "<group>";
+		};
+		901A3A0A141B0C72000237A7 /* Minecraft */ = {
+			isa = PBXGroup;
+			children = (
+				901A3A0B141B0C72000237A7 /* MinecraftChunk.cpp */,
+				901A3A0C141B0C72000237A7 /* MinecraftChunk.h */,
+				901A3A0D141B0C72000237A7 /* MinecraftFile.cpp */,
+				901A3A0E141B0C72000237A7 /* MinecraftFile.h */,
+				901A3A0F141B0C72000237A7 /* MinecraftRegion.cpp */,
+				901A3A10141B0C72000237A7 /* MinecraftRegion.h */,
+				901A3A11141B0C72000237A7 /* NBTFile.cpp */,
+				901A3A12141B0C72000237A7 /* NBTFile.h */,
+			);
+			name = Minecraft;
+			path = ../../Source/Minecraft;
+			sourceTree = "<group>";
+		};
+		90E21463141B0BBE00B07FBB = {
+			isa = PBXGroup;
+			children = (
+				90B23A5115D0095200A39C00 /* IOKit.framework */,
+				901A39EB141B0C26000237A7 /* QuartzCore.framework */,
+				901A39E9141B0C15000237A7 /* OpenGL.framework */,
+				90E21478141B0BBE00B07FBB /* McrView */,
+				90E21471141B0BBE00B07FBB /* Frameworks */,
+				90E2146F141B0BBE00B07FBB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		90E2146F141B0BBE00B07FBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				90E2146E141B0BBE00B07FBB /* McrView.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		90E21471141B0BBE00B07FBB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				90E21472141B0BBE00B07FBB /* Cocoa.framework */,
+				90E21474141B0BBE00B07FBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		90E21474141B0BBE00B07FBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				90E21475141B0BBE00B07FBB /* AppKit.framework */,
+				90E21476141B0BBE00B07FBB /* CoreData.framework */,
+				90E21477141B0BBE00B07FBB /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		90E21478141B0BBE00B07FBB /* McrView */ = {
+			isa = PBXGroup;
+			children = (
+				90D1966C15A151CA00145D8D /* HelpUI.cpp */,
+				90D1966D15A151CA00145D8D /* HelpUI.h */,
+				90DDE47314F8DEF5006076FF /* MovementApp.cpp */,
+				90DDE47414F8DEF5006076FF /* MovementApp.h */,
+				9090B9D5144AD03E0019BE0D /* VertexSky.cpp */,
+				9090B9D6144AD03E0019BE0D /* VertexSky.h */,
+				901A39EF141B0C72000237A7 /* Bricks */,
+				901A3A01141B0C72000237A7 /* Chunks */,
+				901A3A08141B0C72000237A7 /* McrView.cpp */,
+				901A3A09141B0C72000237A7 /* McrView.h */,
+				901A3A0A141B0C72000237A7 /* Minecraft */,
+				901A3A13141B0C72000237A7 /* StarrySky.cpp */,
+				901A3A14141B0C72000237A7 /* StarrySky.h */,
+				901A3A15141B0C72000237A7 /* stdafx.cpp */,
+				901A3A16141B0C72000237A7 /* stdafx.h */,
+				90E21484141B0BBE00B07FBB /* McrViewAppDelegate.h */,
+				90E21485141B0BBE00B07FBB /* McrViewAppDelegate.m */,
+				90E21487141B0BBE00B07FBB /* MainMenu.xib */,
+				90E21479141B0BBE00B07FBB /* Supporting Files */,
+			);
+			path = McrView;
+			sourceTree = "<group>";
+		};
+		90E21479141B0BBE00B07FBB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				90E2147A141B0BBE00B07FBB /* McrView-Info.plist */,
+				90E2147B141B0BBE00B07FBB /* InfoPlist.strings */,
+				90E21480141B0BBE00B07FBB /* McrView-Prefix.pch */,
+				90E21481141B0BBE00B07FBB /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		90E2146D141B0BBE00B07FBB /* McrView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 90E2148C141B0BBE00B07FBB /* Build configuration list for PBXNativeTarget "McrView" */;
+			buildPhases = (
+				90E2146A141B0BBE00B07FBB /* Sources */,
+				90E2146B141B0BBE00B07FBB /* Frameworks */,
+				90E2146C141B0BBE00B07FBB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = McrView;
+			productName = McrView;
+			productReference = 90E2146E141B0BBE00B07FBB /* McrView.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		90E21465141B0BBE00B07FBB /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 90E21468141B0BBE00B07FBB /* Build configuration list for PBXProject "McrView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 90E21463141B0BBE00B07FBB;
+			productRefGroup = 90E2146F141B0BBE00B07FBB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				90E2146D141B0BBE00B07FBB /* McrView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		90E2146C141B0BBE00B07FBB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90E2147D141B0BBE00B07FBB /* InfoPlist.strings in Resources */,
+				90E21483141B0BBE00B07FBB /* Credits.rtf in Resources */,
+				90E21489141B0BBE00B07FBB /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		90E2146A141B0BBE00B07FBB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90E21486141B0BBE00B07FBB /* McrViewAppDelegate.m in Sources */,
+				901A3A2A141B0C72000237A7 /* BrickBlob.cpp in Sources */,
+				901A3A2B141B0C72000237A7 /* BrickBlobFloat.cpp in Sources */,
+				901A3A2C141B0C72000237A7 /* BrickBlobInt.cpp in Sources */,
+				901A3A2D141B0C72000237A7 /* BrickSet.cpp in Sources */,
+				901A3A2E141B0C72000237A7 /* VertexCubeFloat.cpp in Sources */,
+				901A3A2F141B0C72000237A7 /* VertexCubeInt.cpp in Sources */,
+				901A3A32141B0C72000237A7 /* ChunkList.cpp in Sources */,
+				901A3A33141B0C72000237A7 /* ChunkObj.cpp in Sources */,
+				901A3A34141B0C72000237A7 /* ChunkWorld.cpp in Sources */,
+				901A3A35141B0C72000237A7 /* McrView.cpp in Sources */,
+				901A3A36141B0C72000237A7 /* MinecraftChunk.cpp in Sources */,
+				901A3A37141B0C72000237A7 /* MinecraftFile.cpp in Sources */,
+				901A3A38141B0C72000237A7 /* MinecraftRegion.cpp in Sources */,
+				901A3A39141B0C72000237A7 /* NBTFile.cpp in Sources */,
+				901A3A3A141B0C72000237A7 /* StarrySky.cpp in Sources */,
+				901A3A3B141B0C72000237A7 /* stdafx.cpp in Sources */,
+				90B83FBD14300282004C1928 /* BrickSetFile.cpp in Sources */,
+				90B83FBE14300282004C1928 /* ShapeFile.cpp in Sources */,
+				90B83FBF14300282004C1928 /* VertexShapeFloat.cpp in Sources */,
+				90B83FC014300282004C1928 /* VertexShapeInt.cpp in Sources */,
+				9090B9D7144AD03E0019BE0D /* VertexSky.cpp in Sources */,
+				90DDE47514F8DEF5006076FF /* MovementApp.cpp in Sources */,
+				90D1966E15A151CA00145D8D /* HelpUI.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		90E2147B141B0BBE00B07FBB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				90E2147C141B0BBE00B07FBB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		90E21481141B0BBE00B07FBB /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				90E21482141B0BBE00B07FBB /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		90E21487141B0BBE00B07FBB /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				90E21488141B0BBE00B07FBB /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		90E2148A141B0BBE00B07FBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		90E2148B141B0BBE00B07FBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		90E2148D141B0BBE00B07FBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(CONFIGURATION)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "McrView/McrView-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				HEADER_SEARCH_PATHS = (
+					../Source,
+					../../../Milligram,
+				);
+				INFOPLIST_FILE = "McrView/McrView-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Milligram/BuildOSX/$(CONFIGURATION)\"",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OTHER_LDFLAGS = (
+					"-lmgPlatform",
+					"-lmg2D",
+					"-lmg3D",
+					"-lmgGUI",
+					"-lmgUtil",
+					"-lFreeType",
+					"-lJpegLib",
+					"-lZLib",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		90E2148E141B0BBE00B07FBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(CONFIGURATION)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "McrView/McrView-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				HEADER_SEARCH_PATHS = (
+					../Source,
+					../../../Milligram,
+				);
+				INFOPLIST_FILE = "McrView/McrView-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Milligram/BuildOSX/$(CONFIGURATION)\"",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OTHER_LDFLAGS = (
+					"-lmgPlatform",
+					"-lmg2D",
+					"-lmg3D",
+					"-lmgGUI",
+					"-lmgUtil",
+					"-lFreeType",
+					"-lJpegLib",
+					"-lZLib",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		90E21468141B0BBE00B07FBB /* Build configuration list for PBXProject "McrView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90E2148A141B0BBE00B07FBB /* Debug */,
+				90E2148B141B0BBE00B07FBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		90E2148C141B0BBE00B07FBB /* Build configuration list for PBXNativeTarget "McrView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90E2148D141B0BBE00B07FBB /* Debug */,
+				90E2148E141B0BBE00B07FBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 90E21465141B0BBE00B07FBB /* Project object */;
+}

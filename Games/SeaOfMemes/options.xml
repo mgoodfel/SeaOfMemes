@@ -1,0 +1,85 @@
+<options
+  platform = ""
+  graphicsTiming = "true"
+  fullscreen = "false"
+  multisample = "true"
+
+  displayMemory = "200"
+  systemMemory = "400"
+
+  viewDistance = "300"
+
+  threadCount="0"
+
+  fov="60"
+  windowX = "100"
+  windowY = "100"
+  windowWidth = "1024"
+  windowHeight = "768"
+
+  metricUnits = "true"
+  shaderDir = "docs/shaders"
+  deskcursor = "docs/cursors/arrowCursor.xml"
+  movecursor = "docs/cursors/crossCursor.xml"
+  helpFile = "docs/help.txt"
+
+  sky-xmin = "docs/textures/Nebula-xmin.jpg"
+  sky-xmax = "docs/textures/Nebula-xmax.jpg"
+  sky-ymin = "docs/textures/Nebula-ymin.jpg"
+  sky-ymax = "docs/textures/Nebula-ymax.jpg"
+  sky-zmin = "docs/textures/Nebula-zmin.jpg"
+  sky-zmax = "docs/textures/Nebula-zmax.jpg"
+  sunTexture = "docs/textures/sun.jpg;docs/textures/sunAlpha.gif"
+  starTexture = "docs/textures/starpatch.jpg;docs/textures/brightStarsAlpha.jpg"
+
+  planet-xmin = "docs/textures/Planet256-xmin.bmp"
+  planet-xmax = "docs/textures/Planet256-xmax.bmp"
+  planet-ymin = "docs/textures/Planet256-ymin.bmp"
+  planet-ymax = "docs/textures/Planet256-ymax.bmp"
+  planet-zmin = "docs/textures/Planet256-zmin.bmp"
+  planet-zmax = "docs/textures/Planet256-zmax.bmp"
+
+  clouds-xmin = "docs/textures/Clouds256-xmin.bmp"
+  clouds-xmax = "docs/textures/Clouds256-xmax.bmp"
+  clouds-ymin = "docs/textures/Clouds256-ymin.bmp"
+  clouds-ymax = "docs/textures/Clouds256-ymax.bmp"
+  clouds-zmin = "docs/textures/Clouds256-zmin.bmp"
+  clouds-zmax = "docs/textures/Clouds256-zmax.bmp"
+
+  moon-xmin = "docs/textures/Moon256-xmin.jpg"
+  moon-xmax = "docs/textures/Moon256-xmax.jpg"
+  moon-ymin = "docs/textures/Moon256-ymin.jpg"
+  moon-ymax = "docs/textures/Moon256-ymax.jpg"
+  moon-zmin = "docs/textures/Moon256-zmin.jpg"
+  moon-zmax = "docs/textures/Moon256-zmax.jpg"
+
+  ring-front = "docs/textures/Ring-front.jpg"
+  ring-back = "docs/textures/Ring-back.jpg"
+
+  belt = "docs/textures/belt.gif;docs/textures/beltAlpha.jpg"
+
+  waterTexture = "docs/bricks/water.jpg;docs/bricks/waterAlpha.gif"
+  terrainTexture = "docs/textures/terrain.jpg"
+  shellTexture = "docs/bricks/stone.jpg"
+  lightTexture = "docs/textures/sun.jpg"
+
+  rockTexture = "docs/textures/farAsteroid.jpg;docs/textures/farAsteroidAlpha.gif"
+
+  alertFont = "georgia-12-i"
+  alertColor = "#44CFF5"
+
+  speedFont = "Courier-10"
+  speedColor = "#44CFF5"
+  rangeFont = "Courier-10"
+  rangeColor = "#44CFF5"
+  rangeNearFont = "Courier-10"
+  rangeNearColor = "red"
+
+  planetDayLen = "600.0"
+  moonDayLen = "300.0"
+  ringDayLen = "200.0"
+  moonMonthLen = "1000.0"
+  beltMonthLen = "1000.0"
+
+  helpFile = "docs/ui/help.xml"
+/>

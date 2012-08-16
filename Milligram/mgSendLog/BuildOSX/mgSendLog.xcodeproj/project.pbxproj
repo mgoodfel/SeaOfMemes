@@ -1,0 +1,226 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		90C8F69615CF2114006BD760 /* mgSendLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90C8F69515CF2114006BD760 /* mgSendLog.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		90C8F68015CF20BB006BD760 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		90C8F68215CF20BB006BD760 /* mgSendLog */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = mgSendLog; sourceTree = BUILT_PRODUCTS_DIR; };
+		90C8F69515CF2114006BD760 /* mgSendLog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mgSendLog.cpp; path = ../Source/mgSendLog.cpp; sourceTree = "<group>"; };
+		90C8F69B15CF222D006BD760 /* stdafx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stdafx.h; path = ../Source/stdafx.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		90C8F67F15CF20BB006BD760 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		90C8F67715CF20BB006BD760 = {
+			isa = PBXGroup;
+			children = (
+				90C8F69415CF20FB006BD760 /* Source */,
+				90C8F68315CF20BB006BD760 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		90C8F68315CF20BB006BD760 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				90C8F68215CF20BB006BD760 /* mgSendLog */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		90C8F69415CF20FB006BD760 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				90C8F69B15CF222D006BD760 /* stdafx.h */,
+				90C8F69515CF2114006BD760 /* mgSendLog.cpp */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		90C8F68115CF20BB006BD760 /* mgSendLog */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 90C8F68C15CF20BB006BD760 /* Build configuration list for PBXNativeTarget "mgSendLog" */;
+			buildPhases = (
+				90C8F67E15CF20BB006BD760 /* Sources */,
+				90C8F67F15CF20BB006BD760 /* Frameworks */,
+				90C8F68015CF20BB006BD760 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mgSendLog;
+			productName = mgSendLog;
+			productReference = 90C8F68215CF20BB006BD760 /* mgSendLog */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		90C8F67915CF20BB006BD760 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 90C8F67C15CF20BB006BD760 /* Build configuration list for PBXProject "mgSendLog" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 90C8F67715CF20BB006BD760;
+			productRefGroup = 90C8F68315CF20BB006BD760 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				90C8F68115CF20BB006BD760 /* mgSendLog */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		90C8F67E15CF20BB006BD760 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90C8F69615CF2114006BD760 /* mgSendLog.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		90C8F68A15CF20BB006BD760 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		90C8F68B15CF20BB006BD760 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		90C8F68D15CF20BB006BD760 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = Debug;
+				HEADER_SEARCH_PATHS = (
+					../Source,
+					../../../Milligram/,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Milligram/BuildOSX/$(CONFIGURATION)\"",
+				);
+				OTHER_LDFLAGS = "-lmgUtil";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		90C8F68E15CF20BB006BD760 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = Release;
+				HEADER_SEARCH_PATHS = (
+					../Source,
+					../../../Milligram/,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Milligram/BuildOSX/$(CONFIGURATION)\"",
+				);
+				OTHER_LDFLAGS = "-lmgUtil";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		90C8F67C15CF20BB006BD760 /* Build configuration list for PBXProject "mgSendLog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90C8F68A15CF20BB006BD760 /* Debug */,
+				90C8F68B15CF20BB006BD760 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		90C8F68C15CF20BB006BD760 /* Build configuration list for PBXNativeTarget "mgSendLog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90C8F68D15CF20BB006BD760 /* Debug */,
+				90C8F68E15CF20BB006BD760 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 90C8F67915CF20BB006BD760 /* Project object */;
+}
