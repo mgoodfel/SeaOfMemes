@@ -1,21 +1,16 @@
-DEMOS = GuiForms GuiTestAll GuiTestGL GuiTestSDL GuiTestWin Landscape SaucerMovie TestCube Trees
-GAMES = Crafty McrView SeaOfMemes DontHitMe newCrafty WorldClient WorldServer
+DEMOS = GuiForms GuiTestAll GuiTestGL GuiTestSDL GuiTestWin \
+	Landscape SaucerMovie TestCube Trees BVHView
+
+GAMES = Crafty McrView SeaOfMemes DontHitMe NewCrafty WorldClient WorldServer
+
 MILLIGRAM = JpegLib FreeType LibPNG Ogg Vorbis ZLib \
 	mg2D mg3D mgGUI mgPlatform mgUtil \
 	mgSendLog mgLogServer
 
-all:   libs $(MILLIGRAM) $(DEMOS) $(GAMES)
+all:   $(MILLIGRAM) $(DEMOS) $(GAMES)
 
 #
-# erase existing libraries
-#
-libs:
-	-rmdir /s /q ..\Milligram\BuildWin\Debug
-	-rmdir /s /q ..\Milligram\BuildWin\DebugMemory
-	-rmdir /s /q ..\Milligram\BuildWin\Release
-	-rmdir /s /q ..\Milligram\BuildWin\Distrib
-#
-# Rebuild the Milligram libraries
+# clean the Milligram libraries
 #
 $(MILLIGRAM): 
 	-rmdir /s /q ..\Milligram\$*\BuildWin\Debug
@@ -26,7 +21,7 @@ $(MILLIGRAM):
 	-erase ..\Milligram\$*\BuildWin\*.sdf
 
 #
-# Rebuild the Demos
+# clean the Demos
 #
 $(DEMOS): 
 	-rmdir /s /q ..\Demos\$*\BuildWin\Debug
@@ -36,7 +31,7 @@ $(DEMOS):
 	-rmdir /s /q ..\Demos\$*\BuildWin\ipch
 	-erase ..\Demos\$*\BuildWin\*.sdf
 #
-# Rebuild the Distrib version of the games
+# clean the Games
 #
 $(GAMES):
 	-rmdir /s /q ..\Games\$*\BuildWin\Debug

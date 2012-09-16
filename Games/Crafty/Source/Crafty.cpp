@@ -26,7 +26,7 @@ const char THIS_FILE[] = __FILE__;
 #endif
 
 // identify the program for the framework log
-const char* mgProgram = "Crafty";
+const char* mgProgramName = "Crafty";
 const char* mgProgramVersion = "Part 60";
 
 #include "StarrySky.h"

@@ -26,7 +26,7 @@ const char THIS_FILE[] = __FILE__;
 #endif
 
 // identify the program for the framework log
-const char* mgProgram = "Landscape";
+const char* mgProgramName = "Landscape";
 const char* mgProgramVersion = "Part 60";
 
 #include "StarrySky.h"
@@ -93,7 +93,7 @@ void Landscape::appInit()
   MovementApp::appInit();
 
   mgString title;
-  title.format("%s, %s", mgProgram, mgProgramVersion);
+  title.format("%s, %s", mgProgramName, mgProgramVersion);
   mgPlatform->setWindowTitle(title);
 
   // create the help pane

@@ -62,6 +62,9 @@ public:
   // get next association in table
   virtual void getNextAssoc(
     int &posn, 
+    int &x,
+    int &y,
+    int &z,
     const void*& value) const;
 
   // remove all entries

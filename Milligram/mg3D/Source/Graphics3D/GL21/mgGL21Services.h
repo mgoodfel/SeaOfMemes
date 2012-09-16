@@ -45,6 +45,10 @@ public:
     int xWrap,
     int yWrap);
 
+  // set texture filtering
+  virtual void setFilter(
+    int filter);
+
   // update memory texture
   virtual void updateMemory(
     int x,
@@ -71,6 +75,10 @@ public:
   virtual void setWrap(
     int xWrap,
     int yWrap);
+
+  // set texture filtering
+  virtual void setFilter(
+    int filter);
 };
 
 class mgGL21TextureCube : public mgTextureCube
@@ -88,6 +96,10 @@ public:
   virtual void setWrap(
     int xWrap,
     int yWrap);
+
+  // set texture filtering
+  virtual void setFilter(
+    int filter);
 };
 
 // services offered by the display framework to the application
@@ -200,6 +212,20 @@ public:
     const char* shaderName,             // name of shader
     const char* varName,                // variable name
     float value);                       // value
+
+  // set shader uniform
+  virtual void setShaderUniform(
+    const char* shaderName,             // name of shader
+    const char* varName,                // variable name
+    int count,                          // size of array
+    const mgPoint3* point);             // point array
+
+  // set shader uniform
+  virtual void setShaderUniform(
+    const char* shaderName,             // name of shader
+    const char* varName,                // variable name
+    int count,                          // size of array
+    const float* value);                // float array
 
   // allocate vertex buffer
   virtual mgVertexBuffer* newVertexBuffer(

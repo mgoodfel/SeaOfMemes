@@ -28,6 +28,9 @@ const double MG_CUBE_RADIUS = sqrt(3.0);
 const int MG_TEXTURE_REPEAT = 0;
 const int MG_TEXTURE_CLAMP = 1;
 
+const int MG_TEXTURE_NEAREST = 0;
+const int MG_TEXTURE_QUALITY = 1;
+
 class mgApplication;
 class mgVertexBuffer;
 class mgVertexAttrib;
@@ -44,6 +47,7 @@ public:
   BOOL m_transparent;
   int m_xWrap;
   int m_yWrap;
+  int m_filter;
 
   // constructor
   mgTextureImage();
@@ -55,6 +59,10 @@ public:
   virtual void setWrap(
     int xWrap,
     int yWrap) = 0;
+
+  // set texture filtering
+  virtual void setFilter(
+    int filter) = 0;
 
   // update memory texture
   virtual void updateMemory(
@@ -74,6 +82,7 @@ public:
   BOOL* m_imgTransparent;
   int m_xWrap;
   int m_yWrap;
+  int m_filter;
 
   // constructor
   mgTextureArray();
@@ -85,6 +94,10 @@ public:
   virtual void setWrap(
     int xWrap,
     int yWrap) = 0;
+
+  // set texture filtering
+  virtual void setFilter(
+    int filter) = 0;
 };
 
 class mgTextureCube
@@ -101,6 +114,7 @@ public:
   BOOL m_imgTransparent[6];
   int m_xWrap;
   int m_yWrap;
+  int m_filter;
 
   // constructor
   mgTextureCube();
@@ -112,6 +126,10 @@ public:
   virtual void setWrap(
     int xWrap,
     int yWrap) = 0;
+
+  // set texture filtering
+  virtual void setFilter(
+    int filter) = 0;
 };
 
 const int MG_COLOR_BUFFER = 1;
@@ -306,6 +324,20 @@ public:
     const char* shaderName,             // name of shader
     const char* varName,                // variable name
     float value) = 0;                   // value
+
+  // set shader uniform
+  virtual void setShaderUniform(
+    const char* shaderName,             // name of shader
+    const char* varName,                // variable name
+    int count,                          // size of array
+    const mgPoint3* point) = 0;         // point array
+
+  // set shader uniform
+  virtual void setShaderUniform(
+    const char* shaderName,             // name of shader
+    const char* varName,                // variable name
+    int count,                          // size of array
+    const float* value) = 0;            // float array
 
   // allocate vertex buffer
   virtual mgVertexBuffer* newVertexBuffer(

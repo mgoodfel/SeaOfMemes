@@ -26,7 +26,7 @@ const char THIS_FILE[] = __FILE__;
 #endif
 
 // identify the program for the framework log
-const char* mgProgram = "Trees";
+const char* mgProgramName = "Trees";
 const char* mgProgramVersion = "Part 60";
 
 #include "HelpUI.h"
@@ -79,7 +79,7 @@ void Trees::appInit()
   MovementApp::appInit();
 
   mgString title;
-  title.format("Trees, %s", mgProgramVersion);
+  title.format("%s, %s", mgProgramName, mgProgramVersion);
   mgPlatform->setWindowTitle(title);
 
   // load shaders we'll use

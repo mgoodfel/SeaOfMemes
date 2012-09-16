@@ -1239,3 +1239,10 @@ void BrickBlob::lightZMax(
   }
 }
 
+//--------------------------------------------------------------
+// return count of triangles
+int BrickBlob::triangleCount()
+{
+  return m_buffers.m_cubeCount * 2 + m_buffers.m_transCount * 2;// + m_buffers.m_shapeCount;
+}
+

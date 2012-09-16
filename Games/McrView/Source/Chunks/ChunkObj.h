@@ -110,6 +110,9 @@ public:
   // reset the age of a chunk
   virtual void resetAge();
 
+  // return count of triangles
+  virtual int triangleCount();
+
 protected:
   double m_createTime;                        // when loaded into display
   double m_alpha;                             // opacity during create

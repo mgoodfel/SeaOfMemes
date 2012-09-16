@@ -141,7 +141,8 @@ ChunkWorld::~ChunkWorld()
   while (posn != -1)
   {
     const void* value;
-    m_chunkTable.getNextAssoc(posn, value);
+    int x, y, z;
+    m_chunkTable.getNextAssoc(posn, x, y, z, value);
     ChunkObj* chunk = (ChunkObj*) value;
     delete chunk;
   }
@@ -152,7 +153,8 @@ ChunkWorld::~ChunkWorld()
   while (posn != -1)
   {
     const void* value;
-    m_regionTable.getNextAssoc(posn, value);
+    int x, y, z;
+    m_regionTable.getNextAssoc(posn, x, y, z, value);
     MinecraftRegion* region = (MinecraftRegion*) value;
     delete region;
   }
@@ -389,7 +391,8 @@ void ChunkWorld::deleteBuffers()
   while (posn != -1)
   {
     const void* value;
-    m_chunkTable.getNextAssoc(posn, value);
+    int x, y, z;
+    m_chunkTable.getNextAssoc(posn, x, y, z, value);
     ChunkObj* chunk = (ChunkObj*) value;
     if (chunk->m_status == CHUNK_INDISPLAY ||
         chunk->m_status == CHUNK_NEEDSUPDATE)
@@ -409,7 +412,8 @@ void ChunkWorld::createBuffers()
   while (posn != -1)
   {
     const void* value;
-    m_chunkTable.getNextAssoc(posn, value);
+    int x, y, z;
+    m_chunkTable.getNextAssoc(posn, x, y, z, value);
     ChunkObj* chunk = (ChunkObj*) value;
     if (chunk->m_status == CHUNK_INDISPLAY ||
         chunk->m_status == CHUNK_NEEDSUPDATE)
@@ -1543,5 +1547,30 @@ void ChunkWorld::loadWaterTexture(
   }
   if (m_waterTexture == NULL)
     throw new mgException("Could not find water texture (code 0x09) in brick set");
+}
+
+//--------------------------------------------------------------
+// return triangle count for current scene
+int ChunkWorld::triangleCount()
+{
+  int count = 0;
+  m_chunkLock->lock();
+
+  int posn = m_chunkTable.getStartPosition();
+  while (posn != -1)
+  {
+    int x, y, z;
+    const void* value;
+    m_chunkTable.getNextAssoc(posn, x, y, z, value);
+    ChunkObj* chunk = (ChunkObj*) value;
+
+    // if chunk loaded and within view, render it
+    if (chunk->m_status == CHUNK_INDISPLAY ||
+        chunk->m_status == CHUNK_NEEDSUPDATE)
+      count += chunk->triangleCount();
+  }
+
+  m_chunkLock->unlock();
+  return count;
 }
 

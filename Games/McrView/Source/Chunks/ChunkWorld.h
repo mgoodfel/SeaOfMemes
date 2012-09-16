@@ -114,6 +114,9 @@ public:
   virtual void debugStats(
     mgString& status);
 
+  // return triangle count for current scene
+  virtual int triangleCount();
+
 protected:
   // minecraft region dir
   mgString m_regionDir;

@@ -34,7 +34,7 @@ const char THIS_FILE[] = __FILE__;
 #endif
 
 // identify the program for the framework log
-const char* mgProgram = "TestCube";
+const char* mgProgramName = "TestCube";
 const char* mgProgramVersion = "Part 60";
 
 #include "TestCube.h"
@@ -77,7 +77,7 @@ void TestCube::appInit()
   MovementApp::appInit();
 
   mgString title;
-  title.format("%s, %s", mgProgram, mgProgramVersion);
+  title.format("%s, %s", mgProgramName, mgProgramVersion);
   mgPlatform->setWindowTitle(title);
 
   // load the shaders we use

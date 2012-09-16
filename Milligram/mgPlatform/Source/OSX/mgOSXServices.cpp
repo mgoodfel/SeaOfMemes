@@ -47,7 +47,7 @@ const char THIS_FILE[] = __FILE__;
 
 #include "mgApplication.h"
 
-extern const char* mgProgram;
+extern const char* mgProgramName;
 extern const char* mgProgramVersion;
 
 const int MG_LIBRARY_NONE = 0;
@@ -721,7 +721,7 @@ void initFramework(
   
   mgDebugReset();         // reset trace file
 
-  mgDebug(":Program: %s", mgProgram != NULL ? mgProgram : "unknown");
+  mgDebug(":Program: %s", mgProgramName != NULL ? mgProgramName : "unknown");
   mgDebug(":Program Version: %s", mgProgramVersion != NULL ? mgProgramVersion : "unknown");
   
   char machineID[256];

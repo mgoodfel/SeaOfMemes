@@ -99,6 +99,29 @@ void mgGL33TextureImage::setWrap(
 }
 
 //--------------------------------------------------------------
+// set texture filter
+void mgGL33TextureImage::setFilter(
+  int filter)
+{
+  CHECK_THREAD();
+
+  m_filter = filter;
+
+  glBindTexture(GL_TEXTURE_2D, m_handle);
+
+  if (m_filter == MG_TEXTURE_QUALITY)
+  {
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+  }
+  else
+  {
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+  }
+}
+
+//--------------------------------------------------------------
 // update memory texture
 void mgGL33TextureImage::updateMemory(
   int x,
@@ -153,6 +176,28 @@ void mgGL33TextureArray::setWrap(
 }
 
 //--------------------------------------------------------------
+// set texture filter
+void mgGL33TextureArray::setFilter(
+  int filter)
+{
+  CHECK_THREAD();
+  m_filter = filter;
+
+  glBindTexture(GL_TEXTURE_2D_ARRAY, m_handle);
+
+  if (m_filter == MG_TEXTURE_QUALITY)
+  {
+    glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+  }
+  else
+  {
+    glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+  }
+}
+
+//--------------------------------------------------------------
 // constructor
 mgGL33TextureCube::mgGL33TextureCube()
 {
@@ -184,6 +229,28 @@ void mgGL33TextureCube::setWrap(
 
   glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, mgGL33TextureWrap(m_xWrap));
   glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, mgGL33TextureWrap(m_yWrap));
+}
+
+//--------------------------------------------------------------
+// set texture filter
+void mgGL33TextureCube::setFilter(
+  int filter)
+{
+  CHECK_THREAD();
+  m_filter = filter;
+
+  glBindTexture(GL_TEXTURE_CUBE_MAP, m_handle);
+
+  if (m_filter == MG_TEXTURE_QUALITY)
+  {
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+  }
+  else
+  {
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+  }
 }
 
 //--------------------------------------------------------------
@@ -401,6 +468,17 @@ void mgGL33Services::setShaderStdUniforms(
     glUniformMatrix3fv(index, 1, GL_FALSE, matrix);
   }
 
+  index = glGetUniformLocation(shader, "mgVPMatrix");
+  if (index != -1)
+  {
+    mgMatrix4 vpMatrix;
+    vpMatrix.translate(-m_eyePt.x, -m_eyePt.y, -m_eyePt.z);
+    vpMatrix.multiply(m_eyeMatrix);
+    vpMatrix.multiply(m_worldProjection);
+    matrix4toGL(vpMatrix, matrix);
+    glUniformMatrix4fv(index, 1, GL_FALSE, matrix);
+  }
+
   index = glGetUniformLocation(shader, "mgEyePt");
   if (index != -1)
   {
@@ -532,6 +610,37 @@ void mgGL33Services::setShaderUniform(
 }
 
 //-----------------------------------------------------------------------------
+// set shader uniform value to array of Point3
+void mgGL33Services::setShaderUniform(
+  const char* shaderName,             // name of shader
+  const char* varName,                // variable name
+  int count,                          // array size
+  const mgPoint3* points)             // point array
+{
+  DWORD value;
+  if (!m_shaders.lookup(shaderName, value))
+    throw new mgErrorMsg("glShader", "shaderName", "%s", (const char*) shaderName);
+
+  CHECK_THREAD();
+  mgShaderHandle shader = (mgShaderHandle) value;
+
+  GLint index = glGetUniformLocation(shader, (const GLchar*) varName);
+  if (index == -1)
+    return; // throw new mgException("setShaderUniform %s.%s not found", (const char*) shaderName, (const char*) varName);
+
+  GLfloat* values = new GLfloat[count*3];
+  for (int i = 0; i < count; i++)
+  {
+    values[i*3] = (GLfloat) points[i].x;
+    values[i*3+1] = (GLfloat) points[i].y;
+    values[i*3+2] = (GLfloat) points[i].z;
+  }
+  glUniform3fv(index, count, values);
+
+  delete values;
+}
+
+//-----------------------------------------------------------------------------
 // set shader uniform value to Point4
 void mgGL33Services::setShaderUniform(
   const char* shaderName,             // name of shader
@@ -574,7 +683,7 @@ void mgGL33Services::setShaderUniform(
 }
 
 //-----------------------------------------------------------------------------
-// set shader uniform value to Point4
+// set shader uniform value to float
 void mgGL33Services::setShaderUniform(
   const char* shaderName,             // name of shader
   const char* varName,                // variable name
@@ -592,6 +701,28 @@ void mgGL33Services::setShaderUniform(
     return; // throw new mgException("setShaderUniform %s.%s not found", (const char*) shaderName, (const char*) varName);
 
   glUniform1f(index, (GLfloat) floatvalue);
+}
+
+//-----------------------------------------------------------------------------
+// set shader uniform value to float array
+void mgGL33Services::setShaderUniform(
+  const char* shaderName,             // name of shader
+  const char* varName,                // variable name
+  int count,                          // size of array
+  const float* values)                // array of floats
+{
+  DWORD value;
+  if (!m_shaders.lookup(shaderName, value))
+    throw new mgErrorMsg("glShader", "shaderName", "%s", (const char*) shaderName);
+
+  CHECK_THREAD();
+  mgShaderHandle shader = (mgShaderHandle) value;
+
+  GLint index = glGetUniformLocation(shader, (const GLchar*) varName);
+  if (index == -1)
+    return; // throw new mgException("setShaderUniform %s.%s not found", (const char*) shaderName, (const char*) varName);
+
+  glUniform1fv(index, count, (const GLfloat*) values);
 }
 
 //-----------------------------------------------------------------------------
@@ -1255,8 +1386,17 @@ void mgGL33Services::reloadTextureImage(
   glGenTextures(1, &texture->m_handle);
 
   glBindTexture(GL_TEXTURE_2D, texture->m_handle);
-  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+  if (texture->m_filter == MG_TEXTURE_QUALITY)
+  {
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+  }
+  else
+  {
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+  }
+
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, mgGL33TextureWrap(texture->m_xWrap));
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, mgGL33TextureWrap(texture->m_yWrap));
 
@@ -1284,8 +1424,16 @@ void mgGL33Services::reloadTextureArray(
   glGenTextures(1, &texture->m_handle);
 
   glBindTexture(GL_TEXTURE_2D_ARRAY, texture->m_handle);
-  glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR); // NEAREST);
-  glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+  if (texture->m_filter == MG_TEXTURE_QUALITY)
+  {
+    glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+  }
+  else
+  {
+    glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+  }
 
   glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_WRAP_S, mgGL33TextureWrap(texture->m_xWrap));
   glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_WRAP_T, mgGL33TextureWrap(texture->m_yWrap));
@@ -1342,8 +1490,16 @@ void mgGL33Services::reloadTextureCube(
   glGenTextures(1, &texture->m_handle);
 
   glBindTexture(GL_TEXTURE_CUBE_MAP, texture->m_handle);
-  glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR); // NEAREST);
-  glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+  if (texture->m_filter == MG_TEXTURE_QUALITY)
+  {
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+  }
+  else
+  {
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+  }
 
   glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, mgGL33TextureWrap(texture->m_xWrap));
   glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, mgGL33TextureWrap(texture->m_yWrap));

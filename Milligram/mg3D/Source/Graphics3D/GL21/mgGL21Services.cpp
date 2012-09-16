@@ -88,6 +88,13 @@ void mgGL21TextureImage::setWrap(
 }
 
 //--------------------------------------------------------------
+// set texture filter
+void mgGL21TextureImage::setFilter(
+  int filter)
+{
+}
+
+//--------------------------------------------------------------
 // update memory texture
 void mgGL21TextureImage::updateMemory(
   int x,
@@ -142,6 +149,13 @@ void mgGL21TextureArray::setWrap(
 }
 
 //--------------------------------------------------------------
+// set texture filter
+void mgGL21TextureArray::setFilter(
+  int filter)
+{
+}
+
+//--------------------------------------------------------------
 // constructor
 mgGL21TextureCube::mgGL21TextureCube()
 {
@@ -172,6 +186,13 @@ void mgGL21TextureCube::setWrap(
 
   glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, mgGL21TextureWrap(m_xWrap));
   glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, mgGL21TextureWrap(m_yWrap));
+}
+
+//--------------------------------------------------------------
+// set texture filter
+void mgGL21TextureCube::setFilter(
+  int filter)
+{
 }
 
 //--------------------------------------------------------------
@@ -525,6 +546,36 @@ void mgGL21Services::setShaderUniform(
 }
 
 //-----------------------------------------------------------------------------
+// set shader uniform value to array of points
+void mgGL21Services::setShaderUniform(
+  const char* shaderName,             // name of shader
+  const char* varName,                // variable name
+  int count,                          // array size
+  const mgPoint3* points)             // point array
+{
+  DWORD value;
+  if (!m_shaders.lookup(shaderName, value))
+    throw new mgErrorMsg("glShader", "shaderName", "%s", (const char*) shaderName);
+
+  mgShaderHandle shader = (mgShaderHandle) value;
+
+  GLint index = glGetUniformLocation(shader, (const GLchar*) varName);
+  if (index == -1)
+    return; // throw new mgException("setShaderUniform %s.%s not found", (const char*) shaderName, (const char*) varName);
+
+  GLfloat* values = new GLfloat[count*3];
+  for (int i = 0; i < count; i++)
+  {
+    values[3*i] = (GLfloat) points[i].x;
+    values[3*i+1] = (GLfloat) points[i].y;
+    values[3*i+2] = (GLfloat) points[i].z;
+  }
+
+  glUniform3fv(index, count, values);
+  delete values;
+}
+
+//-----------------------------------------------------------------------------
 // set shader uniform value to Point4
 void mgGL21Services::setShaderUniform(
   const char* shaderName,             // name of shader
@@ -545,7 +596,7 @@ void mgGL21Services::setShaderUniform(
 }
 
 //-----------------------------------------------------------------------------
-// set shader uniform value to Point4
+// set shader uniform value to integer
 void mgGL21Services::setShaderUniform(
   const char* shaderName,             // name of shader
   const char* varName,                // variable name
@@ -565,7 +616,7 @@ void mgGL21Services::setShaderUniform(
 }
 
 //-----------------------------------------------------------------------------
-// set shader uniform value to Point4
+// set shader uniform value to float
 void mgGL21Services::setShaderUniform(
   const char* shaderName,             // name of shader
   const char* varName,                // variable name
@@ -582,6 +633,27 @@ void mgGL21Services::setShaderUniform(
     return; // throw new mgException("setShaderUniform %s.%s not found", (const char*) shaderName, (const char*) varName);
 
   glUniform1f(index, (GLfloat) floatvalue);
+}
+
+//-----------------------------------------------------------------------------
+// set shader uniform value to float array
+void mgGL21Services::setShaderUniform(
+  const char* shaderName,             // name of shader
+  const char* varName,                // variable name
+  int count,                          // array size
+  const float* values)                // float array
+{
+  DWORD value;
+  if (!m_shaders.lookup(shaderName, value))
+    throw new mgErrorMsg("glShader", "shaderName", "%s", (const char*) shaderName);
+
+  mgShaderHandle shader = (mgShaderHandle) value;
+
+  GLint index = glGetUniformLocation(shader, (const GLchar*) varName);
+  if (index == -1)
+    return; // throw new mgException("setShaderUniform %s.%s not found", (const char*) shaderName, (const char*) varName);
+
+  glUniform1fv(index, count, (const GLfloat*) values);
 }
 
 //-----------------------------------------------------------------------------

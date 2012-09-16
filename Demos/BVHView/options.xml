@@ -1,0 +1,32 @@
+<options
+  platform = ""
+  graphicsTiming = "true"
+  writeCaps = "false"
+  fullscreen = "false"
+  multisample = "true"
+
+  dpi="0"
+  fov="60"
+  windowX = "100"
+  windowY = "100"
+  windowWidth = "800"
+  windowHeight = "600"
+
+  shaderDir = "docs/shaders"
+  deskcursor = "docs/cursors/arrowCursor.xml"
+  movecursor = "docs/cursors/crossCursor.xml"
+
+  xminface = "docs/images/face-xmin.jpg"
+  xmaxface = "docs/images/face-xmax.jpg"
+  yminface = "docs/images/face-ymin.jpg"
+  ymaxface = "docs/images/face-ymax.jpg"
+  zminface = "docs/images/face-zmin.jpg"
+  zmaxface = "docs/images/face-zmax.jpg"
+
+  helpFile = "docs/ui/help.xml"
+
+  floor = "docs/images/floor.jpg"
+  limb = "docs/images/limb.jpg"
+
+  model = "capture_format_biped_3dmax.bvh"
+/>

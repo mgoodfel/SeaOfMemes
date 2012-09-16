@@ -2,7 +2,7 @@
 <h1>Help</h1>
 <p>
 Hit <b>F1</b> to toggle help.<br/>
-Hit <b>`</b> or <b>~</b> to toggle console.<br/>
+Hit <b>F2</b> to toggle console.<br/>
 </p>
 <p>
 Use the controls at right, and see their actions logged in the console.

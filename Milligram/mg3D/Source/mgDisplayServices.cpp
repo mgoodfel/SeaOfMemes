@@ -43,6 +43,7 @@ mgTextureImage::mgTextureImage()
   m_transparent = false;
   m_xWrap = MG_TEXTURE_REPEAT;
   m_yWrap = MG_TEXTURE_REPEAT;
+  m_filter = MG_TEXTURE_QUALITY;
 }
 
 //--------------------------------------------------------------
@@ -60,6 +61,7 @@ mgTextureArray::mgTextureArray()
   m_height = 0;
   m_xWrap = MG_TEXTURE_REPEAT;
   m_yWrap = MG_TEXTURE_REPEAT;
+  m_filter = MG_TEXTURE_QUALITY;
 }
 
 //--------------------------------------------------------------
@@ -80,6 +82,7 @@ mgTextureCube::mgTextureCube()
   m_height = 0;
   m_xWrap = MG_TEXTURE_CLAMP;
   m_yWrap = MG_TEXTURE_CLAMP;
+  m_filter = MG_TEXTURE_QUALITY;
 }
 
 //--------------------------------------------------------------

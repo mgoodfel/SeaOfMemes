@@ -24,22 +24,22 @@
 CRITICAL_SECTION m_debugLock;
 #endif
 
-BOOL m_debugInitialized = false;
+BOOL m_mgDebugInitialized = false;
 BOOL m_debugConsole = false;
 
-void debugInit(
+void mgDebugInit(
   BOOL console)
 {
 #ifdef WIN32
   InitializeCriticalSection(&m_debugLock);
 #endif
-  m_debugInitialized = true;
+  m_mgDebugInitialized = true;
   m_debugConsole = console;
 }
 
-void debugTerm()
+void mgDebugTerm()
 {
-  if (!m_debugInitialized)
+  if (!m_mgDebugInitialized)
     return;
 #ifdef WIN32
   DeleteCriticalSection(&m_debugLock);
@@ -50,8 +50,8 @@ void debugTerm()
 void mgDebugReset(
   BOOL console)
 {
-  if (!m_debugInitialized)
-    debugInit(console);
+  if (!m_mgDebugInitialized)
+    mgDebugInit(console);
     
   FILE *errors = fopen("errors.txt", "wt");
   fclose(errors);
@@ -62,8 +62,8 @@ void mgDebug(
   const char* format,
   ...)
 {
-  if (!m_debugInitialized)
-    debugInit(m_debugConsole);
+  if (!m_mgDebugInitialized)
+    mgDebugInit(m_debugConsole);
 
 #ifdef WIN32    
   EnterCriticalSection(&m_debugLock);

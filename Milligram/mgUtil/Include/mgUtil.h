@@ -50,6 +50,7 @@
 #include "Util/mgException.h"
 #include "Util/mgErrorMsg.h"
 #include "Util/mgMatrix.h"
+#include "Util/mgQuat.h"
 #include "Util/mgDWordArray.h"
 #include "Util/mgPtrArray.h"
 #include "Util/mgStringArray.h"
@@ -65,6 +66,7 @@
 
 // file formats
 #include "Util/mgOptionsFile.h"
+//#include "Util/mgObjectStore.h"
 
 // operating system services
 #include "OS/mgMiscUtil.h"
@@ -73,9 +75,6 @@
 #include "OS/mgOSLock.h"
 #include "OS/mgOSThread.h"
 #include "OS/mgOSEvent.h"
-
-// audio services
-#include "Audio/mgAudio.h"
 
 // graphics utilities
 #include "GraphicsUtil/mgBezier.h"

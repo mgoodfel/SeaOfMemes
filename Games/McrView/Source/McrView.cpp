@@ -26,7 +26,7 @@ const char THIS_FILE[] = __FILE__;
 #endif
 
 // identify the program for the framework log
-const char* mgProgram = "McrView";
+const char* mgProgramName = "McrView";
 const char* mgProgramVersion = "Part 60";
 
 #include "StarrySky.h"
@@ -270,6 +270,7 @@ BOOL McrView::moveKeyDown(
       return true;   // used key
 
     case MG_EVENT_KEY_F6:
+      mgDebug("triangle count = %d", m_world->triangleCount());
       mgDebug("stop");
       return true;  // used key
   }

@@ -26,7 +26,7 @@ const char THIS_FILE[] = __FILE__;
 #endif
 
 // identify the program for the framework log
-const char* mgProgram = "GuiTestAll";
+const char* mgProgramName = "GuiTestAll";
 const char* mgProgramVersion = "Part 60";
 
 #include "mgGUI/Include/mgGUI.h"
@@ -89,7 +89,7 @@ void GuiTestAll::appInit()
   mgDisplay->setFOV(m_options.getDouble("FOV", 60.0));
 
   mgString title;
-  title.format("%s, %s", mgProgram, mgProgramVersion);
+  title.format("%s, %s", mgProgramName, mgProgramVersion);
   mgPlatform->setWindowTitle(title);
 
   // load the shaders we use
@@ -864,8 +864,7 @@ void GuiTestAll::appKeyDown(
       m_ui->toggleHelp();
       break;
 
-    case '~':
-    case '`':
+    case MG_EVENT_KEY_F2:
       m_ui->toggleConsole();
       break;
 

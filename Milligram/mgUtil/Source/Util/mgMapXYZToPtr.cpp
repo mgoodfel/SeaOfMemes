@@ -202,12 +202,18 @@ int mgMapXYZToPtr::getStartPosition() const
 // get next association
 void mgMapXYZToPtr::getNextAssoc(
   int& index, 
+  int& x,
+  int& y,
+  int& z,
   const void*& value) const
 {
   index = max(0, min(m_tableSize-1, index));
   mgMapXYZToPtrEntry *entry = (mgMapXYZToPtrEntry *) &m_entries[index];
   if (entry->value == NULL)
     return;  // bad posn
+  x = entry->x;
+  y = entry->y;
+  z = entry->z;
   value = entry->value;
   
   // find the next key, if any

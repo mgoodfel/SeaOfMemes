@@ -52,6 +52,12 @@
     <Filter Include="Source\GraphicsUtil">
       <UniqueIdentifier>{9e5c1b08-085b-45c0-968c-1d9ec90bd971}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\ObjectStore">
+      <UniqueIdentifier>{992b0605-fbd6-4019-995f-a7e04612b01d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\ObjectStore">
+      <UniqueIdentifier>{31e24511-213f-4ea0-91c7-f4d4acd6f95d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\mgUtil.h">
@@ -221,6 +227,9 @@
     </ClInclude>
     <ClInclude Include="..\Include\GraphicsUtil\mgSimplexNoise.h">
       <Filter>Include\GraphicsUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Util\mgQuat.h">
+      <Filter>Include\Util</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -394,6 +403,9 @@
     </ClCompile>
     <ClCompile Include="..\Source\OS\Linux\mgLinuxSendLog.cpp">
       <Filter>Source\OS\Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Util\mgQuat.cpp">
+      <Filter>Source\Util</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

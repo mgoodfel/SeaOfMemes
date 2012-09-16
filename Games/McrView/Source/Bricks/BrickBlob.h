@@ -209,6 +209,9 @@ public:
   virtual void updateZMaxEdge(
     BrickBlob* other);
 
+  // return count of triangles
+  virtual int triangleCount();
+
   // do static initialization
   static void staticInit();
 

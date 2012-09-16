@@ -133,7 +133,8 @@ ChunkWorld::~ChunkWorld()
   while (posn != -1)
   {
     const void* value;
-    m_chunkTable.getNextAssoc(posn, value);
+    int x, y, z;
+    m_chunkTable.getNextAssoc(posn, x, y, z, value);
     ChunkObj* chunk = (ChunkObj*) value;
     delete chunk;
   }
@@ -310,7 +311,8 @@ void ChunkWorld::deleteBuffers()
   while (posn != -1)
   {
     const void* value;
-    m_chunkTable.getNextAssoc(posn, value);
+    int x, y, z;
+    m_chunkTable.getNextAssoc(posn, x, y, z, value);
     ChunkObj* chunk = (ChunkObj*) value;
     if (chunk->m_status == CHUNK_INDISPLAY ||
         chunk->m_status == CHUNK_NEEDSUPDATE)
@@ -330,7 +332,8 @@ void ChunkWorld::createBuffers()
   while (posn != -1)
   {
     const void* value;
-    m_chunkTable.getNextAssoc(posn, value);
+    int x, y, z;
+    m_chunkTable.getNextAssoc(posn, x, y, z, value);
     ChunkObj* chunk = (ChunkObj*) value;
     if (chunk->m_status == CHUNK_INDISPLAY ||
         chunk->m_status == CHUNK_NEEDSUPDATE)

@@ -26,7 +26,7 @@ const char THIS_FILE[] = __FILE__;
 #endif
 
 // identify the program for the framework log
-const char* mgProgram = "SaucerMovie";
+const char* mgProgramName = "SaucerMovie";
 const char* mgProgramVersion = "Part 60";
 
 #include "StarrySky.h"
@@ -79,7 +79,7 @@ void SaucerMovie::appInit()
   MovementApp::appInit();
 
   mgString title;
-  title.format("%s, %s", mgProgram, mgProgramVersion);
+  title.format("%s, %s", mgProgramName, mgProgramVersion);
   mgPlatform->setWindowTitle(title);
 
   // load the shaders we might use

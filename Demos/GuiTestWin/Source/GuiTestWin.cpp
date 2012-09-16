@@ -34,7 +34,7 @@ const char THIS_FILE[] = __FILE__;
 
 #include "FlatWorld.h"
 
-const char* WINDOW_TITLE = "GuiTestWin, Part 58";
+const char* WINDOW_TITLE = "GuiTestWin, Part 60";
 const char* WINDOW_CLASS = "GUITESTWIN";
 
 HWND m_window = NULL;
@@ -614,12 +614,12 @@ LRESULT CALLBACK WndProc(
       if (m_ui != NULL)
       {
         // handle the help key and console key
-        if (key == '`' || key == '~')
-          m_ui->toggleConsole();
-
-        else if (key == MG_EVENT_KEY_F1)
+        if (key == MG_EVENT_KEY_F1)
           m_ui->toggleHelp();
     
+        else if (key == MG_EVENT_KEY_F2)
+          m_ui->toggleConsole();
+
         // if ui is taking input
         else if (m_ui->hasKeyFocus())
           m_ui->m_top->surfaceKeyDown(key, m_eventFlags | repeat);

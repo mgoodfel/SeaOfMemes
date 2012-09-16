@@ -42,7 +42,7 @@ const char THIS_FILE[] = __FILE__;
 
 #include "mgApplication.h"
 
-extern const char* mgProgram;
+extern const char* mgProgramName;
 extern const char* mgProgramVersion;
 
 const int MG_LIBRARY_NONE = 0;
@@ -156,7 +156,8 @@ void mgLinuxServices::scanFontDir(
     }
     else if (!foundFont)
     {
-      // if a font file found, add directory to list
+      // if a font file found, add directory to list
+
 
 
       char* dot = strrchr(entry->d_name, '.');
@@ -1165,7 +1166,7 @@ BOOL getDisplayDevice(
 // report program/os/machine information
 void systemReport()
 {
-  mgDebug(":Program: %s", mgProgram != NULL ? mgProgram : "unknown");
+  mgDebug(":Program: %s", mgProgramName != NULL ? mgProgramName : "unknown");
   mgDebug(":Program Version: %s", mgProgramVersion != NULL ? mgProgramVersion : "unknown");
   struct utsname name;
   if (uname(&name) != -1)

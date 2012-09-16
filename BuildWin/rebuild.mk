@@ -1,6 +1,10 @@
-DEMOS = GuiTestAll GuiTestGL GuiTestWin Landscape SaucerMovie TestCube Trees
-GAMES = Crafty McrView SeaOfMemes DontHitMe
-MILLIGRAM = JpegLib FreeType LibPNG Ogg Vorbis ZLib mg2D mg3D mgGUI mgPlatform mgUtil mgSendLog
+DEMOS = GuiTestAll GuiTestGL GuiTestWin \
+	Landscape SaucerMovie TestCube Trees BVHView
+
+GAMES = Crafty McrView SeaOfMemes DontHitMe 
+
+MILLIGRAM = JpegLib FreeType LibPNG Ogg Vorbis ZLib\
+	mgUtil mgPlatform mg2D mg3D mgGUI mgSendLog
 
 all: $(MILLIGRAM) $(DEMOS) $(GAMES)
 
@@ -21,7 +25,7 @@ $(DEMOS):
 	msbuild ..\Demos\$*\BuildWin\$*.vcxproj /p:configuration=DebugMemory
 	msbuild ..\Demos\$*\BuildWin\$*.vcxproj /p:configuration=Distrib
 #
-# Rebuild the Distrib version of the games
+# Rebuild the Games
 #
 $(GAMES):
 	msbuild ..\Games\$*\BuildWin\$*.vcxproj /p:configuration=Debug

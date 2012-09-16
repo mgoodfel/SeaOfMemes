@@ -1,5 +1,5 @@
-PARTXX = part60
-DEMOS = GuiTestAll GuiTestGL GuiTestWin Landscape SaucerMovie TestCube Trees
+PARTXX = part64
+DEMOS = GuiTestAll GuiTestGL GuiTestWin Landscape SaucerMovie TestCube Trees BVHView
 GAMES = Crafty McrView SeaOfMemes DontHitMe
 MILLIGRAM = JpegLib FreeType LibPNG Ogg Vorbis ZLib mg2D mg3D mgGUI mgPlatform mgUtil mgSendLog
 

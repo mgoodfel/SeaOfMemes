@@ -629,3 +629,16 @@ BOOL ChunkObj::withinFrustum()
   return false;
 }
 
+//--------------------------------------------------------------
+// return count of triangles
+int ChunkObj::triangleCount()
+{
+  int count = 0;
+  for (int i = 0; i < CHUNK_COLUMN; i++)
+  {
+    if (m_blobs[i] != NULL)
+      count += m_blobs[i]->triangleCount();
+  }
+  return count;
+}
+

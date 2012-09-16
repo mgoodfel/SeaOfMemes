@@ -26,7 +26,7 @@ const char THIS_FILE[] = __FILE__;
 #endif
 
 // identify the program for the framework log
-const char* mgProgram = "GuiTestGL";
+const char* mgProgramName = "GuiTestGL";
 const char* mgProgramVersion = "Part 60";
 
 #include "mgFontList.h"
@@ -84,7 +84,7 @@ GuiTestGL::~GuiTestGL()
 void GuiTestGL::appRequestDisplay()
 {
   mgString title;
-  title.format("%s, %s", mgProgram, mgProgramVersion);
+  title.format("%s, %s", mgProgramName, mgProgramVersion);
   mgPlatform->setWindowTitle(title);
 
   // use GL2.1 so we can have only one shader
@@ -325,11 +325,11 @@ void GuiTestGL::appKeyDown(
     return; // too early
 
   // handle the help key and console key
-  if (keyCode == '`' || keyCode == '~')
-    m_ui->toggleConsole();
-
-  else if (keyCode == MG_EVENT_KEY_F1)
+  if (keyCode == MG_EVENT_KEY_F1)
     m_ui->toggleHelp();
+
+  else if (keyCode == MG_EVENT_KEY_F2)
+    m_ui->toggleConsole();
 
   else if (m_ui->hasKeyFocus())
     m_ui->m_top->surfaceKeyDown(keyCode, modifiers);

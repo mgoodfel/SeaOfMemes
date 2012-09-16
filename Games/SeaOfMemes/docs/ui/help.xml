@@ -1,6 +1,7 @@
 <form>
-F1 to remove help.<br/>
-ESC to toggle arrow cursor/cross cursor.
+Hit <b>F1</b> to toggle help.<br/>
+Hit <b>F2</b> to toggle debug console.<br/>
+Hit <b>ESC</b> to toggle arrow cursor/cross cursor.
 <p>
 L - land on nearest object (if range is red).<br/>
 K - toggle mph/kph units.

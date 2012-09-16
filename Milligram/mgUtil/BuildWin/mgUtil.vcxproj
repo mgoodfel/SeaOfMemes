@@ -52,6 +52,7 @@
     <ClInclude Include="..\Include\Util\mgMatrix.h" />
     <ClInclude Include="..\Include\Util\mgOptionsFile.h" />
     <ClInclude Include="..\Include\Util\mgPtrArray.h" />
+    <ClInclude Include="..\Include\Util\mgQuat.h" />
     <ClInclude Include="..\Include\Util\mgString.h" />
     <ClInclude Include="..\Include\Util\mgStringArray.h" />
     <ClInclude Include="..\Include\Util\mgUtilErrorTable.h" />
@@ -133,6 +134,7 @@
     <ClCompile Include="..\Source\Util\mgMatrix.cpp" />
     <ClCompile Include="..\Source\Util\mgOptionsFile.cpp" />
     <ClCompile Include="..\Source\Util\mgPtrArray.cpp" />
+    <ClCompile Include="..\Source\Util\mgQuat.cpp" />
     <ClCompile Include="..\Source\Util\mgString.cpp" />
     <ClCompile Include="..\Source\Util\mgStringArray.cpp" />
     <ClCompile Include="..\Source\Util\mgUtilErrorTable.cpp" />

@@ -33,7 +33,7 @@ const char THIS_FILE[] = __FILE__;
 #include "mgWinGL21Support.h"
 #include "mgWinServices.h"
 
-extern const char* mgProgram;
+extern const char* mgProgramName;
 extern const char* mgProgramVersion;
 
 const int MG_LIBRARY_NONE = 0;
@@ -1326,7 +1326,7 @@ LONG WINAPI MyUnhandledExceptionFilter(
 // report program/os/machine information
 void systemReport()
 {
-  mgDebug(":Program: %s", mgProgram != NULL ? mgProgram : "unknown");
+  mgDebug(":Program: %s", mgProgramName != NULL ? mgProgramName : "unknown");
   mgDebug(":Program Version: %s", mgProgramVersion != NULL ? mgProgramVersion : "unknown");
 
   OSVERSIONINFOEX osVersion;

@@ -26,7 +26,7 @@ const char THIS_FILE[] = __FILE__;
 #endif
 
 // identify the program for the framework log
-const char* mgProgram = "SeaOfMemes";
+const char* mgProgramName = "SeaOfMemes";
 const char* mgProgramVersion = "Part 60";
 
 #include "SolarSystem/NebulaSky.h"
