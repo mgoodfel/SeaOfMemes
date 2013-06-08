@@ -22,8 +22,8 @@
   skybox-zmin = "docs/textures/Nebula-zmin.jpg"
   skybox-zmax = "docs/textures/Nebula-zmax.jpg"
 
-  sunTexture = "docs/textures/sun.jpg;docs/textures/sunAlpha.gif"
-  starTexture = "docs/textures/starpatch.jpg;docs/textures/brightStarsAlpha.jpg"
+  sunTexture = "docs/textures/sun.png"
+  starTexture = "docs/textures/starpatch.png"
 
   saucer0 = "docs/textures/saucer0.jpg"
   saucer1 = "docs/textures/saucer1.jpg"
@@ -37,7 +37,7 @@
   saucer9 = "docs/textures/saucer9.jpg"
   saucer10 = "docs/textures/saucer10.jpg"
 
-  tube = "docs/textures/tube.gif;docs/textures/tubeAlpha.gif"
+  tube = "docs/textures/tube.png"
   intro-wall = "docs/textures/intro-wall.jpg"
 
   asteroid-outside = "docs/textures/asteroid-outside.jpg"
@@ -47,7 +47,7 @@
   wreck-shell = "docs/textures/dirty/wreck-shell.jpg"
 
   tower-shell = "docs/textures/dirty/wreck-shell.jpg"
-  tower-glass = "docs/textures/dirty/tower-glass.gif;docs/textures/dirty/tower-glassAlpha.gif"
+  tower-glass = "docs/textures/dirty/tower-glass.png"
   tower-wall = "docs/textures/dirty/tower-wall.jpg"
   tower-light = "docs/textures/dirty/tower-light.jpg"
   tower-floor = "docs/textures/dirty/tower-floor.jpg"

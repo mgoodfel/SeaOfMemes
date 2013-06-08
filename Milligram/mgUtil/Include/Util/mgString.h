@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -21,26 +21,29 @@
 #ifndef MGSTRING_H
 #define MGSTRING_H
 
-// A variable-length string class.  Wherever arguments are "const char*", these
-// are assumed to be UTF-8 format strings.  WCHAR arguments should be Unicode 
-// string constants, which are handled differently under each platform.
-
-// The (const char*) cast returns UTF-8 strings.  The toWCHAR method returns
-// a (const wchar_t*), which is only really useful under Windows, where system
-// calls expect a string in this format.
-
-// Unfortunately, C++ automatically generates a cast to (const char*) when
-// you code string[i] -- it becomes ((const char*) string)[i].  This allows
-// the caller to iterate through characters, which is not meaningful in
-// a UTF-8 string.
-
-// A 'letter' in the class is one or more Unicode characters (a main character
-// and other combining characters) that together form a single symbol in a word.
-// Since the internal format is UTF-8, a single letter may be many bytes.
-
 // MG_MAX_LETTER is the maximum number of bytes returned for a single letter.
 #define MG_MAX_LETTER_CHARS  8
 #define MG_MAX_LETTER  49    // 8 UTF-8 codes (max 6 bytes), plus ending null
+#define MG_SHORT_STRING_LEN 64
+
+/*
+  A variable-length string class.  Wherever arguments are "const char*", these
+  are assumed to be UTF-8 format strings.  WCHAR arguments should be Unicode 
+  string constants, which are handled differently under each platform.
+<p>
+  The (const char*) cast returns UTF-8 strings.  The toWCHAR method returns
+  a (const wchar_t*), which is only really useful under Windows, where system
+  calls expect a string in this format.
+<p>
+  Unfortunately, C++ automatically generates a cast to (const char*) when
+  you code string[i] -- it becomes ((const char*) string)[i].  This allows
+  the caller to iterate through characters, which is not meaningful in
+  a UTF-8 string.
+<p>
+  A 'letter' in the class is one or more Unicode characters (a main character
+  and other combining characters) that together form a single symbol in a word.
+  Since the internal format is UTF-8, a single letter may be many bytes.
+*/
 
 class mgString
 {
@@ -393,7 +396,7 @@ protected:
   int m_dataLen;                // data length
   int m_growBy;                 // size of increase in alloc
   char* m_data;                 // data to add 
-  char m_shortData[64];         // initial data
+  char m_shortData[MG_SHORT_STRING_LEN]; // initial data
 
   // shared initialization
   void init();

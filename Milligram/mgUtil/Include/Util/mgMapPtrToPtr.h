@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -21,6 +21,9 @@
 #ifndef MAPPTRTOPTR_H
 #define MAPPTRTOPTR_H
 
+/*
+  Hashes pointer keys to pointer values.  The caller own all elements pointed to.
+*/
 class mgMapPtrToPtr 
 {
 public:

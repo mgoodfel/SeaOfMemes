@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -26,6 +26,11 @@
 #include "mgControlListener.h"
 #include "mgTimeListener.h"
 
+/*
+  An mgTopControl instance is created on the rendering mgSurface and 
+  sets the mgStyle for the entire tree of controls.  mgTopControl
+  delivers events and handles redraws of modified controls.
+*/
 class mgTopControl : public mgControl, public mgControlListener
 {
 public:
@@ -171,6 +176,14 @@ public:
 
   // control deleted
   virtual void controlDelete(
+    void* source);
+
+  // control child added
+  virtual void controlAddChild(
+    void* source);
+
+  // control child removed
+  virtual void controlRemoveChild(
     void* source);
 
 protected:

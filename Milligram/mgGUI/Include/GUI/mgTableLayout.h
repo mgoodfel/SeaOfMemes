@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -27,6 +27,9 @@ class mgTableRow;
 class mgTableCell;
 //class mgFrame;
 
+/*
+  An enum of table cell alignment options.
+*/
 enum  mgTableAlign { 
   mgTableAlignLeft        = 0x1,
   mgTableAlignRight       = 0x2,
@@ -39,6 +42,10 @@ enum  mgTableAlign {
   mgTableAlignVFill       = 0x40,
 };
 
+/*
+  An mgLayoutManager which arranges child controls as rows of columns, 
+  similar to HTML tables.
+*/
 class mgTableLayout : public mgLayoutManager
 {
 public:

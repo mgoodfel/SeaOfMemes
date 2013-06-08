@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -24,6 +24,11 @@
 #include "MovementApp.h"
 
 class HelpUI;
+
+/*
+  The simplest demo of the framework.  Creates a rotating cube.
+  For example of Debug Console use, find 'debugListVariables'
+*/
 
 class TestCube : public MovementApp
 {
@@ -68,12 +73,15 @@ public:
 protected:
   double m_angle;
   BOOL m_animate;
+
   mgTextureArray* m_cubeTexture;
   mgIndexBuffer* m_cubeIndexes;
   mgVertexBuffer* m_cubeVertexes;
+  mgShader* m_cubeShader;
 
   mgTextureImage* m_floorTexture;
   mgVertexBuffer* m_floorVertexes;
+  mgShader* m_floorShader;
 
   HelpUI* m_help;
 

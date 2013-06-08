@@ -1,5 +1,5 @@
 <cursorDefn
-  texture="dotCursorRGB.bmp;dotCursorAlpha.bmp"
+  texture="dotCursorRGB.png"
   hotX = "16"
   hotY = "16"
 />

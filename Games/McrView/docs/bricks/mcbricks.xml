@@ -15,8 +15,8 @@ Set the brick icon with the 'icon' attribute.  Default is top texture.
 <brick code="0500" all="wood_plank.jpg" />
 <brick code="0600" all="sapling.jpg" />  <!-- sapling -->
 <brick code="0700" all="bedrock.jpg" />
-<brick code="0800" all="water.jpg;waterAlpha.gif" />
-<brick code="0900" all="water.jpg;waterAlpha.gif" />  <!-- stationary water -->
+<brick code="0800" all="water.png" transparent="true" />
+<brick code="0900" all="water.png" transparent="true" />  <!-- stationary water -->
 <brick code="0A00" all="lava.jpg" light="true" />
 <brick code="0B00" all="lava.jpg" light="true" />  <!-- stationary lava -->
 <brick code="0C00" all="sand.jpg" />
@@ -27,11 +27,11 @@ Set the brick icon with the 'icon' attribute.  Default is top texture.
 <brick code="1100" all="normal_wood.jpg" top="wood_top.jpg" bottom="wood_top.jpg" />
 <brick code="1101" all="spruce_wood.jpg" top="wood_top.jpg" bottom="wood_top.jpg" />
 <brick code="1102" all="birch_wood.jpg" top="wood_top.jpg" bottom="wood_top.jpg" />
-<brick code="1200" all="normal_leaves.jpg;normal_leavesAlpha.gif" />
-<brick code="1201" all="spruce_leaves.jpg;spruce_leavesAlpha.gif" />
-<brick code="1202" all="birch_leaves.jpg;birch_leavesAlpha.gif" />
+<brick code="1200" all="normal_leaves.png" transparent="true" />
+<brick code="1201" all="spruce_leaves.png" transparent="true" />
+<brick code="1202" all="birch_leaves.png" transparent="true" />
 <brick code="1300" all="sponge.jpg" />
-<brick code="1400" all="glass.jpg;glassAlpha.gif" />
+<brick code="1400" all="glass.png" transparent="true" />
 <brick code="1500" all="lapis_lazuli_ore.jpg" />
 <brick code="1600" all="lapis_lazuli.jpg" />
 <brick code="1700" all="dispenser.jpg" />
@@ -147,7 +147,7 @@ Set the brick icon with the 'icon' attribute.  Default is top texture.
 <brick code="3203" shape="torch_side.xml" dir="3" />
 <brick code="3204" shape="torch_side.xml" dir="1"/>
 <brick code="3205" shape="torch_floor.xml" />
-<brick code="3300" light="true" all="fire.jpg;fireAlpha.gif" />  <!-- code=3300 fire -->
+<brick code="3300" light="true" all="fire.png" transparent="true" />  <!-- code=3300 fire -->
 <brick code="3400" all="monster_spawner.jpg" />
 <brick code="3500" shape="stair" all="wood_plank.jpg" dir="2" /> 
 <brick code="3501" dir="0" /> 
@@ -160,7 +160,7 @@ Set the brick icon with the 'icon' attribute.  Default is top texture.
 <brick code="3605" dir="2" />
 <brick code="3700" shape="redstone_wire.xml" mat0="redstone_wire.jpg" /> 
 <brick code="3800" all="diamond_ore.jpg" />
-<brick code="3900" all="diamond.jpg;diamondAlpha.gif" />
+<brick code="3900" all="diamond.png" transparent="true" />
 <brick code="3A00" shape="crafting_table.xml" mat0="wood_dark.jpg" mat1="wool_lightblue.jpg" />
 <brick code="3B00" all="seeds.jpg" /> <!-- code=3B00 seeds -->
 <brick code="3C00" all="farmland.jpg" />
@@ -269,7 +269,7 @@ Set the brick icon with the 'icon' attribute.  Default is top texture.
 <brick code="4C05" shape="redstone_torch.xml" />
 <brick code="4D00" all="button.jpg" /><!-- code=4D00 stone button -->
 <brick code="4E00" shape="cap" all="snow_cover.jpg" />
-<brick code="4F00" all="ice.jpg;iceAlpha.gif" />
+<brick code="4F00" all="ice.png" transparent="true" />
 <brick code="5000" all="snow.jpg" />
 <brick code="5100" shape="alan_cactus.xml" mat0="alan_cactus.jpg" />
 <brick code="5200" all="clay.jpg" />
@@ -296,7 +296,7 @@ Set the brick icon with the 'icon' attribute.  Default is top texture.
 <brick code="6300" shape="mushroom.xml" mat0="mushroom_brown.jpg" /> <!-- code=6300 huge brown mushroom -->
 <brick code="6400" shape="mushroom.xml" mat0="mushroom_red.jpg" /> <!-- code=6400 huge red mushroom -->
 <brick code="6500" all="iron_bars.jpg" /> <!-- code=6500 iron bars -->
-<brick code="6600" all="glass.jpg;glassAlpha.gif" /> <!-- code=6600 glass pane -->
+<brick code="6600" all="glass.png" transparent="true" /> <!-- code=6600 glass pane -->
 <brick code="6700" all="melon.jpg" /> <!-- code=6700 melon -->
 <brick code="6800" all="pumpkin_stem.jpg" /> <!-- code=6800 pumpkin stem -->
 <brick code="6900" all="melon_stem.jpg" /> <!-- code=6900 melon stem -->

@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -21,10 +21,13 @@
 #ifndef MGCURSORDEFN_H
 #define MGCURSORDEFN_H
 
-#include "XMLParser/mgXMLParser.h"
+#include "mgUtil/Include/XMLParser/mgXMLParser.h"
 
 class mgCursorDefn;
 
+/*
+  Cursor definition XML tag.
+*/
 class mgCursorDefnTag : public mgXMLTag
 {
 public:
@@ -39,6 +42,9 @@ public:
     const char* attrValue);
 };
 
+/*
+  Contains a cursor definition, usually loaded from an XML file.
+*/
 class mgCursorDefn : public mgXMLParser
 {
 public:

@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -47,13 +47,16 @@ protected:
   mgTextureImage* m_shellTexture;
   mgIndexBuffer* m_shellIndexes;
   mgVertexBuffer* m_shellVertexes;
+  mgShader* m_shellShader;
 
   mgTextureArray* m_officeTextures;
   mgIndexBuffer* m_officeIndexes;
   mgVertexBuffer* m_officeVertexes;
+  mgShader* m_officeShader;
 
   mgTextureImage* m_glassTexture;
   mgIndexBuffer* m_glassIndexes;
+  mgShader* m_glassShader;
 
   mgBezier m_floorSpline;
   double m_floorLen;

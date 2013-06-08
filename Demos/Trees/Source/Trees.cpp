@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -27,13 +27,15 @@ const char THIS_FILE[] = __FILE__;
 
 // identify the program for the framework log
 const char* mgProgramName = "Trees";
-const char* mgProgramVersion = "Part 60";
+const char* mgProgramVersion = "Part 83";
 
 #include "HelpUI.h"
+#include "StarrySky.h"
 #include "Trees.h"
 
-const int BRANCH_SIDES = 9;    // number of sides for branch cylinders
+const int BRANCH_SIDES = 5;    // number of sides for branch cylinders
 const double BRANCH_SCALE = 1/10.0;
+const int TREE_POINTS = 300;
 
 const double INVALID_TIME = -1.0;
 
@@ -54,6 +56,8 @@ mgApplication *mgCreateApplication()
 Trees::Trees()
 {
   m_help = NULL;
+  m_sky = NULL;
+
   m_leafTexture = NULL;
   m_leafIndexes = NULL;
   m_leafVertexes = NULL;
@@ -62,8 +66,9 @@ Trees::Trees()
   m_branchVertexes = NULL;
   m_floorTexture = NULL;
   m_floorVertexes = NULL;
-  m_skyTexture = NULL;
-  m_skyVertexes = NULL;
+  m_shapeTexture = NULL;
+  m_shapeIndexes = NULL;
+  m_shapeVertexes = NULL;
 }
 
 //--------------------------------------------------------------
@@ -83,34 +88,57 @@ void Trees::appInit()
   mgPlatform->setWindowTitle(title);
 
   // load shaders we'll use
-  mgVertex::loadShader("litTexture");
-  mgVertex::loadShader("unlitTexture");
-  mgVertexTA::loadShader("litTextureArray");
+  m_floorShader = mgVertex::loadShader("litTexture");
+  m_branchShader = mgVertex::loadShader("litTexture");
+  m_leafShader = mgVertexTA::loadShader("litTextureArray");
+  m_shapeShader = mgVertex::loadShader("litTexture");
 
   // load texture patterns
   loadTextures();
 
-  m_eyePt = mgPoint3(120, 50.0, 0.0);
-  m_eyeRotX = 10.0;
-  m_eyeRotY = 90.0;
+  m_eyePt = mgPoint3(150, 40, 150); 
+  m_eyeRotX = 7; 
+  m_eyeRotY = 135;
   m_moveSpeed = 25.0/1000.0;  
 
   // create initial "leaf" points and branches
+//  initShape();
   initTree();
 
-  m_runAnimation = false;
+  m_runAnimation = true;
   m_animateGrowth = 0.0;
+
+  mgPoint3 lightDir(0, 1, 1);
+  lightDir.normalize();
+  mgDisplay->setLightDir(lightDir);
+  mgDisplay->setLightAmbient(0.6, 0.6, 0.6);
+
+  m_sky = new StarrySky(m_options);
+  m_sky->enableStars(false);
+  m_sky->enableSkyBox(true);
+  m_sky->enableSun(true);
+
+  m_sky->setSunDir(lightDir);
+
+  m_sky->enableMoon(false);
+  m_sky->setMoonDir(lightDir);
 
   // create the help pane
   m_help = new HelpUI(m_options);
   m_help->setDebugApp(this);
   setUI(m_help);
+
+  // =-= turn off help for debug
+  m_help->toggleHelp();
 }
 
 //--------------------------------------------------------------------
 // terminate application
 void Trees::appTerm()
 {
+  delete m_sky;
+  m_sky = NULL;
+
   delete m_help;
   m_help = NULL;
 
@@ -137,7 +165,7 @@ BOOL Trees::moveKeyDown(
 
     case MG_EVENT_KEY_F4:
       m_tree.colonize();
-      m_tree.branchSizes(false, m_lastCount, 1.0);
+      m_tree.computeBranchSizes(false, m_lastCount, 1.0);
       renderTree();
       m_eyeChanged = true;
       return true;
@@ -158,8 +186,11 @@ BOOL Trees::moveKeyDown(
 // create buffers, ready to send to display
 void Trees::appCreateBuffers()
 {
+  if (m_sky != NULL)
+    m_sky->createBuffers();
+
   createFloor();
-  createSky();
+//  createShape();
   renderTree();
 }
 
@@ -167,15 +198,26 @@ void Trees::appCreateBuffers()
 // delete any display buffers
 void Trees::appDeleteBuffers()
 {
-  delete m_leafIndexes;  m_leafIndexes = NULL;
-  delete m_leafVertexes;  m_leafVertexes = NULL;
+  if (m_sky != NULL)
+    m_sky->deleteBuffers();
 
-  delete m_branchIndexes;  m_branchIndexes = NULL;
-  delete m_branchVertexes;  m_branchVertexes = NULL;
+  delete m_leafIndexes;  
+  m_leafIndexes = NULL;
+  delete m_leafVertexes;  
+  m_leafVertexes = NULL;
 
-  delete m_floorVertexes;  m_floorVertexes = NULL;
+  delete m_branchIndexes;  
+  m_branchIndexes = NULL;
+  delete m_branchVertexes;  
+  m_branchVertexes = NULL;
 
-  delete m_skyVertexes;  m_skyVertexes = NULL;
+  delete m_floorVertexes;  
+  m_floorVertexes = NULL;
+
+  delete m_shapeIndexes;  
+  m_shapeIndexes = NULL;
+  delete m_shapeVertexes;  
+  m_shapeVertexes = NULL;
 }
 
 //--------------------------------------------------------------------
@@ -205,9 +247,12 @@ void Trees::loadTextures()
   m_floorTexture = mgDisplay->loadTexture(fileName);
   m_floorVertexes = NULL;
 
-  m_options.getFileName("sky", m_options.m_sourceFileName, "sky.jpg", fileName);
-  m_skyTexture = mgDisplay->loadTexture(fileName);
-  m_skyVertexes = NULL;
+/*
+  m_options.getFileName("shape", m_options.m_sourceFileName, "shape.jpg", fileName);
+  m_shapeTexture = mgDisplay->loadTexture(fileName);
+  m_shapeVertexes = NULL;
+  m_shapeIndexes = NULL;
+*/
 }
 
 //--------------------------------------------------------------------
@@ -215,43 +260,167 @@ void Trees::loadTextures()
 void Trees::initTree()
 {
   // generate a bunch of leaf points
-  srand(12145688);
+//  srand(12145688);
   mgPoint3 pt;
-  double size = 200.0;
-  for (int i = 0; i < 3000; i++)
+  mgPoint3 base;
+  base.x = 0.0; // 180*(mgRandom()-0.5);
+  base.z = 0.0; // 180*(mgRandom()-0.5);
+
+  double lowY = 99999.0;
+  double highY = 0.0;
+
+  BOOL pine = mgRandom() > 0.5;
+  if (pine)
   {
-    while (true)
+    double height = 100+200*mgRandom();
+    double width = 50+100*mgRandom();
+    base.y = 10*mgRandom();
+    for (int i = 0; i < TREE_POINTS; i++)
     {
-      pt.x = size*mgRandom() - size/2;
-      pt.y = size*mgRandom() - size/2;
-      pt.z = size*mgRandom() - size/2;
-      double len = sqrt(pt.x*pt.x + pt.y*pt.y + pt.z*pt.z);
-      if (len > 0 && len < size/3) // height/5)
-        break;
+      // give the tree a definite boundary by generating
+      // random points and throwing away ones near the outside edge.
+      while (true)
+      {
+        pt.x = mgRandom()-0.5;
+        pt.y = mgRandom();
+        pt.z = mgRandom()-0.5;
+        double len = sqrt(pt.x*pt.x + pt.z*pt.z);
+        if (len < 1-pt.y)
+          break;
+      }
+      pt.x = base.x + pt.x * width;
+      pt.y = base.y + pt.y * height;
+      pt.z = base.z + pt.z * width;
+      lowY = min(lowY, pt.y);
+      highY = max(highY, pt.y);
+      m_tree.addLeaf(pt);
     }
-    pt.y += 100;  // centering
-    m_tree.addLeaf(pt);
+  }
+  else
+  {
+    double height = 100+200*mgRandom();
+    double width = 50+300*mgRandom();
+    base.y = height/2+50*mgRandom();
+    for (int i = 0; i < TREE_POINTS; i++)
+    {
+      // give the tree a definite boundary by generating
+      // random points and throwing away ones near the outside edge.
+      while (true)
+      {
+        pt.x = mgRandom()-0.5;
+        pt.y = mgRandom()-0.5;
+        pt.z = mgRandom()-0.5;
+        double len = pt.length();
+        if (len < 0.4)
+          break;
+      }
+      pt.x = base.x + pt.x * width;
+      pt.y = base.y + pt.y * height;
+      pt.z = base.z + pt.z * width;
+      lowY = min(lowY, pt.y);
+      highY = max(highY, pt.y);
+      m_tree.addLeaf(pt);
+    }
   }
 
   // generate the stems
-  int stems = 1;
-  double range = size*0.6;
-  for (int j = 0; j < stems; j++)
+  double top = pine ? highY : lowY;
+  pt.x = base.x;
+  pt.z = base.z;
+  for (double y = 0.0; y < top; y += GROW_DISTANCE)
   {
-    for (int i = 0; i < 25; i++)
-    {
-      pt.x = j*range/stems + range/(stems*2) - range/2;
-      pt.y = i * GROW_DISTANCE;
-      pt.z = 0.0;
-      int parent = (i > 0) ? m_tree.getBranchCount()-1 : -1; 
-      m_tree.addBranch(pt, parent);
-    }
+    pt.y = y;
+    int parent = (y > 0) ? m_tree.getBranchCount()-1 : -1; 
+    m_tree.addBranch(pt, parent);
   }
 
   m_lastCount = m_tree.getBranchCount();
 
   // set size of branches
-  m_tree.branchSizes(false, 0, 1.0);
+  m_tree.computeBranchSizes(false, 0, 1.0);
+}
+
+//--------------------------------------------------------------------
+// build face
+void buildFace(
+  Colonization& tree,
+  const mgPoint3& center,
+  const mgPoint3& xaxis,
+  const mgPoint3& yaxis)
+{
+  for (int i = 0; i < 1000; i++)
+  {
+    double x = 2*(mgRandom()-0.5);
+    double y = 2*(mgRandom()-0.5);
+    mgPoint3 pt(center);
+    pt.x += xaxis.x * x + yaxis.x * y;
+    pt.y += xaxis.y * x + yaxis.y * y;
+    pt.z += xaxis.z * x + yaxis.z * y;
+    tree.addLeaf(pt);
+  }
+}
+
+//--------------------------------------------------------------------
+// initialize leaf points and branches around shape
+void Trees::initShape()
+{
+  // generate a bunch of leaf points
+  srand(12145688);
+  mgMatrix4 normal;
+  normal.rotateXDeg(45);
+  normal.rotateZDeg(45);
+  normal.scale(70);
+  mgMatrix4 translate(normal);
+  translate.translate(0, 140, 0);
+
+  mgPoint3 center, xaxis, yaxis;
+
+  normal.mapPt(   mgPoint3(0, 0, 1), xaxis);
+  normal.mapPt(   mgPoint3(0, 1, 0), yaxis);
+  translate.mapPt(mgPoint3(1, 0, 0), center);
+  buildFace(m_tree, center, xaxis, yaxis);  // +x
+
+  normal.mapPt(   mgPoint3(0, 0, -1), xaxis);
+  normal.mapPt(   mgPoint3(0, 1, 0), yaxis);
+  translate.mapPt(mgPoint3(-1, 0, 0), center);
+  buildFace(m_tree, center, xaxis, yaxis);  // -x
+
+  normal.mapPt(   mgPoint3(1, 0, 0), xaxis);
+  normal.mapPt(   mgPoint3(0, 1, 0), yaxis);
+  translate.mapPt(mgPoint3(0, 0, 1), center);
+  buildFace(m_tree, center, xaxis, yaxis);  // +z
+
+  normal.mapPt(   mgPoint3(-1, 0, 0), xaxis);
+  normal.mapPt(   mgPoint3(0, 1, 0), yaxis);
+  translate.mapPt(mgPoint3(0, 0, -1), center);
+  buildFace(m_tree, center, xaxis, yaxis);  // -z
+
+  normal.mapPt(   mgPoint3(1, 0, 0), xaxis);
+  normal.mapPt(   mgPoint3(0, 0, 1), yaxis);
+  translate.mapPt(mgPoint3(0, 1, 0), center);
+  buildFace(m_tree, center, xaxis, yaxis);  // +y
+
+  normal.mapPt(   mgPoint3(1, 0, 0), xaxis);
+  normal.mapPt(   mgPoint3(0, 0, -1), yaxis);
+  translate.mapPt(mgPoint3(0, -1, 0), center);
+  buildFace(m_tree, center, xaxis, yaxis);  // -y
+
+  // generate the stems
+  mgPoint3 corner, pt;
+  translate.mapPt(mgPoint3(-1, -1, 1), corner);
+  pt = corner;
+  pt.y = 0;
+  for (int i = 0; pt.y < corner.y; i++)
+  {
+    int parent = (i > 0) ? m_tree.getBranchCount()-1 : -1; 
+    m_tree.addBranch(pt, parent);
+    pt.y += GROW_DISTANCE;
+  }
+
+  m_lastCount = m_tree.getBranchCount();
+
+  // set size of branches
+  m_tree.computeBranchSizes(false, 0, 1.0);
 }
 
 //--------------------------------------------------------------------
@@ -265,15 +434,19 @@ BOOL Trees::appViewAnimate(
 
   if (m_runAnimation)
   {
-    m_animateGrowth += since/1000;
+    m_animateGrowth += since/400;
     if (m_animateGrowth >= 1.0)
     {
       m_lastCount = m_tree.getBranchCount();
       if (!m_tree.colonize())
-        m_runAnimation = false;
+      {
+//        m_runAnimation = false;
+        m_tree.reset();
+        initTree();
+      }
       else m_animateGrowth -= 1.0;
     }
-    m_tree.branchSizes(m_runAnimation, m_lastCount, m_animateGrowth);
+    m_tree.computeBranchSizes(m_runAnimation, m_lastCount, m_animateGrowth);
     renderTree();
   }
 
@@ -285,60 +458,64 @@ BOOL Trees::appViewAnimate(
 void Trees::appViewDraw()
 {
   // draw sky
-  if (m_skyVertexes != NULL)
+  if (m_sky != NULL)
   {
     mgDisplay->setEyePt(mgPoint3(0,0,0));
     mgDisplay->setEyeMatrix(m_eyeMatrix);
 
-    mgDisplay->setZEnable(false);
-    mgDisplay->setCulling(false);
-    mgMatrix4 model;
-    mgDisplay->setModelTransform(model);
-
-    mgDisplay->setShader("unlitTexture");
-    mgDisplay->setTexture(m_skyTexture);
-    mgDisplay->draw(MG_TRIANGLES, m_skyVertexes);
-
-    mgDisplay->setZEnable(true);
+    m_sky->render();
   }
 
   mgDisplay->setEyePt(m_eyePt);
   mgDisplay->setEyeMatrix(m_eyeMatrix);
 
-  mgDisplay->setLightDir(100, 100, 0);
+  mgDisplay->setMatColor(1.0, 1.0, 1.0);
+  mgDisplay->setCulling(true);
+  mgDisplay->setTransparent(false);
+
   // draw the floor
   if (m_floorVertexes != NULL)
   {
     mgMatrix4 floorModel;
     mgDisplay->setModelTransform(floorModel);
 
-    mgDisplay->setShader("litTexture");
+    mgDisplay->setShader(m_floorShader);
     mgDisplay->setTexture(m_floorTexture);
     mgDisplay->draw(MG_TRIANGLES, m_floorVertexes);
   }
 
+  // draw the shape
+  if (m_shapeVertexes != NULL)
+  {
+    mgMatrix4 shapeModel;
+    shapeModel.rotateXDeg(45);
+    shapeModel.rotateZDeg(45);
+    shapeModel.scale(70);
+    shapeModel.translate(0, 140, 0);
+    mgDisplay->setModelTransform(shapeModel);
+
+    mgDisplay->setShader(m_shapeShader);
+    mgDisplay->setTexture(m_shapeTexture);
+    mgDisplay->draw(MG_TRIANGLES, m_shapeVertexes, m_shapeIndexes);
+  }
+
+  mgMatrix4 treeModel;
+  mgDisplay->setModelTransform(treeModel);
+
   if (m_leafIndexes != NULL)
   {
-    // set drawing parameters
-    mgDisplay->setMatColor(1.0, 1.0, 1.0);
-    mgDisplay->setCulling(true);
-    mgDisplay->setTransparent(false);
-
     // draw triangles using texture and shader
-    mgDisplay->setShader("litTextureArray");
+    mgDisplay->setTransparent(true);
+    mgDisplay->setShader(m_leafShader);
     mgDisplay->setTexture(m_leafTexture);
     mgDisplay->draw(MG_TRIANGLES, m_leafVertexes, m_leafIndexes);
+    mgDisplay->setTransparent(false);
   }
 
   if (m_branchIndexes != NULL)
   {
-    // set drawing parameters
-    mgDisplay->setMatColor(1.0, 1.0, 1.0);
-    mgDisplay->setCulling(true);
-    mgDisplay->setTransparent(false);
-
     // draw triangles using texture and shader
-    mgDisplay->setShader("litTexture");
+    mgDisplay->setShader(m_branchShader);
     mgDisplay->setTexture(m_branchTexture);
     mgDisplay->draw(MG_TRIANGLES, m_branchVertexes, m_branchIndexes);
   }
@@ -360,16 +537,39 @@ void Trees::renderTree()
     delete m_branchVertexes;    m_branchVertexes = NULL;
   }
 
-  createCubeBuffers(m_tree.getLeafCount(), m_leafVertexes, m_leafIndexes);
-  for (int i = 0; i < m_tree.getLeafCount(); i++)
+  createLeafBuffers();
+
+  // get the number of branch points
+  int pointCount = 0;
+  for (int i = m_tree.getBranchCount()-1; i >= 0; i--)
   {
-    Leaf* leaf = m_tree.getLeaf(i);
-    double color = leaf->m_active ? 0.0 : 1.0;
-    if (leaf->m_active)
-      addCube(m_leafVertexes, m_leafIndexes, leaf->m_pt, 0.5, 0.0); // color);
+    Branch* branch = m_tree.getBranch(i);
+    if (branch->m_path != -1)
+      continue;  // parent of some other branch
+    int child = i;
+
+    int count = 0;
+    while (branch->m_parent != -1)
+    {
+      Branch* parent = m_tree.getBranch(branch->m_parent);
+      count++;
+
+      // if this is a root
+      if (parent->m_path != child)
+        break;
+
+      child = branch->m_parent;
+      branch = parent;
+    }
+    if (count > 0)
+      pointCount += count+1;
   }
 
-  createBranchBuffers(m_tree.getBranchCount(), BRANCH_SIDES, m_branchVertexes, m_branchIndexes);
+  // create vertexes for cube.  six sides * four vertexes
+  m_branchVertexes = mgVertex::newBuffer(pointCount*(BRANCH_SIDES+1));
+
+  // create indexes for cylinder triangles.  steps times two triangles times three points
+  m_branchIndexes = mgDisplay->newIndexBuffer(pointCount*BRANCH_SIDES*2*3);
 
   mgPoint3* branchPts = new mgPoint3[m_tree.getBranchCount()];
   double* branchWidths = new double[m_tree.getBranchCount()];
@@ -377,7 +577,7 @@ void Trees::renderTree()
   for (int i = m_tree.getBranchCount()-1; i >= 0; i--)
   {
     Branch* branch = m_tree.getBranch(i);
-    if (branch->m_main != -1)
+    if (branch->m_path != -1)
       continue;  // parent of some other branch
     int child = i;
 
@@ -404,7 +604,7 @@ void Trees::renderTree()
       count++;
 
       // if this is a root
-      if (parent->m_main != child)
+      if (parent->m_path != child)
       {
         // fix base to reflect root, not parent width
         branchWidths[count] = sqrt(branch->m_area);
@@ -423,9 +623,7 @@ void Trees::renderTree()
 
 //-----------------------------------------------------------------------------
 // add a cube to the buffers
-void Trees::addCube(
-  mgVertexBuffer* vertexes,
-  mgIndexBuffer* indexes,
+void Trees::addLeaf(
   const mgPoint3& center,
   double size,
   double tz)
@@ -441,7 +639,7 @@ void Trees::addCube(
   tl.m_tz = tr.m_tz = bl.m_tz = br.m_tz = (float) tz;
 
   // x min side
-  index = vertexes->getLength();
+  index = m_leafVertexes->getLength();
 
   tl.setNormal(-1, 0, 0);
   tr.setNormal(-1, 0, 0);
@@ -453,16 +651,16 @@ void Trees::addCube(
   bl.setPoint(center.x-size, center.y-size, center.z+size);
   br.setPoint(center.x-size, center.y-size, center.z-size);
 
-  tl.addTo(vertexes);
-  tr.addTo(vertexes);
-  bl.addTo(vertexes);
-  br.addTo(vertexes);
+  tl.addTo(m_leafVertexes);
+  tr.addTo(m_leafVertexes);
+  bl.addTo(m_leafVertexes);
+  br.addTo(m_leafVertexes);
 
-  // build indexes for a rectangle
-  indexes->addRectIndex(index);
+  // build m_leafIndexes for a rectangle
+  m_leafIndexes->addRectIndex(index);
 
   // x max side
-  index = vertexes->getLength();
+  index = m_leafVertexes->getLength();
 
   tl.setNormal(1, 0, 0);
   tr.setNormal(1, 0, 0);
@@ -474,16 +672,16 @@ void Trees::addCube(
   bl.setPoint(center.x+size, center.y-size, center.z-size);
   br.setPoint(center.x+size, center.y-size, center.z+size);
 
-  tl.addTo(vertexes);
-  tr.addTo(vertexes);
-  bl.addTo(vertexes);
-  br.addTo(vertexes);
+  tl.addTo(m_leafVertexes);
+  tr.addTo(m_leafVertexes);
+  bl.addTo(m_leafVertexes);
+  br.addTo(m_leafVertexes);
 
-  // build indexes for a rectangle
-  indexes->addRectIndex(index);
+  // build m_leafIndexes for a rectangle
+  m_leafIndexes->addRectIndex(index);
 
   // y min side
-  index = vertexes->getLength();
+  index = m_leafVertexes->getLength();
 
   tl.setNormal(0, -1, 0);
   tr.setNormal(0, -1, 0);
@@ -495,16 +693,16 @@ void Trees::addCube(
   bl.setPoint(center.x-size, center.y-size, center.z+size);
   br.setPoint(center.x+size, center.y-size, center.z+size);
 
-  tl.addTo(vertexes);
-  tr.addTo(vertexes);
-  bl.addTo(vertexes);
-  br.addTo(vertexes);
+  tl.addTo(m_leafVertexes);
+  tr.addTo(m_leafVertexes);
+  bl.addTo(m_leafVertexes);
+  br.addTo(m_leafVertexes);
 
-  // build indexes for a rectangle
-  indexes->addRectIndex(index);
+  // build m_leafIndexes for a rectangle
+  m_leafIndexes->addRectIndex(index);
 
   // y max side
-  index = vertexes->getLength();
+  index = m_leafVertexes->getLength();
 
   tl.setNormal(0, 1, 0);
   tr.setNormal(0, 1, 0);
@@ -516,16 +714,16 @@ void Trees::addCube(
   bl.setPoint(center.x-size, center.y+size, center.z-size);
   br.setPoint(center.x+size, center.y+size, center.z-size);
 
-  tl.addTo(vertexes);
-  tr.addTo(vertexes);
-  bl.addTo(vertexes);
-  br.addTo(vertexes);
+  tl.addTo(m_leafVertexes);
+  tr.addTo(m_leafVertexes);
+  bl.addTo(m_leafVertexes);
+  br.addTo(m_leafVertexes);
 
-  // build indexes for a rectangle
-  indexes->addRectIndex(index);
+  // build m_leafIndexes for a rectangle
+  m_leafIndexes->addRectIndex(index);
 
   // z min side
-  index = vertexes->getLength();
+  index = m_leafVertexes->getLength();
 
   tl.setNormal(0, 0, -1);
   tr.setNormal(0, 0, -1);
@@ -537,16 +735,16 @@ void Trees::addCube(
   bl.setPoint(center.x-size, center.y-size, center.z-size);
   br.setPoint(center.x+size, center.y-size, center.z-size);
 
-  tl.addTo(vertexes);
-  tr.addTo(vertexes);
-  bl.addTo(vertexes);
-  br.addTo(vertexes);
+  tl.addTo(m_leafVertexes);
+  tr.addTo(m_leafVertexes);
+  bl.addTo(m_leafVertexes);
+  br.addTo(m_leafVertexes);
 
-  // build indexes for a rectangle
-  indexes->addRectIndex(index);
+  // build m_leafIndexes for a rectangle
+  m_leafIndexes->addRectIndex(index);
 
   // z max side
-  index = vertexes->getLength();
+  index = m_leafVertexes->getLength();
 
   tl.setNormal(0, 0, 1);
   tr.setNormal(0, 0, 1);
@@ -558,27 +756,35 @@ void Trees::addCube(
   bl.setPoint(center.x+size, center.y-size, center.z+size);
   br.setPoint(center.x-size, center.y-size, center.z+size);
 
-  tl.addTo(vertexes);
-  tr.addTo(vertexes);
-  bl.addTo(vertexes);                 
-  br.addTo(vertexes);
+  tl.addTo(m_leafVertexes);
+  tr.addTo(m_leafVertexes);
+  bl.addTo(m_leafVertexes);                 
+  br.addTo(m_leafVertexes);
 
-  // build indexes for a rectangle
-  indexes->addRectIndex(index);
+  // build m_leafIndexes for a rectangle
+  m_leafIndexes->addRectIndex(index);
 }
 
 //-----------------------------------------------------------------------------
-// create the buffers for a set of cubes
-void Trees::createCubeBuffers(
-  int cubeCount,
-  mgVertexBuffer*& vertexes,
-  mgIndexBuffer*& indexes)
+// create the buffers for the leaves
+void Trees::createLeafBuffers()
 {
+  int cubeCount = m_tree.getLeafCount();
+
   // create vertexes for cube.  six sides * four vertexes
-  vertexes = mgVertexTA::newBuffer(cubeCount*6*4);
+  m_leafVertexes = mgVertexTA::newBuffer(cubeCount*6*4);
 
   // create indexes for cube triangles.  six sides times two triangles times three points
-  indexes = mgDisplay->newIndexBuffer(cubeCount*6*2*3, false, true);
+  m_leafIndexes = mgDisplay->newIndexBuffer(cubeCount*6*2*3);
+
+  for (int i = 0; i < cubeCount; i++)
+  {
+    Leaf* leaf = m_tree.getLeaf(i);
+    double color = leaf->m_active ? 0.0 : 1.0;
+    double size = 0.5; // leaf->m_active ? 0.5 : 3.0;
+//    if (leaf->m_active)
+      addLeaf(leaf->m_pt, size, color);
+  }
 }
 
 //-----------------------------------------------------------------------------
@@ -595,13 +801,13 @@ void Trees::getAxis(
   yaxis.normalize();
 
   // cross products to get axis
-  xaxis = yaxis;
-  xaxis.cross(mgPoint3(0, 0, 1));
-  xaxis.normalize();
-
-  zaxis = xaxis;
+  zaxis.set(1/1.414, -1/1.414, 0);
   zaxis.cross(yaxis);
   zaxis.normalize();
+
+  xaxis = yaxis;
+  xaxis.cross(zaxis);
+  xaxis.normalize();
 }
 
 //-----------------------------------------------------------------------------
@@ -718,61 +924,175 @@ void Trees::addBranch(
 }
 
 //-----------------------------------------------------------------------------
-// create the buffers for a set of cubes
-void Trees::createBranchBuffers(
-  int branchCount,
-  int steps,
-  mgVertexBuffer*& vertexes,
-  mgIndexBuffer*& indexes)
-{
-  // create vertexes for cube.  six sides * four vertexes
-  vertexes = mgVertex::newBuffer(branchCount*(steps+1)*2);
-
-  // create indexes for cylinder triangles.  steps times two triangles times three points
-  indexes = mgDisplay->newIndexBuffer(branchCount*steps*2*3, false, true);
-}
-
-//-----------------------------------------------------------------------------
 // create vertex buffer for floor
 void Trees::createFloor()
 {
   // create vertexes for floor.  six vertexes for two triangles
-  m_floorVertexes = mgVertex::newBuffer(6);
+  m_floorVertexes = mgVertex::newBuffer(6*6*40*40);
 
   mgVertex tl, tr, bl, br;
+  double lx, hx, ly, hy, lz, hz;
+  const double size = 20;
+  const double thick = size;
 
-  tl.setTexture(   0,  0);
-  tr.setTexture( 2,  0);
-  bl.setTexture(   0, 2);
-  br.setTexture( 2, 2);
+  // nearby terrain
+  for (int x = -20; x < 20; x++)
+  {
+    for (int z = -20; z < 20; z++)
+    {
+      tl.setTexture(0, 1);
+      tr.setTexture(1, 1);
+      bl.setTexture(0, 0);
+      br.setTexture(1, 0);
 
-  tl.setNormal(0, 1, 0);
-  tr.setNormal(0, 1, 0);
-  bl.setNormal(0, 1, 0);
-  br.setNormal(0, 1, 0);
+      tl.setNormal(0, 1, 0);
+      tr.setNormal(0, 1, 0);
+      bl.setNormal(0, 1, 0);
+      br.setNormal(0, 1, 0);
 
-  tl.setPoint(-1000, 0,  1000);
-  tr.setPoint( 1000, 0,  1000);
-  bl.setPoint(-1000, 0, -1000);
-  br.setPoint( 1000, 0, -1000);
+      lx = x*size;
+      hx = (x+1)*size;
+      lz = z*size;
+      hz = (z+1)*size;
 
-  tl.addTo(m_floorVertexes);
-  tr.addTo(m_floorVertexes);
-  bl.addTo(m_floorVertexes);
+      hy = mgSimplexNoise::noiseSum(10, lx, lz); 
+      ly = hy-thick;
 
-  bl.addTo(m_floorVertexes);
-  tr.addTo(m_floorVertexes);
-  br.addTo(m_floorVertexes);
+      // y max side
+      tl.setPoint(lx, hy, hz);
+      tr.setPoint(hx, hy, hz);
+      bl.setPoint(lx, hy, lz);
+      br.setPoint(hx, hy, lz);
+
+      tl.addTo(m_floorVertexes);
+      tr.addTo(m_floorVertexes);
+      bl.addTo(m_floorVertexes);
+
+      bl.addTo(m_floorVertexes);
+      tr.addTo(m_floorVertexes);
+      br.addTo(m_floorVertexes);
+
+      tl.setTexture(0, hy/size);
+      tr.setTexture(1, hy/size);
+      bl.setTexture(0, ly/size);
+      br.setTexture(1, ly/size);
+
+      // x min side
+      tl.setNormal(-1, 0, 0);
+      tr.setNormal(-1, 0, 0);
+      bl.setNormal(-1, 0, 0);
+      br.setNormal(-1, 0, 0);
+
+      tl.setPoint(lx, hy, hz);
+      tr.setPoint(lx, hy, lz);
+      bl.setPoint(lx, ly, hz);
+      br.setPoint(lx, ly, lz);
+
+      tl.addTo(m_floorVertexes);
+      tr.addTo(m_floorVertexes);
+      bl.addTo(m_floorVertexes);
+
+      bl.addTo(m_floorVertexes);
+      tr.addTo(m_floorVertexes);
+      br.addTo(m_floorVertexes);
+
+      // x max side
+      tl.setNormal(1, 0, 0);
+      tr.setNormal(1, 0, 0);
+      bl.setNormal(1, 0, 0);
+      br.setNormal(1, 0, 0);
+
+      tl.setPoint(hx, hy, lz);
+      tr.setPoint(hx, hy, hz);
+      bl.setPoint(hx, ly, lz);
+      br.setPoint(hx, ly, hz);
+
+      tl.addTo(m_floorVertexes);
+      tr.addTo(m_floorVertexes);
+      bl.addTo(m_floorVertexes);
+
+      bl.addTo(m_floorVertexes);
+      tr.addTo(m_floorVertexes);
+      br.addTo(m_floorVertexes);
+
+      // z min side
+      tl.setNormal(0, 0, -1);
+      tr.setNormal(0, 0, -1);
+      bl.setNormal(0, 0, -1);
+      br.setNormal(0, 0, -1);
+
+      tl.setPoint(lx, hy, lz);
+      tr.setPoint(hx, hy, lz);
+      bl.setPoint(lx, ly, lz);
+      br.setPoint(hx, ly, lz);
+
+      tl.addTo(m_floorVertexes);
+      tr.addTo(m_floorVertexes);
+      bl.addTo(m_floorVertexes);
+
+      bl.addTo(m_floorVertexes);
+      tr.addTo(m_floorVertexes);
+      br.addTo(m_floorVertexes);
+
+      // z max side
+      tl.setNormal(0, 0, 1);
+      tr.setNormal(0, 0, 1);
+      bl.setNormal(0, 0, 1);
+      br.setNormal(0, 0, 1);
+
+      tl.setPoint(hx, hy, hz);
+      tr.setPoint(lx, hy, hz);
+      bl.setPoint(hx, ly, hz);
+      br.setPoint(lx, ly, hz);
+
+      tl.addTo(m_floorVertexes);
+      tr.addTo(m_floorVertexes);
+      bl.addTo(m_floorVertexes);
+
+      bl.addTo(m_floorVertexes);
+      tr.addTo(m_floorVertexes);
+      br.addTo(m_floorVertexes);
+
+      // y min side
+      tl.setTexture(0, 0);
+      tr.setTexture(1, 0);
+      bl.setTexture(0, 1);
+      br.setTexture(1, 1);
+
+      tl.setNormal(0, -1, 0);
+      tr.setNormal(0, -1, 0);
+      bl.setNormal(0, -1, 0);
+      br.setNormal(0, -1, 0);
+
+      tl.setPoint(lx, ly, lz);
+      tr.setPoint(hx, ly, lz);
+      bl.setPoint(lx, ly, hz);
+      br.setPoint(hx, ly, hz);
+
+      tl.addTo(m_floorVertexes);
+      tr.addTo(m_floorVertexes);
+      bl.addTo(m_floorVertexes);
+
+      bl.addTo(m_floorVertexes);
+      tr.addTo(m_floorVertexes);
+      br.addTo(m_floorVertexes);
+    }
+  }
+
 }
 
 //-----------------------------------------------------------------------------
-// create sky vertexes
-void Trees::createSky()
+// create shape
+void Trees::createShape()
 {
-  m_skyVertexes = mgVertex::newBuffer(6*6);
+  // create vertexes for cube.  six sides * four vertexes
+  m_shapeVertexes = mgVertexTA::newBuffer(6*4);
 
-  mgPoint3 center(0,0,0);
-  double size = 100.0;
+  // create indexes for cube triangles.  six sides times two triangles times three points
+  m_shapeIndexes = mgDisplay->newIndexBuffer(6*2*3, false, false);
+
+  mgPoint3 center(0, 0, 0);
+  double size = 1.0;
   mgVertex tl, tr, bl, br;
   int index;
 
@@ -783,6 +1103,8 @@ void Trees::createSky()
   br.setTexture(1, 1);
 
   // x min side
+  index = m_shapeVertexes->getLength();
+
   tl.setNormal(-1, 0, 0);
   tr.setNormal(-1, 0, 0);
   bl.setNormal(-1, 0, 0);
@@ -793,16 +1115,16 @@ void Trees::createSky()
   bl.setPoint(center.x-size, center.y-size, center.z+size);
   br.setPoint(center.x-size, center.y-size, center.z-size);
 
-  tl.addTo(m_skyVertexes);
-  bl.addTo(m_skyVertexes);
-  tr.addTo(m_skyVertexes);
+  tl.addTo(m_shapeVertexes);
+  tr.addTo(m_shapeVertexes);
+  bl.addTo(m_shapeVertexes);
+  br.addTo(m_shapeVertexes);
 
-  bl.addTo(m_skyVertexes);
-  br.addTo(m_skyVertexes);
-  tr.addTo(m_skyVertexes);
+  // build m_shapeIndexes for a rectangle
+  m_shapeIndexes->addRectIndex(index);
 
   // x max side
-  index = m_skyVertexes->getLength();
+  index = m_shapeVertexes->getLength();
 
   tl.setNormal(1, 0, 0);
   tr.setNormal(1, 0, 0);
@@ -814,16 +1136,16 @@ void Trees::createSky()
   bl.setPoint(center.x+size, center.y-size, center.z-size);
   br.setPoint(center.x+size, center.y-size, center.z+size);
 
-  tl.addTo(m_skyVertexes);
-  bl.addTo(m_skyVertexes);
-  tr.addTo(m_skyVertexes);
+  tl.addTo(m_shapeVertexes);
+  tr.addTo(m_shapeVertexes);
+  bl.addTo(m_shapeVertexes);
+  br.addTo(m_shapeVertexes);
 
-  bl.addTo(m_skyVertexes);
-  br.addTo(m_skyVertexes);
-  tr.addTo(m_skyVertexes);
+  // build m_shapeIndexes for a rectangle
+  m_shapeIndexes->addRectIndex(index);
 
   // y min side
-  index = m_skyVertexes->getLength();
+  index = m_shapeVertexes->getLength();
 
   tl.setNormal(0, -1, 0);
   tr.setNormal(0, -1, 0);
@@ -835,16 +1157,16 @@ void Trees::createSky()
   bl.setPoint(center.x-size, center.y-size, center.z+size);
   br.setPoint(center.x+size, center.y-size, center.z+size);
 
-  tl.addTo(m_skyVertexes);
-  bl.addTo(m_skyVertexes);
-  tr.addTo(m_skyVertexes);
+  tl.addTo(m_shapeVertexes);
+  tr.addTo(m_shapeVertexes);
+  bl.addTo(m_shapeVertexes);
+  br.addTo(m_shapeVertexes);
 
-  bl.addTo(m_skyVertexes);
-  br.addTo(m_skyVertexes);
-  tr.addTo(m_skyVertexes);
+  // build m_shapeIndexes for a rectangle
+  m_shapeIndexes->addRectIndex(index);
 
   // y max side
-  index = m_skyVertexes->getLength();
+  index = m_shapeVertexes->getLength();
 
   tl.setNormal(0, 1, 0);
   tr.setNormal(0, 1, 0);
@@ -856,16 +1178,16 @@ void Trees::createSky()
   bl.setPoint(center.x-size, center.y+size, center.z-size);
   br.setPoint(center.x+size, center.y+size, center.z-size);
 
-  tl.addTo(m_skyVertexes);
-  bl.addTo(m_skyVertexes);
-  tr.addTo(m_skyVertexes);
+  tl.addTo(m_shapeVertexes);
+  tr.addTo(m_shapeVertexes);
+  bl.addTo(m_shapeVertexes);
+  br.addTo(m_shapeVertexes);
 
-  bl.addTo(m_skyVertexes);
-  br.addTo(m_skyVertexes);
-  tr.addTo(m_skyVertexes);
+  // build m_shapeIndexes for a rectangle
+  m_shapeIndexes->addRectIndex(index);
 
   // z min side
-  index = m_skyVertexes->getLength();
+  index = m_shapeVertexes->getLength();
 
   tl.setNormal(0, 0, -1);
   tr.setNormal(0, 0, -1);
@@ -877,16 +1199,16 @@ void Trees::createSky()
   bl.setPoint(center.x-size, center.y-size, center.z-size);
   br.setPoint(center.x+size, center.y-size, center.z-size);
 
-  tl.addTo(m_skyVertexes);
-  bl.addTo(m_skyVertexes);
-  tr.addTo(m_skyVertexes);
+  tl.addTo(m_shapeVertexes);
+  tr.addTo(m_shapeVertexes);
+  bl.addTo(m_shapeVertexes);
+  br.addTo(m_shapeVertexes);
 
-  bl.addTo(m_skyVertexes);
-  br.addTo(m_skyVertexes);
-  tr.addTo(m_skyVertexes);
+  // build m_shapeIndexes for a rectangle
+  m_shapeIndexes->addRectIndex(index);
 
   // z max side
-  index = m_skyVertexes->getLength();
+  index = m_shapeVertexes->getLength();
 
   tl.setNormal(0, 0, 1);
   tr.setNormal(0, 0, 1);
@@ -898,12 +1220,12 @@ void Trees::createSky()
   bl.setPoint(center.x+size, center.y-size, center.z+size);
   br.setPoint(center.x-size, center.y-size, center.z+size);
 
-  tl.addTo(m_skyVertexes);
-  bl.addTo(m_skyVertexes);
-  tr.addTo(m_skyVertexes);
+  tl.addTo(m_shapeVertexes);
+  tr.addTo(m_shapeVertexes);
+  bl.addTo(m_shapeVertexes);                 
+  br.addTo(m_shapeVertexes);
 
-  bl.addTo(m_skyVertexes);
-  br.addTo(m_skyVertexes);
-  tr.addTo(m_skyVertexes);
+  // build m_shapeIndexes for a rectangle
+  m_shapeIndexes->addRectIndex(index);
 }
 

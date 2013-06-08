@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -24,7 +24,9 @@
 #include "TextFormatter/mgTextPage.h"
 #include "TextFormatter/mgTextScan.h"
 
-// a formatted child
+/*
+  A formatted child control in a text pane.
+*/
 class mgChildDesc
 {
 public:
@@ -54,7 +56,9 @@ public:
   {}
 };
 
-// description of formatted text fragment
+/*
+  A fragment of formatted text.
+*/
 class mgFragDesc
 {
 public:
@@ -77,7 +81,9 @@ public:
   {}
 };
 
-// format text and position children
+/*
+  Formats an mgTextBuffer into an mgTextPage instance.
+*/
 class mgTextFormat : public mgTextScan
 {
 public:

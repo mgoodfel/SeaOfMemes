@@ -13,7 +13,7 @@ RELEASEFLAGS = -O3
 DEBUGFLAGS = -g3 -O0 -fno-inline 
 
 LIBS = -lm -lrt -lpthread
-LIBDIRS = -L/usr/local/lib
+LIBDIRS = #empty
 DEBUGTARGET = ../../BuildLinux/Debug/$(TARGET)
 RELEASETARGET = ../../BuildLinux/Release/$(TARGET)
  

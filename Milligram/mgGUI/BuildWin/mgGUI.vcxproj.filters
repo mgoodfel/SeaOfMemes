@@ -16,17 +16,11 @@
     <Filter Include="Include\TextFormatter">
       <UniqueIdentifier>{37acb318-f225-4d89-9f78-038fc3524ab7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Include\UglyStyle">
-      <UniqueIdentifier>{d68ee557-239b-4a1c-96a3-7a32cdab6374}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source\Form">
       <UniqueIdentifier>{d83ee6bf-2f01-4bf8-a78d-a5866ddadb6f}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\GUI">
       <UniqueIdentifier>{5f76dfa0-9172-43a4-8117-0755b50cc036}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source\UglyStyle">
-      <UniqueIdentifier>{8cafbf50-0fab-47f8-b3f0-091f20899936}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\TextFormatter">
       <UniqueIdentifier>{d4c9d90e-34b0-45a9-8c87-ee1e4b4b2027}</UniqueIdentifier>
@@ -36,6 +30,12 @@
     </Filter>
     <Filter Include="Include\Util">
       <UniqueIdentifier>{338925c4-2647-4059-b9e9-817db76b2d24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\SimpleStyle">
+      <UniqueIdentifier>{d68ee557-239b-4a1c-96a3-7a32cdab6374}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\SimpleStyle">
+      <UniqueIdentifier>{8cafbf50-0fab-47f8-b3f0-091f20899936}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -198,32 +198,11 @@
     <ClInclude Include="..\Source\stdafx.h">
       <Filter>Source</Filter>
     </ClInclude>
-    <ClInclude Include="..\Include\UglyStyle\mgUglyButton.h">
-      <Filter>Include\UglyStyle</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Include\UglyStyle\mgUglyLabel.h">
-      <Filter>Include\UglyStyle</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Include\UglyStyle\mgUglyStyle.h">
-      <Filter>Include\UglyStyle</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Include\UglyStyle\mgUglyCheckbox.h">
-      <Filter>Include\UglyStyle</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Include\UglyStyle\mgUglyConsole.h">
-      <Filter>Include\UglyStyle</Filter>
-    </ClInclude>
     <ClInclude Include="..\Include\GUI\mgConsoleControl.h">
       <Filter>Include\GUI</Filter>
     </ClInclude>
-    <ClInclude Include="..\Include\UglyStyle\mgUglyStack.h">
-      <Filter>Include\UglyStyle</Filter>
-    </ClInclude>
     <ClInclude Include="..\Include\GUI\mgStackControl.h">
       <Filter>Include\GUI</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Include\UglyStyle\mgUglyField.h">
-      <Filter>Include\UglyStyle</Filter>
     </ClInclude>
     <ClInclude Include="..\Include\GUI\mgFieldControl.h">
       <Filter>Include\GUI</Filter>
@@ -252,29 +231,74 @@
     <ClInclude Include="..\Source\Form\mgConsoleTag.h">
       <Filter>Source\Form</Filter>
     </ClInclude>
-    <ClInclude Include="..\Include\UglyStyle\mgUglyScrollbar.h">
-      <Filter>Include\UglyStyle</Filter>
-    </ClInclude>
     <ClInclude Include="..\Include\GUI\mgScrollbarControl.h">
       <Filter>Include\GUI</Filter>
     </ClInclude>
-    <ClInclude Include="..\Include\UglyStyle\mgUglyList.h">
-      <Filter>Include\UglyStyle</Filter>
-    </ClInclude>
     <ClInclude Include="..\Include\GUI\mgListControl.h">
       <Filter>Include\GUI</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Include\UglyStyle\mgUglyTabs.h">
-      <Filter>Include\UglyStyle</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Include\UglyStyle\mgUglySplit.h">
-      <Filter>Include\UglyStyle</Filter>
     </ClInclude>
     <ClInclude Include="..\Include\mgGUI.h">
       <Filter>Include</Filter>
     </ClInclude>
     <ClInclude Include="..\Include\Util\mgDebugPane.h">
       <Filter>Include\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\SimpleStyle\mgSimpleButton.h">
+      <Filter>Include\SimpleStyle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\SimpleStyle\mgSimpleCheckbox.h">
+      <Filter>Include\SimpleStyle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\SimpleStyle\mgSimpleConsole.h">
+      <Filter>Include\SimpleStyle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\SimpleStyle\mgSimpleField.h">
+      <Filter>Include\SimpleStyle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\SimpleStyle\mgSimpleLabel.h">
+      <Filter>Include\SimpleStyle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\SimpleStyle\mgSimpleList.h">
+      <Filter>Include\SimpleStyle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\SimpleStyle\mgSimpleScrollbar.h">
+      <Filter>Include\SimpleStyle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\SimpleStyle\mgSimpleSplit.h">
+      <Filter>Include\SimpleStyle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\SimpleStyle\mgSimpleStack.h">
+      <Filter>Include\SimpleStyle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\SimpleStyle\mgSimpleStyle.h">
+      <Filter>Include\SimpleStyle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\SimpleStyle\mgSimpleMenuBar.h">
+      <Filter>Include\SimpleStyle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgSplitControl.h">
+      <Filter>Include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgTabbedControl.h">
+      <Filter>Include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\SimpleStyle\mgSimpleTabbed.h">
+      <Filter>Include\SimpleStyle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\SimpleStyle\mgSimpleScrollPane.h">
+      <Filter>Include\SimpleStyle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgDesktopControl.h">
+      <Filter>Include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\SimpleStyle\mgSimpleDesktop.h">
+      <Filter>Include\SimpleStyle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\SimpleStyle\mgSimpleWindow.h">
+      <Filter>Include\SimpleStyle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GUI\mgDesktopListener.h">
+      <Filter>Include\GUI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -362,27 +386,6 @@
     <ClCompile Include="..\Source\stdafx.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="..\Source\UglyStyle\mgUglyButton.cpp">
-      <Filter>Source\UglyStyle</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Source\UglyStyle\mgUglyLabel.cpp">
-      <Filter>Source\UglyStyle</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Source\UglyStyle\mgUglyStyle.cpp">
-      <Filter>Source\UglyStyle</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Source\UglyStyle\mgUglyCheckbox.cpp">
-      <Filter>Source\UglyStyle</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Source\UglyStyle\mgUglyConsole.cpp">
-      <Filter>Source\UglyStyle</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Source\UglyStyle\mgUglyStack.cpp">
-      <Filter>Source\UglyStyle</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Source\UglyStyle\mgUglyField.cpp">
-      <Filter>Source\UglyStyle</Filter>
-    </ClCompile>
     <ClCompile Include="..\Source\Form\mgButtonTag.cpp">
       <Filter>Source\Form</Filter>
     </ClCompile>
@@ -398,23 +401,59 @@
     <ClCompile Include="..\Source\Form\mgConsoleTag.cpp">
       <Filter>Source\Form</Filter>
     </ClCompile>
+    <ClCompile Include="..\Source\Util\mgDebugPane.cpp">
+      <Filter>Source\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\SimpleStyle\mgSimpleButton.cpp">
+      <Filter>Source\SimpleStyle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\SimpleStyle\mgSimpleCheckbox.cpp">
+      <Filter>Source\SimpleStyle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\SimpleStyle\mgSimpleConsole.cpp">
+      <Filter>Source\SimpleStyle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\SimpleStyle\mgSimpleField.cpp">
+      <Filter>Source\SimpleStyle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\SimpleStyle\mgSimpleLabel.cpp">
+      <Filter>Source\SimpleStyle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\SimpleStyle\mgSimpleList.cpp">
+      <Filter>Source\SimpleStyle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\SimpleStyle\mgSimpleScrollbar.cpp">
+      <Filter>Source\SimpleStyle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\SimpleStyle\mgSimpleSplit.cpp">
+      <Filter>Source\SimpleStyle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\SimpleStyle\mgSimpleStack.cpp">
+      <Filter>Source\SimpleStyle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\SimpleStyle\mgSimpleStyle.cpp">
+      <Filter>Source\SimpleStyle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\GUI\mgMenu.cpp">
+      <Filter>Source\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\SimpleStyle\mgSimpleMenuBar.cpp">
+      <Filter>Source\SimpleStyle</Filter>
+    </ClCompile>
     <ClCompile Include="..\Source\GUI\mgStyle.cpp">
       <Filter>Source\GUI</Filter>
     </ClCompile>
-    <ClCompile Include="..\Source\UglyStyle\mgUglyScrollbar.cpp">
-      <Filter>Source\UglyStyle</Filter>
+    <ClCompile Include="..\Source\SimpleStyle\mgSimpleTabbed.cpp">
+      <Filter>Source\SimpleStyle</Filter>
     </ClCompile>
-    <ClCompile Include="..\Source\UglyStyle\mgUglyList.cpp">
-      <Filter>Source\UglyStyle</Filter>
+    <ClCompile Include="..\Source\SimpleStyle\mgSimpleScrollPane.cpp">
+      <Filter>Source\SimpleStyle</Filter>
     </ClCompile>
-    <ClCompile Include="..\Source\UglyStyle\mgUglyTabs.cpp">
-      <Filter>Source\UglyStyle</Filter>
+    <ClCompile Include="..\Source\SimpleStyle\mgSimpleDesktop.cpp">
+      <Filter>Source\SimpleStyle</Filter>
     </ClCompile>
-    <ClCompile Include="..\Source\UglyStyle\mgUglySplit.cpp">
-      <Filter>Source\UglyStyle</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Source\Util\mgDebugPane.cpp">
-      <Filter>Source\Util</Filter>
+    <ClCompile Include="..\Source\SimpleStyle\mgSimpleWindow.cpp">
+      <Filter>Source\SimpleStyle</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

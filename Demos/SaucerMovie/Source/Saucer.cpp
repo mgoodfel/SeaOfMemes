@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -30,6 +30,7 @@ const char THIS_FILE[] = __FILE__;
 mgVertexBuffer* Saucer::m_vertexes = NULL;
 mgIndexBuffer* Saucer::m_indexes = NULL;
 mgTextureArray* Saucer::m_texture = NULL;
+mgShader* Saucer::m_shader = NULL;
 
 const int SAUCER_POINTS = 80;
 const int SAUCER_TEXTURES = 10;
@@ -48,8 +49,6 @@ public:
 Saucer::Saucer(
   const mgOptionsFile& options)
 {
-  mgVertex::loadShader("saucer");
-
   m_outline = NULL;
   m_outlineSize = 0;
 
@@ -344,6 +343,7 @@ void Saucer::createBuffers()
   if (m_vertexes != NULL)
     return;  // already done
 
+  m_shader = mgVertex::loadShader("saucer");
   buildOutline();
 
   // count number of segments
@@ -500,8 +500,8 @@ void Saucer::render()
     mgDisplay->setTransparent(true);
 
   // draw triangles using texture and shader
-  mgDisplay->setShader("saucer");
-  mgDisplay->setShaderUniform("saucer", "textureCycle", (float) m_textureCycle);
+  mgDisplay->setShader(m_shader);
+  mgDisplay->setShaderUniform(m_shader, "textureCycle", (float) m_textureCycle);
   mgDisplay->setTexture(m_texture);
   mgDisplay->draw(MG_TRIANGLES, m_vertexes, m_indexes);
 

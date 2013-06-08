@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -52,7 +52,7 @@ mgControl::mgControl(
   m_children = NULL;
   m_layout = NULL;
 //  m_cursor = NULL;
-  m_cntlName = cntlName;
+  m_cntlName = (cntlName != NULL) ? cntlName : "unnamed";
   
   m_controlListeners = NULL;
   m_mouseListeners = NULL;
@@ -70,12 +70,16 @@ mgControl::mgControl(
 // destructor
 mgControl::~mgControl() 
 {
+  // notify listeners on parent that we're removed
+  dispatchControlRemoveChild(m_parent);
+
   // delete all our children
   if (m_children != NULL)
   {
     for (int i = 0; i < m_children->length(); i++)
     {
       mgControl* child = (mgControl*) m_children->getAt(i);
+      child->m_parent = NULL;
       delete child;
     }
     delete m_children;
@@ -113,16 +117,6 @@ void mgControl::setName(
   m_cntlName = cntlName;
 }
 
-//--------------------------------------------------------------
-// get the name
-void mgControl::getName(
-  mgString& cntlName) const
-{
-  if (m_cntlName.isEmpty())
-    cntlName = "unnamed";
-  else cntlName = m_cntlName;
-}
-  
 //--------------------------------------------------------------
 // return parent control
 mgControl* mgControl::getParent() const
@@ -176,15 +170,6 @@ void mgControl::getSize(
   height = m_height;
 }
 
-//--------------------------------------------------------------
-// get control size
-void mgControl::getSize(
-  mgDimension& size)
-{
-  size.m_width = m_width;
-  size.m_height = m_height;
-}
-  
 //--------------------------------------------------------------
 // set control bounds
 void mgControl::setBounds(
@@ -452,6 +437,9 @@ void mgControl::addChild(
   mgRectangle bounds;
   child->getBounds(bounds);
   damage(bounds);
+
+  // notify listeners we have a new child
+  dispatchControlAddChild(this);   
 }
 
 //--------------------------------------------------------------
@@ -459,15 +447,23 @@ void mgControl::addChild(
 void mgControl::addChildToBottom(
   mgControl* child) 
 {
+  // remove from existing parent
+  if (child->m_parent != NULL)
+    child->m_parent->removeChild(child);
+
+  // add to child list
   if (m_children == NULL)
     m_children = new mgPtrArray();
   m_children->insertAt(0, child);
-  
   child->m_parent = this;
 
+  // damage its bounds
   mgRectangle bounds;
   child->getBounds(bounds);
   damage(bounds);
+
+  // notify listeners we have a new child
+  dispatchControlAddChild(this);   
 }
 
 //--------------------------------------------------------------
@@ -475,14 +471,17 @@ void mgControl::addChildToBottom(
 void mgControl::removeChild(
   mgControl* child) 
 {
-  if (m_children == NULL)
-    m_children = new mgPtrArray();
-  m_children->remove(child);
+  // remove from child list
+  if (m_children != NULL)
+    m_children->remove(child);
 
+  // damage its bounds
   mgRectangle bounds;
   child->getBounds(bounds);
   damage(bounds);
 
+  // notify listeners child is removed
+  dispatchControlRemoveChild(child->m_parent);
   child->m_parent = NULL;
 }
 
@@ -490,7 +489,7 @@ void mgControl::removeChild(
 // raise to top of siblings
 void mgControl::raiseToTop() 
 {
-  if (m_parent != NULL)
+  if (m_parent != NULL && m_parent->m_children != NULL)
   {
     m_parent->m_children->remove(this);
     m_parent->m_children->add(this);
@@ -502,7 +501,7 @@ void mgControl::raiseToTop()
 // sink to bottom of siblings
 void mgControl::sinkToBottom() 
 {
-  if (m_parent != NULL)
+  if (m_parent != NULL && m_parent->m_children != NULL)
   {
     m_parent->removeChild(this);
     m_parent->addChildToBottom(this);
@@ -954,6 +953,36 @@ void mgControl::dispatchControlDelete(
   {
     mgControlListener* listener = (mgControlListener*) m_controlListeners->getAt(i);
     listener->controlDelete(source);
+  }
+}
+
+//--------------------------------------------------------------
+// send addChild to control listeners
+void mgControl::dispatchControlAddChild(
+  void* source)
+{
+  if (m_controlListeners == NULL)
+    return;
+  
+  for (int i = 0; i < m_controlListeners->length(); i++)
+  {
+    mgControlListener* listener = (mgControlListener*) m_controlListeners->getAt(i);
+    listener->controlAddChild(source);
+  }
+}
+
+//--------------------------------------------------------------
+// send addChild to control listeners
+void mgControl::dispatchControlRemoveChild(
+  void* source)
+{
+  if (m_controlListeners == NULL)
+    return;
+  
+  for (int i = 0; i < m_controlListeners->length(); i++)
+  {
+    mgControlListener* listener = (mgControlListener*) m_controlListeners->getAt(i);
+    listener->controlRemoveChild(source);
   }
 }
 

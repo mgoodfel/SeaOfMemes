@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -21,6 +21,11 @@
 #ifndef MGDWORDARRAY_H
 #define MGDWORDARRAY_H
 
+typedef int (*mgCompareFn)(const void*, const void*);
+
+/*
+  A variable-length array of DWORD values.
+*/
 class mgDWordArray
 {
 public:
@@ -41,7 +46,11 @@ public:
   // add an element to end
   virtual void add(
     DWORD elm);
-  
+
+  // add all elements of array
+  virtual void addAll(
+    const mgDWordArray& other);
+      
   // insert element at index
   virtual void insertAt(
     int index,
@@ -62,12 +71,12 @@ public:
     return getAt(index);
   }
 
-  virtual DWORD first()
+  virtual DWORD first() const
   {
     return getAt(0);
   }
 
-  virtual DWORD last()
+  virtual DWORD last() const
   {
     return getAt(m_elementCount-1);
   }
@@ -98,7 +107,7 @@ public:
   
   // sort the array
   void sort(
-    int (*compareFn)(const void*, const void*));
+    mgCompareFn compare);
 
 protected:
   DWORD* m_elements;

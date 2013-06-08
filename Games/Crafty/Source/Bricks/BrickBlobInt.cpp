@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -34,12 +34,18 @@ const char THIS_FILE[] = __FILE__;
 
 const int MAX_INTEN = 15;
 
+mgShader* BrickBlobInt::m_cubeShader = NULL;
+mgShader* BrickBlobInt::m_shapeShader = NULL;
+
 //--------------------------------------------------------------
 // load the shaders we use
 void BrickBlobInt::loadShaders()
 {
-  VertexCubeInt::loadShader("cubesInt");
-  VertexShapeInt::loadShader("shapesInt");
+  if (m_cubeShader == NULL)
+  {
+    m_cubeShader = VertexCubeInt::loadShader("cubesInt");
+    m_shapeShader = VertexShapeInt::loadShader("shapesInt");
+  }
 }
 
 //--------------------------------------------------------------
@@ -99,25 +105,25 @@ void BrickBlobInt::createTransBrickBuffers(
 // render the blob
 void BrickBlobInt::render()
 {
-  mgDisplay->setShader("cubesInt");
-  mgDisplay->setShaderUniform("cubesInt", "torchColor", m_torchColor);
-  mgDisplay->setShaderUniform("cubesInt", "fogColor", m_fogColor);
-  mgDisplay->setShaderUniform("cubesInt", "fogBotHeight", (float) m_fogBotHeight);
-  mgDisplay->setShaderUniform("cubesInt", "fogBotInten", (float) m_fogBotInten);
-  mgDisplay->setShaderUniform("cubesInt", "fogTopHeight", (float) m_fogTopHeight);
-  mgDisplay->setShaderUniform("cubesInt", "fogTopInten", (float) m_fogTopInten);
-  mgDisplay->setShaderUniform("cubesInt", "fogMaxDist", (float) m_fogMaxDist);
+  mgDisplay->setShader(m_cubeShader);
+  mgDisplay->setShaderUniform(m_cubeShader, "torchColor", m_torchColor);
+  mgDisplay->setShaderUniform(m_cubeShader, "fogColor", m_fogColor);
+  mgDisplay->setShaderUniform(m_cubeShader, "fogBotHeight", (float) m_fogBotHeight);
+  mgDisplay->setShaderUniform(m_cubeShader, "fogBotInten", (float) m_fogBotInten);
+  mgDisplay->setShaderUniform(m_cubeShader, "fogTopHeight", (float) m_fogTopHeight);
+  mgDisplay->setShaderUniform(m_cubeShader, "fogTopInten", (float) m_fogTopInten);
+  mgDisplay->setShaderUniform(m_cubeShader, "fogMaxDist", (float) m_fogMaxDist);
   mgDisplay->setTexture(m_textureArray);
   mgDisplay->draw(MG_TRIANGLES, m_buffers.m_cubeVertexes, m_buffers.m_cubeIndexes);
 
-  mgDisplay->setShader("shapesInt");
-  mgDisplay->setShaderUniform("shapesInt", "torchColor", m_torchColor);
-  mgDisplay->setShaderUniform("shapesInt", "fogColor", m_fogColor);
-  mgDisplay->setShaderUniform("shapesInt", "fogBotHeight", (float) m_fogBotHeight);
-  mgDisplay->setShaderUniform("shapesInt", "fogBotInten", (float) m_fogBotInten);
-  mgDisplay->setShaderUniform("shapesInt", "fogTopHeight", (float) m_fogTopHeight);
-  mgDisplay->setShaderUniform("shapesInt", "fogTopInten", (float) m_fogTopInten);
-  mgDisplay->setShaderUniform("shapesInt", "fogMaxDist", (float) m_fogMaxDist);
+  mgDisplay->setShader(m_shapeShader);
+  mgDisplay->setShaderUniform(m_shapeShader, "torchColor", m_torchColor);
+  mgDisplay->setShaderUniform(m_shapeShader, "fogColor", m_fogColor);
+  mgDisplay->setShaderUniform(m_shapeShader, "fogBotHeight", (float) m_fogBotHeight);
+  mgDisplay->setShaderUniform(m_shapeShader, "fogBotInten", (float) m_fogBotInten);
+  mgDisplay->setShaderUniform(m_shapeShader, "fogTopHeight", (float) m_fogTopHeight);
+  mgDisplay->setShaderUniform(m_shapeShader, "fogTopInten", (float) m_fogTopInten);
+  mgDisplay->setShaderUniform(m_shapeShader, "fogMaxDist", (float) m_fogMaxDist);
   mgDisplay->setTexture(m_textureArray);
   mgDisplay->draw(MG_TRIANGLES, m_buffers.m_shapeVertexes);
 }
@@ -132,14 +138,14 @@ void BrickBlobInt::renderTransparent()
 //  if (m_needsSort)
 //    mgDisplay->setMatColor(1, 0, 0);
 
-  mgDisplay->setShader("cubesInt");
-  mgDisplay->setShaderUniform("cubesInt", "torchColor", m_torchColor);
-  mgDisplay->setShaderUniform("cubesInt", "fogColor", m_fogColor);
-  mgDisplay->setShaderUniform("cubesInt", "fogBotHeight", (float) m_fogBotHeight);
-  mgDisplay->setShaderUniform("cubesInt", "fogBotInten", (float) m_fogBotInten);
-  mgDisplay->setShaderUniform("cubesInt", "fogTopHeight", (float) m_fogTopHeight);
-  mgDisplay->setShaderUniform("cubesInt", "fogTopInten", (float) m_fogTopInten);
-  mgDisplay->setShaderUniform("cubesInt", "fogMaxDist", (float) m_fogMaxDist);
+  mgDisplay->setShader(m_cubeShader);
+  mgDisplay->setShaderUniform(m_cubeShader, "torchColor", m_torchColor);
+  mgDisplay->setShaderUniform(m_cubeShader, "fogColor", m_fogColor);
+  mgDisplay->setShaderUniform(m_cubeShader, "fogBotHeight", (float) m_fogBotHeight);
+  mgDisplay->setShaderUniform(m_cubeShader, "fogBotInten", (float) m_fogBotInten);
+  mgDisplay->setShaderUniform(m_cubeShader, "fogTopHeight", (float) m_fogTopHeight);
+  mgDisplay->setShaderUniform(m_cubeShader, "fogTopInten", (float) m_fogTopInten);
+  mgDisplay->setShaderUniform(m_cubeShader, "fogMaxDist", (float) m_fogMaxDist);
   mgDisplay->setTexture(m_textureArray);
   mgDisplay->draw(MG_TRIANGLES, m_buffers.m_transVertexes, m_buffers.m_transIndexes);
 

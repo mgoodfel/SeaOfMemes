@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -30,8 +30,10 @@ const char THIS_FILE[] = __FILE__;
 const double SCALE = 1000.0;
 const double VARIATION = 10.0/SCALE;
 
+mgTextureArray* Prickle::m_texture = NULL;
 mgVertexBuffer* Prickle::m_vertexes = NULL;
 mgIndexBuffer* Prickle::m_indexes = NULL;
+mgShader* Prickle::m_shader = NULL;
 
 //--------------------------------------------------------------
 // constructor
@@ -45,22 +47,22 @@ Prickle::Prickle(
   m_xTumble = (rand()%100)/10.0;
   m_yTumble = (rand()%100)/10.0;
 
-  m_indexes = NULL;
-  m_vertexes = NULL;
-
   // load prickle textures.  must all be same size.
-  mgStringArray fileList;
-  mgString fileName;
-  mgString optionName;
-  for (int i = 0; i < 7; i++)
+  if (m_texture == NULL)
   {
-    optionName.format("prickle%d", i);
-    options.getFileName(optionName, options.m_sourceFileName, optionName, fileName);
-    fileList.add(fileName);
-  }
+    mgStringArray fileList;
+    mgString fileName;
+    mgString optionName;
+    for (int i = 0; i < 7; i++)
+    {
+      optionName.format("prickle%d", i);
+      options.getFileName(optionName, options.m_sourceFileName, optionName, fileName);
+      fileList.add(fileName);
+    }
 
-  m_texture = mgDisplay->loadTextureArray(fileList);
-  m_texture->setWrap(MG_TEXTURE_CLAMP, MG_TEXTURE_CLAMP);
+    m_texture = mgDisplay->loadTextureArray(fileList);
+    m_texture->setWrap(MG_TEXTURE_CLAMP, MG_TEXTURE_CLAMP);
+  }
 }
 
 //--------------------------------------------------------------
@@ -112,7 +114,7 @@ void Prickle::render()
   mgDisplay->setMatColor(1.0, 1.0, 1.0);
 
   // draw triangles using texture and shader
-  mgDisplay->setShader("litTextureArray");
+  mgDisplay->setShader(m_shader);
   mgDisplay->setTexture(m_texture);
   mgDisplay->draw(MG_TRIANGLES, m_vertexes, m_indexes);
 }
@@ -123,6 +125,8 @@ void Prickle::createBuffers()
 {
   if (m_vertexes != NULL)
     return;  // already done
+
+  m_shader = mgVertexTA::loadShader("litTextureArray");
 
   // mesh for each of 6 faces of shell
   int steps = 8;

@@ -15,8 +15,8 @@ CC = gcc
 RELEASEFLAGS = -O3
 DEBUGFLAGS = -g3 -O0 -fno-inline 
 
-LIBS = -LX11 -lGL -lm -lrt -lpthread
-LIBDIRS = -L/usr/local/lib
+LIBS = -lm -lrt -lpthread
+LIBDIRS = #empty
 DEBUGTARGET = ../../BuildLinux/Debug/$(TARGET)
 RELEASETARGET = ../../BuildLinux/Release/$(TARGET)
  

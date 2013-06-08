@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -23,34 +23,36 @@
 #define MGSCROLLPANECONTROL_H
 
 /*
-  The parent of all button controls.
+  The superclass of all scroll pane controls.  A scroll pane is 
+  vertical and/or horizontal scrollbars controlling the view on
+  a child control.
 */
-#include "GUI/mgControl.h"
+#include "mgControl.h"
 
 class mgScrollPaneControl : public mgControl
 {
 public:
   // constructor
   mgScrollPaneControl(
-    mgControl* parent)
-  : mgControl(parent)
+    mgControl* parent,
+    const char* cntlName = NULL)
+  : mgControl(parent, cntlName)
   {}
 
   // destructor
   virtual ~mgScrollPaneControl()
   {}
   
-  // set object to be scrolled
-  virtual void setScrolledPane(
-    mgControl* control) = 0;
+  // get scrolled pane parent
+  virtual mgControl* getScrollParent() = 0;
     
-  // set vertical scroller
-  virtual void setVScroller(
-    mgScroller* scroller) = 0;
+  // set vertical scrollbar
+  virtual void setVScrollbar(
+    mgScrollbarControl* scrollbar) = 0;
 
-  // set horizontal scroller
-  virtual void setHScroller(
-    mgScroller* scroller) = 0;
+  // set horizontal scrollbar
+  virtual void setHScrollbar(
+    mgScrollbarControl* scrollbar) = 0;
 };
 
 #endif

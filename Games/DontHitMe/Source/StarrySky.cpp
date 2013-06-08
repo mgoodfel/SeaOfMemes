@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -34,9 +34,11 @@ StarrySky::StarrySky(
   const mgOptionsFile& options)
 {
   // load shaders
-  mgVertex::loadShader("unlitTexture");
-  mgVertexTA::loadShader("unlitTextureCube");
-  VertexSky::loadShader("skyfog");
+  m_sunShader = mgVertex::loadShader("unlitTexture");
+  m_moonShader = mgVertex::loadShader("unlitTexture");
+  m_starShader = mgVertex::loadShader("unlitTexture");
+  m_skyBoxShader = mgVertex::loadShader("unlitTextureCube");
+  m_fogShader = VertexSky::loadShader("skyfog");
 
   mgString fileName;
 
@@ -173,7 +175,7 @@ void StarrySky::render()
   if (m_enableSkyBox && m_skyBoxTexture != NULL && m_skyBoxTriangles != NULL)
   {
     mgDisplay->setMatColor(1.0, 1.0, 1.0);
-    mgDisplay->setShader("unlitTextureCube");
+    mgDisplay->setShader(m_skyBoxShader);
     mgDisplay->setTexture(m_skyBoxTexture);
     mgDisplay->draw(MG_TRIANGLES, m_skyBoxTriangles);
   }
@@ -182,7 +184,7 @@ void StarrySky::render()
   if (m_enableStars && m_starTexture != NULL && m_starTriangles != NULL)
   {
     mgDisplay->setMatColor(1.0, 1.0, 1.0);
-    mgDisplay->setShader("unlitTexture");
+    mgDisplay->setShader(m_starShader);
     mgDisplay->setTexture(m_starTexture);
     mgDisplay->draw(MG_TRIANGLES, m_starTriangles);
   }
@@ -205,7 +207,7 @@ void StarrySky::render()
     dir._31 = m_moonDir.x; dir._32 = m_moonDir.y; dir._33 = m_moonDir.z; 
     mgDisplay->appendModelTransform(dir);
 
-    mgDisplay->setShader("unlitTexture");
+    mgDisplay->setShader(m_moonShader);
     mgDisplay->setTexture(m_moonTexture);
     mgDisplay->draw(MG_TRIANGLES, m_moonTriangles);
 
@@ -230,7 +232,7 @@ void StarrySky::render()
     dir._31 = m_sunDir.x; dir._32 = m_sunDir.y; dir._33 = m_sunDir.z; 
     mgDisplay->appendModelTransform(dir);
 
-    mgDisplay->setShader("unlitTexture");
+    mgDisplay->setShader(m_sunShader);
     mgDisplay->setTexture(m_sunTexture);
     mgDisplay->draw(MG_TRIANGLES, m_sunTriangles);
 
@@ -241,13 +243,13 @@ void StarrySky::render()
   if (m_enableFog && m_fogVertexes != NULL)
   {
     mgDisplay->setMatColor(1.0, 1.0, 1.0);
-    mgDisplay->setShader("skyfog");
-    mgDisplay->setShaderUniform("skyfog", "fogColor", m_fogColor);
-    mgDisplay->setShaderUniform("skyfog", "fogBotHeight", (float) (m_fogBotHeight/m_skyDist));
-    mgDisplay->setShaderUniform("skyfog", "fogBotInten", (float) m_fogBotInten);
-    mgDisplay->setShaderUniform("skyfog", "fogTopHeight", (float) (m_fogTopHeight/m_skyDist));
-    mgDisplay->setShaderUniform("skyfog", "fogTopInten", (float) m_fogTopInten);
-    mgDisplay->setShaderUniform("skyfog", "fogMaxDist", (float) (m_fogMaxDist/m_skyDist));
+    mgDisplay->setShader(m_fogShader);
+    mgDisplay->setShaderUniform(m_fogShader, "fogColor", mgPoint4(m_fogColor.x, m_fogColor.y, m_fogColor.z, 1.0));
+    mgDisplay->setShaderUniform(m_fogShader, "fogBotHeight", (float) (m_fogBotHeight/m_skyDist));
+    mgDisplay->setShaderUniform(m_fogShader, "fogBotInten", (float) m_fogBotInten);
+    mgDisplay->setShaderUniform(m_fogShader, "fogTopHeight", (float) (m_fogTopHeight/m_skyDist));
+    mgDisplay->setShaderUniform(m_fogShader, "fogTopInten", (float) m_fogTopInten);
+    mgDisplay->setShaderUniform(m_fogShader, "fogMaxDist", (float) (m_fogMaxDist/m_skyDist));
     mgDisplay->draw(MG_TRIANGLES, m_fogVertexes, m_fogIndexes);
   }
 
@@ -259,154 +261,65 @@ void StarrySky::render()
 // create the skybox triangles
 void StarrySky::createSkyBox()
 {
+  const int SKY_STRIPS = 5;
+  const int SKY_FACES = 10;
+
   // three points times two triangles times six faces
-  m_skyBoxTriangles = mgVertexTA::newBuffer(3*2*6);
+  m_skyBoxTriangles = mgVertexTA::newBuffer(3*2*SKY_STRIPS * SKY_FACES);
 
   mgVertexTA tl, tr, bl, br;
+  mgPoint3 normal;
 
-  // draw xmin
-  tl.setNormal( 1, 0, 0);
-  tr.setNormal( 1, 0, 0);
-  bl.setNormal( 1, 0, 0);
-  br.setNormal( 1, 0, 0);
+  // create a sphere
+  for (int i = 1; i <= SKY_STRIPS; i++)
+  {
+    double topAngle = (PI*(i-1))/SKY_STRIPS;
+    double topRadius = sin(topAngle);
+    double topY = cos(topAngle);
+                                    
+    double botAngle = (PI*i)/SKY_STRIPS;
+    double botRadius = sin(botAngle);
+    double botY = cos(botAngle);
+                                    
+    for (int j = 1; j <= SKY_FACES; j++)
+    {
+      double leftAngle = (2.0*PI*(j-1))/SKY_FACES;
+      tl.setPoint(topRadius * cos(leftAngle), topY, topRadius * sin(leftAngle));
+      bl.setPoint(botRadius * cos(leftAngle), botY, botRadius * sin(leftAngle));
 
-  tl.setPoint(-1,  1, -1);      
-  tr.setPoint(-1,  1,  1); 
-  bl.setPoint(-1, -1, -1);
-  br.setPoint(-1, -1,  1); 
+      double rightAngle = (2.0*PI*j)/SKY_FACES;
+      tr.setPoint(topRadius * cos(rightAngle), topY, topRadius * sin(rightAngle));
+      br.setPoint(botRadius * cos(rightAngle), botY, botRadius * sin(rightAngle));
 
-  tl.setTexture(-1,  1, -1);      
-  tr.setTexture(-1,  1,  1); 
-  bl.setTexture(-1, -1, -1);
-  br.setTexture(-1, -1,  1); 
+      normal = mgPoint3(tl.m_px, tl.m_py, tl.m_pz);
+      normal.normalize();
+      tl.setTexture(normal.x, normal.y, normal.z);
+      tl.setNormal(-normal.x, -normal.y, -normal.z);
 
-  tl.addTo(m_skyBoxTriangles);
-  tr.addTo(m_skyBoxTriangles);
-  bl.addTo(m_skyBoxTriangles);
+      normal = mgPoint3(tr.m_px, tr.m_py, tr.m_pz);
+      normal.normalize();
+      tr.setTexture(normal.x, normal.y, normal.z);
+      tr.setNormal(-normal.x, -normal.y, -normal.z);
 
-  bl.addTo(m_skyBoxTriangles);
-  tr.addTo(m_skyBoxTriangles);
-  br.addTo(m_skyBoxTriangles);
+      normal = mgPoint3(bl.m_px, bl.m_py, bl.m_pz);
+      normal.normalize();
+      bl.setTexture(normal.x, normal.y, normal.z);
+      bl.setNormal(-normal.x, -normal.y, -normal.z);
 
-  // draw xmax
-  tl.setNormal(-1, 0, 0);
-  tr.setNormal(-1, 0, 0);
-  bl.setNormal(-1, 0, 0);
-  br.setNormal(-1, 0, 0);
+      normal = mgPoint3(br.m_px, br.m_py, br.m_pz);
+      normal.normalize();
+      br.setTexture(normal.x, normal.y, normal.z);
+      br.setNormal(-normal.x, -normal.y, -normal.z);
 
-  tl.setPoint( 1,  1,  1);      
-  tr.setPoint( 1,  1, -1); 
-  bl.setPoint( 1, -1,  1);      
-  br.setPoint( 1, -1, -1); 
+      tl.addTo(m_skyBoxTriangles);
+      bl.addTo(m_skyBoxTriangles);
+      tr.addTo(m_skyBoxTriangles);
 
-  tl.setTexture( 1,  1,  1);      
-  tr.setTexture( 1,  1, -1); 
-  bl.setTexture( 1, -1,  1);      
-  br.setTexture( 1, -1, -1); 
-
-  tl.addTo(m_skyBoxTriangles);
-  tr.addTo(m_skyBoxTriangles);
-  bl.addTo(m_skyBoxTriangles);
-
-  bl.addTo(m_skyBoxTriangles);
-  tr.addTo(m_skyBoxTriangles);
-  br.addTo(m_skyBoxTriangles);
-
-  // ymin
-  tl.setNormal(0,  1, 0);
-  tr.setNormal(0,  1, 0);
-  bl.setNormal(0,  1, 0);
-  br.setNormal(0,  1, 0);
-
-  tl.setPoint( 1, -1, -1); 
-  tr.setPoint(-1, -1, -1); 
-  bl.setPoint( 1, -1,  1);
-  br.setPoint(-1, -1,  1);
-
-  tl.setTexture( 1, -1, -1); 
-  tr.setTexture(-1, -1, -1); 
-  bl.setTexture( 1, -1,  1);
-  br.setTexture(-1, -1,  1);
-
-  tl.addTo(m_skyBoxTriangles);
-  tr.addTo(m_skyBoxTriangles);
-  bl.addTo(m_skyBoxTriangles);
-
-  bl.addTo(m_skyBoxTriangles);
-  tr.addTo(m_skyBoxTriangles);
-  br.addTo(m_skyBoxTriangles);
-
-  // ymax
-  tl.setNormal(0, -1, 0);
-  tr.setNormal(0, -1, 0);
-  bl.setNormal(0, -1, 0);
-  br.setNormal(0, -1, 0);
-
-  tl.setPoint( 1,  1,  1);        
-  tr.setPoint(-1,  1,  1);        
-  bl.setPoint( 1,  1, -1);             
-  br.setPoint(-1,  1, -1);
-
-  tl.setTexture( 1,  1,  1);        
-  tr.setTexture(-1,  1,  1);        
-  bl.setTexture( 1,  1, -1);             
-  br.setTexture(-1,  1, -1);
-
-  tl.addTo(m_skyBoxTriangles);
-  tr.addTo(m_skyBoxTriangles);
-  bl.addTo(m_skyBoxTriangles);
-
-  bl.addTo(m_skyBoxTriangles);
-  tr.addTo(m_skyBoxTriangles);
-  br.addTo(m_skyBoxTriangles);
-
-  // zmin
-  tl.setNormal(0, 0,  1);
-  tr.setNormal(0, 0,  1);
-  bl.setNormal(0, 0,  1);
-  br.setNormal(0, 0,  1);
-
-  tl.setPoint( 1,  1, -1);      
-  tr.setPoint(-1,  1, -1);      
-  bl.setPoint( 1, -1, -1);      
-  br.setPoint(-1, -1, -1);      
-
-  tl.setTexture( 1,  1, -1);      
-  tr.setTexture(-1,  1, -1);      
-  bl.setTexture( 1, -1, -1);      
-  br.setTexture(-1, -1, -1);      
-
-  tl.addTo(m_skyBoxTriangles);
-  tr.addTo(m_skyBoxTriangles);
-  bl.addTo(m_skyBoxTriangles);
-
-  bl.addTo(m_skyBoxTriangles);
-  tr.addTo(m_skyBoxTriangles);
-  br.addTo(m_skyBoxTriangles);
-
-  // zmax
-  tl.setNormal(0, 0, -1);
-  tr.setNormal(0, 0, -1);
-  bl.setNormal(0, 0, -1);
-  br.setNormal(0, 0, -1);
-
-  tl.setPoint(-1,  1,  1);
-  tr.setPoint( 1,  1,  1);
-  bl.setPoint(-1, -1,  1);
-  br.setPoint( 1, -1,  1);
-
-  tl.setTexture(-1,  1,  1);
-  tr.setTexture( 1,  1,  1);
-  bl.setTexture(-1, -1,  1);
-  br.setTexture( 1, -1,  1);
-
-  tl.addTo(m_skyBoxTriangles);
-  tr.addTo(m_skyBoxTriangles);
-  bl.addTo(m_skyBoxTriangles);
-
-  bl.addTo(m_skyBoxTriangles);
-  tr.addTo(m_skyBoxTriangles);
-  br.addTo(m_skyBoxTriangles);
+      tr.addTo(m_skyBoxTriangles);
+      bl.addTo(m_skyBoxTriangles);
+      br.addTo(m_skyBoxTriangles);
+    }
+  }
 }
 
 //--------------------------------------------------------------

@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -24,6 +24,9 @@
 
 #include "mgFrame.h"
 
+/*
+  The various edge types of an mgRectFrame.
+*/
 enum mgRectEdgeType
 {
   mgFlatEdge = 0,
@@ -31,6 +34,9 @@ enum mgRectEdgeType
   mgLoweredEdge = 2,
 };
 
+/*
+  An mgFrame that draws a rectangular border around the object.
+*/
 class mgRectFrame : public mgFrame
 {
 public:
@@ -51,8 +57,12 @@ public:
     const mgDimension& interior,
     mgDimension& exterior) const;
 
+  // adjust rectangle to exterior of frame
+  virtual void getOutsideRect(
+    mgRectangle& bounds) const;
+
   // adjust rectangle to interior of frame
-  void getInsideRect(
+  virtual void getInsideRect(
     mgRectangle& bounds) const;
 
   // paint the frame foreground

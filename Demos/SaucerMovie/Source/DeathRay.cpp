@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -38,7 +38,7 @@ DeathRay::DeathRay(
   m_vertexes = NULL;
   m_texture = NULL;
 
-  mgVertex::loadShader("ray");
+  m_shader = mgVertex::loadShader("ray");
 
   mgString fileName;
   options.getFileName("ray", options.m_sourceFileName, "", fileName);
@@ -157,8 +157,8 @@ void DeathRay::render()
   mgDisplay->setTransparent(true);
 
   // draw triangles using texture and shader
-  mgDisplay->setShader("ray");
-  mgDisplay->setShaderUniform("ray", "textureOffset", m_textureOffset);
+  mgDisplay->setShader(m_shader);
+  mgDisplay->setShaderUniform(m_shader, "textureOffset", m_textureOffset);
   mgDisplay->setTexture(m_texture);
   mgDisplay->draw(MG_TRIANGLES, m_vertexes);
 

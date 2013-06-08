@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -29,7 +29,7 @@ const char THIS_FILE[] = __FILE__;
 #include "mgPlatform/Include/mgPlatformServices.h"
 #include "mgGL33Types.h"
 #include "mgGL33Misc.h"
-#include "mgGL33Services.h"
+#include "mgGL33Display.h"
 
 #include "mgGL33VertexBuffer.h"
 

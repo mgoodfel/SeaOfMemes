@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -530,7 +530,7 @@ void mgTableLayout::paintBackground(
 {
   mgDimension size;
   m_parent->getSize(size);
-  if (size.m_width == 0 || size.m_height == 0)
+  if (size.m_width == 0 || size.m_height == 0 || m_colUsed == NULL)
     return;  // nothing to do
   
   // reduce dimensions by frame
@@ -650,7 +650,7 @@ void mgTableLayout::paintForeground(
 {
   mgDimension size;
   m_parent->getSize(size);
-  if (size.m_width == 0 || size.m_height == 0)
+  if (size.m_width == 0 || size.m_height == 0 || m_colUsed == NULL)
     return;  // nothing to do
   
   // reduce dimensions by frame
@@ -1167,8 +1167,9 @@ void mgTableLayout::getRowHeights()
       int horzInset = cell->m_leftInset + cell->m_rightInset;
       int vertInset = cell->m_topInset + cell->m_bottomInset;
 
-      mgDimension childSize;
-      if (cell->m_child->preferredSizeAtWidth(cellWidth - horzInset, childSize))
+      mgDimension childSize(0, 0);
+      if (cell->m_child != NULL &&
+          cell->m_child->preferredSizeAtWidth(cellWidth - horzInset, childSize))
       {
         cell->m_maxHeight = vertInset + childSize.m_height;
         cell->m_minHeight = cell->m_maxHeight;

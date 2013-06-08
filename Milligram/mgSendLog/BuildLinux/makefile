@@ -11,9 +11,9 @@ CC = g++
 RELEASEFLAGS = -O3
 DEBUGFLAGS = -g3 -O0 -fno-inline 
 
-LIBS = -LX11 -lGL -lm -lrt -lpthread
-DEBUGLIBDIRS = -L/usr/local/lib -L../../../Milligram/BuildLinux/Debug
-RELEASELIBDIRS = -L/usr/local/lib -L../../../Milligram/BuildLinux/Release
+LIBS = -lm -lrt -lpthread
+DEBUGLIBDIRS = -L../../../Milligram/BuildLinux/Debug
+RELEASELIBDIRS = -L../../../Milligram/BuildLinux/Release
 FRAMEWORK = -lmgUtil
 
 
@@ -52,11 +52,11 @@ Release/%.o: $(SOURCE)/%.cpp
 
 Debug/$(TARGET): $(DEBUGFILES)
 	@echo "Link $@"
-	@$(CC) $(DEBUGLIBDIRS) $(LIBS) -o Debug/$(TARGET) $(DEBUGFILES) $(FRAMEWORK)
+	@$(CC) $(DEBUGLIBDIRS) -o Debug/$(TARGET) $(DEBUGFILES) $(FRAMEWORK) $(LIBS) 
 
 Release/$(TARGET): $(RELEASEFILES)
 	@echo "Link $@"
-	@$(CC) $(RELEASELIBDIRS) $(LIBS) -o Release/$(TARGET) $(RELEASEFILES) $(FRAMEWORK)
+	@$(CC) $(RELEASELIBDIRS) -o Release/$(TARGET) $(RELEASEFILES) $(FRAMEWORK) $(LIBS) 
 
 clean: 
 	-rm -r -f Debug

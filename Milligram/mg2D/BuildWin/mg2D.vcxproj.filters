@@ -7,98 +7,77 @@
     <Filter Include="Include">
       <UniqueIdentifier>{03ca1176-0686-4353-9cc4-26aad839f31e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Include\Graphics2D">
-      <UniqueIdentifier>{ed5a85e0-70dd-46eb-bc82-0e67cc8da718}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source\Generic2D">
       <UniqueIdentifier>{fa11c9a8-c776-40ab-aaa0-2e6c9aaeaa61}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Include\Graphics2D\Surfaces">
-      <UniqueIdentifier>{0d3d3531-be33-474c-872b-7d030927ac86}</UniqueIdentifier>
+    <Filter Include="Include\Surfaces">
+      <UniqueIdentifier>{c9b03505-a04c-4910-8f60-3ead98e7049d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Include\Graphics2D\mgBrush.h">
-      <Filter>Include\Graphics2D</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Include\Graphics2D\mgColor.h">
-      <Filter>Include\Graphics2D</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Include\Graphics2D\mgContext.h">
-      <Filter>Include\Graphics2D</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Include\Graphics2D\mgFont.h">
-      <Filter>Include\Graphics2D</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Include\Graphics2D\mgIcon.h">
-      <Filter>Include\Graphics2D</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Include\Graphics2D\mgImage.h">
-      <Filter>Include\Graphics2D</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Include\Graphics2D\mgPen.h">
-      <Filter>Include\Graphics2D</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Include\Graphics2D\mgResource.h">
-      <Filter>Include\Graphics2D</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Include\Graphics2D\mgSurface.h">
-      <Filter>Include\Graphics2D</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Include\Graphics2D\mgTypes2D.h">
-      <Filter>Include\Graphics2D</Filter>
-    </ClInclude>
     <ClInclude Include="..\Source\stdafx.h">
       <Filter>Source</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Source\Generic2D\mgGenBrush.h">
-      <Filter>Source\Generic2D</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Source\Generic2D\mgGenContext.h">
-      <Filter>Source\Generic2D</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Source\Generic2D\mgGenFont.h">
-      <Filter>Source\Generic2D</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Source\Generic2D\mgGenIcon.h">
-      <Filter>Source\Generic2D</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Source\Generic2D\mgGenImage.h">
-      <Filter>Source\Generic2D</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Source\Generic2D\mgGenPen.h">
-      <Filter>Source\Generic2D</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Include\Graphics2D\Surfaces\mgGenSurface.h">
-      <Filter>Include\Graphics2D\Surfaces</Filter>
     </ClInclude>
     <ClInclude Include="..\Include\mg2D.h">
       <Filter>Include</Filter>
     </ClInclude>
-    <ClInclude Include="..\Source\Generic2D\mgGenCharCache.h">
-      <Filter>Source\Generic2D</Filter>
+    <ClInclude Include="..\Include\mgBrush.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\mgColor.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\mgContext.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\mgFont.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\mgIcon.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\mgImage.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\mgPen.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\mgResource.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\mgSurface.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\mgTypes2D.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Surfaces\mgGenSurface.h">
+      <Filter>Include\Surfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Surfaces\mgFTFont.h">
+      <Filter>Include\Surfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Surfaces\mgGenContext.h">
+      <Filter>Include\Surfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Surfaces\mgGenFont.h">
+      <Filter>Include\Surfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Surfaces\mgGenIcon.h">
+      <Filter>Include\Surfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Surfaces\mgGenImage.h">
+      <Filter>Include\Surfaces</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\stdafx.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="..\Source\Generic2D\mgGenBrush.cpp">
-      <Filter>Source\Generic2D</Filter>
-    </ClCompile>
     <ClCompile Include="..\Source\Generic2D\mgGenContext.cpp">
       <Filter>Source\Generic2D</Filter>
     </ClCompile>
     <ClCompile Include="..\Source\Generic2D\mgGenFont.cpp">
-      <Filter>Source\Generic2D</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Source\Generic2D\mgGenIcon.cpp">
-      <Filter>Source\Generic2D</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Source\Generic2D\mgGenImage.cpp">
-      <Filter>Source\Generic2D</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Source\Generic2D\mgGenPen.cpp">
       <Filter>Source\Generic2D</Filter>
     </ClCompile>
     <ClCompile Include="..\Source\Generic2D\mgGenSurface.cpp">
@@ -107,7 +86,7 @@
     <ClCompile Include="..\Source\mgColor.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="..\Source\Generic2D\mgGenCharCache.cpp">
+    <ClCompile Include="..\Source\Generic2D\mgFTFont.cpp">
       <Filter>Source\Generic2D</Filter>
     </ClCompile>
   </ItemGroup>

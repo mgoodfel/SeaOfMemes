@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -23,6 +23,7 @@
 
 #include "JpegLib/Include/jpeglib.h"
 #include "JpegLib/Include/cdjpeg.h"
+#include "LibPNG/Include/png.h"
 
 class mgImageWrite;
 
@@ -148,6 +149,33 @@ protected:
   // read DWORD data out of file
   DWORD readDWord(
     FILE* inFile);
+};
+
+// PNG read object
+class mgPNGRead : public mgImageRead
+{
+public:
+  // open a file to be read
+  virtual BOOL open(
+    const char* fileName);          // name of file to open
+
+  // do a step of work 
+  virtual BOOL decodeStep(
+    int &y,                         // current scanlines complete
+    int &height);                   // amount to go
+
+  // constructor
+  mgPNGRead(
+    mgImageWrite *writer);
+
+  // destructor
+  virtual ~mgPNGRead();
+
+protected:
+  png_structp m_state;
+  png_infop m_info; // decompress state 
+  BYTE* m_RGBAline;                 // RGBA line
+  int m_y;
 };
 
 // write decoded image

@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -57,6 +57,9 @@ public:
   virtual int getDisplayMemUsed();
 
 protected:
+  static mgShader* m_cubeShader;
+  static mgShader* m_shapeShader;
+
   // add vertexes and indexes for cube 
   void cubeTriangles(
     mgVertexBuffer* vertexes,

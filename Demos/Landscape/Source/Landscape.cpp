@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -27,7 +27,7 @@ const char THIS_FILE[] = __FILE__;
 
 // identify the program for the framework log
 const char* mgProgramName = "Landscape";
-const char* mgProgramVersion = "Part 60";
+const char* mgProgramVersion = "Part 83";
 
 #include "StarrySky.h"
 #include "VertexTerrain.h"
@@ -105,19 +105,16 @@ void Landscape::appInit()
   loadTextures();
 
   // load shaders
-  mgVertex::loadShader("litTexture");
-  mgVertex::loadShader("unlitTexture");
-  mgVertexTA::loadShader("litTextureArray");
-  VertexTerrain::loadShader("terrain");
-  mgVertex::loadShader("water");
+  m_terrainShader = VertexTerrain::loadShader("terrain");
+  m_waterShader = mgVertex::loadShader("water");
 
   // create the sky
   m_lightDir = mgPoint3(0.0, 0.5, 1.0);
   m_lightColor = mgPoint3(0.8, 0.8, 0.8);
-  m_lightAmbient = mgPoint3(0.2, 0.2, 0.2);
+  m_lightAmbient = mgPoint3(0.4, 0.4, 0.4);
 
   m_fogColor = mgPoint3(0.8, 0.8, 0.8);
-  m_fogMaxDist = 13000.0;
+  m_fogMaxDist = 30000.0;
   m_fogTopHeight = 2000.0; // WATER_LEVEL + 128.0;// m_fogMaxDist;
   m_fogBotHeight = WATER_LEVEL; 
   m_fogBotInten = 1.0; 
@@ -156,18 +153,21 @@ void Landscape::appInit()
   m_mapGrid = GRID_CHUNKS;
 
   m_eyeHeight = 1.75;
-  m_eyePt = mgPoint3(7012.1, 358.22, -6287.94); // nice area for initial coordinate
+  m_eyePt = mgPoint3(-12000, 0, -12000); // nice area for initial coordinate
 
   double ht = Terrain::heightAtPt(m_eyePt.x, m_eyePt.z);
   ht = max(ht, WATER_LEVEL);
   m_eyePt.y = ht + m_eyeHeight;
 
   m_eyeRotX = 4.4;
-  m_eyeRotY = 2.84;
+  m_eyeRotY = 180;
   m_eyeRotZ = 0.0;
 
   // init threads
   m_threadCount = m_options.getInteger("threadCount", 1); 
+#ifdef EMSCRIPTEN
+  m_threadCount = 0;
+#endif
 
   m_buildLock = mgOSLock::create();
 
@@ -604,13 +604,14 @@ void Landscape::renderTerrain()
   mgDisplay->setCulling(false);
 
   mgDisplay->setTexture(texture);
-  mgDisplay->setShader("terrain");
-  mgDisplay->setShaderUniform("terrain", "fogColor", mgPoint4(m_fogColor.x, m_fogColor.y, m_fogColor.z, 1.0));
-  mgDisplay->setShaderUniform("terrain", "fogBotHeight", (float) (m_fogBotHeight - renderEyePt.y));
-  mgDisplay->setShaderUniform("terrain", "fogBotInten", (float) m_fogBotInten);
-  mgDisplay->setShaderUniform("terrain", "fogTopHeight", (float) (m_fogTopHeight - renderEyePt.y));
-  mgDisplay->setShaderUniform("terrain", "fogTopInten", (float) m_fogTopInten);
-  mgDisplay->setShaderUniform("terrain", "fogMaxDist", (float) m_fogMaxDist);
+  mgDisplay->setShader(m_terrainShader);
+  mgDisplay->setShaderUniform(m_terrainShader, "fogColor", mgPoint4(m_fogColor.x, m_fogColor.y, m_fogColor.z, 1.0));
+
+  mgDisplay->setShaderUniform(m_terrainShader, "fogBotHeight", (float) (m_fogBotHeight - renderEyePt.y));
+  mgDisplay->setShaderUniform(m_terrainShader, "fogBotInten", (float) m_fogBotInten);
+  mgDisplay->setShaderUniform(m_terrainShader, "fogTopHeight", (float) (m_fogTopHeight - renderEyePt.y));
+  mgDisplay->setShaderUniform(m_terrainShader, "fogTopInten", (float) m_fogTopInten);
+  mgDisplay->setShaderUniform(m_terrainShader, "fogMaxDist", (float) m_fogMaxDist);
 
   for (int x = 0; x <= 2; x++)
   {
@@ -623,13 +624,13 @@ void Landscape::renderTerrain()
   if (!m_mapView && gridStyle == GRID_TERRAIN)
   {
     mgDisplay->setTransparent(true);
-    mgDisplay->setShader("water");
-    mgDisplay->setShaderUniform("water", "fogColor", m_fogColor);
-    mgDisplay->setShaderUniform("water", "fogBotHeight", (float) (m_fogBotHeight - renderEyePt.y));
-    mgDisplay->setShaderUniform("water", "fogBotInten", (float) m_fogBotInten);
-    mgDisplay->setShaderUniform("water", "fogTopHeight", (float) (m_fogTopHeight - renderEyePt.y));
-    mgDisplay->setShaderUniform("water", "fogTopInten", (float) m_fogTopInten);
-    mgDisplay->setShaderUniform("water", "fogMaxDist", (float) m_fogMaxDist);
+    mgDisplay->setShader(m_waterShader);
+    mgDisplay->setShaderUniform(m_waterShader, "fogColor", mgPoint4(m_fogColor.x, m_fogColor.y, m_fogColor.z, 1.0));
+    mgDisplay->setShaderUniform(m_waterShader, "fogBotHeight", (float) (m_fogBotHeight - renderEyePt.y));
+    mgDisplay->setShaderUniform(m_waterShader, "fogBotInten", (float) m_fogBotInten);
+    mgDisplay->setShaderUniform(m_waterShader, "fogTopHeight", (float) (m_fogTopHeight - renderEyePt.y));
+    mgDisplay->setShaderUniform(m_waterShader, "fogTopInten", (float) m_fogTopInten);
+    mgDisplay->setShaderUniform(m_waterShader, "fogMaxDist", (float) m_fogMaxDist);
 
     for (int x = 0; x <= 2; x++)
     {

@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -21,6 +21,11 @@
 #ifndef MGSTRINGARRAY_H
 #define MGSTRINGARRAY_H
 
+typedef int (*mgCompareFn)(const void*, const void*);
+
+/*
+  A variable-length array of strings.  Each element is separately allocated.
+*/
 class mgStringArray
 {
 public:
@@ -42,6 +47,10 @@ public:
   virtual void add(
     const char* string);
   
+  // add a list to end
+  void addAll(
+    const mgStringArray& other);
+
   // insert element at index
   virtual void insertAt(
     int index,
@@ -60,6 +69,20 @@ public:
     int index) const
   {
     return getAt(index);
+  }
+
+  virtual const char* first() const
+  {
+    if (m_elementCount > 0)
+      return getAt(0);
+    else return NULL;
+  }
+
+  virtual const char* last() const
+  {
+    if (m_elementCount > 0)
+      return getAt(m_elementCount-1);
+    else return NULL;
   }
 
   // find and remove item
@@ -86,7 +109,7 @@ public:
   
   // sort the array
   void sort(
-    int (*compareFn)(const void*, const void*));
+    mgCompareFn compare);
 
 protected:
   const char** m_elements;

@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -23,16 +23,12 @@
 
 #include "mgPaint.h"
 
+/*
+  An mgPaint which is a solid color.
+*/
 class mgSolidPaint : public mgPaint
 {
 public:
-  // create paint from color 
-  static const mgSolidPaint* createPaint(
-    mgSurface* surface,
-    int red,
-    int green,
-    int blue);
-  
   // create paint from color 
   static const mgSolidPaint* createPaint(
     mgSurface* surface,

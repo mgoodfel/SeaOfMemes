@@ -9,6 +9,42 @@
 /* Begin PBXBuildFile section */
 		900D17BA15DCAB270059DA97 /* mgDebugPane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 900D17B915DCAB270059DA97 /* mgDebugPane.cpp */; };
 		900D17BC15DCAB3F0059DA97 /* mgDebugPane.h in Headers */ = {isa = PBXBuildFile; fileRef = 900D17BB15DCAB3F0059DA97 /* mgDebugPane.h */; };
+		901295B81762D66F0007F15F /* mgSimpleButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 901295A81762D66F0007F15F /* mgSimpleButton.h */; };
+		901295B91762D66F0007F15F /* mgSimpleCheckbox.h in Headers */ = {isa = PBXBuildFile; fileRef = 901295A91762D66F0007F15F /* mgSimpleCheckbox.h */; };
+		901295BA1762D66F0007F15F /* mgSimpleConsole.h in Headers */ = {isa = PBXBuildFile; fileRef = 901295AA1762D66F0007F15F /* mgSimpleConsole.h */; };
+		901295BB1762D66F0007F15F /* mgSimpleDesktop.h in Headers */ = {isa = PBXBuildFile; fileRef = 901295AB1762D66F0007F15F /* mgSimpleDesktop.h */; };
+		901295BC1762D66F0007F15F /* mgSimpleField.h in Headers */ = {isa = PBXBuildFile; fileRef = 901295AC1762D66F0007F15F /* mgSimpleField.h */; };
+		901295BD1762D66F0007F15F /* mgSimpleLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 901295AD1762D66F0007F15F /* mgSimpleLabel.h */; };
+		901295BE1762D66F0007F15F /* mgSimpleList.h in Headers */ = {isa = PBXBuildFile; fileRef = 901295AE1762D66F0007F15F /* mgSimpleList.h */; };
+		901295BF1762D66F0007F15F /* mgSimpleMenuBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 901295AF1762D66F0007F15F /* mgSimpleMenuBar.h */; };
+		901295C01762D66F0007F15F /* mgSimpleRadio.h in Headers */ = {isa = PBXBuildFile; fileRef = 901295B01762D66F0007F15F /* mgSimpleRadio.h */; };
+		901295C11762D66F0007F15F /* mgSimpleScrollbar.h in Headers */ = {isa = PBXBuildFile; fileRef = 901295B11762D66F0007F15F /* mgSimpleScrollbar.h */; };
+		901295C21762D66F0007F15F /* mgSimpleScrollPane.h in Headers */ = {isa = PBXBuildFile; fileRef = 901295B21762D66F0007F15F /* mgSimpleScrollPane.h */; };
+		901295C31762D66F0007F15F /* mgSimpleSplit.h in Headers */ = {isa = PBXBuildFile; fileRef = 901295B31762D66F0007F15F /* mgSimpleSplit.h */; };
+		901295C41762D66F0007F15F /* mgSimpleStack.h in Headers */ = {isa = PBXBuildFile; fileRef = 901295B41762D66F0007F15F /* mgSimpleStack.h */; };
+		901295C51762D66F0007F15F /* mgSimpleStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 901295B51762D66F0007F15F /* mgSimpleStyle.h */; };
+		901295C61762D66F0007F15F /* mgSimpleTabbed.h in Headers */ = {isa = PBXBuildFile; fileRef = 901295B61762D66F0007F15F /* mgSimpleTabbed.h */; };
+		901295C71762D66F0007F15F /* mgSimpleWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 901295B71762D66F0007F15F /* mgSimpleWindow.h */; };
+		901295D91762D67C0007F15F /* mgSimpleButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 901295C91762D67C0007F15F /* mgSimpleButton.cpp */; };
+		901295DA1762D67C0007F15F /* mgSimpleCheckbox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 901295CA1762D67C0007F15F /* mgSimpleCheckbox.cpp */; };
+		901295DB1762D67C0007F15F /* mgSimpleConsole.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 901295CB1762D67C0007F15F /* mgSimpleConsole.cpp */; };
+		901295DC1762D67C0007F15F /* mgSimpleDesktop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 901295CC1762D67C0007F15F /* mgSimpleDesktop.cpp */; };
+		901295DD1762D67C0007F15F /* mgSimpleField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 901295CD1762D67C0007F15F /* mgSimpleField.cpp */; };
+		901295DE1762D67C0007F15F /* mgSimpleLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 901295CE1762D67C0007F15F /* mgSimpleLabel.cpp */; };
+		901295DF1762D67C0007F15F /* mgSimpleList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 901295CF1762D67C0007F15F /* mgSimpleList.cpp */; };
+		901295E01762D67C0007F15F /* mgSimpleMenuBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 901295D01762D67C0007F15F /* mgSimpleMenuBar.cpp */; };
+		901295E21762D67C0007F15F /* mgSimpleScrollbar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 901295D21762D67C0007F15F /* mgSimpleScrollbar.cpp */; };
+		901295E31762D67C0007F15F /* mgSimpleScrollPane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 901295D31762D67C0007F15F /* mgSimpleScrollPane.cpp */; };
+		901295E41762D67C0007F15F /* mgSimpleSplit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 901295D41762D67C0007F15F /* mgSimpleSplit.cpp */; };
+		901295E51762D67C0007F15F /* mgSimpleStack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 901295D51762D67C0007F15F /* mgSimpleStack.cpp */; };
+		901295E61762D67C0007F15F /* mgSimpleStyle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 901295D61762D67C0007F15F /* mgSimpleStyle.cpp */; };
+		901295E71762D67C0007F15F /* mgSimpleTabbed.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 901295D71762D67C0007F15F /* mgSimpleTabbed.cpp */; };
+		901295E81762D67C0007F15F /* mgSimpleWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 901295D81762D67C0007F15F /* mgSimpleWindow.cpp */; };
+		901295F51762D6C70007F15F /* mgDesktopControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 901295F11762D6C70007F15F /* mgDesktopControl.h */; };
+		901295F61762D6C70007F15F /* mgDesktopListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 901295F21762D6C70007F15F /* mgDesktopListener.h */; };
+		901295F71762D6C70007F15F /* mgSplitControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 901295F31762D6C70007F15F /* mgSplitControl.h */; };
+		901295F81762D6C70007F15F /* mgTabbedControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 901295F41762D6C70007F15F /* mgTabbedControl.h */; };
+		901295FA1762D6E10007F15F /* mgMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 901295F91762D6E10007F15F /* mgMenu.cpp */; };
 		9041B303159EC5B600D7BCC5 /* mgFormPane.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B26E159EC5B600D7BCC5 /* mgFormPane.h */; };
 		9041B304159EC5B600D7BCC5 /* mgFormParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B26F159EC5B600D7BCC5 /* mgFormParser.h */; };
 		9041B30D159EC5B600D7BCC5 /* mgActionListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B27A159EC5B600D7BCC5 /* mgActionListener.h */; };
@@ -56,15 +92,6 @@
 		9041B337159EC5B600D7BCC5 /* mgTextMeasure.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2A5159EC5B600D7BCC5 /* mgTextMeasure.h */; };
 		9041B338159EC5B600D7BCC5 /* mgTextPage.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2A6159EC5B600D7BCC5 /* mgTextPage.h */; };
 		9041B339159EC5B600D7BCC5 /* mgTextScan.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2A7159EC5B600D7BCC5 /* mgTextScan.h */; };
-		9041B33A159EC5B600D7BCC5 /* mgUglyButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2A9159EC5B600D7BCC5 /* mgUglyButton.h */; };
-		9041B33B159EC5B600D7BCC5 /* mgUglyCheckbox.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2AA159EC5B600D7BCC5 /* mgUglyCheckbox.h */; };
-		9041B33C159EC5B600D7BCC5 /* mgUglyConsole.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2AB159EC5B600D7BCC5 /* mgUglyConsole.h */; };
-		9041B33D159EC5B600D7BCC5 /* mgUglyField.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2AC159EC5B600D7BCC5 /* mgUglyField.h */; };
-		9041B33E159EC5B600D7BCC5 /* mgUglyLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2AD159EC5B600D7BCC5 /* mgUglyLabel.h */; };
-		9041B33F159EC5B600D7BCC5 /* mgUglyList.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2AE159EC5B600D7BCC5 /* mgUglyList.h */; };
-		9041B341159EC5B600D7BCC5 /* mgUglyScrollbar.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2B0159EC5B600D7BCC5 /* mgUglyScrollbar.h */; };
-		9041B343159EC5B600D7BCC5 /* mgUglyStack.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2B2159EC5B600D7BCC5 /* mgUglyStack.h */; };
-		9041B344159EC5B600D7BCC5 /* mgUglyStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2B3159EC5B600D7BCC5 /* mgUglyStyle.h */; };
 		9041B346159EC5B600D7BCC5 /* mgBlockTag.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2B7159EC5B600D7BCC5 /* mgBlockTag.cpp */; };
 		9041B347159EC5B600D7BCC5 /* mgBlockTag.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B2B8159EC5B600D7BCC5 /* mgBlockTag.h */; };
 		9041B348159EC5B600D7BCC5 /* mgBreakTag.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2B9159EC5B600D7BCC5 /* mgBreakTag.cpp */; };
@@ -117,20 +144,47 @@
 		9041B37F159EC5B600D7BCC5 /* mgTextFormat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2F3159EC5B600D7BCC5 /* mgTextFormat.cpp */; };
 		9041B380159EC5B600D7BCC5 /* mgTextMeasure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2F4159EC5B600D7BCC5 /* mgTextMeasure.cpp */; };
 		9041B381159EC5B600D7BCC5 /* mgTextScan.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2F5159EC5B600D7BCC5 /* mgTextScan.cpp */; };
-		9041B382159EC5B600D7BCC5 /* mgUglyButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2F7159EC5B600D7BCC5 /* mgUglyButton.cpp */; };
-		9041B383159EC5B600D7BCC5 /* mgUglyCheckbox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2F8159EC5B600D7BCC5 /* mgUglyCheckbox.cpp */; };
-		9041B384159EC5B600D7BCC5 /* mgUglyConsole.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2F9159EC5B600D7BCC5 /* mgUglyConsole.cpp */; };
-		9041B385159EC5B600D7BCC5 /* mgUglyField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2FA159EC5B600D7BCC5 /* mgUglyField.cpp */; };
-		9041B386159EC5B600D7BCC5 /* mgUglyLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2FB159EC5B600D7BCC5 /* mgUglyLabel.cpp */; };
-		9041B387159EC5B600D7BCC5 /* mgUglyList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2FC159EC5B600D7BCC5 /* mgUglyList.cpp */; };
-		9041B389159EC5B600D7BCC5 /* mgUglyScrollbar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B2FE159EC5B600D7BCC5 /* mgUglyScrollbar.cpp */; };
-		9041B38B159EC5B600D7BCC5 /* mgUglyStack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B300159EC5B600D7BCC5 /* mgUglyStack.cpp */; };
-		9041B38C159EC5B600D7BCC5 /* mgUglyStyle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B301159EC5B600D7BCC5 /* mgUglyStyle.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		900D17B915DCAB270059DA97 /* mgDebugPane.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mgDebugPane.cpp; path = Util/mgDebugPane.cpp; sourceTree = "<group>"; };
 		900D17BB15DCAB3F0059DA97 /* mgDebugPane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mgDebugPane.h; path = Util/mgDebugPane.h; sourceTree = "<group>"; };
+		901295A81762D66F0007F15F /* mgSimpleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgSimpleButton.h; sourceTree = "<group>"; };
+		901295A91762D66F0007F15F /* mgSimpleCheckbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgSimpleCheckbox.h; sourceTree = "<group>"; };
+		901295AA1762D66F0007F15F /* mgSimpleConsole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgSimpleConsole.h; sourceTree = "<group>"; };
+		901295AB1762D66F0007F15F /* mgSimpleDesktop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgSimpleDesktop.h; sourceTree = "<group>"; };
+		901295AC1762D66F0007F15F /* mgSimpleField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgSimpleField.h; sourceTree = "<group>"; };
+		901295AD1762D66F0007F15F /* mgSimpleLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgSimpleLabel.h; sourceTree = "<group>"; };
+		901295AE1762D66F0007F15F /* mgSimpleList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgSimpleList.h; sourceTree = "<group>"; };
+		901295AF1762D66F0007F15F /* mgSimpleMenuBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgSimpleMenuBar.h; sourceTree = "<group>"; };
+		901295B01762D66F0007F15F /* mgSimpleRadio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgSimpleRadio.h; sourceTree = "<group>"; };
+		901295B11762D66F0007F15F /* mgSimpleScrollbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgSimpleScrollbar.h; sourceTree = "<group>"; };
+		901295B21762D66F0007F15F /* mgSimpleScrollPane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgSimpleScrollPane.h; sourceTree = "<group>"; };
+		901295B31762D66F0007F15F /* mgSimpleSplit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgSimpleSplit.h; sourceTree = "<group>"; };
+		901295B41762D66F0007F15F /* mgSimpleStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgSimpleStack.h; sourceTree = "<group>"; };
+		901295B51762D66F0007F15F /* mgSimpleStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgSimpleStyle.h; sourceTree = "<group>"; };
+		901295B61762D66F0007F15F /* mgSimpleTabbed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgSimpleTabbed.h; sourceTree = "<group>"; };
+		901295B71762D66F0007F15F /* mgSimpleWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgSimpleWindow.h; sourceTree = "<group>"; };
+		901295C91762D67C0007F15F /* mgSimpleButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgSimpleButton.cpp; sourceTree = "<group>"; };
+		901295CA1762D67C0007F15F /* mgSimpleCheckbox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgSimpleCheckbox.cpp; sourceTree = "<group>"; };
+		901295CB1762D67C0007F15F /* mgSimpleConsole.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgSimpleConsole.cpp; sourceTree = "<group>"; };
+		901295CC1762D67C0007F15F /* mgSimpleDesktop.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgSimpleDesktop.cpp; sourceTree = "<group>"; };
+		901295CD1762D67C0007F15F /* mgSimpleField.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgSimpleField.cpp; sourceTree = "<group>"; };
+		901295CE1762D67C0007F15F /* mgSimpleLabel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgSimpleLabel.cpp; sourceTree = "<group>"; };
+		901295CF1762D67C0007F15F /* mgSimpleList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgSimpleList.cpp; sourceTree = "<group>"; };
+		901295D01762D67C0007F15F /* mgSimpleMenuBar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgSimpleMenuBar.cpp; sourceTree = "<group>"; };
+		901295D21762D67C0007F15F /* mgSimpleScrollbar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgSimpleScrollbar.cpp; sourceTree = "<group>"; };
+		901295D31762D67C0007F15F /* mgSimpleScrollPane.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgSimpleScrollPane.cpp; sourceTree = "<group>"; };
+		901295D41762D67C0007F15F /* mgSimpleSplit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgSimpleSplit.cpp; sourceTree = "<group>"; };
+		901295D51762D67C0007F15F /* mgSimpleStack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgSimpleStack.cpp; sourceTree = "<group>"; };
+		901295D61762D67C0007F15F /* mgSimpleStyle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgSimpleStyle.cpp; sourceTree = "<group>"; };
+		901295D71762D67C0007F15F /* mgSimpleTabbed.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgSimpleTabbed.cpp; sourceTree = "<group>"; };
+		901295D81762D67C0007F15F /* mgSimpleWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgSimpleWindow.cpp; sourceTree = "<group>"; };
+		901295F11762D6C70007F15F /* mgDesktopControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgDesktopControl.h; sourceTree = "<group>"; };
+		901295F21762D6C70007F15F /* mgDesktopListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgDesktopListener.h; sourceTree = "<group>"; };
+		901295F31762D6C70007F15F /* mgSplitControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgSplitControl.h; sourceTree = "<group>"; };
+		901295F41762D6C70007F15F /* mgTabbedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgTabbedControl.h; sourceTree = "<group>"; };
+		901295F91762D6E10007F15F /* mgMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgMenu.cpp; sourceTree = "<group>"; };
 		9041B262159EC55C00D7BCC5 /* libmgGUI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libmgGUI.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9041B26E159EC5B600D7BCC5 /* mgFormPane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgFormPane.h; sourceTree = "<group>"; };
 		9041B26F159EC5B600D7BCC5 /* mgFormParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgFormParser.h; sourceTree = "<group>"; };
@@ -179,15 +233,6 @@
 		9041B2A5159EC5B600D7BCC5 /* mgTextMeasure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgTextMeasure.h; sourceTree = "<group>"; };
 		9041B2A6159EC5B600D7BCC5 /* mgTextPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgTextPage.h; sourceTree = "<group>"; };
 		9041B2A7159EC5B600D7BCC5 /* mgTextScan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgTextScan.h; sourceTree = "<group>"; };
-		9041B2A9159EC5B600D7BCC5 /* mgUglyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgUglyButton.h; sourceTree = "<group>"; };
-		9041B2AA159EC5B600D7BCC5 /* mgUglyCheckbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgUglyCheckbox.h; sourceTree = "<group>"; };
-		9041B2AB159EC5B600D7BCC5 /* mgUglyConsole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgUglyConsole.h; sourceTree = "<group>"; };
-		9041B2AC159EC5B600D7BCC5 /* mgUglyField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgUglyField.h; sourceTree = "<group>"; };
-		9041B2AD159EC5B600D7BCC5 /* mgUglyLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgUglyLabel.h; sourceTree = "<group>"; };
-		9041B2AE159EC5B600D7BCC5 /* mgUglyList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgUglyList.h; sourceTree = "<group>"; };
-		9041B2B0159EC5B600D7BCC5 /* mgUglyScrollbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgUglyScrollbar.h; sourceTree = "<group>"; };
-		9041B2B2159EC5B600D7BCC5 /* mgUglyStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgUglyStack.h; sourceTree = "<group>"; };
-		9041B2B3159EC5B600D7BCC5 /* mgUglyStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgUglyStyle.h; sourceTree = "<group>"; };
 		9041B2B7159EC5B600D7BCC5 /* mgBlockTag.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgBlockTag.cpp; sourceTree = "<group>"; };
 		9041B2B8159EC5B600D7BCC5 /* mgBlockTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgBlockTag.h; sourceTree = "<group>"; };
 		9041B2B9159EC5B600D7BCC5 /* mgBreakTag.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgBreakTag.cpp; sourceTree = "<group>"; };
@@ -240,15 +285,6 @@
 		9041B2F3159EC5B600D7BCC5 /* mgTextFormat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgTextFormat.cpp; sourceTree = "<group>"; };
 		9041B2F4159EC5B600D7BCC5 /* mgTextMeasure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgTextMeasure.cpp; sourceTree = "<group>"; };
 		9041B2F5159EC5B600D7BCC5 /* mgTextScan.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgTextScan.cpp; sourceTree = "<group>"; };
-		9041B2F7159EC5B600D7BCC5 /* mgUglyButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgUglyButton.cpp; sourceTree = "<group>"; };
-		9041B2F8159EC5B600D7BCC5 /* mgUglyCheckbox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgUglyCheckbox.cpp; sourceTree = "<group>"; };
-		9041B2F9159EC5B600D7BCC5 /* mgUglyConsole.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgUglyConsole.cpp; sourceTree = "<group>"; };
-		9041B2FA159EC5B600D7BCC5 /* mgUglyField.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgUglyField.cpp; sourceTree = "<group>"; };
-		9041B2FB159EC5B600D7BCC5 /* mgUglyLabel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgUglyLabel.cpp; sourceTree = "<group>"; };
-		9041B2FC159EC5B600D7BCC5 /* mgUglyList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgUglyList.cpp; sourceTree = "<group>"; };
-		9041B2FE159EC5B600D7BCC5 /* mgUglyScrollbar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgUglyScrollbar.cpp; sourceTree = "<group>"; };
-		9041B300159EC5B600D7BCC5 /* mgUglyStack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgUglyStack.cpp; sourceTree = "<group>"; };
-		9041B301159EC5B600D7BCC5 /* mgUglyStyle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgUglyStyle.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,6 +314,51 @@
 			name = Util;
 			sourceTree = "<group>";
 		};
+		901295A71762D66F0007F15F /* SimpleStyle */ = {
+			isa = PBXGroup;
+			children = (
+				901295A81762D66F0007F15F /* mgSimpleButton.h */,
+				901295A91762D66F0007F15F /* mgSimpleCheckbox.h */,
+				901295AA1762D66F0007F15F /* mgSimpleConsole.h */,
+				901295AB1762D66F0007F15F /* mgSimpleDesktop.h */,
+				901295AC1762D66F0007F15F /* mgSimpleField.h */,
+				901295AD1762D66F0007F15F /* mgSimpleLabel.h */,
+				901295AE1762D66F0007F15F /* mgSimpleList.h */,
+				901295AF1762D66F0007F15F /* mgSimpleMenuBar.h */,
+				901295B01762D66F0007F15F /* mgSimpleRadio.h */,
+				901295B11762D66F0007F15F /* mgSimpleScrollbar.h */,
+				901295B21762D66F0007F15F /* mgSimpleScrollPane.h */,
+				901295B31762D66F0007F15F /* mgSimpleSplit.h */,
+				901295B41762D66F0007F15F /* mgSimpleStack.h */,
+				901295B51762D66F0007F15F /* mgSimpleStyle.h */,
+				901295B61762D66F0007F15F /* mgSimpleTabbed.h */,
+				901295B71762D66F0007F15F /* mgSimpleWindow.h */,
+			);
+			path = SimpleStyle;
+			sourceTree = "<group>";
+		};
+		901295C81762D67C0007F15F /* SimpleStyle */ = {
+			isa = PBXGroup;
+			children = (
+				901295C91762D67C0007F15F /* mgSimpleButton.cpp */,
+				901295CA1762D67C0007F15F /* mgSimpleCheckbox.cpp */,
+				901295CB1762D67C0007F15F /* mgSimpleConsole.cpp */,
+				901295CC1762D67C0007F15F /* mgSimpleDesktop.cpp */,
+				901295CD1762D67C0007F15F /* mgSimpleField.cpp */,
+				901295CE1762D67C0007F15F /* mgSimpleLabel.cpp */,
+				901295CF1762D67C0007F15F /* mgSimpleList.cpp */,
+				901295D01762D67C0007F15F /* mgSimpleMenuBar.cpp */,
+				901295D21762D67C0007F15F /* mgSimpleScrollbar.cpp */,
+				901295D31762D67C0007F15F /* mgSimpleScrollPane.cpp */,
+				901295D41762D67C0007F15F /* mgSimpleSplit.cpp */,
+				901295D51762D67C0007F15F /* mgSimpleStack.cpp */,
+				901295D61762D67C0007F15F /* mgSimpleStyle.cpp */,
+				901295D71762D67C0007F15F /* mgSimpleTabbed.cpp */,
+				901295D81762D67C0007F15F /* mgSimpleWindow.cpp */,
+			);
+			path = SimpleStyle;
+			sourceTree = "<group>";
+		};
 		9041B257159EC55C00D7BCC5 = {
 			isa = PBXGroup;
 			children = (
@@ -298,12 +379,12 @@
 		9041B26C159EC5B600D7BCC5 /* Include */ = {
 			isa = PBXGroup;
 			children = (
+				901295A71762D66F0007F15F /* SimpleStyle */,
 				900D17B615DCAB000059DA97 /* Util */,
 				9041B26D159EC5B600D7BCC5 /* Form */,
 				9041B279159EC5B600D7BCC5 /* GUI */,
 				9041B2A0159EC5B600D7BCC5 /* mgInputEvents.h */,
 				9041B2A1159EC5B600D7BCC5 /* TextFormatter */,
-				9041B2A8159EC5B600D7BCC5 /* UglyStyle */,
 			);
 			name = Include;
 			path = ../Include;
@@ -321,6 +402,10 @@
 		9041B279159EC5B600D7BCC5 /* GUI */ = {
 			isa = PBXGroup;
 			children = (
+				901295F11762D6C70007F15F /* mgDesktopControl.h */,
+				901295F21762D6C70007F15F /* mgDesktopListener.h */,
+				901295F31762D6C70007F15F /* mgSplitControl.h */,
+				901295F41762D6C70007F15F /* mgTabbedControl.h */,
 				9041B27A159EC5B600D7BCC5 /* mgActionListener.h */,
 				9041B27B159EC5B600D7BCC5 /* mgButtonControl.h */,
 				9041B27C159EC5B600D7BCC5 /* mgChangeListener.h */,
@@ -376,31 +461,15 @@
 			path = TextFormatter;
 			sourceTree = "<group>";
 		};
-		9041B2A8159EC5B600D7BCC5 /* UglyStyle */ = {
-			isa = PBXGroup;
-			children = (
-				9041B2A9159EC5B600D7BCC5 /* mgUglyButton.h */,
-				9041B2AA159EC5B600D7BCC5 /* mgUglyCheckbox.h */,
-				9041B2AB159EC5B600D7BCC5 /* mgUglyConsole.h */,
-				9041B2AC159EC5B600D7BCC5 /* mgUglyField.h */,
-				9041B2AD159EC5B600D7BCC5 /* mgUglyLabel.h */,
-				9041B2AE159EC5B600D7BCC5 /* mgUglyList.h */,
-				9041B2B0159EC5B600D7BCC5 /* mgUglyScrollbar.h */,
-				9041B2B2159EC5B600D7BCC5 /* mgUglyStack.h */,
-				9041B2B3159EC5B600D7BCC5 /* mgUglyStyle.h */,
-			);
-			path = UglyStyle;
-			sourceTree = "<group>";
-		};
 		9041B2B5159EC5B600D7BCC5 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				901295C81762D67C0007F15F /* SimpleStyle */,
 				900D17B815DCAB0A0059DA97 /* Util */,
 				9041B2B6159EC5B600D7BCC5 /* Form */,
 				9041B2E4159EC5B600D7BCC5 /* GUI */,
 				9041B2EF159EC5B600D7BCC5 /* stdafx.h */,
 				9041B2F0159EC5B600D7BCC5 /* TextFormatter */,
-				9041B2F6159EC5B600D7BCC5 /* UglyStyle */,
 			);
 			name = Source;
 			path = ../Source;
@@ -454,6 +523,7 @@
 		9041B2E4159EC5B600D7BCC5 /* GUI */ = {
 			isa = PBXGroup;
 			children = (
+				901295F91762D6E10007F15F /* mgMenu.cpp */,
 				9041B2E5159EC5B600D7BCC5 /* mgColumnLayout.cpp */,
 				9041B2E6159EC5B600D7BCC5 /* mgControl.cpp */,
 				9041B2E7159EC5B600D7BCC5 /* mgFrame.cpp */,
@@ -476,22 +546,6 @@
 				9041B2F5159EC5B600D7BCC5 /* mgTextScan.cpp */,
 			);
 			path = TextFormatter;
-			sourceTree = "<group>";
-		};
-		9041B2F6159EC5B600D7BCC5 /* UglyStyle */ = {
-			isa = PBXGroup;
-			children = (
-				9041B2F7159EC5B600D7BCC5 /* mgUglyButton.cpp */,
-				9041B2F8159EC5B600D7BCC5 /* mgUglyCheckbox.cpp */,
-				9041B2F9159EC5B600D7BCC5 /* mgUglyConsole.cpp */,
-				9041B2FA159EC5B600D7BCC5 /* mgUglyField.cpp */,
-				9041B2FB159EC5B600D7BCC5 /* mgUglyLabel.cpp */,
-				9041B2FC159EC5B600D7BCC5 /* mgUglyList.cpp */,
-				9041B2FE159EC5B600D7BCC5 /* mgUglyScrollbar.cpp */,
-				9041B300159EC5B600D7BCC5 /* mgUglyStack.cpp */,
-				9041B301159EC5B600D7BCC5 /* mgUglyStyle.cpp */,
-			);
-			path = UglyStyle;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -548,15 +602,6 @@
 				9041B337159EC5B600D7BCC5 /* mgTextMeasure.h in Headers */,
 				9041B338159EC5B600D7BCC5 /* mgTextPage.h in Headers */,
 				9041B339159EC5B600D7BCC5 /* mgTextScan.h in Headers */,
-				9041B33A159EC5B600D7BCC5 /* mgUglyButton.h in Headers */,
-				9041B33B159EC5B600D7BCC5 /* mgUglyCheckbox.h in Headers */,
-				9041B33C159EC5B600D7BCC5 /* mgUglyConsole.h in Headers */,
-				9041B33D159EC5B600D7BCC5 /* mgUglyField.h in Headers */,
-				9041B33E159EC5B600D7BCC5 /* mgUglyLabel.h in Headers */,
-				9041B33F159EC5B600D7BCC5 /* mgUglyList.h in Headers */,
-				9041B341159EC5B600D7BCC5 /* mgUglyScrollbar.h in Headers */,
-				9041B343159EC5B600D7BCC5 /* mgUglyStack.h in Headers */,
-				9041B344159EC5B600D7BCC5 /* mgUglyStyle.h in Headers */,
 				9041B347159EC5B600D7BCC5 /* mgBlockTag.h in Headers */,
 				9041B349159EC5B600D7BCC5 /* mgBreakTag.h in Headers */,
 				9041B34B159EC5B600D7BCC5 /* mgButtonTag.h in Headers */,
@@ -577,6 +622,26 @@
 				9041B36B159EC5B600D7BCC5 /* mgTextTag.h in Headers */,
 				9041B37C159EC5B600D7BCC5 /* stdafx.h in Headers */,
 				900D17BC15DCAB3F0059DA97 /* mgDebugPane.h in Headers */,
+				901295B81762D66F0007F15F /* mgSimpleButton.h in Headers */,
+				901295B91762D66F0007F15F /* mgSimpleCheckbox.h in Headers */,
+				901295BA1762D66F0007F15F /* mgSimpleConsole.h in Headers */,
+				901295BB1762D66F0007F15F /* mgSimpleDesktop.h in Headers */,
+				901295BC1762D66F0007F15F /* mgSimpleField.h in Headers */,
+				901295BD1762D66F0007F15F /* mgSimpleLabel.h in Headers */,
+				901295BE1762D66F0007F15F /* mgSimpleList.h in Headers */,
+				901295BF1762D66F0007F15F /* mgSimpleMenuBar.h in Headers */,
+				901295C01762D66F0007F15F /* mgSimpleRadio.h in Headers */,
+				901295C11762D66F0007F15F /* mgSimpleScrollbar.h in Headers */,
+				901295C21762D66F0007F15F /* mgSimpleScrollPane.h in Headers */,
+				901295C31762D66F0007F15F /* mgSimpleSplit.h in Headers */,
+				901295C41762D66F0007F15F /* mgSimpleStack.h in Headers */,
+				901295C51762D66F0007F15F /* mgSimpleStyle.h in Headers */,
+				901295C61762D66F0007F15F /* mgSimpleTabbed.h in Headers */,
+				901295C71762D66F0007F15F /* mgSimpleWindow.h in Headers */,
+				901295F51762D6C70007F15F /* mgDesktopControl.h in Headers */,
+				901295F61762D6C70007F15F /* mgDesktopListener.h in Headers */,
+				901295F71762D6C70007F15F /* mgSplitControl.h in Headers */,
+				901295F81762D6C70007F15F /* mgTabbedControl.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -660,16 +725,23 @@
 				9041B37F159EC5B600D7BCC5 /* mgTextFormat.cpp in Sources */,
 				9041B380159EC5B600D7BCC5 /* mgTextMeasure.cpp in Sources */,
 				9041B381159EC5B600D7BCC5 /* mgTextScan.cpp in Sources */,
-				9041B382159EC5B600D7BCC5 /* mgUglyButton.cpp in Sources */,
-				9041B383159EC5B600D7BCC5 /* mgUglyCheckbox.cpp in Sources */,
-				9041B384159EC5B600D7BCC5 /* mgUglyConsole.cpp in Sources */,
-				9041B385159EC5B600D7BCC5 /* mgUglyField.cpp in Sources */,
-				9041B386159EC5B600D7BCC5 /* mgUglyLabel.cpp in Sources */,
-				9041B387159EC5B600D7BCC5 /* mgUglyList.cpp in Sources */,
-				9041B389159EC5B600D7BCC5 /* mgUglyScrollbar.cpp in Sources */,
-				9041B38B159EC5B600D7BCC5 /* mgUglyStack.cpp in Sources */,
-				9041B38C159EC5B600D7BCC5 /* mgUglyStyle.cpp in Sources */,
 				900D17BA15DCAB270059DA97 /* mgDebugPane.cpp in Sources */,
+				901295D91762D67C0007F15F /* mgSimpleButton.cpp in Sources */,
+				901295DA1762D67C0007F15F /* mgSimpleCheckbox.cpp in Sources */,
+				901295DB1762D67C0007F15F /* mgSimpleConsole.cpp in Sources */,
+				901295DC1762D67C0007F15F /* mgSimpleDesktop.cpp in Sources */,
+				901295DD1762D67C0007F15F /* mgSimpleField.cpp in Sources */,
+				901295DE1762D67C0007F15F /* mgSimpleLabel.cpp in Sources */,
+				901295DF1762D67C0007F15F /* mgSimpleList.cpp in Sources */,
+				901295E01762D67C0007F15F /* mgSimpleMenuBar.cpp in Sources */,
+				901295E21762D67C0007F15F /* mgSimpleScrollbar.cpp in Sources */,
+				901295E31762D67C0007F15F /* mgSimpleScrollPane.cpp in Sources */,
+				901295E41762D67C0007F15F /* mgSimpleSplit.cpp in Sources */,
+				901295E51762D67C0007F15F /* mgSimpleStack.cpp in Sources */,
+				901295E61762D67C0007F15F /* mgSimpleStyle.cpp in Sources */,
+				901295E71762D67C0007F15F /* mgSimpleTabbed.cpp in Sources */,
+				901295E81762D67C0007F15F /* mgSimpleWindow.cpp in Sources */,
+				901295FA1762D6E10007F15F /* mgMenu.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

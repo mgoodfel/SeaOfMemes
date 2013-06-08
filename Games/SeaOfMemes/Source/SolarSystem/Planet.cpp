@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -72,6 +72,7 @@ Planet::~Planet()
 // create buffers ready to send to display
 void Planet::createBuffers()
 {
+  m_shader = VertexPlanet::loadShader("planet");
   m_farVertexes = VertexPlanet::newBuffer(6, true);
 }
 
@@ -213,10 +214,10 @@ void Planet::renderFar(
   }
 */
 
-  mgDisplay->setShader("planet");
-  mgDisplay->setShaderUniform("planet", "modelEye", modelEye);
-  mgDisplay->setShaderUniform("planet", "modelLightDir", modelLightDir);
-  mgDisplay->setShaderUniform("planet", "specularColor", specularColor);
+  mgDisplay->setShader(m_shader);
+  mgDisplay->setShaderUniform(m_shader, "modelEye", modelEye);
+  mgDisplay->setShaderUniform(m_shader, "modelLightDir", modelLightDir);
+  mgDisplay->setShaderUniform(m_shader, "specularColor", specularColor);
   mgDisplay->setTexture(m_farTerrain, 0);
   mgDisplay->setTexture(m_farClouds, 1);
   mgDisplay->draw(MG_TRIANGLES, m_farVertexes);

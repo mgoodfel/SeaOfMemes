@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -27,7 +27,7 @@ const char THIS_FILE[] = __FILE__;
 
 // identify the program for the framework log
 const char* mgProgramName = "Crafty";
-const char* mgProgramVersion = "Part 60";
+const char* mgProgramVersion = "Part 83";
 
 #include "StarrySky.h"
 #include "Chunks/ChunkWorld.h"

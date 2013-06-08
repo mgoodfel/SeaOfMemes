@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -79,6 +79,18 @@ void mgStringArray::add(
   strcpy(elm, string);
 
   m_elements[m_elementCount++] = elm;
+}
+
+//--------------------------------------------------------------
+// add a list to end
+void mgStringArray::addAll(
+  const mgStringArray& other)
+{
+  grow(m_elementCount + other.m_elementCount);
+  for (int i = 0; i < other.m_elementCount; i++)
+  {
+    add(other[i]);
+  }
 }
 
 //--------------------------------------------------------------
@@ -233,7 +245,7 @@ void mgStringArray::pop(
 //--------------------------------------------------------------
 // sort the array
 void mgStringArray::sort(
-  int (*compareFn)(const void*, const void*))
+  mgCompareFn compare)
 {
-  qsort(m_elements, m_elementCount, sizeof(void*), compareFn);
+  qsort(m_elements, m_elementCount, sizeof(void*), compare);
 }

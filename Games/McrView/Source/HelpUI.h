@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -76,7 +76,8 @@ public:
   virtual void toggleHelp();
 
 protected:
-  mgTextureSurface* m_surface;
+  mgTextureSurface* m_overlay;
+  mgSurface* m_surface;
   mgStyle* m_style;
   mgTopControl* m_top;
 

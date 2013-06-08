@@ -1,5 +1,5 @@
-PARTXX = part64
-DEMOS = GuiTestAll GuiTestGL GuiTestWin Landscape SaucerMovie TestCube Trees BVHView
+PARTXX = part83
+DEMOS = GuiTestAll GuiTestGL Landscape SaucerMovie TestCube Trees 
 GAMES = Crafty McrView SeaOfMemes DontHitMe
 MILLIGRAM = JpegLib FreeType LibPNG Ogg Vorbis ZLib mg2D mg3D mgGUI mgPlatform mgUtil mgSendLog
 
@@ -22,6 +22,7 @@ $(MILLIGRAM):
 	-xcopy /q /e /i ..\Milligram\$*\Source Publish\Source\Milligram\$*\Source
 	-xcopy /q /e /i ..\Milligram\$*\Include Publish\Source\Milligram\$*\Include
 	-xcopy /q /e /i ..\Milligram\$*\BuildLinux Publish\Source\Milligram\$*\BuildLinux
+	-xcopy /q /e /i ..\Milligram\$*\BuildScript Publish\Source\Milligram\$*\BuildScript
 	-xcopy /q /e /i ..\Milligram\$*\BuildOSX Publish\Source\Milligram\$*\BuildOSX
 	-rmdir /s /q Publish\Source\Milligram\$*\BuildOSX\xcuserdata
 	-xcopy /q /h /i ..\Milligram\$*\BuildWin\$*.* Publish\Source\Milligram\$*\BuildWin
@@ -38,6 +39,7 @@ $(DEMOS):
 	-xcopy /q /e /i ..\Demos\$*\docs Publish\Source\Demos\$*\docs
 	-xcopy /q /e /i ..\Demos\$*\Source Publish\Source\Demos\$*\Source
 	-xcopy /q /e /i ..\Demos\$*\BuildLinux Publish\Source\Demos\$*\BuildLinux
+	-xcopy /q /e /i ..\Demos\$*\BuildScript Publish\Source\Demos\$*\BuildScript
 	-xcopy /q /e /i ..\Demos\$*\BuildOSX Publish\Source\Demos\$*\BuildOSX
 	-rmdir /s /q Publish\Source\Demos\$*\BuildOSX\xcuserdata
 	-xcopy /q /h /i ..\Demos\$*\BuildWin\$*.* Publish\Source\Demos\$*\BuildWin
@@ -56,6 +58,7 @@ $(GAMES):
 	-xcopy /q /e /i ..\Games\$*\docs Publish\Source\Games\$*\docs
 	-xcopy /q /e /i ..\Games\$*\Source Publish\Source\Games\$*\Source
 	-xcopy /q /e /i ..\Games\$*\BuildLinux Publish\Source\Games\$*\BuildLinux
+	-xcopy /q /e /i ..\Games\$*\BuildScript Publish\Source\Games\$*\BuildScript
 	-xcopy /q /e /i ..\Games\$*\BuildOSX Publish\Source\Games\$*\BuildOSX
 	-rmdir /s /q Publish\Source\Games\$*\BuildOSX\xcuserdata
 	-xcopy /q /h /i ..\Games\$*\BuildWin\$*.* Publish\Source\Games\$*\BuildWin
@@ -68,6 +71,7 @@ MakeZips:
 # Copy the publish makefiles
 	-xcopy /q /e /i ..\BuildLinux Publish\Source\BuildLinux
 	-xcopy /q /e /i ..\BuildOSX Publish\Source\BuildOSX
+	-xcopy /q /e /i ..\BuildScript Publish\Source\BuildScript
 	-mkdir Publish\Source\BuildWin
 	-xcopy /q ..\BuildWin\*.mk Publish\Source\BuildWin
 	-xcopy /q ..\BuildWin\*.txt Publish\Source\BuildWin
@@ -75,15 +79,19 @@ MakeZips:
 # Copy the section makefiles
 #
 	-xcopy /q /e /i ..\Demos\BuildLinux Publish\Source\Demos\BuildLinux
+	-xcopy /q /e /i ..\Demos\BuildScript Publish\Source\Demos\BuildScript
 	-xcopy /q /e /i ..\Demos\BuildOSX Publish\Source\Demos\BuildOSX
 	-xcopy /q /e /i ..\Demos\BuildWin Publish\Source\Demos\BuildWin
 #
 	-xcopy /q /e /i ..\Games\BuildLinux Publish\Source\Games\BuildLinux
+	-xcopy /q /e /i ..\Games\BuildScript Publish\Source\Games\BuildScript
 	-xcopy /q /e /i ..\Games\BuildOSX Publish\Source\Games\BuildOSX
 	-xcopy /q /e /i ..\Games\BuildWin Publish\Source\Games\BuildWin
 #
 	-mkdir Publish\Source\Milligram\BuildLinux
 	-xcopy /q /e /i ..\Milligram\BuildLinux\makefile Publish\Source\Milligram\BuildLinux
+	-mkdir Publish\Source\Milligram\BuildScript
+	-xcopy /q /e /i ..\Milligram\BuildScript\makefile Publish\Source\Milligram\BuildScript
 	-mkdir Publish\Source\Milligram\BuildOSX
 	-xcopy /q /e /i ..\Milligram\BuildOSX\makefile Publish\Source\Milligram\BuildOSX
 	-mkdir Publish\Source\Milligram\BuildWin

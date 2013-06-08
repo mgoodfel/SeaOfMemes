@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -36,13 +36,10 @@ Wreck::Wreck(
   m_indexes = NULL;
   m_vertexes = NULL;
 
-  // load ball textures.  must all be same size.
-  mgStringArray fileList;
   mgString fileName;
   options.getFileName("wreck-shell", options.m_sourceFileName, "wreck-shell.jpg", fileName);
-  fileList.add(fileName);
 
-  m_texture = mgDisplay->loadTextureArray(fileList);
+  m_texture = mgDisplay->loadTexture(fileName);
 
   for (int i = 0; i < 6; i++)
   {
@@ -74,7 +71,7 @@ Wreck::~Wreck()
 //-----------------------------------------------------------------------------
 // set normals of points on grid
 void Wreck::setNormals(
-  mgVertexTA* points,
+  mgVertex* points,
   int rows,
   int cols,
   BOOL outward)
@@ -96,7 +93,7 @@ void Wreck::setNormals(
       southPt.subtract(pt);
 
       // normal is average of orthogonal vectors to each neighbor point
-      mgVertexTA* v = &points[index];
+      mgVertex* v = &points[index];
       v->m_nx = v->m_ny = v->m_nz = 0.0f;
       mgPoint3 normal;
       if (i > 0)
@@ -167,13 +164,12 @@ void Wreck::buildSurface(
   double lenScale,
   int lenSteps,
   const mgMatrix4& xform,
-  BOOL outwards,
-  int texture)
+  BOOL outwards)
 {
   double bodyLen = bodySpline.getLength();
   double lenLen = lenSpline.getLength();
 
-  mgVertexTA* points = new mgVertexTA[(bodySteps+1) * (lenSteps+1)];
+  mgVertex* points = new mgVertex[(bodySteps+1) * (lenSteps+1)];
 
   mgPoint3 lenPt, bodyPt, xpt;
   for (int i = 0; i <= lenSteps; i++)
@@ -184,14 +180,14 @@ void Wreck::buildSurface(
     {
       bodySpline.splinePt((bodyLen * j)/bodySteps, bodyPt);
 
-      mgVertexTA* v = &points[i*(bodySteps+1)+j];
+      mgVertex* v = &points[i*(bodySteps+1)+j];
       mgPoint3 pt(lenScale * (ht * bodyScale * bodyPt.x), 
                   lenScale * (lenPt.z + ht * bodyScale * bodyPt.y), 
                   lenScale * lenPt.x);
       xform.mapPt(pt, xpt);
       v->setPoint(xpt.x, xpt.y, xpt.z);
 
-      v->setTexture(2*j/(double) bodySteps, 2*i/(double) lenSteps, texture);
+      v->setTexture(2*j/(double) bodySteps, 2*i/(double) lenSteps);
     }
   }
 
@@ -221,7 +217,7 @@ void Wreck::createRing(
 
   double ringLen = ringSpline.getLength();
 
-  mgVertexTA* points = new mgVertexTA[(ringSteps+1) * (circleSteps+1)];
+  mgVertex* points = new mgVertex[(ringSteps+1) * (circleSteps+1)];
 
   mgPoint3 ringPt, xpt;
   for (int i = 0; i <= circleSteps; i++)
@@ -231,14 +227,14 @@ void Wreck::createRing(
     {
       ringSpline.splinePt((ringLen * j)/ringSteps, ringPt);
 
-      mgVertexTA* v = &points[i*(ringSteps+1)+j];
+      mgVertex* v = &points[i*(ringSteps+1)+j];
       mgPoint3 pt(cos(angle) * ringPt.x, 
                   sin(angle) * ringPt.x,
                   ringPt.y);
       xform.mapPt(pt, xpt);
       v->setPoint(xpt.x, xpt.y, xpt.z);
 
-      v->setTexture(xpt.z/100 + 2*j/(double) ringSteps, 2*i/(double) circleSteps, 0);
+      v->setTexture(xpt.z/100 + 2*j/(double) ringSteps, 2*i/(double) circleSteps);
     }
   }
 
@@ -290,7 +286,7 @@ void Wreck::createSpine(
   {
     mgMatrix4 rotate;
     rotate.rotateZDeg(i*120);
-    buildSurface(sideSpline, 0.1, sideSteps, outSpline, 1.0, outSteps, rotate, false, 0);
+    buildSurface(sideSpline, 0.1, sideSteps, outSpline, 1.0, outSteps, rotate, false);
   }
 }
 
@@ -298,6 +294,8 @@ void Wreck::createSpine(
 // create vertex and index buffers
 void Wreck::createBuffers()
 {
+  m_shader = mgVertex::loadShader("litTexture");
+
   int sideSteps = 50;
   int outSteps = 240;
 
@@ -310,8 +308,8 @@ void Wreck::createBuffers()
   vertexCount += 3* (circleSteps+1) * (ringSteps+1);
   indexCount += 3*6*circleSteps*ringSteps;
 
-  m_vertexes = mgVertexTA::newBuffer(vertexCount);
-  m_indexes = mgDisplay->newIndexBuffer(indexCount, false, true);
+  m_vertexes = mgVertex::newBuffer(vertexCount);
+  m_indexes = mgDisplay->newIndexBuffer(indexCount);
 
   for (int i = 0; i < 3; i++)
   {
@@ -357,7 +355,7 @@ void Wreck::render()
   mgDisplay->setTransparent(false);
 
   // draw triangles using texture and shader
-  mgDisplay->setShader("litTextureArray");
+  mgDisplay->setShader(m_shader);
   mgDisplay->setTexture(m_texture);
   mgDisplay->draw(MG_TRIANGLES, m_vertexes, m_indexes);
 

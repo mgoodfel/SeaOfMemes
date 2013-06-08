@@ -20,7 +20,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\Graphics3D\mgIndexBuffer.h" />
-    <ClInclude Include="..\Include\Graphics3D\mgTextureSurface.h" />
     <ClInclude Include="..\Include\Graphics3D\mgVertexAttrib.h" />
     <ClInclude Include="..\Include\Graphics3D\mgVertexBuffer.h" />
     <ClInclude Include="..\Include\Graphics3D\mgVertexTypes.h" />
@@ -30,39 +29,52 @@
     <ClInclude Include="..\Include\Util3D\mgCursorDefn.h" />
     <ClInclude Include="..\Source\Graphics3D\DX9\mgDX9DevMode.h" />
     <ClInclude Include="..\Source\Graphics3D\DX9\mgDX9Indexes.h" />
-    <ClInclude Include="..\Source\Graphics3D\DX9\mgDX9Services.h" />
+    <ClInclude Include="..\Source\Graphics3D\DX9\mgDX9Display.h" />
     <ClInclude Include="..\Source\Graphics3D\DX9\mgDX9State.h" />
     <ClInclude Include="..\Source\Graphics3D\DX9\mgDX9Textures.h" />
     <ClInclude Include="..\Source\Graphics3D\GL21\mgGL21IndexBuffer.h" />
     <ClInclude Include="..\Source\Graphics3D\GL21\mgGL21Misc.h" />
-    <ClInclude Include="..\Source\Graphics3D\GL21\mgGL21Services.h" />
+    <ClInclude Include="..\Source\Graphics3D\GL21\mgGL21Display.h" />
     <ClInclude Include="..\Source\Graphics3D\GL21\mgGL21Types.h" />
     <ClInclude Include="..\Source\Graphics3D\GL21\mgGL21VertexBuffer.h" />
     <ClInclude Include="..\Source\Graphics3D\GL33\mgGL33IndexBuffer.h" />
     <ClInclude Include="..\Source\Graphics3D\GL33\mgGL33Misc.h" />
-    <ClInclude Include="..\Source\Graphics3D\GL33\mgGL33Services.h" />
+    <ClInclude Include="..\Source\Graphics3D\GL33\mgGL33Display.h" />
     <ClInclude Include="..\Source\Graphics3D\GL33\mgGL33Types.h" />
     <ClInclude Include="..\Source\Graphics3D\GL33\mgGL33VertexBuffer.h" />
+    <ClInclude Include="..\Source\Graphics3D\GLTextureSurface\mgGLTextureSurface.h" />
+    <ClInclude Include="..\Source\Graphics3D\mgVertexOverlayImage.h" />
+    <ClInclude Include="..\Source\Graphics3D\mgVertexOverlaySolid.h" />
+    <ClInclude Include="..\Source\Graphics3D\mgVertexOverlayText.h" />
+    <ClInclude Include="..\Source\Graphics3D\WebGL\mgWebGLIndexBuffer.h" />
+    <ClInclude Include="..\Source\Graphics3D\WebGL\mgWebGLMisc.h" />
+    <ClInclude Include="..\Source\Graphics3D\WebGL\mgWebGLDisplay.h" />
+    <ClInclude Include="..\Source\Graphics3D\WebGL\mgWebGLTypes.h" />
+    <ClInclude Include="..\Source\Graphics3D\WebGL\mgWebGLVertexBuffer.h" />
     <ClInclude Include="..\Source\stdafx.h" />
     <ClInclude Include="..\Source\Util3D\mgFontList.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\Graphics3D\DX9\mgDX9DevMode.cpp" />
     <ClCompile Include="..\Source\Graphics3D\DX9\mgDX9Indexes.cpp" />
-    <ClCompile Include="..\Source\Graphics3D\DX9\mgDX9Services.cpp" />
+    <ClCompile Include="..\Source\Graphics3D\DX9\mgDX9Display.cpp" />
     <ClCompile Include="..\Source\Graphics3D\DX9\mgDX9Textures.cpp" />
     <ClCompile Include="..\Source\Graphics3D\GL21\mgGL21IndexBuffer.cpp" />
     <ClCompile Include="..\Source\Graphics3D\GL21\mgGL21Misc.cpp" />
-    <ClCompile Include="..\Source\Graphics3D\GL21\mgGL21Services.cpp" />
+    <ClCompile Include="..\Source\Graphics3D\GL21\mgGL21Display.cpp" />
     <ClCompile Include="..\Source\Graphics3D\GL21\mgGL21VertexBuffer.cpp" />
     <ClCompile Include="..\Source\Graphics3D\GL33\mgGL33IndexBuffer.cpp" />
     <ClCompile Include="..\Source\Graphics3D\GL33\mgGL33Misc.cpp" />
-    <ClCompile Include="..\Source\Graphics3D\GL33\mgGL33Services.cpp" />
+    <ClCompile Include="..\Source\Graphics3D\GL33\mgGL33Display.cpp" />
     <ClCompile Include="..\Source\Graphics3D\GL33\mgGL33VertexBuffer.cpp" />
+    <ClCompile Include="..\Source\Graphics3D\GLTextureSurface\mgGLTextureSurface.cpp" />
     <ClCompile Include="..\Source\Graphics3D\mgIndexBuffer.cpp" />
-    <ClCompile Include="..\Source\Graphics3D\mgTextureSurface.cpp" />
     <ClCompile Include="..\Source\Graphics3D\mgVertexBuffer.cpp" />
     <ClCompile Include="..\Source\Graphics3D\mgVertexTypes.cpp" />
+    <ClCompile Include="..\Source\Graphics3D\WebGL\mgWebGLIndexBuffer.cpp" />
+    <ClCompile Include="..\Source\Graphics3D\WebGL\mgWebGLMisc.cpp" />
+    <ClCompile Include="..\Source\Graphics3D\WebGL\mgWebGLDisplay.cpp" />
+    <ClCompile Include="..\Source\Graphics3D\WebGL\mgWebGLVertexBuffer.cpp" />
     <ClCompile Include="..\Source\mgDisplayServices.cpp" />
     <ClCompile Include="..\Source\stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

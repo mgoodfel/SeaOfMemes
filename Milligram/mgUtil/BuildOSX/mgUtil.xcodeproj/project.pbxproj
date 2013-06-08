@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9012967E1762E1550007F15F /* mgMapDWordToDWord.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9012967B1762E1550007F15F /* mgMapDWordToDWord.cpp */; };
+		9012967F1762E1550007F15F /* mgPoint3Array.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9012967C1762E1550007F15F /* mgPoint3Array.cpp */; };
+		901296801762E1550007F15F /* mgQuat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9012967D1762E1550007F15F /* mgQuat.cpp */; };
+		901296841762E1650007F15F /* mgMapDWordToDWord.h in Headers */ = {isa = PBXBuildFile; fileRef = 901296811762E1650007F15F /* mgMapDWordToDWord.h */; };
+		901296851762E1650007F15F /* mgPoint3Array.h in Headers */ = {isa = PBXBuildFile; fileRef = 901296821762E1650007F15F /* mgPoint3Array.h */; };
+		901296861762E1650007F15F /* mgQuat.h in Headers */ = {isa = PBXBuildFile; fileRef = 901296831762E1650007F15F /* mgQuat.h */; };
 		908C00931505F6D900F0BFF2 /* mgAudio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 908C008C1505F6D900F0BFF2 /* mgAudio.cpp */; };
 		908C00941505F6D900F0BFF2 /* mgAudioAL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 908C008D1505F6D900F0BFF2 /* mgAudioAL.cpp */; };
 		908C00951505F6D900F0BFF2 /* mgAudioAL.h in Headers */ = {isa = PBXBuildFile; fileRef = 908C008E1505F6D900F0BFF2 /* mgAudioAL.h */; };
@@ -100,6 +106,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9012967B1762E1550007F15F /* mgMapDWordToDWord.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgMapDWordToDWord.cpp; sourceTree = "<group>"; };
+		9012967C1762E1550007F15F /* mgPoint3Array.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgPoint3Array.cpp; sourceTree = "<group>"; };
+		9012967D1762E1550007F15F /* mgQuat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgQuat.cpp; sourceTree = "<group>"; };
+		901296811762E1650007F15F /* mgMapDWordToDWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgMapDWordToDWord.h; sourceTree = "<group>"; };
+		901296821762E1650007F15F /* mgPoint3Array.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgPoint3Array.h; sourceTree = "<group>"; };
+		901296831762E1650007F15F /* mgQuat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgQuat.h; sourceTree = "<group>"; };
 		908C008C1505F6D900F0BFF2 /* mgAudio.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgAudio.cpp; sourceTree = "<group>"; };
 		908C008D1505F6D900F0BFF2 /* mgAudioAL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgAudioAL.cpp; sourceTree = "<group>"; };
 		908C008E1505F6D900F0BFF2 /* mgAudioAL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgAudioAL.h; sourceTree = "<group>"; };
@@ -297,6 +309,9 @@
 		90C2D9D514FF8F810073081C /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				9012967B1762E1550007F15F /* mgMapDWordToDWord.cpp */,
+				9012967C1762E1550007F15F /* mgPoint3Array.cpp */,
+				9012967D1762E1550007F15F /* mgQuat.cpp */,
 				90C2D9D614FF8F810073081C /* mgBlockPool.cpp */,
 				90C2D9D714FF8F810073081C /* mgDebug.cpp */,
 				90C2D9D814FF8F810073081C /* mgDebugMemory.cpp */,
@@ -371,6 +386,9 @@
 		90C2DA7814FF8FB20073081C /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				901296811762E1650007F15F /* mgMapDWordToDWord.h */,
+				901296821762E1650007F15F /* mgPoint3Array.h */,
+				901296831762E1650007F15F /* mgQuat.h */,
 				90C2DA7914FF8FB20073081C /* mgBlockPool.h */,
 				90C2DA7A14FF8FB20073081C /* mgDebug.h */,
 				90C2DA7B14FF8FB20073081C /* mgDebugMemory.h */,
@@ -476,6 +494,9 @@
 				908C00991505F6D900F0BFF2 /* mgVorbisRead.h in Headers */,
 				90CA97221518E63D002A8A1F /* mgBezier.h in Headers */,
 				90CA97231518E63D002A8A1F /* mgSimplexNoise.h in Headers */,
+				901296841762E1650007F15F /* mgMapDWordToDWord.h in Headers */,
+				901296851762E1650007F15F /* mgPoint3Array.h in Headers */,
+				901296861762E1650007F15F /* mgQuat.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,6 +525,9 @@
 /* Begin PBXProject section */
 		90C2D95814FF8F380073081C /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+			};
 			buildConfigurationList = 90C2D95B14FF8F380073081C /* Build configuration list for PBXProject "mgUtil" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -570,6 +594,9 @@
 				90CA97281518E649002A8A1F /* mgBezier.cpp in Sources */,
 				90CA97291518E649002A8A1F /* mgSimplexNoise.cpp in Sources */,
 				90B23A3E15D0049100A39C00 /* mgOSXSendLog.cpp in Sources */,
+				9012967E1762E1550007F15F /* mgMapDWordToDWord.cpp in Sources */,
+				9012967F1762E1550007F15F /* mgPoint3Array.cpp in Sources */,
+				901296801762E1550007F15F /* mgQuat.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,6 +608,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -595,6 +626,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
 					../Source,
@@ -611,6 +643,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -619,6 +655,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
 					../Source,
@@ -633,6 +670,7 @@
 		90C2D96614FF8F390073081C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_BUILD_DIR = ../../BuildOSX/Debug;
 				EXECUTABLE_PREFIX = lib;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
@@ -650,6 +688,7 @@
 		90C2D96714FF8F390073081C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_BUILD_DIR = ../../BuildOSX/Release;
 				EXECUTABLE_PREFIX = lib;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;

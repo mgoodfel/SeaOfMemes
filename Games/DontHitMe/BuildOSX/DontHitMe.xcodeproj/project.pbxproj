@@ -345,7 +345,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../Milligram/BuildOSX/$(CONFIGURATION)\"",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = (
 					"-lmgPlatform",
 					"-lmg2D",
@@ -354,8 +354,11 @@
 					"-lmgUtil",
 					"-lFreeType",
 					"-lJpegLib",
+					"-lLibPNG",
+					"-lZLib",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SHARED_PRECOMPS_DIR = build;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -380,7 +383,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../Milligram/BuildOSX/$(CONFIGURATION)\"",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = (
 					"-lmgPlatform",
 					"-lmg2D",
@@ -389,8 +392,11 @@
 					"-lmgUtil",
 					"-lFreeType",
 					"-lJpegLib",
+					"-lLibPNG",
+					"-lZLib",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SHARED_PRECOMPS_DIR = build;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

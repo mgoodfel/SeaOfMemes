@@ -1,6 +1,6 @@
 # Build Debug and Release versions of libraries
 
-LIBS = JpegLib Ogg Vorbis ZLib FreeType mgUtil mg2D mg3D mgGUI mgPlatform  #LibPNG
+LIBS = JpegLib LibPNG Ogg Vorbis ZLib FreeType mgUtil mg2D mg3D mgGUI mgPlatform 
 
 all: dirs $(LIBS)
 

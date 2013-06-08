@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -27,7 +27,7 @@ const char THIS_FILE[] = __FILE__;
 
 // identify the program for the framework log
 const char* mgProgramName = "GuiTestAll";
-const char* mgProgramVersion = "Part 60";
+const char* mgProgramVersion = "Part 83";
 
 #include "mgGUI/Include/mgGUI.h"
 #include "SampleUI.h"
@@ -55,7 +55,7 @@ GuiTestAll::GuiTestAll()
   m_cubeVertexes = NULL;
   m_floorTexture = NULL;
   m_floorVertexes = NULL;
-  m_surface = NULL;
+  m_overlay = NULL;
   m_ui = NULL;
 
   // parse the options file
@@ -93,8 +93,8 @@ void GuiTestAll::appInit()
   mgPlatform->setWindowTitle(title);
 
   // load the shaders we use
-  mgVertex::loadShader("litTexture");
-  mgVertexTA::loadShader("litTextureArray");
+  m_floorShader = mgVertex::loadShader("litTexture");
+  m_cubeShader = mgVertexTA::loadShader("litTextureArray");
 
   // load cursor pattern
   loadCursor();
@@ -114,11 +114,15 @@ void GuiTestAll::appInit()
   m_cubeVertexes = NULL;
   m_floorVertexes = NULL;
 
-  m_surface = mgDisplay->createOverlaySurface();
+  m_overlay = mgDisplay->createOverlaySurface();
 
-  mgString fileName;
-  m_options.getFileName("helpFile", m_options.m_sourceFileName, "help.xml", fileName);
-  m_ui = new SampleUI(m_surface, fileName);
+  if (m_overlay != NULL)
+  {
+    mgString fileName;
+    m_options.getFileName("helpFile", m_options.m_sourceFileName, "help.xml", fileName);
+    m_ui = new SampleUI(m_overlay->getSurface(), fileName);
+  }
+  else m_ui = NULL;
 }
 
 //--------------------------------------------------------------------
@@ -135,8 +139,8 @@ void GuiTestAll::appTerm()
   delete m_ui;
   m_ui = NULL;
 
-  delete m_surface;
-  m_surface = NULL;
+  delete m_overlay;
+  m_overlay = NULL;
 
   mgTermDisplayServices();
 }
@@ -407,18 +411,19 @@ void GuiTestAll::appIdle()
 
   if (m_ui != NULL)
   {
+    mgSurface* surface = m_overlay->getSurface();
     // if the ui needs an update
-    if (m_surface->isDamaged())
+    if (surface->isDamaged())
     {
       mgRectangle bounds;
-      m_surface->getDamage(bounds);
+      surface->getDamage(bounds);
       m_ui->m_top->surfacePaint(bounds);
-      m_surface->repair(bounds);
+      surface->repair(bounds);
     }
 
     mgDisplay->setTransparent(true);
     mgDisplay->setZEnable(false);
-    mgDisplay->drawOverlaySurface(m_surface, 0, 0);
+    m_overlay->drawOverlay(0, 0);
   }
 
   mgDisplay->drawCursor();
@@ -469,7 +474,7 @@ void GuiTestAll::viewDraw()
     mgMatrix4 floorModel;
     mgDisplay->setModelTransform(floorModel);
 
-    mgDisplay->setShader("litTexture");
+    mgDisplay->setShader(m_floorShader);
     mgDisplay->setTexture(m_floorTexture);
     mgDisplay->draw(MG_TRIANGLES, m_floorVertexes);
   }
@@ -491,7 +496,7 @@ void GuiTestAll::viewDraw()
     mgDisplay->setTransparent(false);
 
     // draw triangles using texture and shader
-    mgDisplay->setShader("litTextureArray");
+    mgDisplay->setShader(m_cubeShader);
     mgDisplay->setTexture(m_cubeTexture);
     mgDisplay->draw(MG_TRIANGLES, m_cubeVertexes, m_cubeIndexes);
   }
@@ -818,7 +823,7 @@ void GuiTestAll::appMouseDrag(
     if ((flags & BOTH_BUTTONS) != 0)
       turnEye(dx, dy);
   }
-  else appMouseMove(dx, dy, flags);
+  else turnEye(dx, dy);
 }
 
 //-----------------------------------------------------------------------------
@@ -878,8 +883,8 @@ void GuiTestAll::appKeyDown(
       if ((modifiers & MG_EVENT_KEYREPEAT) != 0)
         return;
           
-        if (m_forwardSince == INVALID_TIME)
-          m_forwardSince = mgOSGetTime();
+      if (m_forwardSince == INVALID_TIME)
+        m_forwardSince = mgOSGetTime();
       break;
 
     case 'S':
@@ -1008,9 +1013,12 @@ void GuiTestAll::appKeyChar(
   int keyCode,
   int modifiers)
 {
+  // ui key processing
   if (m_ui != NULL && m_ui->hasKeyFocus())
   {
     m_ui->m_top->surfaceKeyChar(keyCode, modifiers);
     return;
   }
+
+  // app key processing
 }

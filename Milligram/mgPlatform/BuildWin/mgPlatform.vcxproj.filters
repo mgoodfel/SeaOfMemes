@@ -25,6 +25,9 @@
     <Filter Include="Include\OSX">
       <UniqueIdentifier>{b600ade7-87c1-46e7-93f7-bbd47345a215}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Script">
+      <UniqueIdentifier>{6607debe-f5d2-47d4-a9cf-2b7da5332e8f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\mgApplication.h">
@@ -54,12 +57,6 @@
     <ClInclude Include="..\Include\mgPlatformServices.h">
       <Filter>Include</Filter>
     </ClInclude>
-    <ClInclude Include="..\Source\Windows\mgWinServices.h">
-      <Filter>Source\Windows</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Source\Linux\mgLinuxServices.h">
-      <Filter>Source\Linux</Filter>
-    </ClInclude>
     <ClInclude Include="..\Source\OSX\mgOSXServices.h">
       <Filter>Source\OSX</Filter>
     </ClInclude>
@@ -70,9 +67,6 @@
       <Filter>Include\Windows</Filter>
     </ClInclude>
     <ClInclude Include="..\Include\mgPlatform.h">
-      <Filter>Include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Include\mgCursorDefn.h">
       <Filter>Include</Filter>
     </ClInclude>
     <ClInclude Include="..\Source\mgDisplaySupport.h">
@@ -102,6 +96,18 @@
     <ClInclude Include="..\Source\Linux\mgFontConfParser.h">
       <Filter>Source\Linux</Filter>
     </ClInclude>
+    <ClInclude Include="..\Source\Script\mgWebGLSupport.h">
+      <Filter>Source\Script</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Linux\mgLinuxPlatform.h">
+      <Filter>Source\Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Script\mgScriptPlatform.h">
+      <Filter>Source\Script</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Windows\mgWinPlatform.h">
+      <Filter>Source\Windows</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\stdafx.cpp">
@@ -113,20 +119,11 @@
     <ClCompile Include="..\Source\mgPlatformErrorTable.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="..\Source\Windows\mgWinServices.cpp">
-      <Filter>Source\Windows</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Source\Linux\mgLinuxServices.cpp">
-      <Filter>Source\Linux</Filter>
-    </ClCompile>
     <ClCompile Include="..\Source\OSX\mgOSXServices.cpp">
       <Filter>Source\OSX</Filter>
     </ClCompile>
     <ClCompile Include="..\Source\Windows\win_glew.c">
       <Filter>Source\Windows</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Source\mgCursorDefn.cpp">
-      <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="..\Source\Windows\mgWinGL21Support.cpp">
       <Filter>Source\Windows</Filter>
@@ -151,6 +148,21 @@
     </ClCompile>
     <ClCompile Include="..\Source\Linux\mgFontConfParser.cpp">
       <Filter>Source\Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Script\linkage.cpp">
+      <Filter>Source\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Script\mgWebGLSupport.cpp">
+      <Filter>Source\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Linux\mgLinuxPlatform.cpp">
+      <Filter>Source\Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Script\mgScriptPlatform.cpp">
+      <Filter>Source\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Windows\mgWinPlatform.cpp">
+      <Filter>Source\Windows</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

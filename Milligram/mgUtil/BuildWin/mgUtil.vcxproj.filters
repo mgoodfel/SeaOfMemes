@@ -58,6 +58,9 @@
     <Filter Include="Include\ObjectStore">
       <UniqueIdentifier>{31e24511-213f-4ea0-91c7-f4d4acd6f95d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\OS\Script">
+      <UniqueIdentifier>{86ea8658-1486-4f85-afc6-5bc9b970a83b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\mgUtil.h">
@@ -230,6 +233,33 @@
     </ClInclude>
     <ClInclude Include="..\Include\Util\mgQuat.h">
       <Filter>Include\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Util\mgMapDWordToDWord.h">
+      <Filter>Include\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Util\mgPoint3Array.h">
+      <Filter>Include\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\GraphicsUtil\mgOctree.h">
+      <Filter>Include\GraphicsUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\OS\mgOSScript.h">
+      <Filter>Include\OS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\OS\mgScriptMisc.h">
+      <Filter>Include\OS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\OS\Script\mgScriptEvent.h">
+      <Filter>Source\OS\Script</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\OS\Script\mgScriptThread.h">
+      <Filter>Source\OS\Script</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\OS\Script\mgScriptLock.h">
+      <Filter>Source\OS\Script</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Audio\mgAudioScript.h">
+      <Filter>Source\Audio</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -406,6 +436,36 @@
     </ClCompile>
     <ClCompile Include="..\Source\Util\mgQuat.cpp">
       <Filter>Source\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Util\mgMapDWordToDWord.cpp">
+      <Filter>Source\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Util\mgPoint3Array.cpp">
+      <Filter>Source\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\GraphicsUtil\mgOctree.cpp">
+      <Filter>Source\GraphicsUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\OS\Script\mgScriptFileUtil.cpp">
+      <Filter>Source\OS\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\OS\Script\mgScriptMisc.cpp">
+      <Filter>Source\OS\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\OS\Script\mgScriptTimer.cpp">
+      <Filter>Source\OS\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\OS\Script\mgScriptEvent.cpp">
+      <Filter>Source\OS\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\OS\Script\mgScriptLock.cpp">
+      <Filter>Source\OS\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\OS\Script\mgScriptThread.cpp">
+      <Filter>Source\OS\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Audio\mgAudioScript.cpp">
+      <Filter>Source\Audio</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

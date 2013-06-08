@@ -74,5 +74,8 @@
     <ClInclude Include="..\Include\pngstruct.h">
       <Filter>Include</Filter>
     </ClInclude>
+    <ClInclude Include="..\Include\pnglibconf.h">
+      <Filter>Include</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

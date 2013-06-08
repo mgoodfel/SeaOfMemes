@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -88,14 +88,11 @@ void mgPtrArray::add(
 //--------------------------------------------------------------
 // add a list to end
 void mgPtrArray::addAll(
-  const mgPtrArray& list)
+  const mgPtrArray& other)
 {
-  int len = list.length();
-  grow(m_elementCount + len);
-  for (int i = 0; i < len; i++)
-  {
-    m_elements[m_elementCount++] = list[i];
-  }
+  grow(m_elementCount + other.m_elementCount);
+  memcpy(m_elements+m_elementCount, other.m_elements, sizeof(void*)*other.m_elementCount);
+  m_elementCount += other.m_elementCount;
 }
 
 //--------------------------------------------------------------
@@ -209,7 +206,7 @@ const void* mgPtrArray::pop()
 //--------------------------------------------------------------
 // sort the array
 void mgPtrArray::sort(
-  int (*compareFn)(const void*, const void*))
+  mgCompareFn compare)
 {
-  qsort(m_elements, m_elementCount, sizeof(void*), compareFn);
+  qsort(m_elements, m_elementCount, sizeof(void*), compare);
 }

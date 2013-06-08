@@ -6,6 +6,8 @@
     <ClCompile Include="..\Source\MovementApp.cpp" />
     <ClCompile Include="..\Source\HelpUI.cpp" />
     <ClCompile Include="..\Source\Colonization.cpp" />
+    <ClCompile Include="..\Source\StarrySky.cpp" />
+    <ClCompile Include="..\Source\VertexSky.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Source\stdafx.h" />
@@ -13,5 +15,7 @@
     <ClInclude Include="..\Source\MovementApp.h" />
     <ClInclude Include="..\Source\HelpUI.h" />
     <ClInclude Include="..\Source\Colonization.h" />
+    <ClInclude Include="..\Source\StarrySky.h" />
+    <ClInclude Include="..\Source\VertexSky.h" />
   </ItemGroup>
 </Project>

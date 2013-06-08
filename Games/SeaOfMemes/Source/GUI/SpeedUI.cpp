@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -33,26 +33,34 @@ const char THIS_FILE[] = __FILE__;
 SpeedUI::SpeedUI(
   const mgOptionsFile& options)
 {
+  m_style = NULL;
+  m_top = NULL;
+  m_speedLbl = NULL;
+  m_rangeLbl = NULL;
+
   m_speed = 0.0;
   m_range = 0.0;
   m_units = UNITS_KM;
   m_landingState = LANDING_NONE;
 
   // create a rendering surface
-  m_surface = mgDisplay->createOverlaySurface();
+  m_overlay = mgDisplay->createOverlaySurface();
+  if (m_overlay == NULL)
+    return;  // no 2d graphics
 
   // create a style object, which creates controls
-  m_style = new mgUglyStyle(m_surface);
+  mgSurface* surface = m_overlay->getSurface();
+  m_style = new mgSimpleStyle(surface);
 
   // create the top control that holds the ui
-  m_top = new mgTopControl(m_surface, m_style);
+  m_top = new mgTopControl(surface, m_style);
   mgTableLayout* layout = new mgTableLayout(m_top);
   m_top->setLayout(layout);
 
   // set fonts and colors
   mgString fontName, colorName;
   options.getString("speedFont", "Courier-10", fontName);
-  const mgFont* speedFont = m_surface->createFont(fontName);
+  const mgFont* speedFont = surface->createFont(fontName);
 
   options.getString("speedColor", "white", colorName);
   mgColor speedColor(colorName);
@@ -63,7 +71,7 @@ SpeedUI::SpeedUI(
   m_style->setAttr("speedLbl", "textColor", speedColor);
 
   options.getString("rangeFont", "Courier-10", fontName);
-  const mgFont* rangeFont = m_surface->createFont(fontName);
+  const mgFont* rangeFont = surface->createFont(fontName);
 
   options.getString("rangeColor", "white", colorName);
   mgColor rangeColor(colorName);
@@ -95,7 +103,7 @@ SpeedUI::SpeedUI(
   mgDimension size;
   m_top->preferredSize(size);
   m_top->surfaceResized(size.m_width, size.m_height);
-  m_surface->setSurfaceSize(size.m_width, size.m_height);
+  surface->setSurfaceSize(size.m_width, size.m_height);
 }
 
 //--------------------------------------------------------------
@@ -108,8 +116,8 @@ SpeedUI::~SpeedUI()
   delete m_style;
   m_style = NULL;
 
-  delete m_surface;
-  m_surface = NULL;
+  delete m_overlay;
+  m_overlay = NULL;
 }
 
 //--------------------------------------------------------------
@@ -128,15 +136,17 @@ BOOL SpeedUI::animate(
   double now,
   double since)
 {
-  m_top->animate(now, since);
+  if (m_top != NULL)
+    m_top->animate(now, since);
 
   // if the ui needs an update
-  if (m_surface != NULL && m_surface->isDamaged())
+  mgSurface* surface = m_overlay->getSurface();
+  if (surface != NULL && surface->isDamaged())
   {
     mgRectangle bounds;
-    m_surface->getDamage(bounds);
+    surface->getDamage(bounds);
     m_top->surfacePaint(bounds);
-    m_surface->repair(bounds);
+    surface->repair(bounds);
     return true;
   }
   else return false;
@@ -146,7 +156,7 @@ BOOL SpeedUI::animate(
 // render the ui
 void SpeedUI::render()
 {
-  if (m_surface == NULL)
+  if (m_overlay == NULL)
     return;
 
   mgDisplay->setTransparent(true);
@@ -156,7 +166,7 @@ void SpeedUI::render()
   m_top->getSize(size);
 
   // draw at top-right
-  mgDisplay->drawOverlaySurface(m_surface, m_viewWidth - size.m_width, 0);
+  m_overlay->drawOverlay(m_viewWidth - size.m_width, 0);
 }
 
 //--------------------------------------------------------------
@@ -191,7 +201,8 @@ void SpeedUI::formatSpeed()
       commaFormat(line, "kph", (int) floor(0.5+m_speed*3600.0));
       break;
   }
-  m_speedLbl->setLabel(line);
+  if (m_speedLbl != NULL)
+    m_speedLbl->setLabel(line);
 }
 
 //--------------------------------------------------------------
@@ -208,7 +219,8 @@ void SpeedUI::formatRange()
       commaFormat(line, "km", (int) floor(0.5+m_range/1000.0));
       break;
   }
-  m_rangeLbl->setLabel(line);
+  if (m_rangeLbl != NULL)
+    m_rangeLbl->setLabel(line);
 }
 
 //--------------------------------------------------------------

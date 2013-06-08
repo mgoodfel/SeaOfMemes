@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -33,10 +33,9 @@ public:
   float m_nz;
   float m_tx;
   float m_ty;
-  BYTE m_red;
-  BYTE m_green;
-  BYTE m_blue;
-  BYTE m_alpha;
+  float m_red;
+  float m_green;
+  float m_blue;
 
   // set the point
   void setPoint(
@@ -71,15 +70,13 @@ public:
 
   // set the material color
   void setColor(
-    BYTE red,
-    BYTE green,
-    BYTE blue,
-    BYTE alpha = 255)
+    double red,
+    double green,
+    double blue)
   {
-    m_red = red;
-    m_green = green;
-    m_blue = blue;
-    m_alpha = alpha;
+    m_red = (float) red;
+    m_green = (float) green;
+    m_blue = (float) blue;
   }
 
   // add this vertex to a buffer
@@ -90,7 +87,7 @@ public:
   }
 
   // load a shader using this vertex type
-  static void loadShader(
+  static mgShader* loadShader(
     const char* shaderName);
 
   // create a vertex buffer of this type

@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -96,6 +96,7 @@ BrickTag::BrickTag(
   m_majorCode = -1;  // not set
   m_dir = 0;
   m_light = false;
+  m_transparent = false;
   m_shape = "cube";
 }
 
@@ -170,6 +171,9 @@ void BrickTag::tagAttr(
 
   else if (_stricmp(attrName, "light") == 0)
     m_light = getBoolean(parser, attrName, attrValue);
+
+  else if (_stricmp(attrName, "transparent") == 0)
+    m_transparent = getBoolean(parser, attrName, attrValue);
 
   else if (_stricmp(attrName, "dir") == 0)
     m_dir = getInteger(parser, attrName, attrValue);

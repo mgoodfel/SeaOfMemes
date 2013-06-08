@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -83,10 +83,8 @@ void mgTopControl::surfacePaint(
   // clear the area
   gc->resetState();
   gc->setClip(bounds.m_x, bounds.m_y, bounds.m_width, bounds.m_height);
-  gc->setBrush(m_surface->createBrush("black"));
-  gc->setAlpha(0);
+  gc->setBrush(m_surface->createBrush(mgColor(0, 0, 0, 0)));
   gc->fillRect(bounds.m_x, bounds.m_y, bounds.m_width, bounds.m_height);
-  gc->setAlpha(255);
 
   gc->setClip(bounds.m_x, bounds.m_y, bounds.m_width, bounds.m_height);
 
@@ -520,6 +518,20 @@ void mgTopControl::controlDelete(
 
   if (m_mouseFocus == source)
     m_mouseFocus = NULL;
+}
+
+//--------------------------------------------------------------
+// listener for control add child
+void mgTopControl::controlAddChild(
+  void* source)
+{
+}
+
+//--------------------------------------------------------------
+// listener for control remove child
+void mgTopControl::controlRemoveChild(
+  void* source)
+{
 }
 
 #ifdef WORKED

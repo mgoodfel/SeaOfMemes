@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -459,6 +459,147 @@ BOOL mgBMPRead::decodeStep(
     return true;
 
   m_writer->outputEnd();
+  return false;
+}
+
+//--------------------------------------------------------
+// handle a png error
+void mgPNGError(
+  png_structp state, 
+  png_const_charp msg)
+{
+  throw new mgErrorMsg("imgLibPNG", "", "");
+}
+
+//--------------------------------------------------------
+// handle a png warning
+void mgPNGWarn(
+  png_structp state, 
+  png_const_charp msg)
+{
+  mgDebug("libPng warning: %s", msg);
+}
+
+//--------------------------------------------------------
+// constructor and destructor
+mgPNGRead::mgPNGRead(
+  mgImageWrite *writer)
+  : mgImageRead(writer)
+{
+  m_RGBAline = NULL;
+  m_inFile = NULL;
+
+  m_state = png_create_read_struct(PNG_LIBPNG_VER_STRING, NULL, mgPNGError, mgPNGWarn);
+
+  if (m_state == NULL)
+    throw new mgErrorMsg("imgLibPNG", "", "");
+
+  // Allocate/initialize the memory for image information
+  m_info = png_create_info_struct(m_state);
+  if (m_info == NULL)
+  {
+    png_destroy_read_struct(&m_state, NULL, NULL);
+    throw new mgErrorMsg("imgLibPNG", "", "");
+  }
+}
+
+//--------------------------------------------------------
+// destructor
+mgPNGRead::~mgPNGRead()
+{
+  delete m_RGBAline;
+  m_RGBAline = NULL;
+
+  png_destroy_read_struct(&m_state, &m_info, NULL);
+
+  if (m_inFile != NULL)
+    fclose(m_inFile);
+}
+
+//--------------------------------------------------------
+// open a JPG file to be read
+BOOL mgPNGRead::open(
+  const char* fileName)   // name of file to open
+{
+  png_uint_32 width, height;
+  int bit_depth, color_type, interlace_type;
+
+  // if file name exists 
+  m_inFile = mgOSFileOpen(fileName, "rb");
+  if (m_inFile == NULL)
+    throw new mgErrorMsg("imgBadOpen", "", "");
+
+  png_init_io(m_state, m_inFile);
+
+  png_read_info(m_state, m_info);
+
+  png_get_IHDR(m_state, m_info, &width, &height, &bit_depth, &color_type,
+       &interlace_type, NULL, NULL);
+
+  m_RGBAline = new BYTE[png_get_rowbytes(m_state, m_info)];
+  m_width = width;
+  m_height = height;
+  m_y = 0;
+
+  if (!m_writer->outputStart(m_width, m_height))
+    return false;
+  
+#ifdef PNG_READ_SCALE_16_TO_8_SUPPORTED
+  png_set_scale_16(m_state);
+#else
+  png_set_strip_16(m_state);
+#endif
+
+  // Extract multiple pixels with bit depths of 1, 2, and 4 from a single
+  // byte into separate bytes (useful for paletted and grayscale images).
+  png_set_packing(m_state);
+
+  // Expand paletted colors into true RGB triplets
+  if (color_type == PNG_COLOR_TYPE_PALETTE)
+    png_set_palette_to_rgb(m_state);
+
+  // Expand grayscale images to the full 8 bits from 1, 2, or 4 bits/pixel 
+  if (color_type == PNG_COLOR_TYPE_GRAY && bit_depth < 8)
+    png_set_expand_gray_1_2_4_to_8(m_state);
+
+  // Expand paletted or RGB images with transparency to full alpha channels
+  // so the data will be available as RGBA quartets.
+  if (png_get_valid(m_state, m_info, PNG_INFO_tRNS))
+    png_set_tRNS_to_alpha(m_state);
+
+//  png_set_alpha_mode(m_state, PNG_ALPHA_PNG, 1.0);
+
+  png_read_update_info(m_state, m_info);
+
+  // start decompression
+  return true;
+}
+
+//--------------------------------------------------------
+// do a step of work on JPG decode
+BOOL mgPNGRead::decodeStep(
+  int &y,                    // current scanlines complete
+  int &height)               // amount to go
+{
+  // do a strip of the image 
+  int count = 128;  // size of a strip 
+  while (count-- > 0 && m_y < m_height)
+  {
+    png_read_rows(m_state, (png_bytepp) &m_RGBAline, NULL, 1);
+    if (!m_writer->outputLine(m_y, m_RGBAline, m_width))
+      return false;
+    m_y++;
+  }
+  y = m_y;
+  height = m_height;
+  if (y < height)
+    return true;
+
+  // Read rest of file, and get additional chunks in info_ptr
+  png_read_end(m_state, m_info);
+
+  m_writer->outputEnd();
+
   return false;
 }
 

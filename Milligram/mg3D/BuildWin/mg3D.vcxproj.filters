@@ -28,6 +28,12 @@
     <Filter Include="Source\Util3D">
       <UniqueIdentifier>{1b90c3f6-1bfb-42dc-b51e-9e0e12ee19f4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Graphics3D\WebGL">
+      <UniqueIdentifier>{68651b33-d85b-4d5a-9415-6fda90fc423d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Graphics3D\GLTextureSurface">
+      <UniqueIdentifier>{3ddd52c2-816b-4ef2-bd38-0c1731f2def5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\mg3D.h">
@@ -54,9 +60,6 @@
     <ClInclude Include="..\Source\Graphics3D\DX9\mgDX9Indexes.h">
       <Filter>Source\Graphics3D\DX9</Filter>
     </ClInclude>
-    <ClInclude Include="..\Source\Graphics3D\DX9\mgDX9Services.h">
-      <Filter>Source\Graphics3D\DX9</Filter>
-    </ClInclude>
     <ClInclude Include="..\Source\Graphics3D\DX9\mgDX9State.h">
       <Filter>Source\Graphics3D\DX9</Filter>
     </ClInclude>
@@ -67,9 +70,6 @@
       <Filter>Source\Graphics3D\GL21</Filter>
     </ClInclude>
     <ClInclude Include="..\Source\Graphics3D\GL21\mgGL21Misc.h">
-      <Filter>Source\Graphics3D\GL21</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Source\Graphics3D\GL21\mgGL21Services.h">
       <Filter>Source\Graphics3D\GL21</Filter>
     </ClInclude>
     <ClInclude Include="..\Source\Graphics3D\GL21\mgGL21Types.h">
@@ -84,17 +84,11 @@
     <ClInclude Include="..\Source\Graphics3D\GL33\mgGL33Misc.h">
       <Filter>Source\Graphics3D\GL33</Filter>
     </ClInclude>
-    <ClInclude Include="..\Source\Graphics3D\GL33\mgGL33Services.h">
-      <Filter>Source\Graphics3D\GL33</Filter>
-    </ClInclude>
     <ClInclude Include="..\Source\Graphics3D\GL33\mgGL33Types.h">
       <Filter>Source\Graphics3D\GL33</Filter>
     </ClInclude>
     <ClInclude Include="..\Source\Graphics3D\GL33\mgGL33VertexBuffer.h">
       <Filter>Source\Graphics3D\GL33</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Include\Graphics3D\mgTextureSurface.h">
-      <Filter>Include\Graphics3D</Filter>
     </ClInclude>
     <ClInclude Include="..\Include\Util3D\mg3DErrorTable.h">
       <Filter>Include\Util3D</Filter>
@@ -107,6 +101,42 @@
     </ClInclude>
     <ClInclude Include="..\Source\Util3D\mgFontList.h">
       <Filter>Source\Util3D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Graphics3D\WebGL\mgWebGLIndexBuffer.h">
+      <Filter>Source\Graphics3D\WebGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Graphics3D\WebGL\mgWebGLMisc.h">
+      <Filter>Source\Graphics3D\WebGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Graphics3D\WebGL\mgWebGLTypes.h">
+      <Filter>Source\Graphics3D\WebGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Graphics3D\WebGL\mgWebGLVertexBuffer.h">
+      <Filter>Source\Graphics3D\WebGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Graphics3D\DX9\mgDX9Display.h">
+      <Filter>Source\Graphics3D\DX9</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Graphics3D\GL21\mgGL21Display.h">
+      <Filter>Source\Graphics3D\GL21</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Graphics3D\GL33\mgGL33Display.h">
+      <Filter>Source\Graphics3D\GL33</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Graphics3D\WebGL\mgWebGLDisplay.h">
+      <Filter>Source\Graphics3D\WebGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Graphics3D\GLTextureSurface\mgGLTextureSurface.h">
+      <Filter>Source\Graphics3D\GLTextureSurface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Graphics3D\mgVertexOverlayImage.h">
+      <Filter>Source\Graphics3D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Graphics3D\mgVertexOverlaySolid.h">
+      <Filter>Source\Graphics3D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Graphics3D\mgVertexOverlayText.h">
+      <Filter>Source\Graphics3D</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -128,9 +158,6 @@
     <ClCompile Include="..\Source\Graphics3D\DX9\mgDX9Indexes.cpp">
       <Filter>Source\Graphics3D\DX9</Filter>
     </ClCompile>
-    <ClCompile Include="..\Source\Graphics3D\DX9\mgDX9Services.cpp">
-      <Filter>Source\Graphics3D\DX9</Filter>
-    </ClCompile>
     <ClCompile Include="..\Source\Graphics3D\DX9\mgDX9Textures.cpp">
       <Filter>Source\Graphics3D\DX9</Filter>
     </ClCompile>
@@ -138,9 +165,6 @@
       <Filter>Source\Graphics3D\GL21</Filter>
     </ClCompile>
     <ClCompile Include="..\Source\Graphics3D\GL21\mgGL21Misc.cpp">
-      <Filter>Source\Graphics3D\GL21</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Source\Graphics3D\GL21\mgGL21Services.cpp">
       <Filter>Source\Graphics3D\GL21</Filter>
     </ClCompile>
     <ClCompile Include="..\Source\Graphics3D\GL21\mgGL21VertexBuffer.cpp">
@@ -152,14 +176,8 @@
     <ClCompile Include="..\Source\Graphics3D\GL33\mgGL33Misc.cpp">
       <Filter>Source\Graphics3D\GL33</Filter>
     </ClCompile>
-    <ClCompile Include="..\Source\Graphics3D\GL33\mgGL33Services.cpp">
-      <Filter>Source\Graphics3D\GL33</Filter>
-    </ClCompile>
     <ClCompile Include="..\Source\Graphics3D\GL33\mgGL33VertexBuffer.cpp">
       <Filter>Source\Graphics3D\GL33</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Source\Graphics3D\mgTextureSurface.cpp">
-      <Filter>Source\Graphics3D</Filter>
     </ClCompile>
     <ClCompile Include="..\Source\Util3D\mg3DErrorTable.cpp">
       <Filter>Source\Util3D</Filter>
@@ -172,6 +190,30 @@
     </ClCompile>
     <ClCompile Include="..\Source\Util3D\mgFontList.cpp">
       <Filter>Source\Util3D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Graphics3D\WebGL\mgWebGLIndexBuffer.cpp">
+      <Filter>Source\Graphics3D\WebGL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Graphics3D\WebGL\mgWebGLMisc.cpp">
+      <Filter>Source\Graphics3D\WebGL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Graphics3D\WebGL\mgWebGLVertexBuffer.cpp">
+      <Filter>Source\Graphics3D\WebGL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Graphics3D\DX9\mgDX9Display.cpp">
+      <Filter>Source\Graphics3D\DX9</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Graphics3D\GL21\mgGL21Display.cpp">
+      <Filter>Source\Graphics3D\GL21</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Graphics3D\GL33\mgGL33Display.cpp">
+      <Filter>Source\Graphics3D\GL33</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Graphics3D\WebGL\mgWebGLDisplay.cpp">
+      <Filter>Source\Graphics3D\WebGL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Graphics3D\GLTextureSurface\mgGLTextureSurface.cpp">
+      <Filter>Source\Graphics3D\GLTextureSurface</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -21,6 +21,8 @@
 #ifndef COLONIZATION_H
 #define COLONIZATION_H
 
+class BranchLocs;
+
 class Leaf
 {
 public:
@@ -39,26 +41,28 @@ public:
 
   mgPoint3 m_growDir;
   int m_growCount;
+  int m_childCount;
 
   double m_area;
 
-  double m_mainAngle;
-  int m_main;
+  double m_pathArea;
+  int m_path;
+
+  int m_next;   // chain of branches in octree cell
 
   Branch() {}
 };
 
 const double GROW_DISTANCE = 3.0;
-const double MIN_DISTANCE = 4 * GROW_DISTANCE;
-const double MAX_DISTANCE = 20 * GROW_DISTANCE;
+const double MIN_GROW = 1.0;
+const double MIN_DISTANCE = 2 /*4 */ * GROW_DISTANCE;
+const double MAX_DISTANCE = 10 * GROW_DISTANCE;
 const double TWIG_AREA = 0.1*0.1;
+const int OCT_DEPTH = 16;
 
 class Colonization
 {
 public:
-  mgPtrArray m_leaves;
-  mgPtrArray m_branches;
-
   // constructor
   Colonization();
 
@@ -104,10 +108,23 @@ public:
   virtual BOOL colonize();
 
   // calculate sizes of branches
-  virtual void branchSizes(
+  virtual void computeBranchSizes(
     BOOL partial,               // true to scale nodes by growth
     int lastCount,              // only modify branches > lastCount
     double growth);             // growth factor
+
+  // reset list of branches and leaves
+  virtual void reset();
+
+protected:
+  mgPtrArray m_leaves;
+  mgPtrArray m_branches;
+  mgMapDWordToDWord m_branchLocs;
+
+  // find closest branch
+  BOOL findClosestBranch(
+    const mgPoint3& leafPt,
+    int& closest);
 };
 
 #endif

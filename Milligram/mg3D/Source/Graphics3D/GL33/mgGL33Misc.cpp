@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -28,7 +28,7 @@ const char THIS_FILE[] = __FILE__;
 
 #include "mgPlatform/Include/mgPlatformServices.h"
 #include "Graphics3D/mgVertexAttrib.h"
-#include "mgGL33Services.h"
+#include "mgGL33Display.h"
 #include "mgGL33Types.h"
 
 #include "mgGL33Misc.h"
@@ -82,7 +82,6 @@ void GL33getShaderLog(
   GLuint shader,
   mgString& logStr)
 {
-  CHECK_THREAD();
   GLint logLen, retLen;
   glGetShaderiv(shader, GL_INFO_LOG_LENGTH, &logLen);
   char* logText = new char[logLen];
@@ -98,7 +97,6 @@ BOOL GL33loadShaderFile(
   const char* fileName,
   GLuint shader)
 {
-  CHECK_THREAD();
   FILE* sourceFile = mgOSFileOpen(fileName, "rb");
   if (sourceFile == NULL)
     return false;
@@ -127,6 +125,59 @@ BOOL GL33loadShaderFile(
 //--------------------------------------------------------------------------
 // load and compile a shader
 // =-= source code modified from a version in the OpenGL SuperBible
+BOOL GL33compileShaderPairSource(
+  const char* shaderName,
+  GLuint hVertexShader,
+  const char* vertexSource, 
+  GLuint hFragmentShader,
+  const char* fragmentSource)
+{
+  GLint testVal;
+
+  const GLchar* strings[1];
+  strings[0] = (GLchar *) vertexSource;
+  glShaderSource(hVertexShader, 1, strings, NULL);
+
+  mgString log;
+  // Compile vertex shader
+  glCompileShader(hVertexShader);
+  GL33getShaderLog(hVertexShader, log);
+  log.trim();
+  if (log.isEmpty())
+    mgDebug("vertex shader %s compiled", (const char*) shaderName);
+  else mgDebug("vertex shader %s log:\n%s", (const char*) shaderName, (const char*) log);
+
+  // Check for errors
+  glGetShaderiv(hVertexShader, GL_COMPILE_STATUS, &testVal);
+  if (testVal == GL_FALSE)
+  {
+    mgDebug("vertex shader %s compilation failed.", (const char*) shaderName);
+    return false;
+  }
+    
+  strings[0] = (GLchar *) fragmentSource;
+  glShaderSource(hFragmentShader, 1, strings, NULL);
+
+  glCompileShader(hFragmentShader);
+  GL33getShaderLog(hFragmentShader, log);
+  log.trim();
+  if (log.isEmpty())
+    mgDebug("fragment shader %s compiled", (const char*) shaderName);
+  else mgDebug("fragment shader %s log:\n%s", (const char*) shaderName, (const char*) log);
+
+  glGetShaderiv(hFragmentShader, GL_COMPILE_STATUS, &testVal);
+  if (testVal == GL_FALSE)
+  {
+    mgDebug("fragment shader %s compilation failed.", (const char*) shaderName);
+    return false;
+  }
+
+  return true;
+}
+
+//--------------------------------------------------------------------------
+// load and compile a shader
+// =-= source code modified from a version in the OpenGL SuperBible
 BOOL GL33compileShaderPair(
   const char* shaderDir,
   GLuint hVertexShader,
@@ -134,7 +185,6 @@ BOOL GL33compileShaderPair(
   GLuint hFragmentShader,
   const char* fragmentFileName)
 {
-  CHECK_THREAD();
   GLint testVal;
 
   // Load them. If fail clean up and return null
@@ -198,7 +248,6 @@ GLuint mgGL33loadShaderPair(
   int argCount, 
   ...)
 {
-  CHECK_THREAD();
   mgString NVshader;
   NVshader.format("%sGL33/NVIDIA/", (const char*) shaderDir);
 
@@ -270,7 +319,6 @@ GLuint mgGL33loadShaderPair(
   const char* fragmentFileName, 
   const mgVertexAttrib* attribs)
 {
-  CHECK_THREAD();
   mgString NVshader;
   NVshader.format("%sGL33/NVIDIA/", (const char*) shaderDir);
 
@@ -323,6 +371,64 @@ GLuint mgGL33loadShaderPair(
     uiShaderID = 0;
 
     throw new mgErrorMsg("glBadShaderLink", "vsName,fsName", "%s,%s", (const char*) vertexFileName, (const char*) fragmentFileName);
+  }
+
+  return uiShaderID;
+}
+
+//--------------------------------------------------------------------------
+// Load the shader file, with the supplied named attributes
+GLuint mgGL33loadShaderPairSource(
+  const char* shaderName,
+  const char* vertexSource, 
+  const char* fragmentSource, 
+  const mgVertexAttrib* attribs)
+{
+  // Create shader objects
+  GLuint hVertexShader = glCreateShader(GL_VERTEX_SHADER);
+  GLuint hFragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
+  
+  // find a version which compiles on this display
+  if (!GL33compileShaderPairSource(shaderName, hVertexShader, vertexSource, hFragmentShader, fragmentSource))
+    throw new mgErrorMsg("glBadShader", "vsName,fsName", "%s,%s", (const char*) shaderName, (const char*) shaderName);
+
+  // create the shader program
+  GLuint uiShaderID = glCreateProgram();
+
+  glAttachShader(uiShaderID, hVertexShader);
+  glAttachShader(uiShaderID, hFragmentShader);
+
+  // bind all the attributes
+  for (int i = 0; ; i++)
+  {
+    if (attribs[i].m_name == NULL)
+      break;
+    glBindAttribLocation(uiShaderID, i, attribs[i].m_name);
+  }
+
+  glLinkProgram(uiShaderID);
+  
+  // These are no longer needed
+  glDeleteShader(hVertexShader);
+  glDeleteShader(hFragmentShader);  
+    
+  // Make sure link worked too
+  GLint testVal;
+  glGetProgramiv(uiShaderID, GL_LINK_STATUS, &testVal);
+  if (testVal == GL_FALSE)
+  {
+    // get the linker log
+    GLsizei msgSize, msgLen;
+    glGetProgramiv(uiShaderID, GL_INFO_LOG_LENGTH, &msgSize);
+    GLchar* message = new char[msgSize];
+    glGetProgramInfoLog(uiShaderID, msgSize, &msgLen, message);
+    mgDebug("%s", (const char*) message);
+    delete message;
+
+    glDeleteProgram(uiShaderID);
+    uiShaderID = 0;
+
+    throw new mgErrorMsg("glBadShaderLink", "vsName,fsName", "%s,%s", (const char*) shaderName, (const char*) shaderName);
   }
 
   return uiShaderID;

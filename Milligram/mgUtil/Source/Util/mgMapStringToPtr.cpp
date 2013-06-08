@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -150,7 +150,7 @@ void mgMapStringToPtr::removeKey(
   while (true)
   {
     mgMapStringToPtrEntry *entry = (mgMapStringToPtrEntry *) &m_entries[index];
-    if (strcmp(entry->key, key) == 0)
+    if (entry->key != NULL && strcmp(entry->key, key) == 0)
     {
       // remove the key
       delete m_entries[index].key;

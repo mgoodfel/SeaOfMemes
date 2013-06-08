@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -21,6 +21,11 @@
 #ifndef MGINDEXBUFFER_H
 #define MGINDEXBUFFER_H
 
+/*
+  A buffer for vertex indexes.  Buffers may contain 16 or 32 bit indexes,
+  and be static or dynamic.  Buffers are created by the mgDisplayServices 
+  instance but should be deleted by the caller.
+*/
 class mgIndexBuffer
 {
 public:

@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -33,12 +33,10 @@ const char THIS_FILE[] = __FILE__;
 // constructor
 const mgSolidPaint* mgSolidPaint::createPaint(
   mgSurface* surface,
-  int red,
-  int green,
-  int blue)
+  const mgColor& color)
 {
   mgString key;
-  key.format("SolidPaint/%d,%d,%d", red, green, blue);
+  key.format("SolidPaint/%g,%g,%g,%g", color.m_r, color.m_g, color.m_b, color.m_a);
   
   mgSolidPaint* paint = (mgSolidPaint*) surface->findResource(key);
   if (paint != NULL)
@@ -46,19 +44,10 @@ const mgSolidPaint* mgSolidPaint::createPaint(
     
   paint = new mgSolidPaint();
   paint->m_key = key;
-  paint->m_brush = surface->createBrush(red, green, blue);
+  paint->m_brush = surface->createBrush(color);
   
   surface->saveResource(paint);
   return paint;
-}
-   
-//--------------------------------------------------------------
-// constructor
-const mgSolidPaint* mgSolidPaint::createPaint(
-  mgSurface* surface,
-  const mgColor& color)
-{
-  return mgSolidPaint::createPaint(surface, color.m_r, color.m_g, color.m_b);
 }
    
 //--------------------------------------------------------------

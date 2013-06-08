@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -33,7 +33,7 @@ const char THIS_FILE[] = __FILE__;
 Earth::Earth(
   double radius)
 {
-  mgVertex::loadShader("litTexture");
+  m_shader = mgVertex::loadShader("litTexture");
 
   m_radius = radius;
 
@@ -151,7 +151,7 @@ void Earth::renderFar()
   model.scale(m_radius/SYSTEM_FAR_SCALE);
   mgDisplay->setModelTransform(model);
 
-  mgDisplay->setShader("litTexture");
+  mgDisplay->setShader(m_shader);
   mgDisplay->setMatColor(1, 1, 1);
   mgDisplay->setTexture(m_farTexture);
   mgDisplay->draw(MG_TRIANGLES, m_farVertexes);

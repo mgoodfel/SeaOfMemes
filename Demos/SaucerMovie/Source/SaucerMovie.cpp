@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -27,7 +27,7 @@ const char THIS_FILE[] = __FILE__;
 
 // identify the program for the framework log
 const char* mgProgramName = "SaucerMovie";
-const char* mgProgramVersion = "Part 60";
+const char* mgProgramVersion = "Part 83";
 
 #include "StarrySky.h"
 #include "Saucer.h"
@@ -64,6 +64,8 @@ SaucerMovie::SaucerMovie()
   m_badSaucer = NULL;
   m_killer1 = NULL;
   m_killer2 = NULL;
+
+  m_randomPosn = 1.0;
 }
 
 //--------------------------------------------------------------
@@ -83,12 +85,7 @@ void SaucerMovie::appInit()
   mgPlatform->setWindowTitle(title);
 
   // load the shaders we might use
-  mgVertex::loadShader("litTexture");
-  mgVertex::loadShader("unlitTexture");
-  mgVertex::loadShader("litTextureCube");
-  mgVertex::loadShader("unlitTextureCube");
-  mgVertexTA::loadShader("litTextureArray");
-  mgVertexTA::loadShader("unlitTextureArray");
+  m_earthShader = mgVertex::loadShader("unlitTexture");
 
   mgString fileName;
   m_options.getFileName("planetImage", m_options.m_sourceFileName, "", fileName);
@@ -122,6 +119,10 @@ void SaucerMovie::appInit()
   m_help = new HelpUI(m_options);
   m_help->setDebugApp(this);
   setUI(m_help);
+
+  // initialize with movie running
+  m_help->toggleHelp();
+  m_movieScene = 0;
 }
 
 //--------------------------------------------------------------
@@ -155,6 +156,17 @@ void SaucerMovie::appTerm()
 }
 
 //--------------------------------------------------------------------
+// generate random number from simplex noise
+double SaucerMovie::rand()
+{
+  // the mgRandom function from mgUtil uses platform rand, which is
+  // different on each platform.  We want a repeatable pattern of
+  // saucers, since they are picked to not get in the way of the view.
+  m_randomPosn += PI;
+  return (1+mgSimplexNoise::noise(m_randomPosn, m_randomPosn))/2;
+}
+
+//--------------------------------------------------------------------
 // place a saucer in the cloud
 void SaucerMovie::placeSaucer(
   Saucer* saucer)
@@ -162,9 +174,9 @@ void SaucerMovie::placeSaucer(
   BOOL tooClose = true;
   while (tooClose)
   {
-    saucer->m_origin.x = -150+300*mgRandom();
-    saucer->m_origin.y = -150+300*mgRandom();
-    saucer->m_origin.z = -1050 - 1000*mgRandom();
+    saucer->m_origin.x = -150+300*rand();
+    saucer->m_origin.y = -150+300*rand();
+    saucer->m_origin.z = -1050 - 1000*rand();
     tooClose = false;
     for (int j = 0; j < m_saucers.length(); j++)
     {
@@ -188,8 +200,8 @@ void SaucerMovie::createEarth()
   mgVertex v;
   v.setNormal(0, 0, -1);
 
-  double w = 1536/2.0;
-  double h = 1200/2.0;
+  double w = 1024/2.0;
+  double h = 1024/2.0;
 
   v.setPoint(-w, h, 0);  // tl
   v.setTexture(0, 0);
@@ -581,7 +593,7 @@ void SaucerMovie::appViewDraw()
     mgDisplay->setModelTransform(model);
 
     mgDisplay->setTransparent(true);
-    mgDisplay->setShader("unlitTexture");
+    mgDisplay->setShader(m_earthShader);
     mgDisplay->setMatColor(1, 1, 1);
     mgDisplay->setTexture(m_earthTexture);
     mgDisplay->draw(MG_TRIANGLES, m_earthVertexes);

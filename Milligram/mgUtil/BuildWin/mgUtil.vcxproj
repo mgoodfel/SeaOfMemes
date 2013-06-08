@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClInclude Include="..\Include\Audio\mgAudio.h" />
     <ClInclude Include="..\Include\GraphicsUtil\mgBezier.h" />
+    <ClInclude Include="..\Include\GraphicsUtil\mgOctree.h" />
     <ClInclude Include="..\Include\GraphicsUtil\mgSimplexNoise.h" />
     <ClInclude Include="..\Include\ImageUtil\mgImageUtil.h" />
     <ClInclude Include="..\Include\mgUtil.h" />
@@ -31,10 +32,12 @@
     <ClInclude Include="..\Include\OS\mgOSLinux.h" />
     <ClInclude Include="..\Include\OS\mgOSLock.h" />
     <ClInclude Include="..\Include\OS\mgOSOSX.h" />
+    <ClInclude Include="..\Include\OS\mgOSScript.h" />
     <ClInclude Include="..\Include\OS\mgOSThread.h" />
     <ClInclude Include="..\Include\OS\mgOSTimer.h" />
     <ClInclude Include="..\Include\OS\mgOSWindows.h" />
     <ClInclude Include="..\Include\OS\mgOSXMisc.h" />
+    <ClInclude Include="..\Include\OS\mgScriptMisc.h" />
     <ClInclude Include="..\Include\Util\mgBlockPool.h" />
     <ClInclude Include="..\Include\Util\mgDebug.h" />
     <ClInclude Include="..\Include\Util\mgDebugMemory.h" />
@@ -42,6 +45,7 @@
     <ClInclude Include="..\Include\Util\mgErrorMsg.h" />
     <ClInclude Include="..\Include\Util\mgErrorTable.h" />
     <ClInclude Include="..\Include\Util\mgException.h" />
+    <ClInclude Include="..\Include\Util\mgMapDWordToDWord.h" />
     <ClInclude Include="..\Include\Util\mgMapDWordToPtr.h" />
     <ClInclude Include="..\Include\Util\mgMapPtrToPtr.h" />
     <ClInclude Include="..\Include\Util\mgMapStringToDouble.h" />
@@ -51,6 +55,7 @@
     <ClInclude Include="..\Include\Util\mgMapXYZToPtr.h" />
     <ClInclude Include="..\Include\Util\mgMatrix.h" />
     <ClInclude Include="..\Include\Util\mgOptionsFile.h" />
+    <ClInclude Include="..\Include\Util\mgPoint3Array.h" />
     <ClInclude Include="..\Include\Util\mgPtrArray.h" />
     <ClInclude Include="..\Include\Util\mgQuat.h" />
     <ClInclude Include="..\Include\Util\mgString.h" />
@@ -60,6 +65,7 @@
     <ClInclude Include="..\Include\XMLParser\mgXMLScanner.h" />
     <ClInclude Include="..\Include\XMLParser\mgXMLTag.h" />
     <ClInclude Include="..\Source\Audio\mgAudioAL.h" />
+    <ClInclude Include="..\Source\Audio\mgAudioScript.h" />
     <ClInclude Include="..\Source\Audio\mgAudioWin.h" />
     <ClInclude Include="..\Source\Audio\mgVorbisRead.h" />
     <ClInclude Include="..\Source\ImageUtil\mgDiffuse.h" />
@@ -72,6 +78,9 @@
     <ClInclude Include="..\Source\OS\OSX\mgOSXEvent.h" />
     <ClInclude Include="..\Source\OS\OSX\mgOSXLock.h" />
     <ClInclude Include="..\Source\OS\OSX\mgOSXThread.h" />
+    <ClInclude Include="..\Source\OS\Script\mgScriptEvent.h" />
+    <ClInclude Include="..\Source\OS\Script\mgScriptLock.h" />
+    <ClInclude Include="..\Source\OS\Script\mgScriptThread.h" />
     <ClInclude Include="..\Source\OS\Windows\mgWinEvent.h" />
     <ClInclude Include="..\Source\OS\Windows\mgWinLock.h" />
     <ClInclude Include="..\Source\OS\Windows\mgWinThread.h" />
@@ -80,9 +89,11 @@
   <ItemGroup>
     <ClCompile Include="..\Source\Audio\mgAudio.cpp" />
     <ClCompile Include="..\Source\Audio\mgAudioAL.cpp" />
+    <ClCompile Include="..\Source\Audio\mgAudioScript.cpp" />
     <ClCompile Include="..\Source\Audio\mgAudioWin.cpp" />
     <ClCompile Include="..\Source\Audio\mgVorbisRead.cpp" />
     <ClCompile Include="..\Source\GraphicsUtil\mgBezier.cpp" />
+    <ClCompile Include="..\Source\GraphicsUtil\mgOctree.cpp" />
     <ClCompile Include="..\Source\GraphicsUtil\mgSimplexNoise.cpp" />
     <ClCompile Include="..\Source\ImageUtil\mgDiffuse.cpp" />
     <ClCompile Include="..\Source\ImageUtil\mgGIF3.cpp" />
@@ -104,6 +115,12 @@
     <ClCompile Include="..\Source\OS\OSX\mgOSXMisc.cpp" />
     <ClCompile Include="..\Source\OS\OSX\mgOSXThread.cpp" />
     <ClCompile Include="..\Source\OS\OSX\mgOSXTimer.cpp" />
+    <ClCompile Include="..\Source\OS\Script\mgScriptEvent.cpp" />
+    <ClCompile Include="..\Source\OS\Script\mgScriptFileUtil.cpp" />
+    <ClCompile Include="..\Source\OS\Script\mgScriptLock.cpp" />
+    <ClCompile Include="..\Source\OS\Script\mgScriptMisc.cpp" />
+    <ClCompile Include="..\Source\OS\Script\mgScriptThread.cpp" />
+    <ClCompile Include="..\Source\OS\Script\mgScriptTimer.cpp" />
     <ClCompile Include="..\Source\OS\Windows\mgWinEvent.cpp" />
     <ClCompile Include="..\Source\OS\Windows\mgWinFileUtil.cpp" />
     <ClCompile Include="..\Source\OS\Windows\mgWinLock.cpp" />
@@ -124,6 +141,7 @@
     <ClCompile Include="..\Source\Util\mgErrorMsg.cpp" />
     <ClCompile Include="..\Source\Util\mgErrorTable.cpp" />
     <ClCompile Include="..\Source\Util\mgException.cpp" />
+    <ClCompile Include="..\Source\Util\mgMapDWordToDWord.cpp" />
     <ClCompile Include="..\Source\Util\mgMapDWordToPtr.cpp" />
     <ClCompile Include="..\Source\Util\mgMapPtrToPtr.cpp" />
     <ClCompile Include="..\Source\Util\mgMapStringToDouble.cpp" />
@@ -133,6 +151,7 @@
     <ClCompile Include="..\Source\Util\mgMapXYZToPtr.cpp" />
     <ClCompile Include="..\Source\Util\mgMatrix.cpp" />
     <ClCompile Include="..\Source\Util\mgOptionsFile.cpp" />
+    <ClCompile Include="..\Source\Util\mgPoint3Array.cpp" />
     <ClCompile Include="..\Source\Util\mgPtrArray.cpp" />
     <ClCompile Include="..\Source\Util\mgQuat.cpp" />
     <ClCompile Include="..\Source\Util\mgString.cpp" />
@@ -202,7 +221,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;../Include;../Source;../../</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;../../;../Include;../Source</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
@@ -215,7 +234,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>DEBUG_MEMORY;WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;../Include;../Source;../../</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;../../;../Include;../Source</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
@@ -228,7 +247,7 @@
       <WarningLevel>Level3</WarningLevel>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;../Include;../Source;../../</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;../../;../Include;../Source</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -245,7 +264,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;../Include;../Source;../../</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;../../;../Include;../Source</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>

@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -24,7 +24,12 @@
 #include "mgErrorMsg.h"
 #include "../XMLParser/mgXMLParser.h"
 
-// holds local language versions of errors and other messages to the user
+/*
+  Error messages can be named and saved in a table instance.  When an mgErrorMsg is caught,
+  the actual message text can be created by the table.  This allows message text
+  to be in native languages saved as XML files.
+*/
+
 class mgErrorTable : public mgXMLParser
 {
 public:

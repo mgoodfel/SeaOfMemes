@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -63,6 +63,7 @@ protected:
   mgTextureImage* m_texture;
   mgIndexBuffer* m_indexes;
   mgVertexBuffer* m_vertexes;
+  mgShader* m_shader;
 
   double m_radius;
   mgBezier* m_track;

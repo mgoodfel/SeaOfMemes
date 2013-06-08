@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -39,35 +39,11 @@ double Terrain::heightAtPt(
   double tx, 
   double tz)
 {
-  double ht = mgSimplexNoise::noiseSum(10, tx/40000.0, tz/40000.0);
-  ht = 10.0*exp(4.5*fabs(ht));
-  ht += 0.2*mgSimplexNoise::noiseSum(3, tx/100, tz/100);
+  double ht = mgSimplexNoise::noiseSum(7, tx/40000.0, tz/40000.0);
+  ht *= 150+1000*exp(fabs(ht));
+  ht += 2*mgSimplexNoise::noiseSum(7, tx/100, tz/100);
 
-#ifdef CAVES
-  int octaves = 5;
-  double scale = 1.0/10000;
-  double amplitude = 1.0;
-
-  double cave = 0.0;
-  for (int o = 0; o < octaves; o++)
-  {
-    double noise = SimplexNoise::noise(tx * scale, tz * scale, 1.0);
-    cave += noise * amplitude;
-    scale *= 2.0;
-    amplitude *= 0.5;
-  }
-
-  cave = fabs(cave)/1.64;
-  if (cave < 0.1)
-    ht *= cave;
-#endif
   return ht;
-/*
-  double ht = noise(10, tx/40000.0, tz/40000.0);
-  ht = 10.0*exp(4.5*fabs(ht));
-  ht += 20*noise(10, tx/1333.0, tz/1333.0);
-  return ht;
-*/
 }
 
 //--------------------------------------------------------------
@@ -674,20 +650,24 @@ void Terrain::createTerrain(
 
       if (ht > 3000)
       {
-        v.setColor(133, 133, 133);  // gray rock
+        v.setColor(255/255.0, 255/255.0, 255/255.0);  // white ice
       }
-      else if (ht > 300)  
+      else if (ht > 1500)
       {
-        v.setColor(62, 124, 85); // green grass
+        v.setColor(133/255.0, 133/255.0, 133/255.0);  // gray rock
+      }
+      else if (ht > 200)  
+      {
+        v.setColor(62/255.0, 124/255.0, 85/255.0); // green grass
       }
       else if (ht > 100)  
       {
-        v.setColor(241, 220, 177); // sand
+        v.setColor(241/255.0, 220/255.0, 177/255.0); // sand
       }
       else 
       {
         double inten = max(0, ht)/100.0;
-        v.setColor((BYTE) (inten*179), (BYTE) (inten*148), (BYTE) (inten*117));   // dirt
+        v.setColor(inten*179/255.0, inten*148/255.0, inten*117/255.0);   // dirt
       }
 
       // in map view, don't draw water.  It just hides the grid lines.
@@ -697,9 +677,9 @@ void Terrain::createTerrain(
         if (ht < WATER_LEVEL)
         {
           v.m_py = WATER_LEVEL;
-          v.m_red = (BYTE) ((61*v.m_red + 16*194)/255);
-          v.m_green = (BYTE) ((61*v.m_green + 84*194)/255);
-          v.m_blue = (BYTE) ((61*v.m_blue + 255*194)/255);
+          v.m_red = (float) ((61*v.m_red + 194*16/255.0)/255.0);
+          v.m_green = (float) ((61*v.m_green + 194*84/255.0)/255.0);
+          v.m_blue = (float) ((61*v.m_blue + 194*255/255.0)/255.0);
         }
       }
 

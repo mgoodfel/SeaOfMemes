@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -82,6 +82,7 @@ protected:
 
   mgTextureImage* m_earthTexture;
   mgVertexBuffer* m_earthVertexes;
+  mgShader* m_earthShader;
 
   BOOL m_nebula;
   StarrySky* m_sky;
@@ -103,6 +104,11 @@ protected:
   Saucer* m_killer2;
   mgBezier m_cameraTrack;
   double m_trackLen;
+
+  double m_randomPosn;
+
+  // generate random number from simplex noise
+  double rand();
 
   // place a saucer in the cloud
   virtual void placeSaucer(

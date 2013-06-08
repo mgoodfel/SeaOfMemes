@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -140,18 +140,23 @@ public:
 protected:
   mgTextureImage* m_starTexture;
   mgVertexBuffer* m_starTriangles;
+  mgShader* m_starShader;
 
   mgTextureImage* m_moonTexture;
   mgVertexBuffer* m_moonTriangles;
+  mgShader* m_moonShader;
 
   mgTextureImage* m_sunTexture;
   mgVertexBuffer* m_sunTriangles;
+  mgShader* m_sunShader;
 
   mgTextureCube* m_skyBoxTexture;
   mgVertexBuffer* m_skyBoxTriangles;
+  mgShader* m_skyBoxShader;
 
   mgVertexBuffer* m_fogVertexes;
   mgIndexBuffer* m_fogIndexes;
+  mgShader* m_fogShader;
 
   float m_skyDist;
   mgPoint3 m_moonDir;

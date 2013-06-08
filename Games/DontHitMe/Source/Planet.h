@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -42,15 +42,19 @@ public:
 
 protected:
   mgTextureImage* m_outsideTexture;
-  mgTextureImage* m_insideTexture;
-  mgTextureImage* m_lavaTexture;
-
   mgVertexBuffer* m_outsideVertexes;
   mgIndexBuffer* m_outsideIndexes;
+  mgShader* m_outsideShader;
+
+  mgTextureImage* m_insideTexture;
   mgVertexBuffer* m_insideVertexes;
   mgIndexBuffer* m_insideIndexes;
+  mgShader* m_insideShader;
+
+  mgTextureImage* m_lavaTexture;
   mgVertexBuffer* m_lavaVertexes;
   mgIndexBuffer* m_lavaIndexes;
+  mgShader* m_lavaShader;
 
   mgPoint3 m_origin;
   int m_samples;

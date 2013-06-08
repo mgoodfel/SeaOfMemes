@@ -5,27 +5,28 @@ DEFINE = -DGLEW_STATIC
 
 ROOT = mgDisplayServices.o
 
-UTIL3D = Util3D/mgCursorDefn.o Util3D/mg3DErrorTable.o Util3D/mgFontList.o
+UTIL3D = $(addprefix Util3D/, mgCursorDefn.o mg3DErrorTable.o mgFontList.o )
 
-GRAPHICS3D = Graphics3D/mgTextureSurface.o Graphics3D/mgIndexBuffer.o \
-	Graphics3D/mgVertexBuffer.o Graphics3D/mgVertexTypes.o
+GRAPHICS3D = $(addprefix Graphics3D/, mgIndexBuffer.o mgVertexBuffer.o mgVertexTypes.o )
 
-GL21 = Graphics3D/GL21/mgGL21IndexBuffer.o Graphics3D/GL21/mgGL21Misc.o Graphics3D/GL21/mgGL21Services.o \
-	Graphics3D/GL21/mgGL21VertexBuffer.o
+GLSURFACE = $(addprefix Graphics3D/GLTextureSurface/, mgGLTextureSurface.o )
 
-GL33 = Graphics3D/GL33/mgGL33IndexBuffer.o Graphics3D/GL33/mgGL33Misc.o Graphics3D/GL33/mgGL33Services.o \
-	Graphics3D/GL33/mgGL33VertexBuffer.o
+GL21 = $(addprefix Graphics3D/GL21/, mgGL21IndexBuffer.o mgGL21Misc.o mgGL21Display.o \
+	mgGL21VertexBuffer.o)
 
-FILES = $(ROOT) $(UTIL3D) $(GRAPHICS3D) $(GL21) $(GL33)
-DIRLIST = Util3D Graphics3D Graphics3D/GL21 Graphics3D/GL33
+GL33 = $(addprefix Graphics3D/GL33/, mgGL33IndexBuffer.o mgGL33Misc.o mgGL33Display.o \
+	mgGL33VertexBuffer.o)
+
+FILES = $(ROOT) $(UTIL3D) $(GRAPHICS3D) $(GL21) $(GL33) $(GLSURFACE)
+DIRLIST = Util3D Graphics3D Graphics3D/GL21 Graphics3D/GL33 Graphics3D/GLTextureSurface
 
 # Build Debug and Release library
 CC = g++
 RELEASEFLAGS = -O3
 DEBUGFLAGS = -g3 -O0 -fno-inline 
 
-LIBS = -LX11 -lGL -lm -lrt -lpthread
-LIBDIRS = -L/usr/local/lib
+LIBS = -lX11 -lGL -lm -lrt -lpthread
+LIBDIRS = #empty
 DEBUGTARGET = ../../BuildLinux/Debug/$(TARGET)
 RELEASETARGET = ../../BuildLinux/Release/$(TARGET)
  

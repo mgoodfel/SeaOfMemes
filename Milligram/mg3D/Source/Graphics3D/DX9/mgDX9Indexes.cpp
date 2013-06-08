@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -28,7 +28,7 @@ const char THIS_FILE[] = __FILE__;
 #define new new(THIS_FILE, __LINE__)
 #endif
 
-#include "mgDX9Services.h"
+#include "mgDX9Display.h"
 #include "mgDX9Indexes.h"
 
 //--------------------------------------------------------------

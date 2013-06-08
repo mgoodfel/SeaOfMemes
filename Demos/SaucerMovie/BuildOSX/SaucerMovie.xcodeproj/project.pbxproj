@@ -340,6 +340,8 @@
 					"-lJpegLib",
 					"-lVorbis",
 					"-lOgg",
+					"-lLibPNG",
+					"-lZLib",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -375,6 +377,8 @@
 					"-lJpegLib",
 					"-lVorbis",
 					"-lOgg",
+					"-lLibPNG",
+					"-lZLib",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

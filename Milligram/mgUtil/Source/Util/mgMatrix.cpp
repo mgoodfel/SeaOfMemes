@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -27,240 +27,6 @@
 const char THIS_FILE[] = __FILE__;
 #define new new(THIS_FILE, __LINE__)
 #endif
-
-//-----------------------------------------------------------------------------
-// constructor
-mgPoint2::mgPoint2()
-{
-  x = y = 0.0;
-}
-
-//-----------------------------------------------------------------------------
-// constructor
-mgPoint2::mgPoint2(
-  double newX, 
-  double newY)
-{
-  x = newX;
-  y = newY;
-}
-
-//-----------------------------------------------------------------------------
-// copy constructor
-mgPoint2::mgPoint2(
-  const mgPoint2 &other)
-{
-  x = other.x;
-  y = other.y;
-}
-
-//-----------------------------------------------------------------------------
-// return dot product
-double mgPoint2::dot(
-  const mgPoint2 &pt) const
-{
-  return x * pt.x + y * pt.y;
-}
-
-//-----------------------------------------------------------------------------
-// return dot product
-double mgPoint2::dot(
-  double otherX, 
-  double otherY) const
-{
-  return x * otherX + y * otherY;
-}
-
-//-----------------------------------------------------------------------------
-// replace with point + other vector
-void mgPoint2::add(
-  const mgPoint2 &pt)
-{
-  x += pt.x;
-  y += pt.y;
-}
-
-//-----------------------------------------------------------------------------
-// replace with point - other vector
-void mgPoint2::subtract(
-  const mgPoint2 &pt)
-{
-  x -= pt.x;
-  y -= pt.y;
-}
-
-//-----------------------------------------------------------------------------
-// return length
-double mgPoint2::length() const
-{
-  return sqrt(x*x + y*y);
-}
-
-//-----------------------------------------------------------------------------
-// scale by constant
-void mgPoint2::scale(
-  double scale)
-{
-  x *= scale;
-  y *= scale;
-}
-
-//-----------------------------------------------------------------------------
-// normalize
-void mgPoint2::normalize()
-{
-  double len = sqrt(x*x + y*y);
-  x /= len;
-  y /= len;
-}
-
-//-----------------------------------------------------------------------------
-// constructor
-mgPoint3::mgPoint3()
-{
-  x = y = z = 0.0;
-}
-
-//-----------------------------------------------------------------------------
-// constructor
-mgPoint3::mgPoint3(
-  double newX, 
-  double newY, 
-  double newZ)
-{
-  x = newX;
-  y = newY;
-  z = newZ;
-}
-
-//-----------------------------------------------------------------------------
-// copy constructor
-mgPoint3::mgPoint3(
-  const mgPoint3 &other)
-{
-  x = other.x;
-  y = other.y;
-  z = other.z;
-}
-
-//-----------------------------------------------------------------------------
-// assignment operator
-mgPoint3& mgPoint3::operator=(
-  const mgPoint3 &other)
-{
-  x = other.x;
-  y = other.y;
-  z = other.z;
-
-  return *this;
-}
-
-//-----------------------------------------------------------------------------
-// comparison
-BOOL mgPoint3::operator==(
-  const mgPoint3 &other)
-{
-  return x == other.x && y == other.y && z == other.z;
-}
-
-//-----------------------------------------------------------------------------
-// return dot product
-double mgPoint3::dot(
-  const mgPoint3 &pt) const
-{
-  return x * pt.x + y * pt.y + z * pt.z;
-}
-
-//-----------------------------------------------------------------------------
-// return dot product
-double mgPoint3::dot(
-  double otherX, 
-  double otherY, 
-  double otherZ) const
-{
-  return x * otherX + y * otherY + z * otherZ;
-}
-
-//-----------------------------------------------------------------------------
-// replace with cross product with other vector
-void mgPoint3::cross(
-  const mgPoint3 &pt)
-{
-  double newX = y*pt.z - z*pt.y;
-  double newY = z*pt.x - x*pt.z;
-  double newZ = x*pt.y - y*pt.x;
-  x = newX;
-  y = newY;
-  z = newZ;
-}
-
-//-----------------------------------------------------------------------------
-// replace with point + other vector
-void mgPoint3::add(
-  const mgPoint3 &pt)
-{
-  x += pt.x;
-  y += pt.y;
-  z += pt.z;
-}
-
-//-----------------------------------------------------------------------------
-// replace with point - other vector
-void mgPoint3::subtract(
-  const mgPoint3 &pt)
-{
-  x -= pt.x;
-  y -= pt.y;
-  z -= pt.z;
-}
-
-//-----------------------------------------------------------------------------
-// return length
-double mgPoint3::length() const
-{
-  return sqrt(x*x + y*y + z*z);
-}
-
-//-----------------------------------------------------------------------------
-// scale by constant
-void mgPoint3::scale(
-  double scale)
-{
-  x *= scale;
-  y *= scale;
-  z *= scale;
-}
-
-//-----------------------------------------------------------------------------
-// normalize
-void mgPoint3::normalize()
-{
-  double len = sqrt(x*x + y*y + z*z);
-  x /= len;
-  y /= len;
-  z /= len;
-}
-
-//-----------------------------------------------------------------------------
-// constructor
-mgPoint4::mgPoint4()
-{
-  x = y = z = w = 0.0;
-}
-
-//-----------------------------------------------------------------------------
-// constructor
-mgPoint4::mgPoint4(
-  double newX, 
-  double newY, 
-  double newZ,
-  double newW)
-{
-  x = newX;
-  y = newY;
-  z = newZ;
-  w = newW;
-}
 
 //-----------------------------------------------------------------------------
 // constructor
@@ -336,6 +102,49 @@ void mgMatrix3::transpose()
 }
 
 //-----------------------------------------------------------------------------
+// translate matrix by coordinates
+void mgMatrix3::translate(
+  const mgPoint2& pt)
+{
+  _31 += pt.x;
+  _32 += pt.y;
+}
+
+//-----------------------------------------------------------------------------
+// rotate the matrix 
+void mgMatrix3::rotate(
+  double rads)
+{
+  mgMatrix3 rot;
+  rot._22 = cos(rads);
+  rot._23 = sin(rads);
+  rot._32 = -rot._23; // -sinf(rads);
+  rot._33 = rot._22; // cosf(rads);
+  multiply(rot);
+}
+
+//-----------------------------------------------------------------------------
+// scale matrix 
+void mgMatrix3::scale(
+  const mgPoint2& pt)
+{
+  mgMatrix3 scale;
+  scale._11 = pt.x;
+  scale._22 = pt.y;
+  multiply(scale);
+}
+
+//-----------------------------------------------------------------------------
+// map a point through the matrix
+void mgMatrix3::mapPt(
+  const mgPoint2 &from,
+  mgPoint2 &to) const
+{
+  to.x = _11 * from.x + _21 * from.y + _31;
+  to.y = _12 * from.x + _22 * from.y + _32;
+}
+
+//-----------------------------------------------------------------------------
 // constructor
 mgMatrix4::mgMatrix4()
 {
@@ -359,7 +168,7 @@ void mgMatrix4::multiply(
   double* pB = (double*)&m._11;
   double  pM[16];
 
-  memset(pM, 0, sizeof(mgMatrix4));
+  memset(pM, 0, sizeof(pM));
 
   for (WORD i = 0; i<4; i++) 
     for (WORD j = 0; j<4; j++) 
@@ -378,7 +187,7 @@ void mgMatrix4::leftMultiply(
   double* pB = (double*)&_11;
   double  pM[16];
 
-  memset(pM, 0, sizeof(mgMatrix4));
+  memset(pM, 0, sizeof(pM));
 
   for (WORD i = 0; i<4; i++) 
     for (WORD j = 0; j<4; j++) 

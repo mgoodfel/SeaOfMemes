@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -37,8 +37,8 @@ const int WATER_SIZE = 4096;  // must divide evenly into HORIZON_SIZE
 PlanetLandscape::PlanetLandscape()
 {
   // load shaders
-  VertexTerrain::loadShader("terrain");
-  mgVertex::loadShader("water");
+  m_terrainShader = VertexTerrain::loadShader("terrain");
+  m_waterShader = mgVertex::loadShader("water");
 
   mgString fileName;
 
@@ -106,13 +106,13 @@ void PlanetLandscape::renderTerrain(
   mgDisplay->setCulling(false);
 
   mgDisplay->setTexture(m_terrainTexture);
-  mgDisplay->setShader("terrain");
-  mgDisplay->setShaderUniform("terrain", "fogColor", mgPoint4(m_fogColor.x, m_fogColor.y, m_fogColor.z, 1.0));
-  mgDisplay->setShaderUniform("terrain", "fogBotHeight", (float) (m_fogBotHeight - renderEyePt.y));
-  mgDisplay->setShaderUniform("terrain", "fogBotInten", (float) m_fogBotInten);
-  mgDisplay->setShaderUniform("terrain", "fogTopHeight", (float) (m_fogTopHeight - renderEyePt.y));
-  mgDisplay->setShaderUniform("terrain", "fogTopInten", (float) m_fogTopInten);
-  mgDisplay->setShaderUniform("terrain", "fogMaxDist", (float) m_fogMaxDist);
+  mgDisplay->setShader(m_terrainShader);
+  mgDisplay->setShaderUniform(m_terrainShader, "fogColor", mgPoint4(m_fogColor.x, m_fogColor.y, m_fogColor.z, 1.0));
+  mgDisplay->setShaderUniform(m_terrainShader, "fogBotHeight", (float) (m_fogBotHeight - renderEyePt.y));
+  mgDisplay->setShaderUniform(m_terrainShader, "fogBotInten", (float) m_fogBotInten);
+  mgDisplay->setShaderUniform(m_terrainShader, "fogTopHeight", (float) (m_fogTopHeight - renderEyePt.y));
+  mgDisplay->setShaderUniform(m_terrainShader, "fogTopInten", (float) m_fogTopInten);
+  mgDisplay->setShaderUniform(m_terrainShader, "fogMaxDist", (float) m_fogMaxDist);
 
   for (int x = 0; x <= 2; x++)
   {
@@ -123,13 +123,13 @@ void PlanetLandscape::renderTerrain(
   }
 
   mgDisplay->setTransparent(true);
-  mgDisplay->setShader("water");
-  mgDisplay->setShaderUniform("water", "fogColor", m_fogColor);
-  mgDisplay->setShaderUniform("water", "fogBotHeight", (float) (m_fogBotHeight - renderEyePt.y));
-  mgDisplay->setShaderUniform("water", "fogBotInten", (float) m_fogBotInten);
-  mgDisplay->setShaderUniform("water", "fogTopHeight", (float) (m_fogTopHeight - renderEyePt.y));
-  mgDisplay->setShaderUniform("water", "fogTopInten", (float) m_fogTopInten);
-  mgDisplay->setShaderUniform("water", "fogMaxDist", (float) m_fogMaxDist);
+  mgDisplay->setShader(m_waterShader);
+  mgDisplay->setShaderUniform(m_waterShader, "fogColor", m_fogColor);
+  mgDisplay->setShaderUniform(m_waterShader, "fogBotHeight", (float) (m_fogBotHeight - renderEyePt.y));
+  mgDisplay->setShaderUniform(m_waterShader, "fogBotInten", (float) m_fogBotInten);
+  mgDisplay->setShaderUniform(m_waterShader, "fogTopHeight", (float) (m_fogTopHeight - renderEyePt.y));
+  mgDisplay->setShaderUniform(m_waterShader, "fogTopInten", (float) m_fogTopInten);
+  mgDisplay->setShaderUniform(m_waterShader, "fogMaxDist", (float) m_fogMaxDist);
 
   for (int x = 0; x <= 2; x++)
   {

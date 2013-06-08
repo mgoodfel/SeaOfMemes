@@ -144,6 +144,7 @@
     <ClCompile Include="..\Source\Colonization.cpp" />
     <ClCompile Include="..\Source\HelpUI.cpp" />
     <ClCompile Include="..\Source\MovementApp.cpp" />
+    <ClCompile Include="..\Source\StarrySky.cpp" />
     <ClCompile Include="..\Source\stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='DebugMemory|Win32'">Create</PrecompiledHeader>
@@ -151,13 +152,16 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Distrib|Win32'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="..\Source\Trees.cpp" />
+    <ClCompile Include="..\Source\VertexSky.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Source\Colonization.h" />
     <ClInclude Include="..\Source\HelpUI.h" />
     <ClInclude Include="..\Source\MovementApp.h" />
+    <ClInclude Include="..\Source\StarrySky.h" />
     <ClInclude Include="..\Source\stdafx.h" />
     <ClInclude Include="..\Source\Trees.h" />
+    <ClInclude Include="..\Source\VertexSky.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

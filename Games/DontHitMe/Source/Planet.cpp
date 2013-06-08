@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -82,7 +82,7 @@ double Planet::outsideHt(
 // return inside diameter of object
 double Planet::insideHt(
   const mgPoint3& pt)
-{                                                      
+{ 
   double ht = m_insideRadius - m_insideHeight*mgSimplexNoise::noiseSumAbs(10, 1.3*pt.x, 1.3*pt.y, 1.3*pt.z);
   return ht;
 }
@@ -131,6 +131,7 @@ void Planet::pointNormal(
   normal.normalize();
 
   v.m_nx = (float) normal.x;
+
   v.m_ny = (float) normal.y;
   v.m_nz = (float) normal.z;
 
@@ -319,14 +320,17 @@ void Planet::addPolygons(
 void Planet::createBuffers()
 {
   int vertexSize = m_samples+1;
-  m_outsideVertexes = mgVertexTA::newBuffer(6*vertexSize*vertexSize);
-  m_outsideIndexes = mgDisplay->newIndexBuffer(6*6*m_samples*m_samples, false, true);
+  m_outsideShader = mgVertex::loadShader("litTexture");
+  m_outsideVertexes = mgVertex::newBuffer(6*vertexSize*vertexSize);
+  m_outsideIndexes = mgDisplay->newIndexBuffer(6*6*m_samples*m_samples);
 
-  m_insideVertexes = mgVertexTA::newBuffer(6*vertexSize*vertexSize);
-  m_insideIndexes = mgDisplay->newIndexBuffer(6*6*m_samples*m_samples, false, true);
+  m_insideShader = mgVertex::loadShader("cave");
+  m_insideVertexes = mgVertex::newBuffer(6*vertexSize*vertexSize);
+  m_insideIndexes = mgDisplay->newIndexBuffer(6*6*m_samples*m_samples);
 
-  m_lavaVertexes = mgVertexTA::newBuffer(6*vertexSize*vertexSize);
-  m_lavaIndexes = mgDisplay->newIndexBuffer(6*6*m_samples*m_samples, false, true);
+  m_lavaShader = mgVertex::loadShader("unlitTexture");
+  m_lavaVertexes = mgVertex::newBuffer(6*vertexSize*vertexSize);
+  m_lavaIndexes = mgDisplay->newIndexBuffer(6*6*m_samples*m_samples);
 
   // generate the depth map.  extend into neighbors so we can compute normals
   int depthSize = m_samples+3;  // -1 to size+1
@@ -525,18 +529,18 @@ void Planet::render()
   mgDisplay->setModelTransform(model);
 
   // draw triangles using texture and shader
-  mgDisplay->setShader("litTexture");
+  mgDisplay->setShader(m_outsideShader);
   mgDisplay->setLightColor(1, 1, 1);
   mgDisplay->setTexture(m_outsideTexture);
   mgDisplay->draw(MG_TRIANGLES, m_outsideVertexes, m_outsideIndexes); 
 
-  mgDisplay->setShader("cave");
+  mgDisplay->setShader(m_insideShader);
   mgDisplay->setLightColor(204/255.0, 70/255.0, 7/255.0);
-  mgDisplay->setShaderUniform("cave", "lightPosn", m_origin);
+  mgDisplay->setShaderUniform(m_insideShader, "lightPosn", m_origin);
   mgDisplay->setTexture(m_insideTexture);
   mgDisplay->draw(MG_TRIANGLES, m_insideVertexes, m_insideIndexes); 
 
-  mgDisplay->setShader("unlitTexture");
+  mgDisplay->setShader(m_lavaShader);
   mgDisplay->setLightColor(1, 1, 1);
   mgDisplay->setTexture(m_lavaTexture);
   mgDisplay->draw(MG_TRIANGLES, m_lavaVertexes, m_lavaIndexes); 

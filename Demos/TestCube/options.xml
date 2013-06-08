@@ -23,5 +23,7 @@
   zminface = "docs/images/face-zmin.jpg"
   zmaxface = "docs/images/face-zmax.jpg"
 
+  floor = "docs/images/floor.jpg"
+
   helpFile = "docs/ui/help.xml"
 />

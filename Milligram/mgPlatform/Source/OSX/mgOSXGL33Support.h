@@ -72,6 +72,12 @@ protected:
   GLuint m_overlayShader;
   GLuint m_overlayObject;
   GLuint m_overlayVertexes;
+  GLint m_overlayTextureUnitIndex;
+  GLint m_overlaySizeIndex;
+  GLint m_overlayOriginIndex;
+ 
+  // compile the built-in shaders
+  virtual BOOL builtinShaders();
 
   // return shader log error messages as a string
   virtual void getShaderLog(

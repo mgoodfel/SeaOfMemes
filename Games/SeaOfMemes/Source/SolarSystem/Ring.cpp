@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -171,6 +171,7 @@ void Ring::createWallMaxFar(
   double outsideRadius = (m_radius + m_ringThick)/SYSTEM_FAR_SCALE;
   double insideRadius = (m_radius + m_ringThick - m_wallHeight)/SYSTEM_FAR_SCALE;
   double totalHeight = (m_ringWidth + m_wallWidth*2)/SYSTEM_FAR_SCALE;
+  double wallHeight = m_wallHeight/SYSTEM_FAR_SCALE;
   edgeY = edgeY/SYSTEM_FAR_SCALE;
 
   double left = j/(double) RING_LENGTH_STEPS;
@@ -192,7 +193,7 @@ void Ring::createWallMaxFar(
 
   bl.setNormal(0.0, 1.0, 0.0);
   bl.setPoint(outsideRadius * lx, edgeY, outsideRadius * lz);
-  bl.setTexture(left, m_wallHeight / totalHeight, 1); // shell texture
+  bl.setTexture(left, wallHeight / totalHeight, 1); // shell texture
 
   // create max side of wall, right edge
   tr.setNormal(0.0, 1.0, 0.0);
@@ -201,7 +202,7 @@ void Ring::createWallMaxFar(
 
   br.setNormal(0.0, 1.0, 0.0);
   br.setPoint(outsideRadius * rx, edgeY, outsideRadius * rz);
-  br.setTexture(right, m_wallHeight / totalHeight, 1); // shell texture
+  br.setTexture(right, wallHeight / totalHeight, 1); // shell texture
 
   tl.addTo(m_farVertexes);
   tr.addTo(m_farVertexes);
@@ -332,6 +333,8 @@ BOOL Ring::animate(
 // create buffers ready to send to display
 void Ring::createBuffers()
 {
+  m_shader = mgVertexTA::loadShader("litTextureArray");
+
   int ringSegments = 8;
   m_farVertexes = mgVertexTA::newBuffer(ringSegments*4*RING_LENGTH_STEPS);
   m_farIndexes = mgDisplay->newIndexBuffer(ringSegments*6*RING_LENGTH_STEPS);
@@ -373,7 +376,7 @@ void Ring::createBuffers()
 // draw back (away from eye) portion of ring
 void Ring::renderBackFar()
 {
-  mgDisplay->setShader("litTextureArray");
+  mgDisplay->setShader(m_shader);
   mgDisplay->setTexture(m_farTexture);
 
   mgDisplay->draw(MG_TRIANGLES, m_farVertexes, m_farIndexes);

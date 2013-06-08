@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -123,3 +123,37 @@ mgOSThread* mgOSThread::create(
   return new mgOSXThread(threadCount, callback, priority, threadArg1, threadArgs);
 }
 #endif
+
+#ifdef EMSCRIPTEN
+
+#include "Script/mgScriptEvent.h"
+#include "Script/mgScriptLock.h"
+#include "Script/mgScriptThread.h"
+
+//--------------------------------------------------------------
+// create an event
+mgOSEvent* mgOSEvent::create()
+{
+  return new mgScriptEvent();
+}
+
+//--------------------------------------------------------------
+// create a lock object
+mgOSLock* mgOSLock::create()
+{
+  return new mgScriptLock();
+}
+
+//--------------------------------------------------------------
+// create a thread group
+mgOSThread* mgOSThread::create(
+  int threadCount,
+  mgOSThreadCallback callback,
+  int priority,
+  void* threadArg1,
+  void** threadArgs)
+{
+  return new mgScriptThread(threadCount, callback, priority, threadArg1, threadArgs);
+}
+#endif
+

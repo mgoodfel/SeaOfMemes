@@ -19,35 +19,29 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Include\Graphics2D\mgBrush.h" />
-    <ClInclude Include="..\Include\Graphics2D\mgColor.h" />
-    <ClInclude Include="..\Include\Graphics2D\mgContext.h" />
-    <ClInclude Include="..\Include\Graphics2D\mgFont.h" />
-    <ClInclude Include="..\Include\Graphics2D\mgIcon.h" />
-    <ClInclude Include="..\Include\Graphics2D\mgImage.h" />
-    <ClInclude Include="..\Include\Graphics2D\mgPen.h" />
-    <ClInclude Include="..\Include\Graphics2D\mgResource.h" />
-    <ClInclude Include="..\Include\Graphics2D\mgSurface.h" />
-    <ClInclude Include="..\Include\Graphics2D\mgTypes2D.h" />
-    <ClInclude Include="..\Include\Graphics2D\Surfaces\mgGenSurface.h" />
     <ClInclude Include="..\Include\mg2D.h" />
-    <ClInclude Include="..\Source\Generic2D\mgGenBrush.h" />
-    <ClInclude Include="..\Source\Generic2D\mgGenCharCache.h" />
-    <ClInclude Include="..\Source\Generic2D\mgGenContext.h" />
-    <ClInclude Include="..\Source\Generic2D\mgGenFont.h" />
-    <ClInclude Include="..\Source\Generic2D\mgGenIcon.h" />
-    <ClInclude Include="..\Source\Generic2D\mgGenImage.h" />
-    <ClInclude Include="..\Source\Generic2D\mgGenPen.h" />
+    <ClInclude Include="..\Include\mgBrush.h" />
+    <ClInclude Include="..\Include\mgColor.h" />
+    <ClInclude Include="..\Include\mgContext.h" />
+    <ClInclude Include="..\Include\mgFont.h" />
+    <ClInclude Include="..\Include\mgIcon.h" />
+    <ClInclude Include="..\Include\mgImage.h" />
+    <ClInclude Include="..\Include\mgPen.h" />
+    <ClInclude Include="..\Include\mgResource.h" />
+    <ClInclude Include="..\Include\mgSurface.h" />
+    <ClInclude Include="..\Include\mgTypes2D.h" />
+    <ClInclude Include="..\Include\Surfaces\mgFTFont.h" />
+    <ClInclude Include="..\Include\Surfaces\mgGenContext.h" />
+    <ClInclude Include="..\Include\Surfaces\mgGenFont.h" />
+    <ClInclude Include="..\Include\Surfaces\mgGenIcon.h" />
+    <ClInclude Include="..\Include\Surfaces\mgGenImage.h" />
+    <ClInclude Include="..\Include\Surfaces\mgGenSurface.h" />
     <ClInclude Include="..\Source\stdafx.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Source\Generic2D\mgGenBrush.cpp" />
-    <ClCompile Include="..\Source\Generic2D\mgGenCharCache.cpp" />
+    <ClCompile Include="..\Source\Generic2D\mgFTFont.cpp" />
     <ClCompile Include="..\Source\Generic2D\mgGenContext.cpp" />
     <ClCompile Include="..\Source\Generic2D\mgGenFont.cpp" />
-    <ClCompile Include="..\Source\Generic2D\mgGenIcon.cpp" />
-    <ClCompile Include="..\Source\Generic2D\mgGenImage.cpp" />
-    <ClCompile Include="..\Source\Generic2D\mgGenPen.cpp" />
     <ClCompile Include="..\Source\Generic2D\mgGenSurface.cpp" />
     <ClCompile Include="..\Source\mgColor.cpp" />
     <ClCompile Include="..\Source\stdafx.cpp">
@@ -121,7 +115,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;../Include;../Source;../../FreeType/Include;../../</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;../../;../Include;../Source;../../FreeType/Include</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
@@ -134,7 +128,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>DEBUG_MEMORY;WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;../Include;../Source;../../FreeType/Include;../../</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;../../;../Include;../Source;../../FreeType/Include</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
@@ -147,7 +141,7 @@
       <WarningLevel>Level3</WarningLevel>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;../Include;../Source;../../FreeType/Include;../../</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;../../;../Include;../Source;../../FreeType/Include</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
@@ -165,7 +159,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;../Include;../Source;../../FreeType/Include;../../</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;../../;../Include;../Source;../../FreeType/Include</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>

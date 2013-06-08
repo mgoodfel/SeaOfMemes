@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -28,8 +28,8 @@
 
 #pragma comment(lib, "mg2D.lib")
 
-#include "Graphics2D/mgTypes2D.h"
-#include "Graphics2D/mgSurface.h"
-#include "Graphics2D/mgContext.h"
+#include "mgTypes2D.h"
+#include "mgSurface.h"
+#include "mgContext.h"
 
 #endif

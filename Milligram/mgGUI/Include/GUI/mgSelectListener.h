@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -22,6 +22,10 @@
 #ifndef MGSELECTLISTENER_H
 #define MGSELECTLISTENER_H
 
+/*
+  Abstract interface which delivers "select" events from a control (ex: radio button
+  press or list box selection.)
+*/
 class mgSelectListener
 {
 public:

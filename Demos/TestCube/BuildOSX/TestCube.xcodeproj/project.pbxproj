@@ -7,20 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		901296781762DCFD0007F15F /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 901296771762DCFD0007F15F /* OpenGL.framework */; };
+		9012967A1762DD090007F15F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 901296791762DD090007F15F /* QuartzCore.framework */; };
 		90AD07D313DEEC330074D8D7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90AD07D213DEEC330074D8D7 /* Cocoa.framework */; };
 		90AD07DD13DEEC330074D8D7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 90AD07DB13DEEC330074D8D7 /* InfoPlist.strings */; };
 		90AD07E613DEEC330074D8D7 /* TestCubeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 90AD07E513DEEC330074D8D7 /* TestCubeAppDelegate.m */; };
 		90AD07E913DEEC330074D8D7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90AD07E713DEEC330074D8D7 /* MainMenu.xib */; };
-		90AD09DD13DEED9A0074D8D7 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90AD09DC13DEED9A0074D8D7 /* OpenGL.framework */; };
 		90AD09E213DEEDC30074D8D7 /* stdafx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90AD09DE13DEEDC30074D8D7 /* stdafx.cpp */; };
 		90AD09E313DEEDC30074D8D7 /* TestCube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90AD09E013DEEDC30074D8D7 /* TestCube.cpp */; };
-		90AD09E913DEEEC20074D8D7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90AD09E813DEEEC20074D8D7 /* QuartzCore.framework */; };
 		90B23A7C15D00A0800A39C00 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90B23A7B15D00A0800A39C00 /* IOKit.framework */; };
 		90D1961F15A143DF00145D8D /* HelpUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90D1961D15A143DF00145D8D /* HelpUI.cpp */; };
 		90DDE45C14F8D4ED006076FF /* MovementApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90DDE45A14F8D4ED006076FF /* MovementApp.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		901296771762DCFD0007F15F /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		901296791762DD090007F15F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		90AD07CE13DEEC330074D8D7 /* TestCube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestCube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90AD07D213DEEC330074D8D7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		90AD07D513DEEC330074D8D7 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -32,12 +34,10 @@
 		90AD07E413DEEC330074D8D7 /* TestCubeAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestCubeAppDelegate.h; sourceTree = "<group>"; };
 		90AD07E513DEEC330074D8D7 /* TestCubeAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestCubeAppDelegate.m; sourceTree = "<group>"; };
 		90AD07E813DEEC330074D8D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		90AD09DC13DEED9A0074D8D7 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = ../../../../../../System/Library/Frameworks/OpenGL.framework; sourceTree = "<group>"; };
 		90AD09DE13DEEDC30074D8D7 /* stdafx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = stdafx.cpp; path = ../../Source/stdafx.cpp; sourceTree = "<group>"; };
 		90AD09DF13DEEDC30074D8D7 /* stdafx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stdafx.h; path = ../../Source/stdafx.h; sourceTree = "<group>"; };
 		90AD09E013DEEDC30074D8D7 /* TestCube.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestCube.cpp; path = ../../Source/TestCube.cpp; sourceTree = "<group>"; };
 		90AD09E113DEEDC30074D8D7 /* TestCube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestCube.h; path = ../../Source/TestCube.h; sourceTree = "<group>"; };
-		90AD09E813DEEEC20074D8D7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = ../../../../../../System/Library/Frameworks/QuartzCore.framework; sourceTree = "<group>"; };
 		90B23A7B15D00A0800A39C00 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		90D1961D15A143DF00145D8D /* HelpUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HelpUI.cpp; path = ../../Source/HelpUI.cpp; sourceTree = "<group>"; };
 		90D1961E15A143DF00145D8D /* HelpUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelpUI.h; path = ../../Source/HelpUI.h; sourceTree = "<group>"; };
@@ -50,10 +50,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9012967A1762DD090007F15F /* QuartzCore.framework in Frameworks */,
+				901296781762DCFD0007F15F /* OpenGL.framework in Frameworks */,
 				90B23A7C15D00A0800A39C00 /* IOKit.framework in Frameworks */,
 				90AD07D313DEEC330074D8D7 /* Cocoa.framework in Frameworks */,
-				90AD09DD13DEED9A0074D8D7 /* OpenGL.framework in Frameworks */,
-				90AD09E913DEEEC20074D8D7 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +63,8 @@
 		90AD07C313DEEC330074D8D7 = {
 			isa = PBXGroup;
 			children = (
+				901296791762DD090007F15F /* QuartzCore.framework */,
+				901296771762DCFD0007F15F /* OpenGL.framework */,
 				90B23A7B15D00A0800A39C00 /* IOKit.framework */,
 				90AD07D813DEEC330074D8D7 /* TestCube */,
 				90AD07D113DEEC330074D8D7 /* Frameworks */,
@@ -81,8 +83,6 @@
 		90AD07D113DEEC330074D8D7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				90AD09E813DEEEC20074D8D7 /* QuartzCore.framework */,
-				90AD09DC13DEED9A0074D8D7 /* OpenGL.framework */,
 				90AD07D213DEEC330074D8D7 /* Cocoa.framework */,
 				90AD07D413DEEC330074D8D7 /* Other Frameworks */,
 			);
@@ -153,6 +153,9 @@
 /* Begin PBXProject section */
 		90AD07C513DEEC330074D8D7 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+			};
 			buildConfigurationList = 90AD07C813DEEC330074D8D7 /* Build configuration list for PBXProject "TestCube" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -222,6 +225,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -236,7 +243,10 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = ../../../Milligram;
+				LIBRARY_SEARCH_PATHS = "../../../Milligram/BuildOSX/$(CONFIGURATION)";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -248,6 +258,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -256,7 +270,10 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = ../../../Milligram;
+				LIBRARY_SEARCH_PATHS = "../../../Milligram/BuildOSX/$(CONFIGURATION)";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				SDKROOT = macosx;
 			};
@@ -265,6 +282,7 @@
 		90AD07ED13DEEC330074D8D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_BUILD_DIR = "$(CONFIGURATION)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TestCube/TestCube-Prefix.pch";
@@ -280,7 +298,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../Milligram/BuildOSX/$(CONFIGURATION)\"",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = (
 					"-lmgPlatform",
 					"-lmg2D",
@@ -289,6 +307,8 @@
 					"-lmgUtil",
 					"-lFreeType",
 					"-lJpegLib",
+					"-lLibPNG",
+					"-lZLib",
 				);
 				PRELINK_LIBS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -299,6 +319,7 @@
 		90AD07EE13DEEC330074D8D7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_BUILD_DIR = "$(CONFIGURATION)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TestCube/TestCube-Prefix.pch";
@@ -314,7 +335,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../Milligram/BuildOSX/$(CONFIGURATION)\"",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = (
 					"-lmgPlatform",
 					"-lmg2D",
@@ -323,6 +344,8 @@
 					"-lmgUtil",
 					"-lFreeType",
 					"-lJpegLib",
+					"-lLibPNG",
+					"-lZLib",
 				);
 				PRELINK_LIBS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -25,6 +25,9 @@
 
 class mgOptionsFile;
 
+/*
+  A single option tag in the option file.
+*/
 class mgOptionsTag : public mgXMLTag
 {
 public:
@@ -42,6 +45,11 @@ public:
   virtual void tagClose(
     mgXMLParser* parser);
 };
+
+/*
+  Parses an XML file of name=value options.  Options can be read as strings,
+  integers, booleans, etc.
+*/
 
 class mgOptionsFile : public mgXMLParser
 {

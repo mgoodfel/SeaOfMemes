@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -19,15 +19,6 @@
   this notice.
 */
 
-/*
--Description:
-
-  A DebugPane displays a scrolling console and input line.  It parses commands
-  out of the input for displaying variables and calling functions.  Variables
-  and Functions are implemented via a subclass and should be used to present
-  debug information for apps.  Not intended for end-users.
-*/
-
 #ifndef MGDEBUGPANE_H
 #define MGDEBUGPANE_H
 
@@ -38,6 +29,10 @@
 class mgConsoleControl;
 class mgFieldControl;
 
+/*
+  The interface used by mgDebugPane to set and display application variables, 
+  or call application methods.
+*/
 class mgDebugInterface
 {
 public:
@@ -78,6 +73,12 @@ public:
     mgString& reply) = 0;
 };
 
+/*
+  A DebugPane displays a scrolling console and input line.  It parses commands
+  out of the input for displaying variables and calling functions.  Variables
+  and Functions are implemented via an mgDebugInterface instance and should be 
+  used to present debug information for apps.  Not intended for end-users.
+*/
 class mgDebugPane : public mgControl, public mgChangeListener, public mgControlListener
 {
 public:
@@ -192,6 +193,16 @@ protected:
 
   // control deleted
   virtual void controlDelete(
+    void* source)
+  {}
+
+  // control deleted
+  virtual void controlAddChild(
+    void* source)
+  {}
+
+  // control deleted
+  virtual void controlRemoveChild(
     void* source)
   {}
 };

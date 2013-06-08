@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -27,8 +27,9 @@ const char THIS_FILE[] = __FILE__;
 
 #include "mgDisplayServices.h"
 
-#include "Graphics3D/GL33/mgGL33Services.h"
-#include "Graphics3D/GL21/mgGL21Services.h"
+#include "Graphics3D/GL33/mgGL33Display.h"
+#include "Graphics3D/GL21/mgGL21Display.h"
+#include "Graphics3D/WebGL/mgWebGLDisplay.h"
 #include "Util3D/mgFontList.h"
 #include "Util3D/mg3DErrorTable.h"
 
@@ -93,6 +94,20 @@ mgTextureCube::~mgTextureCube()
 
 //--------------------------------------------------------------
 // constructor
+mgShader::mgShader(
+  const char* name)
+{
+  m_name = name;
+}
+
+//--------------------------------------------------------------
+// destructor
+mgShader::~mgShader()
+{
+}
+
+//--------------------------------------------------------------
+// constructor
 mgDisplayServices::mgDisplayServices(
   const char* shaderDir,
   const char* fontDir)
@@ -152,7 +167,7 @@ void mgDisplayServices::setFOV(
   double angle)
 {
   m_FOV = angle;
-  setProjection();
+  setProjection(m_graphicsWidth, m_graphicsHeight);
   frustumBuildPlanes();
   m_updateShaderVars = true;
 }
@@ -184,7 +199,7 @@ void mgDisplayServices::setScreenSize(
 
   mgDebug("view size is %d by %d", m_graphicsWidth, m_graphicsHeight);
 
-  setProjection();
+  setProjection(m_graphicsWidth, m_graphicsHeight);
 }
 
 //--------------------------------------------------------------
@@ -195,7 +210,7 @@ void mgDisplayServices::setFrontAndBack(
 {
   m_viewFront = frontDist;
   m_viewBack = backDist;
-  setProjection();
+  setProjection(m_graphicsWidth, m_graphicsHeight);
   frustumBuildPlanes();
   m_updateShaderVars = true;
 }
@@ -445,14 +460,21 @@ void mgInitDisplayServices(
 #ifdef SUPPORT_GL33
   if (mgDisplay == NULL && library.equalsIgnoreCase("OpenGL3.3"))
   {
-    mgDisplay = new mgGL33Services(shaderDir, fontDir);
+    mgDisplay = new mgGL33Display(shaderDir, fontDir);
   }
 #endif
 
 #ifdef SUPPORT_GL21
   if (mgDisplay == NULL && library.equalsIgnoreCase("OpenGL2.1"))
   {
-    mgDisplay = new mgGL21Services(shaderDir, fontDir);
+    mgDisplay = new mgGL21Display(shaderDir, fontDir);
+  }
+#endif
+
+#ifdef SUPPORT_WEBGL
+  if (mgDisplay == NULL && library.equalsIgnoreCase("WebGL"))
+  {
+    mgDisplay = new mgWebGLDisplay(shaderDir, fontDir);
   }
 #endif
 

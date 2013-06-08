@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -60,10 +60,13 @@ public:
     Asteroid* world);
 
 protected:
-  mgVertexBuffer* m_vertexes;
-  mgIndexBuffer* m_indexes;
+  mgVertexBuffer* m_terrainVertexes;
+  mgIndexBuffer* m_terrainIndexes;
+  mgShader* m_terrainShader;
+
   mgVertexBuffer* m_waterVertexes;
   mgIndexBuffer* m_waterIndexes;
+  mgShader* m_waterShader;
 
   // return outside diameter of object
   void outsidePt(

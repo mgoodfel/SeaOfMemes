@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -25,6 +25,7 @@
 #include "Colonization.h"
 
 class HelpUI;
+class StarrySky;
 
 class Trees : public MovementApp
 {
@@ -64,10 +65,9 @@ public:
   // render the view
   virtual void appViewDraw();
 
-  //--- end of mgApplication interface
-
 protected:
   HelpUI* m_help;
+  StarrySky* m_sky;
 
   double m_animateGrowth;
   BOOL m_runAnimation;
@@ -76,16 +76,21 @@ protected:
   mgTextureArray* m_leafTexture;
   mgIndexBuffer* m_leafIndexes;
   mgVertexBuffer* m_leafVertexes;
+  mgShader* m_leafShader;
 
   mgTextureImage* m_branchTexture;
   mgIndexBuffer* m_branchIndexes;
   mgVertexBuffer* m_branchVertexes;
+  mgShader* m_branchShader;
 
   mgTextureImage* m_floorTexture;
   mgVertexBuffer* m_floorVertexes;
+  mgShader* m_floorShader;
 
-  mgTextureImage* m_skyTexture;
-  mgVertexBuffer* m_skyVertexes;
+  mgTextureImage* m_shapeTexture;
+  mgIndexBuffer* m_shapeIndexes;
+  mgVertexBuffer* m_shapeVertexes;
+  mgShader* m_shapeShader;
 
   Colonization m_tree;
 
@@ -95,22 +100,20 @@ protected:
   // initialize leaf points and branches
   virtual void initTree();
 
+  // initialize leaf points and branches around shape
+  virtual void initShape();
+
   // create buffers for rendering tree
   virtual void renderTree();
 
   // add a cube to the buffers
-  virtual void addCube(
-    mgVertexBuffer* vertexes,
-    mgIndexBuffer* indexes,
+  virtual void addLeaf(
     const mgPoint3& center,
     double size,
     double tz);
 
-  // create the buffers for a set of cubes
-  virtual void createCubeBuffers(
-    int cubeCount,
-    mgVertexBuffer*& vertexes,
-    mgIndexBuffer*& indexes);
+  // create the buffers for a set of leaves
+  virtual void createLeafBuffers();
 
   // get axis vectors for cross-section at point
   virtual void getAxis(
@@ -128,18 +131,11 @@ protected:
     double* branchWidths,
     mgPoint3* branchPts);
 
-  // create the buffers for a set of cubes
-  virtual void createBranchBuffers(
-    int cylinderCount,
-    int steps,
-    mgVertexBuffer*& vertexes,
-    mgIndexBuffer*& indexes);
-
   // create vertex buffer for floor
   virtual void createFloor();
 
-  // create vertex buffer for sky
-  virtual void createSky();
+  // create vertex buffer for shape
+  virtual void createShape();
 };
 
 #endif

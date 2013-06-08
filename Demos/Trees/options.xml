@@ -17,10 +17,20 @@
   deskcursor = "docs/cursors/arrowCursor.xml"
 
   ground = "docs/textures/ground.jpg"
-  sky = "docs/textures/sky.jpg"
   leafUnused = "docs/textures/leaf-unused.jpg"
   leafUsed = "docs/textures/leaf-used.jpg"
   branch = "docs/textures/branch.jpg"
+  shape = "docs/textures/shape.jpg"
+
+  skybox-xmin = "docs/textures/sky-xmin.jpg"
+  skybox-xmax = "docs/textures/sky-xmax.jpg"
+  skybox-ymin = "docs/textures/sky-ymin.jpg"
+  skybox-ymax = "docs/textures/sky-ymax.jpg"
+  skybox-zmin = "docs/textures/sky-zmin.jpg"
+  skybox-zmax = "docs/textures/sky-zmax.jpg"
+  sunTexture = "docs/textures/sun.png"
+  moonTexture = "docs/textures/moon.png"
+  starTexture = "docs/textures/dim-stars.png"
 
   helpFile = "docs/ui/help.xml"
 />

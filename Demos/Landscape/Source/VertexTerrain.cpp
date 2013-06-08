@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -31,16 +31,16 @@ const mgVertexAttrib VERTEX_TERRAIN_ATTRIBS[] = {
   "vertPoint", MG_VERTEX_FLOAT3, (int) offsetof(VertexTerrain, m_px), 
   "vertNormal", MG_VERTEX_FLOAT3, (int) offsetof(VertexTerrain, m_nx), 
   "vertTexCoord0", MG_VERTEX_FLOAT2, (int) offsetof(VertexTerrain, m_tx),
-  "vertColor", MG_VERTEX_UBYTE4, (int) offsetof(VertexTerrain, m_red),
+  "vertColor", MG_VERTEX_FLOAT3, (int) offsetof(VertexTerrain, m_red),
   NULL, 0, -1  
 };
 
 //--------------------------------------------------------------
 // load a shader using this vertex
-void VertexTerrain::loadShader(
+mgShader* VertexTerrain::loadShader(
   const char* shaderName)
 {
-  mgDisplay->loadShader(shaderName, VERTEX_TERRAIN_ATTRIBS);
+  return mgDisplay->loadShader(shaderName, VERTEX_TERRAIN_ATTRIBS);
 }
 
 //--------------------------------------------------------------

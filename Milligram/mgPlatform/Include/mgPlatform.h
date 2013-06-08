@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -21,20 +21,20 @@
 #ifndef MGPLATFORM_H
 #define MGPLATFORM_H
 
-#pragma comment(lib, "mgPlatform.lib")
-
 #include "mgUtil/Include/mgUtil.h"
 
 #include "mgApplication.h"
 #include "mgInputEvents.h"
-#include "mgCursorDefn.h"
 #include "mgPlatformErrorTable.h"
 #include "mgPlatformServices.h"
 
 #ifdef WIN32
+#pragma comment(lib, "mgPlatform.lib")
+
 //#define SUPPORT_DX9                 // define to add DirectX9 support
 #define SUPPORT_GL21                // define to add OpenGL 2.1 support
 #define SUPPORT_GL33                // define to add OpenGL 3.3 support
+#define SUPPORT_FTFONT              // define to use FreeType fonts
 
 #include "Windows/win_glew.h"
 #endif
@@ -43,6 +43,7 @@
 
 #define SUPPORT_GL21                // define to add OpenGL 2.1 support
 #define SUPPORT_GL33                // define to add OpenGL 3.3 support
+#define SUPPORT_FTFONT              // define to use FreeType fonts
 
 #include "Linux/linux_glew.h"
 #endif
@@ -50,8 +51,19 @@
 #if defined(__APPLE__)
 #define SUPPORT_GL21                // define to add OpenGL 2.1 support
 #define SUPPORT_GL33                // define to add OpenGL 3.3 support
+#define SUPPORT_FTFONT              // define to use FreeType fonts
 
 #include <OpenGL/gl3.h>
+#endif
+
+#if defined(EMSCRIPTEN)
+#define SUPPORT_WEBGL
+//#define SUPPORT_FTFONT              // define to use FreeType fonts
+#define SUPPORT_CANVASFONT              // define to use Javascript canvas fonts
+
+// include OpenGL ES headers so we are restricted to WebGL subset
+#include <GLES2/gl2.h>
+#include <EGL/egl.h>
 #endif
 
 #endif

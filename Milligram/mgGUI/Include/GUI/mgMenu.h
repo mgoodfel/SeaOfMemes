@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -22,11 +22,11 @@
 #ifndef MGMENU_H
 #define MGMENU_H
 
-/*
-  definition of a menu
-*/
-#include "GUI/mgControl.h"
+#include "mgControl.h"
 
+/*
+  The definition of a menu, for use in mgMenuControl.
+*/
 class mgMenu
 {
 public:
@@ -66,9 +66,12 @@ public:
     BOOL enabled);
 
   // set toggle item state
-  void setItemState(
+  void setToggleState(
     const char* name,
     BOOL state);
+
+protected:
+  mgPtrArray m_items;
 };
 
 #endif

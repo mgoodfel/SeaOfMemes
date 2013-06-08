@@ -20,10 +20,10 @@ CC = g++
 RELEASEFLAGS = -O3 -Wno-invalid-offsetof
 DEBUGFLAGS = -g3 -O0 -fno-inline -Wno-invalid-offsetof
 
-LIBS = -LX11 -lGL -lm -lrt -lpthread
-DEBUGLIBDIRS = -L/usr/X11R6/lib -L/usr/X11R6/lib64 -L/usr/local/lib -L../../../Milligram/BuildLinux/Debug
-RELEASELIBDIRS = -L/usr/X11R6/lib -L/usr/X11R6/lib64 -L/usr/local/lib -L../../../Milligram/BuildLinux/Release
-FRAMEWORK = -lmg3D -lmgPlatform -lmg2D -lmgGUI -lmgUtil -lJpegLib -lFreeType
+LIBS = -lX11 -lGL -lm -lrt -lpthread
+DEBUGLIBDIRS = -L../../../Milligram/BuildLinux/Debug
+RELEASELIBDIRS = -L../../../Milligram/BuildLinux/Release
+FRAMEWORK = -lmg3D -lmgPlatform -lmg2D -lmgGUI -lmgUtil -lJpegLib -lLibPNG -lZLib -lFreeType
 
 
 all: debug release
@@ -61,11 +61,11 @@ Release/%.o: $(SOURCE)/%.cpp
 
 Debug/$(TARGET): $(DEBUGFILES)
 	@echo "Link $@"
-	@$(CC) $(DEBUGLIBDIRS) $(LIBS) -o Debug/$(TARGET) $(DEBUGFILES) $(FRAMEWORK)
+	@$(CC) $(DEBUGLIBDIRS) -o Debug/$(TARGET) $(DEBUGFILES) $(FRAMEWORK) $(LIBS)
 
 Release/$(TARGET): $(RELEASEFILES)
 	@echo "Link $@"
-	@$(CC) $(RELEASELIBDIRS) $(LIBS) -o Release/$(TARGET) $(RELEASEFILES) $(FRAMEWORK)
+	@$(CC) $(RELEASELIBDIRS) -o Release/$(TARGET) $(RELEASEFILES) $(FRAMEWORK) $(LIBS)
 
 clean: 
 	-rm -r -f Debug

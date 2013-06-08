@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -25,6 +25,9 @@
 class mgControl;
 class mgPaint;
 
+/*
+  The whitespace around the outside of a frame (in pixels.)
+*/
 class mgFrameMargin
 {
 public:
@@ -62,6 +65,10 @@ public:
   }
 };
 
+/*
+  A frame around a rectangular area.  The interior can be painted with an mgPaint.
+  This is a surface-managed resource and should not be deleted (see mg2D/mgSurface).
+*/
 class mgFrame : public mgResource
 {
 public:
@@ -90,6 +97,10 @@ public:
   virtual void getOutsideSize(
     const mgDimension& interior,
     mgDimension& exterior) const;
+
+  // adjust rectangle to exterior of frame
+  virtual void getOutsideRect(
+    mgRectangle& bounds) const;
 
   // adjust rectangle to interior of frame
   virtual void getInsideRect(

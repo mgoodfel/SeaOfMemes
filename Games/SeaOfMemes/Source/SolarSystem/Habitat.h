@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -62,18 +62,22 @@ protected:
   mgTextureImage* m_terrainTexture;
   mgVertexBuffer* m_terrainVertexes;
   mgIndexBuffer* m_terrainIndexes;
+  mgShader* m_terrainShader;
 
   mgTextureImage* m_waterTexture;
   mgVertexBuffer* m_waterVertexes;
   mgIndexBuffer* m_waterIndexes;
+  mgShader* m_waterShader;
 
   mgTextureImage* m_shellTexture;
   mgVertexBuffer* m_shellVertexes;
   mgIndexBuffer* m_shellIndexes;
+  mgShader* m_shellShader;
 
   mgTextureImage* m_lightTexture;
   mgVertexBuffer* m_lightVertexes;
   mgIndexBuffer* m_lightIndexes;
+  mgShader* m_lightShader;
 
   // return outside diameter of object
   void shellPt(

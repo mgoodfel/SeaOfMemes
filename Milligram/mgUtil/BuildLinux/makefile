@@ -1,30 +1,27 @@
 TARGET = libmgUtil.a
 
 SOURCE = ../Source
-INCDIRS = -I/usr/include -I/usr/local/include -I./ -I$(SOURCE) -I../Include -I../../
+INCDIRS = -I/usr/include -I/usr/local/include -I./ -I../../ -I../Include -I$(SOURCE) 
 DEFINE =
 
-UTIL = Util/mgBlockPool.o      Util/mgDebug.o \
-	Util/mgDWordArray.o     Util/mgException.o         Util/mgMapDWordToPtr.o \
-	Util/mgMapPtrToPtr.o    Util/mgMapStringToPtr.o    Util/mgMapStringToString.o \
-	Util/mgMatrix.o         Util/mgOptionsFile.o       Util/mgPtrArray.o \
-	Util/mgString.o         Util/mgStringArray.o       Util/mgMapStringToDWord.o \
-	Util/mgMapXYZToPtr.o    Util/mgErrorMsg.o          Util/mgErrorTable.o  \
-	Util/mgUtilErrorTable.o Util/mgMapStringToDouble.o
+UTIL = $(addprefix Util/, mgBlockPool.o mgDebug.o mgDWordArray.o mgException.o \
+	mgMapDWordToPtr.o mgMapDWordToDWord.o mgMapPtrToPtr.o mgMapStringToPtr.o \
+	mgMapStringToString.o mgMatrix.o mgOptionsFile.o mgPtrArray.o mgString.o \
+	mgStringArray.o mgMapStringToDWord.o mgMapXYZToPtr.o mgErrorMsg.o mgErrorTable.o \
+	mgUtilErrorTable.o mgMapStringToDouble.o)
 
-IMAGEUTIL = ImageUtil/mgDiffuse.o ImageUtil/mgGIF3.o ImageUtil/mgImageIO.o \
-	ImageUtil/mgImageUtil.o ImageUtil/mgLZW.o
+IMAGEUTIL = $(addprefix ImageUtil/, mgDiffuse.o mgGIF3.o mgImageIO.o mgImageUtil.o mgLZW.o)
 
-GRAPHICSUTIL = GraphicsUtil/mgSimplexNoise.o GraphicsUtil/mgBezier.o
+GRAPHICSUTIL = $(addprefix GraphicsUtil/, mgSimplexNoise.o mgBezier.o)
 
-AUDIO = Audio/mgVorbisRead.o Audio/mgAudio.o Audio/mgAudioAL.o
+AUDIO = $(addprefix Audio/, mgVorbisRead.o mgAudio.o mgAudioAL.o)
 
-XMLPARSER = XMLParser/mgXMLParser.o XMLParser/mgXMLScanner.o XMLParser/mgXMLTag.o
+XMLPARSER = $(addprefix XMLParser/, mgXMLParser.o mgXMLScanner.o mgXMLTag.o)
 
-LINUXOS = OS/Linux/mgLinuxEvent.o OS/Linux/mgLinuxFileUtil.o OS/Linux/mgLinuxLock.o \
-	OS/Linux/mgLinuxMisc.o OS/Linux/mgLinuxThread.o OS/Linux/mgLinuxTimer.o OS/Linux/mgLinuxSendLog.o
+LINUXOS = $(addprefix OS/Linux/, mgLinuxEvent.o mgLinuxFileUtil.o mgLinuxLock.o \
+	mgLinuxMisc.o mgLinuxThread.o mgLinuxTimer.o mgLinuxSendLog.o)
 
-GENERICOS = OS/mgOSCreate.o OS/mgMiscUtil.o 						
+GENERICOS = $(addprefix OS/, mgOSCreate.o mgMiscUtil.o) 
 
 FILES = $(UTIL) $(IMAGEUTIL) $(GRAPHICSUTIL) $(AUDIO) $(XMLPARSER) $(LINUXOS) $(GENERICOS)
 DIRLIST = Util ImageUtil GraphicsUtil Audio XMLParser OS OS/Linux
@@ -34,8 +31,8 @@ CC = g++
 RELEASEFLAGS = -O3
 DEBUGFLAGS = -g3 -O0 -fno-inline 
 
-LIBS = -LX11 -lGL -lm -lrt -lpthread
-LIBDIRS = -L/usr/local/lib
+LIBS = -lm -lrt -lpthread
+LIBDIRS = #empty
 DEBUGTARGET = ../../BuildLinux/Debug/$(TARGET)
 RELEASETARGET = ../../BuildLinux/Release/$(TARGET)
  

@@ -7,6 +7,6 @@
 #include "GUI/mgToolkit.h"
 #include "Form/mgFormPane.h"
 #include "Form/mgFormParser.h"
-#include "UglyStyle/mgUglyStyle.h"
+#include "SimpleStyle/mgSimpleStyle.h"
 
 #endif

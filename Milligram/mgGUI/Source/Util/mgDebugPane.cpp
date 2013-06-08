@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -180,7 +180,7 @@ void mgDebugPane::listVariables()
   int nameLen = 0;
   for (int i = 0; i < m_varNames.length(); i++)
   {
-    int len = strlen(m_varNames[i]);
+    int len = (int) strlen(m_varNames[i]);
     nameLen = max(nameLen, len);
   }
 
@@ -218,7 +218,7 @@ void mgDebugPane::listFunctions()
   int nameLen = 0;
   for (int i = 0; i < m_funcNames.length(); i++)
   {
-    int len = strlen(m_funcNames[i]) + strlen(m_funcParms[i]) + 2;
+    int len = (int) (strlen(m_funcNames[i]) + strlen(m_funcParms[i]) + 2);
     nameLen = max(nameLen, len);
   }
   nameLen = max(15, min(30, nameLen));

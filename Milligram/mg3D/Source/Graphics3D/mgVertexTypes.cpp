@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -38,10 +38,10 @@ const mgVertexAttrib MG_VERTEX_ATTRIBS[] = {
 
 //--------------------------------------------------------------
 // load a shader using this vertex
-void mgVertex::loadShader(
+mgShader* mgVertex::loadShader(
   const char* shaderName)
 {
-  mgDisplay->loadShader(shaderName, MG_VERTEX_ATTRIBS);
+  return mgDisplay->loadShader(shaderName, MG_VERTEX_ATTRIBS);
 }
 
 //--------------------------------------------------------------
@@ -64,10 +64,10 @@ const mgVertexAttrib MG_VERTEX_TA_ATTRIBS[] = {
 
 //--------------------------------------------------------------
 // load a shader using this vertex
-void mgVertexTA::loadShader(
+mgShader* mgVertexTA::loadShader(
   const char* shaderName)
 {
-  mgDisplay->loadShader(shaderName, MG_VERTEX_TA_ATTRIBS);
+  return mgDisplay->loadShader(shaderName, MG_VERTEX_TA_ATTRIBS);
 }
 
 //--------------------------------------------------------------

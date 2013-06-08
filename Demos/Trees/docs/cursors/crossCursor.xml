@@ -1,5 +1,5 @@
 <cursorDefn
-  texture="crossCursorRGB.bmp;crossCursorAlpha.bmp"
+  texture="crossCursor.png"
   hotX = "16"
   hotY = "16"
 />

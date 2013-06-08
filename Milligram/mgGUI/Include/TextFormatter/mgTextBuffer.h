@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -21,6 +21,9 @@
 #ifndef MGTEXTBUFFER_H
 #define MGTEXTBUFFER_H
 
+/*
+  An enum listing various text alignment options.
+*/
 enum mgTextAlign { 
   mgTextAlignLeft        = 0, 
   mgTextAlignHCenter     = 1, 
@@ -34,36 +37,45 @@ enum mgTextAlign {
   mgTextAlignVFill       = 9,
   mgTextAlignVDefault    = 10
 };
+
+/*
+  An enum for boolean options (includes "default")
+*/
 enum mgBooleanAttr { mgTrue, mgFalse, mgDefaultBoolean };
 
 #define MGDEFAULTSHORT SHRT_MAX
 #define MGDEFAULTCOLOR 0xFF000000
 
-// the buffer contains a string of formatting commands, each introduced by a code
+/*
+  An enum listing the formatting commands.  Used internally by 
+  the text formatter.
+*/
 enum mgFormatCmd 
 { 
-  mgJustifyCmd, 
-  mgLeftMarginCmd, 
-  mgRightMarginCmd, 
-  mgIndentCmd,
-  mgColorCmd, 
-  mgTargetCmd, 
-  mgAnchorCmd, 
-  mgFontFaceCmd,
-  mgFontSizeCmd,
-  mgFontItalicCmd,
-  mgFontBoldCmd,
-  mgWrapCmd, 
-  mgSpaceCmd, 
-  mgTabCmd, 
-  mgTextCmd,
-  mgChildCmd, 
-  mgBreakCmd,
-  mgClearCmd,
-  mgDoneCmd 
+  mgJustifyCmd          = 1, 
+  mgLeftMarginCmd       = 2, 
+  mgRightMarginCmd      = 3, 
+  mgIndentCmd           = 4,
+  mgColorCmd            = 5, 
+  mgTargetCmd           = 6, 
+  mgAnchorCmd           = 7, 
+  mgFontFaceCmd         = 8,
+  mgFontSizeCmd         = 9,
+  mgFontItalicCmd       = 10,
+  mgFontBoldCmd         = 11,
+  mgWrapCmd             = 12, 
+  mgSpaceCmd            = 13, 
+  mgTabCmd              = 14, 
+  mgTextCmd             = 15,
+  mgChildCmd            = 16, 
+  mgBreakCmd            = 17,
+  mgClearCmd            = 18,
+  mgDoneCmd             = 19 
 };
 
-// a buffer of formatting commands, held in a mgTextBox
+/*
+  A buffer of text, child controls and formatting commands.
+*/
 class mgTextBuffer
 {
 public:
@@ -220,6 +232,24 @@ public:
     mgTextAlign horzAlign,          // horizontal alignment
     mgTextAlign vertAlign);         // vertical alignment
 
+  // read child object
+  void readChild(
+    unsigned int &posn,               // buffer position
+    const void*& child,               // child object
+    mgTextAlign& horzAlign,           // horizontal alignment
+    mgTextAlign& vertAlign);          // vertical alignment
+
+  // write a string to buffer
+  void writeString(
+    const char* string,
+    int len = -1);
+
+  // read string from buffer
+  void readString(
+    unsigned int &posn,               // buffer position
+    int &len,                         // length of text
+    const char* &text);               // pointer to text data
+
   // set end of input
   void writeDone();
 
@@ -230,7 +260,7 @@ public:
     unsigned int& posn)
   {
     if (posn < m_bufferLen)
-      return (mgFormatCmd) m_buffer[posn++];
+      return (mgFormatCmd) readShort(posn);
     else return mgDoneCmd;
   }
 
@@ -310,7 +340,7 @@ public:
   DWORD readColor(
     unsigned int& posn)
   {
-    return readDWORD(posn);
+    return readDWord(posn);
   }    
 
   void* readAnchor(
@@ -331,29 +361,12 @@ public:
   {
     int len;
     const char* string;
-    readText(posn, len, string);
+    readString(posn, len, string);
     face.empty();
     face.write(string, len);
   }
 
-  // read text from buffer
-  void readText(
-    unsigned int &posn,               // buffer position
-    int &len,                         // length of text
-    const char* &text);               // pointer to text data
-
-  // read child object
-  void readChild(
-    unsigned int &posn,               // buffer position
-    const void*& child,               // child object
-    mgTextAlign& horzAlign,           // horizontal alignment
-    mgTextAlign& vertAlign);          // vertical alignment
-
 protected:
-  BYTE* m_buffer;                     // content buffer 
-  unsigned int m_bufferSize;          // size of buffer allocation
-  unsigned int m_bufferLen;           // length used
-
   // formatting state so we can query it
   mgTextAlign m_justify;              // justification
   short m_leftMargin;                 // left margin
@@ -372,45 +385,94 @@ protected:
   mgPtrArray m_anchors;               // array of mgAnchorRect* 
   BOOL m_wasBlank;                    // true if last char blank
 
+private:  // make sure no subclass directly accesses buffer
+  BYTE* m_buffer;                     // content buffer 
+  unsigned int m_bufferSize;          // size of buffer allocation
+  unsigned int m_bufferLen;           // length used
+
   // make room in buffer
   void makeRoom(
     int addLen);                      // additional length required
 
   // check to see if there's room in buffer
   void checkBufferSize(
-    int addLen);                 // additional length required
+    int addLen)                  // additional length required
+  {
+    // add 4 to requested len to handle alignment changes
+    addLen += 4;
+    if (m_bufferLen + addLen > m_bufferSize)
+      makeRoom(addLen);
+  }
 
-  // write a command and short value to buffer
+  // write a short value to buffer
   void writeShort(
-    mgFormatCmd nCmd, 
-    short value);
+    short value)
+  {
+    // align to next short
+    m_bufferLen += m_bufferLen&1;
 
-  // write a command and long value to buffer
-  void writeDWORD(
-    mgFormatCmd nCmd, 
-    DWORD value);
-
-  // write a command and ptr to buffer
-  void writePtr(
-    mgFormatCmd nCmd, 
-    void* value);
-
-  // write a string
-  void writeString(
-    const char* string,
-    int len = -1);
+    *(short* ) (m_buffer+m_bufferLen) = value;
+    m_bufferLen += sizeof(short);
+  }
 
   // read short value from buffer
   short readShort(
-    unsigned int &posn);         // buffer position
+    unsigned int &posn)          // buffer position
+  {
+    // align position to next short
+    posn += posn&1;
+    short value = *(short*) (m_buffer + posn);
+    posn += sizeof(short);
+
+    return value;
+  }
+
+  // write a long value to buffer
+  void writeDWORD(
+    DWORD value)
+  {
+    // align to next DWORD
+    m_bufferLen += (4-m_bufferLen&3)&3;
+
+    *(DWORD*) (m_buffer+m_bufferLen) = value;
+    m_bufferLen += sizeof(DWORD);
+  }
 
   // read long value from buffer
-  DWORD readDWORD(
-    unsigned int &posn);         // buffer position
+  DWORD readDWord(
+    unsigned int &posn)          // buffer position
+  {
+    // align position to next DWORD
+    posn += (4-posn&3)&3;
+    DWORD lValue = *(DWORD*) (m_buffer + posn);
+    posn += sizeof(DWORD);
+
+    return lValue;
+  }
+
+  // write a ptr to buffer
+  void writePtr(
+    const void* value)
+  {
+    // align to next DWORD
+    m_bufferLen += (4-m_bufferLen&3)&3;
+
+    *(void**) (m_buffer+m_bufferLen) = (void*) value;
+    m_bufferLen += sizeof(void*);
+  }
 
   // read pointer from buffer
   void* readPtr(
-    unsigned int &posn);          // buffer position
+    unsigned int &posn)           // buffer position
+  {
+    // align position to next DWORD
+    posn += (4-posn&3)&3;
+    void* value = *(void**) (m_buffer + posn);
+    posn += sizeof(void*);
+
+    return value;
+  }
+
 };
 
 #endif

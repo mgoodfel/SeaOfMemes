@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -27,7 +27,7 @@ const char THIS_FILE[] = __FILE__;
 
 // identify the program for the framework log
 const char* mgProgramName = "DontHitMe";
-const char* mgProgramVersion = "Part 60";
+const char* mgProgramVersion = "Part 83";
 
 #include "StarrySky.h"
 #include "Tube.h"
@@ -132,14 +132,6 @@ void DontHitMe::appInit()
 
   initMovement();
 
-  // load the shaders we might use
-  mgVertex::loadShader("litTexture");
-  mgVertex::loadShader("unlitTexture");
-  mgVertex::loadShader("litTextureCube");
-  mgVertex::loadShader("unlitTextureCube");
-  mgVertexTA::loadShader("litTextureArray");
-  mgVertexTA::loadShader("unlitTextureArray");
-
   m_sky = new StarrySky(m_options);
   m_sky->enableSkyBox(true);
   m_sky->enableStars(true);
@@ -157,6 +149,11 @@ void DontHitMe::appInit()
   m_wreck = new Wreck(m_options);
   m_tower1 = new Tower(m_options, false);
   m_tower2 = new Tower(m_options, false);
+
+  // create prickle flock
+  Prickle* prickle = new Prickle(m_options);
+  prickle->m_origin = mgPoint3(300, 0, 0);
+  m_prickles.add(prickle);
 
   mgString fileName;
   m_options.getFileName("tube", m_options.m_sourceFileName, "tube.jpg", fileName);
@@ -206,6 +203,13 @@ void DontHitMe::appTerm()
   delete m_sky;
   m_sky = NULL;
 
+  for (int i = 0; i < m_prickles.length(); i++)
+  {
+    Prickle* prickle = (Prickle*) m_prickles[i];
+    delete prickle;
+  }
+  m_prickles.removeAll();
+
   mgTermDisplayServices();
 }
 
@@ -215,11 +219,52 @@ void DontHitMe::initTrack()
 {
   m_tube = new Tube(TUBE_RADIUS, TUBE_STEPS);
 
-  const double TRACK_RADIUS = 350.0;
-  const int TRACK_POINTS = 12;
-  const double CNTL_LEN = 2*TRACK_RADIUS/TRACK_POINTS;
+  mgPoint3 points[100];
+  int pointCount = 0;
 
-  mgPoint3 points[TRACK_POINTS+2];
+  points[pointCount++] = mgPoint3(-228.416445, -41.358831, -117.116098);
+  points[pointCount++] = mgPoint3(-243.142015, -13.272057, -78.736983);
+  points[pointCount++] = mgPoint3(-250.652838, 13.582563, -41.237106);
+  points[pointCount++] = mgPoint3(-246.772827, 42.275564, -9.971116);
+  points[pointCount++] = mgPoint3(-220.172371, 77.741417, -1.910027);
+  points[pointCount++] = mgPoint3(-186.696810, 93.162267, 27.003141);
+  points[pointCount++] = mgPoint3(-162.644748, 91.834728, 49.839272);
+  points[pointCount++] = mgPoint3(-135.575121, 83.329043, 65.969549);
+  points[pointCount++] = mgPoint3(-95.004644, 67.156703, 86.108004);
+  points[pointCount++] = mgPoint3(-63.820451, 51.180720, 101.277010);
+  points[pointCount++] = mgPoint3(-34.210671, 32.013787, 115.049674);
+  points[pointCount++] = mgPoint3(-5.953715, 12.834811, 122.929728);
+  points[pointCount++] = mgPoint3(27.007515, -6.686469, 121.968658);
+  points[pointCount++] = mgPoint3(61.645948, -7.969721, 120.272704);
+  points[pointCount++] = mgPoint3(94.041745, -1.391364, 121.005816);
+  points[pointCount++] = mgPoint3(129.733907, 10.565194, 122.912350);
+  points[pointCount++] = mgPoint3(161.957111, 16.065340, 108.947959);
+  points[pointCount++] = mgPoint3(207.644826, 16.679817, 70.219127);
+  points[pointCount++] = mgPoint3(219.624802, 18.653035, 47.242515);
+  points[pointCount++] = mgPoint3(223.891977, 9.090362, 27.537427);
+  points[pointCount++] = mgPoint3(222.537937, -4.518158, 5.098732);
+  points[pointCount++] = mgPoint3(213.729281, -14.378990, -22.287487);
+  points[pointCount++] = mgPoint3(208.807850, -27.577125, -32.607589);
+  points[pointCount++] = mgPoint3(208.981896, -54.885413, -33.944260);
+  points[pointCount++] = mgPoint3(201.786616, -85.248045, -39.267186);
+  points[pointCount++] = mgPoint3(173.388444, -106.360454, -61.914524);
+  points[pointCount++] = mgPoint3(148.180797, -107.036729, -80.996889);
+  points[pointCount++] = mgPoint3(119.912835, -79.744013, -94.359016);
+  points[pointCount++] = mgPoint3(84.907808, -64.429394, -102.021798);
+  points[pointCount++] = mgPoint3(28.167741, -68.077039, -117.682767);
+  points[pointCount++] = mgPoint3(-6.985498, -80.490656, -130.833510);
+  points[pointCount++] = mgPoint3(-43.262429, -96.783243, -145.603375);
+  points[pointCount++] = mgPoint3(-74.684409, -110.848949, -158.145489);
+  points[pointCount++] = mgPoint3(-110.273785, -110.509320, -167.411397);
+  points[pointCount++] = mgPoint3(-150.329849, -96.364764, -168.732019);
+  points[pointCount++] = mgPoint3(-182.235273, -76.109089, -152.612426);
+  points[pointCount++] = mgPoint3(-220.564855, -57.127795, -133.041037);
+
+  points[pointCount++] = mgPoint3(-228.416445, -41.358831, -117.116098);
+  points[pointCount++] = mgPoint3(-243.142015, -13.272057, -78.736983);
+  points[pointCount++] = mgPoint3(-250.652838, 13.582563, -41.237106);
+/*
+  const double TRACK_RADIUS = 350.0;
 
   // create simple circular track
   for (int i = 0; i <= TRACK_POINTS+1; i++)
@@ -231,31 +276,33 @@ void DontHitMe::initTrack()
     pt->y = 60*sin(5*(2*PI*i)/TRACK_POINTS);
     pt->z = TRACK_RADIUS * sin(lenAngle);
   }
+*/
 
   // build first point of spline
-  mgPoint3 pt, lastPt, nextPt;
-  pt = points[0];
-  lastPt = points[TRACK_POINTS-1];
-  nextPt = points[1];
+  mgBezier* track = new mgBezier();
 
-  mgPoint3 cntlPt(pt);
+  // build first point of spline
+  mgPoint3 lastPt(points[0]);
+  mgPoint3 nowPt(points[1]);
+  mgPoint3 nextPt(points[2]);
+
+  mgPoint3 cntlPt(nowPt);
   cntlPt.subtract(lastPt);
   cntlPt.add(nextPt);
-  cntlPt.subtract(pt);
+  cntlPt.subtract(nowPt);
   cntlPt.scale(0.125);
-  cntlPt.add(pt);
+  cntlPt.add(nowPt);
 
-  mgBezier* track = new mgBezier();
-  track->addVertex(pt, cntlPt);
+  track->addVertex(nowPt, cntlPt);
 
   // build remaining points of spline
-  for (int i = 1; i <= TRACK_POINTS; i++)
+  for (int i = 2; i < pointCount-1; i++)
   {
     mgPoint3 pt = points[i];
-    mgPoint3 lastPt = points[i-1];
-    mgPoint3 nextPt = points[i+1];
+    lastPt = points[i-1];
+    nextPt = points[i+1];
 
-    mgPoint3 cntlPt(pt);
+    cntlPt = pt;
     cntlPt.subtract(lastPt);
     cntlPt.add(nextPt);
     cntlPt.subtract(pt);
@@ -607,14 +654,12 @@ void DontHitMe::appViewDraw()
     m_tower2->render();
   }
 
-/*
   // draw the prickles
   for (int i = 0; i < m_prickles.length(); i++)
   {
     Prickle* prickle = (Prickle*) m_prickles[i];
     prickle->render();
   }
-*/
 
   if (m_showingIntro)
   {
@@ -673,13 +718,11 @@ void DontHitMe::appCreateBuffers()
   m_tower1->createBuffers();
   m_tower2->createBuffers();
 
-/*
   for (int i = 0; i < m_prickles.length(); i++)
   {
     Prickle* prickle = (Prickle*) m_prickles[i];
     prickle->createBuffers();
   }
-*/
 }
 
 //-----------------------------------------------------------------------------
@@ -695,13 +738,11 @@ void DontHitMe::appDeleteBuffers()
   m_tower1->deleteBuffers();
   m_tower2->deleteBuffers();
 
-/*
   for (int i = 0; i < m_prickles.length(); i++)
   {
     Prickle* prickle = (Prickle*) m_prickles[i];
     prickle->deleteBuffers();
   }
-*/
 }
 
 //--------------------------------------------------------------------
@@ -893,6 +934,9 @@ void DontHitMe::appKeyDown(
 
     case MG_EVENT_KEY_F1:
 //      showHelp();
+      if (m_flying)
+        mgDebug("  points[pointCount++] = new mgPoint3(%f, %f, %f);", m_flightOrigin.x, m_flightOrigin.y, m_flightOrigin.z);
+      else mgDebug("  points[pointCount++] = new mgPoint3(%f, %f, %f);", m_ballOrigin.x, m_ballOrigin.y, m_ballOrigin.z);
       break;
 
     case MG_EVENT_KEY_F5:

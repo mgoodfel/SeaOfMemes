@@ -420,8 +420,11 @@
 					"-lmgUtil",
 					"-lFreeType",
 					"-lJpegLib",
+					"-lLibPNG",
+					"-lZLib",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SHARED_PRECOMPS_DIR = build;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -455,8 +458,11 @@
 					"-lmgUtil",
 					"-lFreeType",
 					"-lJpegLib",
+					"-lLibPNG",
+					"-lZLib",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SHARED_PRECOMPS_DIR = build;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

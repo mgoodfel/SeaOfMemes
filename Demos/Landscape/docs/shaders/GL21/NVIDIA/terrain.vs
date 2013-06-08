@@ -10,7 +10,7 @@ uniform vec4 mgMatColor;
 attribute vec4 vertPoint;
 attribute vec3 vertNormal;
 attribute vec2 vertTexCoord0;
-attribute vec4 vertColor;
+attribute vec3 vertColor;
 
 varying vec4 vFragColor;
 varying vec2 vTex;
@@ -20,11 +20,8 @@ void main(void)
   vec3 eyeNormal = mgNormalMatrix * vertNormal;
   float lightInten = max(0.0, dot(eyeNormal, mgLightDir));
 
-  vec4 vInColor;
-  vInColor = vertColor/255.0;
-
-  vFragColor.rgb = vInColor.rgb * (mgLightColor * lightInten + mgLightAmbient);
-  vFragColor.a = vInColor.a;
+  vFragColor.rgb = vertColor.rgb * (mgLightColor * lightInten + mgLightAmbient);
+  vFragColor.a = 1.0;
 
   vTex = vertTexCoord0;
 

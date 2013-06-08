@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -25,6 +25,12 @@
 
 class mgFrame;
 
+/*
+  An mgLayoutManager which puts all child controls into a column.  The width
+  of each control is forced to the maximum width.  If the parent is resized
+  beyond the minimum, the height of each control increases in proportion to 
+  its requested size.
+*/
 class mgColumnLayout : public mgLayoutManager
 {
 public:

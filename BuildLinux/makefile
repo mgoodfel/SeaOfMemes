@@ -1,7 +1,7 @@
-PARTXX = part60
-DEMOS = Landscape SaucerMovie TestCube Trees GuiTestAll GuiTestGL #GuiTestSDL
+PARTXX = part83
+DEMOS = Landscape SaucerMovie TestCube Trees GuiTestAll #GuiTestGL #GuiTestSDL
 GAMES = Crafty McrView SeaOfMemes DontHitMe
-MILLIGRAM = JpegLib FreeType Ogg Vorbis ZLib mg2D mg3D mgGUI mgUtil mgPlatform mgSendLog
+MILLIGRAM = JpegLib LibPNG FreeType Ogg Vorbis ZLib mg2D mg3D mgGUI mgUtil mgPlatform mgSendLog
 
 all:   MakeDirs $(MILLIGRAM) $(DEMOS) $(GAMES) MakeZips
 

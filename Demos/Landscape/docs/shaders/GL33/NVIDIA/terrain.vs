@@ -18,7 +18,7 @@ uniform float fogMaxDist;
 in vec4 vertPoint;
 in vec3 vertNormal;
 in vec2 vertTexCoord0;
-in ivec4 vertColor;
+in vec3 vertColor;
 
 smooth out vec4 vFragColor;
 smooth out vec2 vTex;
@@ -29,11 +29,8 @@ void main(void)
   vec3 eyeNormal = mgNormalMatrix * vertNormal;
   float lightInten = max(0.0, dot(eyeNormal, mgLightDir));
 
-  vec4 vInColor;
-  vInColor = vertColor/255.0;
-
-  vFragColor.rgb = vInColor.rgb * (mgLightColor * lightInten + mgLightAmbient);
-  vFragColor.a = vInColor.a;
+  vFragColor.rgb = vertColor.rgb * (mgLightColor * lightInten + mgLightAmbient);
+  vFragColor.a = 1.0;
 
   vTex = vertTexCoord0;
 

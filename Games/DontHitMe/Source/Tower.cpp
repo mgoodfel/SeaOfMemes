@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -270,8 +270,8 @@ void Tower::createShell()
   int glassIndexCount = 6*FLOORS * FLOOR_STEPS;
 
   m_shellVertexes = mgVertex::newBuffer(vertexCount);
-  m_shellIndexes = mgDisplay->newIndexBuffer(indexCount, false, true);
-  m_glassIndexes = mgDisplay->newIndexBuffer(glassIndexCount, false, true);
+  m_shellIndexes = mgDisplay->newIndexBuffer(indexCount);
+  m_glassIndexes = mgDisplay->newIndexBuffer(glassIndexCount);
 
   mgVertex* points = new mgVertex[(FLOOR_STEPS+1) * (APT_STEPS+1)];
 
@@ -593,7 +593,7 @@ void Tower::createOffices()
   int vertexCount = 4*wallCount;
   int indexCount = 6*wallCount;
   m_officeVertexes = mgVertexTA::newBuffer(vertexCount);
-  m_officeIndexes = mgDisplay->newIndexBuffer(indexCount, false, true);
+  m_officeIndexes = mgDisplay->newIndexBuffer(indexCount);
 
   // add front side offices
   for (int floor = 0; floor < 2*FLOORS; floor++)
@@ -617,6 +617,10 @@ void Tower::createOffices()
 // create vertex and index buffers
 void Tower::createBuffers()
 {
+  m_shellShader = mgVertex::loadShader("litTexture");
+  m_officeShader = mgVertexTA::loadShader("unlitTextureArray");
+  m_glassShader = mgVertex::loadShader("litTexture");
+
   createShell();
   createOffices();
 }
@@ -627,6 +631,7 @@ void Tower::deleteBuffers()
 {
   delete m_shellIndexes;
   m_shellIndexes = NULL;
+
   delete m_shellVertexes;
   m_shellVertexes = NULL;
 
@@ -648,18 +653,18 @@ void Tower::render()
   mgDisplay->setTransparent(false);
 
   // draw triangles using texture and shader
-  mgDisplay->setShader("litTexture");
+  mgDisplay->setShader(m_shellShader);
   mgDisplay->setTexture(m_shellTexture);
   mgDisplay->draw(MG_TRIANGLES, m_shellVertexes, m_shellIndexes);
 
   // draw triangles using texture and shader
-  mgDisplay->setShader("unlitTextureArray");
+  mgDisplay->setShader(m_officeShader);
   mgDisplay->setTexture(m_officeTextures);
   mgDisplay->draw(MG_TRIANGLES, m_officeVertexes, m_officeIndexes);
 
   // draw triangles using texture and shader
   mgDisplay->setTransparent(true);
-  mgDisplay->setShader("litTexture");
+  mgDisplay->setShader(m_glassShader);
   mgDisplay->setTexture(m_glassTexture);
   mgDisplay->draw(MG_TRIANGLES, m_shellVertexes, m_glassIndexes);
 

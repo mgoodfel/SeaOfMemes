@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -20,10 +20,8 @@
 */
 
 /*
-  Description:
-    The simplest demo of the framework.  Creates a rotating cube.
-
-    For example of Debug Console use, find 'debugListVariables'
+  The simplest demo of the framework.  Creates a rotating cube.
+  For example of Debug Console use, find 'debugListVariables'
 */
 
 #include "stdafx.h"
@@ -35,7 +33,7 @@ const char THIS_FILE[] = __FILE__;
 
 // identify the program for the framework log
 const char* mgProgramName = "TestCube";
-const char* mgProgramVersion = "Part 60";
+const char* mgProgramVersion = "Part 83";
 
 #include "TestCube.h"
 #include "HelpUI.h"
@@ -81,8 +79,8 @@ void TestCube::appInit()
   mgPlatform->setWindowTitle(title);
 
   // load the shaders we use
-  mgVertex::loadShader("litTexture");
-  mgVertexTA::loadShader("litTextureArray");
+  m_floorShader = mgVertex::loadShader("litTexture");
+  m_cubeShader = mgVertexTA::loadShader("litTextureArray");
 
   // rotation angle for cube
   m_angle = 0.0;
@@ -141,7 +139,7 @@ void TestCube::loadTextures()
   m_cubeTexture = mgDisplay->loadTextureArray(faceNames);
 
   // load floor texture
-  m_options.getFileName("floor", m_options.m_sourceFileName, "docs/images/floor.jpg", fileName);
+  m_options.getFileName("floor", m_options.m_sourceFileName, "floor.jpg", fileName);
   m_floorTexture = mgDisplay->loadTexture(fileName);
 }
 
@@ -174,7 +172,7 @@ void TestCube::appViewDraw()
     mgMatrix4 floorModel;
     mgDisplay->setModelTransform(floorModel);
 
-    mgDisplay->setShader("litTexture");
+    mgDisplay->setShader(m_floorShader);
     mgDisplay->setTexture(m_floorTexture);
     mgDisplay->draw(MG_TRIANGLES, m_floorVertexes);
   }
@@ -196,7 +194,7 @@ void TestCube::appViewDraw()
     mgDisplay->setTransparent(false);
 
     // draw triangles using texture and shader
-    mgDisplay->setShader("litTextureArray");
+    mgDisplay->setShader(m_cubeShader);
     mgDisplay->setTexture(m_cubeTexture);
     mgDisplay->draw(MG_TRIANGLES, m_cubeVertexes, m_cubeIndexes);
   }

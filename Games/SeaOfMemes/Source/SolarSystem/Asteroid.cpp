@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -37,8 +37,8 @@ const double VARIATION = 10.0/SCALE;
 // AsteroidChunk constructor
 AsteroidChunk::AsteroidChunk()
 {
-  m_indexes = NULL;
-  m_vertexes = NULL;
+  m_terrainIndexes = NULL;
+  m_terrainVertexes = NULL;
   m_waterIndexes = NULL;
   m_waterVertexes = NULL;
 }
@@ -47,11 +47,11 @@ AsteroidChunk::AsteroidChunk()
 // AsteroidChunk destructor
 AsteroidChunk::~AsteroidChunk()
 {
-  delete m_indexes;
-  m_indexes = NULL;
+  delete m_terrainIndexes;
+  m_terrainIndexes = NULL;
 
-  delete m_vertexes;
-  m_vertexes = NULL;
+  delete m_terrainVertexes;
+  m_terrainVertexes = NULL;
 
   delete m_waterIndexes;
   m_waterIndexes = NULL;
@@ -94,7 +94,7 @@ void AsteroidChunk::addPolygons(
   int depthSize = m_samples+3;  // -1 to size+1
   int vertexSize = m_samples+1;   // 0 to size
 
-  int vertexBase = m_vertexes->getLength();
+  int vertexBase = m_terrainVertexes->getLength();
 
   VertexTerrain v;
   v.setColor(133, 133, 133);  // gray rock
@@ -183,11 +183,11 @@ void AsteroidChunk::addPolygons(
         else v.setColor(135, 104, 73);  // brown dirt
       }
 
-      v.addTo(m_vertexes);
+      v.addTo(m_terrainVertexes);
     }
   }
 
-  m_indexes->addGrid(vertexBase, vertexSize, m_samples, m_samples, outward);
+  m_terrainIndexes->addGrid(vertexBase, vertexSize, m_samples, m_samples, outward);
 }
 
 //--------------------------------------------------------------
@@ -539,17 +539,20 @@ void AsteroidChunk::createBuffers(
   Asteroid* world)
 {
   // if buffer already created, nothing to do
-  if (m_indexes != NULL)
+  if (m_terrainIndexes != NULL)
     return;
+
+  m_terrainShader = VertexTerrain::loadShader("terrain");
+  m_waterShader = mgVertex::loadShader("litTexture");
 
   int vertexSize = m_samples+1;   // 0 to size
 
   // inside and outside times six sides
   int vertexCount = 6*vertexSize*vertexSize;
-  m_vertexes = VertexTerrain::newBuffer(vertexCount);
+  m_terrainVertexes = VertexTerrain::newBuffer(vertexCount);
 
   // inside and outside times six sides times six points per cell
-  m_indexes = mgDisplay->newIndexBuffer(6*6*m_samples*m_samples, false, vertexCount > 65535);  
+  m_terrainIndexes = mgDisplay->newIndexBuffer(6*6*m_samples*m_samples, false, vertexCount > 65535);  
 
   // create surface for this chunk
   addOutsideSurface(world);
@@ -562,11 +565,11 @@ void AsteroidChunk::createBuffers(
 // AsteroidChunk delete buffers
 void AsteroidChunk::deleteBuffers()
 {
-  delete m_indexes;
-  m_indexes = NULL;
+  delete m_terrainIndexes;
+  m_terrainIndexes = NULL;
 
-  delete m_vertexes;
-  m_vertexes = NULL;
+  delete m_terrainVertexes;
+  m_terrainVertexes = NULL;
 
   delete m_waterIndexes;
   m_waterIndexes = NULL;
@@ -589,9 +592,9 @@ BOOL AsteroidChunk::animate(
 void AsteroidChunk::render(
   Asteroid* world)
 {
-  mgDisplay->setShader("terrain");
+  mgDisplay->setShader(m_terrainShader);
   mgDisplay->setTexture(world->m_terrainTexture);
-  mgDisplay->draw(MG_TRIANGLES, m_vertexes, m_indexes); 
+  mgDisplay->draw(MG_TRIANGLES, m_terrainVertexes, m_terrainIndexes); 
 }
 
 //--------------------------------------------------------------
@@ -601,7 +604,7 @@ void AsteroidChunk::renderTransparent(
 {
   if (m_waterVertexes != NULL)
   {
-    mgDisplay->setShader("litTexture");
+    mgDisplay->setShader(m_waterShader);
     mgDisplay->setTexture(world->m_waterTexture);
     mgDisplay->draw(MG_TRIANGLES, m_waterVertexes, m_waterIndexes);
   }
@@ -615,9 +618,6 @@ Asteroid::Asteroid(
   double radius,
   BOOL addWater)
 {
-  VertexTerrain::loadShader("terrain");
-  mgVertex::loadShader("litTexture");
-
   mgString fileName;
 
   options.getFileName("waterTexture", options.m_sourceFileName, "", fileName);

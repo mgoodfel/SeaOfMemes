@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -41,15 +41,16 @@ public:
   virtual void render();
 
 protected:
-  mgTextureArray* m_texture;
+  mgTextureImage* m_texture;
   mgIndexBuffer* m_indexes;
   mgVertexBuffer* m_vertexes;
+  mgShader* m_shader;
 
   mgPtrArray m_towers;
 
   // set normals of points on grid
   void setNormals(
-    mgVertexTA* points,
+    mgVertex* points,
     int rows,
     int cols,
     BOOL outward);
@@ -63,8 +64,7 @@ protected:
     double lenScale,
     int lenSteps,
     const mgMatrix4& xform,
-    BOOL outwards,
-    int texture);
+    BOOL outwards);
 
   // create buffers for tower ring
   void createRing(

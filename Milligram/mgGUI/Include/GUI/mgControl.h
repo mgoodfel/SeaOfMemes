@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -32,6 +32,13 @@ class mgKeyListener;
 class mgFocusListener;
 class mgTimeListener;
 
+/*
+  The superclass of all controls.  Controls are created as children of an
+  existing parent.  There will be an mgTopControl instance created on the
+  rendering surface.  Controls have names and rectangular bounds.  They 
+  can draw on the surface and respond to various input events delivered
+  by "Listeners."
+*/
 class mgControl
 {
 public:
@@ -48,8 +55,10 @@ public:
     const char* cntlName);
 
   // get the name
-  virtual void getName(
-    mgString& name) const;
+  virtual const char* getName() const
+  {
+    return (const char*) m_cntlName; 
+  }
   
   // return parent control
   virtual mgControl* getParent() const;
@@ -75,15 +84,36 @@ public:
     int x,
     int y);
     
+  // set control location
+  virtual void setLocation(
+    const mgPoint& pt)
+  {
+    setLocation(pt.m_x, pt.m_y);
+  }
+    
   // get control location
   virtual void getLocation(
     int& x,
     int& y) const;
   
+  // get control location
+  virtual void getLocation(
+    mgPoint& pt) const
+  {
+    getLocation(pt.m_x, pt.m_y);
+  }
+  
   // set control size
   virtual void setSize(
     int width,
     int height);
+    
+  // set control size
+  virtual void setSize(
+    const mgDimension& size)
+  {
+    setSize(size.m_width, size.m_height);
+  }
     
   // get control size
   virtual void getSize(
@@ -92,7 +122,10 @@ public:
 
   // get control size
   virtual void getSize(
-    mgDimension& size);
+    mgDimension& size) const
+  {
+    getSize(size.m_width, size.m_height);
+  }
   
   // set control bounds
   virtual void setBounds(
@@ -298,15 +331,6 @@ public:
     mgTimeListener* listener);
 
 protected:
-  mgString m_cntlName;
-  
-  int m_x;
-  int m_y;
-  int m_width;
-  int m_height;
-  BOOL m_visible;
-  BOOL m_enabled;
-  
 //  const TKCursor* m_cursor;               // cursor pattern, or NULL
   mgLayoutManager* m_layout;              // layout manager, or NULL
   
@@ -348,6 +372,14 @@ protected:
 
   // send delete to control listeners
   virtual void dispatchControlDelete(
+    void* source);
+
+  // send addChild to control listeners
+  virtual void dispatchControlAddChild(
+    void* source);
+
+  // send removeChild to control listeners
+  virtual void dispatchControlRemoveChild(
     void* source);
 
   // send enter to mouse listeners
@@ -431,6 +463,16 @@ protected:
     mgControl* source,
     const TKCursor* cursor);
 #endif
+
+private:
+  mgString m_cntlName;
+  
+  int m_x;
+  int m_y;
+  int m_width;
+  int m_height;
+  BOOL m_visible;
+  BOOL m_enabled;
 
   friend class mgTopControl;
 };

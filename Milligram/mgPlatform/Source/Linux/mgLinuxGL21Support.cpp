@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -27,36 +27,8 @@ const char THIS_FILE[] = __FILE__;
 #define new new(THIS_FILE, __LINE__)
 #endif
 
-#include "mgLinuxServices.h"
+#include "mgLinuxPlatform.h"
 #include "mgLinuxGL21Support.h"
-
-const char* GL21_OVERLAY_VERTEX_SHADER = "           \n\
-#version 120                                         \n\
-uniform mat4 mgProjMatrix;                           \n\
-uniform vec2 mgOrigin;                               \n\
-attribute vec2 vertPoint;                            \n\
-attribute vec2 vertTexCoord0;                        \n\
-varying vec2 vTex;                                   \n\
-void main(void)                                      \n\
-{                                                    \n\
-  vTex = vertTexCoord0;                              \n\
-  vec4 position;                                     \n\
-  position.xy = vertPoint + mgOrigin;                \n\
-  position.z = 0.0;                                  \n\
-  position.w = 1.0;                                  \n\
-  gl_Position = mgProjMatrix * position;             \n\
-}                                                    \n\
-";
-
-const char* GL21_OVERLAY_FRAGMENT_SHADER = "         \n\
-#version 120                                         \n\
-uniform sampler2D mgTextureUnit0;                    \n\
-varying vec2 vTex;                                   \n\
-void main(void)                                      \n\
-{                                                    \n\
-  gl_FragColor = texture2D(mgTextureUnit0, vTex);    \n\
-}                                                    \n\
-";
 
 extern "C" GLubyte* glExtensions;
 
@@ -93,7 +65,7 @@ BOOL mgLinuxGL21Support::initDisplay()
     m_fullscreen?"true":"false", 
     m_multiSample?"true":"false");
 
-  mgLinuxServices* system = (mgLinuxServices*) mgPlatform;
+  mgLinuxPlatform* system = (mgLinuxPlatform*) mgPlatform;
 
   // =-= some drivers are failing this test.  not clear we need it
 #ifdef WORKED
@@ -157,22 +129,14 @@ BOOL mgLinuxGL21Support::initDisplay()
   if (system->getMultiSample())
     glEnable(GL_MULTISAMPLE);
 
-  // compile the overlay shader
-  mgDebug("compile overlay shader:");
-  const char* attrNames[] = {"vertPoint", "vertTexCoord0"};
-  const DWORD attrIndexes[] = {0, 1};
-  m_overlayShader = compileShaderPair(GL21_OVERLAY_VERTEX_SHADER, GL21_OVERLAY_FRAGMENT_SHADER,
-    2, attrNames, attrIndexes);
-
-  if (m_overlayShader == 0)
+  if (!builtinShaders())
   {
-    mgDebug("could not compile overlay shader");
     termDisplay();
-    return false; 
+    return false;
   }
 
   const char* vendor = (const char*) glGetString(GL_VENDOR);
-  if (vendor != NULL)
+  if (vendor != NULL)
     mgDebug(":OpenGL device vendor: %s", (const char*) vendor);
   const char* renderer = (const char*) glGetString(GL_RENDERER);
   if (renderer != NULL)
@@ -238,7 +202,7 @@ BOOL mgLinuxGL21Support::initDisplay()
 // terminate graphics
 void mgLinuxGL21Support::termDisplay()
 {
-  mgLinuxServices* system = (mgLinuxServices*) mgPlatform;
+  mgLinuxPlatform* system = (mgLinuxPlatform*) mgPlatform;
 
   glXMakeCurrent(system->m_display, 0, 0);
   glXDestroyContext(system->m_display, system->m_glrc);
@@ -252,7 +216,7 @@ void mgLinuxGL21Support::termDisplay()
 // update graphics in window
 void mgLinuxGL21Support::swapBuffers()
 {
-  mgLinuxServices* system = (mgLinuxServices*) mgPlatform;
+  mgLinuxPlatform* system = (mgLinuxPlatform*) mgPlatform;
 
   glXSwapBuffers(system->m_display, system->m_window);
 }
@@ -360,6 +324,54 @@ BOOL mgLinuxGL21Support::checkVersion(
       glVersion/100, glVersion%100, shaderVersion/100, shaderVersion%100);
     return false;
   }
+
+  return true;
+}
+
+//--------------------------------------------------------------------------
+// compile the builtin shaders
+BOOL mgLinuxGL21Support::builtinShaders()
+{
+  mgString vs;
+  vs += "#version 120\n";
+  vs += "uniform vec2 mgSize;\n";
+  vs += "uniform vec2 mgOrigin;\n";
+  vs += "attribute vec2 vertPoint;\n";
+  vs += "attribute vec2 vertTexCoord0;\n";
+  vs += "varying vec2 vTex;\n";
+  vs += "void main(void) \n";
+  vs += "{ \n";
+  vs += "  vTex = vertTexCoord0;\n";
+  vs += "  gl_Position.x = (2.0 * (vertPoint.x+mgOrigin.x)) / mgSize.x - 1.0;\n";
+  vs += "  gl_Position.y = (-2.0 * (vertPoint.y+mgOrigin.y)) / mgSize.y + 1.0;\n";
+  vs += "  gl_Position.z = 0.5;\n";
+  vs += "  gl_Position.w = 1.0;\n";
+  vs += "}\n";
+
+  mgString fs;
+  fs += "#version 120\n";
+  fs += "uniform sampler2D mgTextureUnit0;\n";
+  fs += "varying vec2 vTex;\n";
+  fs += "void main(void) \n";
+  fs += "{\n"; 
+  fs += "  gl_FragColor = texture2D(mgTextureUnit0, vTex);\n";
+  fs += "}\n";
+
+  // compile the overlay shader
+  mgDebug("compile overlay shader:");
+  const char* attrNames[] = {"vertPoint", "vertTexCoord0"};
+  const DWORD attrIndexes[] = {0, 1};
+  m_overlayShader = compileShaderPair(vs, fs, 2, attrNames, attrIndexes);
+
+  if (m_overlayShader == 0)
+  {
+    mgDebug("compile overlay shader failed.");
+    return false;
+  }
+
+  m_overlayTextureUnitIndex = glGetUniformLocation(m_overlayShader, "mgTextureUnit0");
+  m_overlaySizeIndex = glGetUniformLocation(m_overlayShader, "mgSize");
+  m_overlayOriginIndex = glGetUniformLocation(m_overlayShader, "mgOrigin");
 
   return true;
 }
@@ -489,29 +501,11 @@ void mgLinuxGL21Support::drawOverlayTexture(
   const size_t OVERLAY_POINT_OFFSET = offsetof(OverlayVertex, m_px);
   const size_t OVERLAY_TXCOORDS_OFFSET = offsetof(OverlayVertex, m_tx);
 
-  // create overlay LH orthographic projection with top left at 0,0
-  const GLfloat zNear = -1.0;
-  const GLfloat zFar = 1.0;
-  GLfloat projection[16];
-  memset(projection, 0, sizeof(projection));
-  projection[0*4+0] = 2.0f/m_graphicsWidth;
-  projection[1*4+1] = -2.0f/m_graphicsHeight;
-  projection[2*4+2] = 1.0f/(zFar - zNear);
-  projection[3*4+0] = -1.0f;   // (left+right)/(left-right)
-  projection[3*4+1] = 1.0f;   // (bot+top)/(bot-top)
-  projection[3*4+2] = -zNear/(zFar - zNear);
-  projection[3*4+3] = 1.0f;
-
   glUseProgram(m_overlayShader);
 
-  GLint iProjMatrix = glGetUniformLocation(m_overlayShader, "mgProjMatrix");
-  glUniformMatrix4fv(iProjMatrix, 1, GL_FALSE, projection);
-
-  GLint iTextureUnit = glGetUniformLocation(m_overlayShader, "mgTextureUnit0");
-  glUniform1i(iTextureUnit, 0);
-  
-  GLint iOrigin = glGetUniformLocation(m_overlayShader, "mgOrigin");
-  glUniform2f(iOrigin, (GLfloat) x, (GLfloat) y);
+  glUniform1i(m_overlayTextureUnitIndex, 0);
+  glUniform2f(m_overlaySizeIndex, (GLfloat) m_graphicsWidth, (GLfloat) m_graphicsHeight);
+  glUniform2f(m_overlayOriginIndex, (GLfloat) x, (GLfloat) y);
 
   if (m_overlayVertexes == 0)
     glGenBuffers(1, &m_overlayVertexes);

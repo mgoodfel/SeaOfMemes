@@ -1,5 +1,5 @@
 /*
-  Copyright (C); 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source);
@@ -21,7 +21,7 @@
 #if !defined(MGWINGL33SUPPORT_H) && defined(SUPPORT_GL33)
 #define MGWINGL33SUPPORT_H
 
-#include "mgDisplaySupport.h"
+#include "../mgDisplaySupport.h"
 
 class mgWinGL33Support : public mgDisplaySupport
 {
@@ -74,6 +74,12 @@ protected:
   GLuint m_overlayShader;
   GLuint m_overlayObject;
   GLuint m_overlayVertexes;
+  GLint m_overlayTextureUnitIndex;
+  GLint m_overlaySizeIndex;
+  GLint m_overlayOriginIndex;
+
+  // compile the built-in shaders
+  virtual BOOL builtinShaders();
 
   // return shader log as a string
   virtual void getShaderLog(

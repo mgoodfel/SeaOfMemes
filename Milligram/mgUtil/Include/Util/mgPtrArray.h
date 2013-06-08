@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -21,6 +21,11 @@
 #ifndef MGPTRARRAY_H
 #define MGPTRARRAY_H
 
+typedef int (*mgCompareFn)(const void*, const void*);
+
+/*
+  A variable-length array of pointers.  The caller owns the elements pointed to.
+*/
 class mgPtrArray
 {
 public:
@@ -49,7 +54,7 @@ public:
   
   // add a list to end
   void addAll(
-    const mgPtrArray& list);
+    const mgPtrArray& other);
 
   // insert element at index
   void insertAt(
@@ -71,12 +76,12 @@ public:
     return getAt(index);
   }
   
-  virtual const void* first()
+  virtual const void* first() const
   {
     return getAt(0);
   }
 
-  virtual const void* last()
+  virtual const void* last() const
   {
     return getAt(m_elementCount-1);
   }
@@ -107,7 +112,7 @@ public:
   
   // sort the array
   void sort(
-    int (*compareFn)(const void*, const void*));
+    mgCompareFn compare);
 
 protected:
   const void** m_elements;

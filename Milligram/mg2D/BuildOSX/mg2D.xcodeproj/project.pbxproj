@@ -7,68 +7,58 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9041B226159EC32000D7BCC5 /* mgBrush.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B1F4159EC32000D7BCC5 /* mgBrush.h */; };
-		9041B227159EC32000D7BCC5 /* mgColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B1F5159EC32000D7BCC5 /* mgColor.h */; };
-		9041B228159EC32000D7BCC5 /* mgContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B1F6159EC32000D7BCC5 /* mgContext.h */; };
-		9041B229159EC32000D7BCC5 /* mgFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B1F7159EC32000D7BCC5 /* mgFont.h */; };
-		9041B22A159EC32000D7BCC5 /* mgIcon.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B1F8159EC32000D7BCC5 /* mgIcon.h */; };
-		9041B22B159EC32000D7BCC5 /* mgImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B1F9159EC32000D7BCC5 /* mgImage.h */; };
-		9041B22C159EC32000D7BCC5 /* mgPen.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B1FA159EC32000D7BCC5 /* mgPen.h */; };
-		9041B22D159EC32000D7BCC5 /* mgResource.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B1FB159EC32000D7BCC5 /* mgResource.h */; };
-		9041B22E159EC32000D7BCC5 /* mgSurface.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B1FC159EC32000D7BCC5 /* mgSurface.h */; };
-		9041B22F159EC32000D7BCC5 /* mgTypes2D.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B1FD159EC32000D7BCC5 /* mgTypes2D.h */; };
-		9041B230159EC32000D7BCC5 /* mgGenSurface.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B1FF159EC32000D7BCC5 /* mgGenSurface.h */; };
 		9041B231159EC32000D7BCC5 /* mg2D.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B200159EC32000D7BCC5 /* mg2D.h */; };
-		9041B232159EC32000D7BCC5 /* mgGenBrush.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B203159EC32000D7BCC5 /* mgGenBrush.cpp */; };
-		9041B233159EC32000D7BCC5 /* mgGenBrush.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B204159EC32000D7BCC5 /* mgGenBrush.h */; };
-		9041B234159EC32000D7BCC5 /* mgGenCharCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B205159EC32000D7BCC5 /* mgGenCharCache.cpp */; };
-		9041B235159EC32000D7BCC5 /* mgGenCharCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B206159EC32000D7BCC5 /* mgGenCharCache.h */; };
 		9041B236159EC32000D7BCC5 /* mgGenContext.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B207159EC32000D7BCC5 /* mgGenContext.cpp */; };
-		9041B237159EC32000D7BCC5 /* mgGenContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B208159EC32000D7BCC5 /* mgGenContext.h */; };
 		9041B238159EC32000D7BCC5 /* mgGenFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B209159EC32000D7BCC5 /* mgGenFont.cpp */; };
-		9041B239159EC32000D7BCC5 /* mgGenFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B20A159EC32000D7BCC5 /* mgGenFont.h */; };
-		9041B23A159EC32000D7BCC5 /* mgGenIcon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B20B159EC32000D7BCC5 /* mgGenIcon.cpp */; };
-		9041B23B159EC32000D7BCC5 /* mgGenIcon.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B20C159EC32000D7BCC5 /* mgGenIcon.h */; };
-		9041B23C159EC32000D7BCC5 /* mgGenImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B20D159EC32000D7BCC5 /* mgGenImage.cpp */; };
-		9041B23D159EC32000D7BCC5 /* mgGenImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B20E159EC32000D7BCC5 /* mgGenImage.h */; };
-		9041B23E159EC32000D7BCC5 /* mgGenPen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B20F159EC32000D7BCC5 /* mgGenPen.cpp */; };
-		9041B23F159EC32000D7BCC5 /* mgGenPen.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B210159EC32000D7BCC5 /* mgGenPen.h */; };
 		9041B240159EC32000D7BCC5 /* mgGenSurface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B211159EC32000D7BCC5 /* mgGenSurface.cpp */; };
 		9041B241159EC32000D7BCC5 /* mgColor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B212159EC32000D7BCC5 /* mgColor.cpp */; };
 		9041B243159EC32000D7BCC5 /* stdafx.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B214159EC32000D7BCC5 /* stdafx.h */; };
+		9070D2601762CA5100081003 /* mgBrush.h in Headers */ = {isa = PBXBuildFile; fileRef = 9070D2561762CA5100081003 /* mgBrush.h */; };
+		9070D2611762CA5100081003 /* mgColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 9070D2571762CA5100081003 /* mgColor.h */; };
+		9070D2621762CA5100081003 /* mgContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 9070D2581762CA5100081003 /* mgContext.h */; };
+		9070D2631762CA5100081003 /* mgFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 9070D2591762CA5100081003 /* mgFont.h */; };
+		9070D2641762CA5100081003 /* mgIcon.h in Headers */ = {isa = PBXBuildFile; fileRef = 9070D25A1762CA5100081003 /* mgIcon.h */; };
+		9070D2651762CA5100081003 /* mgImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 9070D25B1762CA5100081003 /* mgImage.h */; };
+		9070D2661762CA5100081003 /* mgPen.h in Headers */ = {isa = PBXBuildFile; fileRef = 9070D25C1762CA5100081003 /* mgPen.h */; };
+		9070D2671762CA5100081003 /* mgResource.h in Headers */ = {isa = PBXBuildFile; fileRef = 9070D25D1762CA5100081003 /* mgResource.h */; };
+		9070D2681762CA5100081003 /* mgSurface.h in Headers */ = {isa = PBXBuildFile; fileRef = 9070D25E1762CA5100081003 /* mgSurface.h */; };
+		9070D2691762CA5100081003 /* mgTypes2D.h in Headers */ = {isa = PBXBuildFile; fileRef = 9070D25F1762CA5100081003 /* mgTypes2D.h */; };
+		9070D2721762CA6000081003 /* mgCanvasFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 9070D26B1762CA6000081003 /* mgCanvasFont.h */; };
+		9070D2731762CA6000081003 /* mgFTFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 9070D26C1762CA6000081003 /* mgFTFont.h */; };
+		9070D2741762CA6000081003 /* mgGenContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 9070D26D1762CA6000081003 /* mgGenContext.h */; };
+		9070D2751762CA6000081003 /* mgGenFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 9070D26E1762CA6000081003 /* mgGenFont.h */; };
+		9070D2761762CA6000081003 /* mgGenIcon.h in Headers */ = {isa = PBXBuildFile; fileRef = 9070D26F1762CA6000081003 /* mgGenIcon.h */; };
+		9070D2771762CA6000081003 /* mgGenImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 9070D2701762CA6000081003 /* mgGenImage.h */; };
+		9070D2781762CA6000081003 /* mgGenSurface.h in Headers */ = {isa = PBXBuildFile; fileRef = 9070D2711762CA6000081003 /* mgGenSurface.h */; };
+		9070D27C1762CA8E00081003 /* mgFTFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9070D27B1762CA8E00081003 /* mgFTFont.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9041B1E7159EC2BF00D7BCC5 /* libmg2D.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libmg2D.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		9041B1F4159EC32000D7BCC5 /* mgBrush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgBrush.h; sourceTree = "<group>"; };
-		9041B1F5159EC32000D7BCC5 /* mgColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgColor.h; sourceTree = "<group>"; };
-		9041B1F6159EC32000D7BCC5 /* mgContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgContext.h; sourceTree = "<group>"; };
-		9041B1F7159EC32000D7BCC5 /* mgFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgFont.h; sourceTree = "<group>"; };
-		9041B1F8159EC32000D7BCC5 /* mgIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgIcon.h; sourceTree = "<group>"; };
-		9041B1F9159EC32000D7BCC5 /* mgImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgImage.h; sourceTree = "<group>"; };
-		9041B1FA159EC32000D7BCC5 /* mgPen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgPen.h; sourceTree = "<group>"; };
-		9041B1FB159EC32000D7BCC5 /* mgResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgResource.h; sourceTree = "<group>"; };
-		9041B1FC159EC32000D7BCC5 /* mgSurface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgSurface.h; sourceTree = "<group>"; };
-		9041B1FD159EC32000D7BCC5 /* mgTypes2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgTypes2D.h; sourceTree = "<group>"; };
-		9041B1FF159EC32000D7BCC5 /* mgGenSurface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgGenSurface.h; sourceTree = "<group>"; };
 		9041B200159EC32000D7BCC5 /* mg2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mg2D.h; sourceTree = "<group>"; };
-		9041B203159EC32000D7BCC5 /* mgGenBrush.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgGenBrush.cpp; sourceTree = "<group>"; };
-		9041B204159EC32000D7BCC5 /* mgGenBrush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgGenBrush.h; sourceTree = "<group>"; };
-		9041B205159EC32000D7BCC5 /* mgGenCharCache.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgGenCharCache.cpp; sourceTree = "<group>"; };
-		9041B206159EC32000D7BCC5 /* mgGenCharCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgGenCharCache.h; sourceTree = "<group>"; };
 		9041B207159EC32000D7BCC5 /* mgGenContext.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgGenContext.cpp; sourceTree = "<group>"; };
-		9041B208159EC32000D7BCC5 /* mgGenContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgGenContext.h; sourceTree = "<group>"; };
 		9041B209159EC32000D7BCC5 /* mgGenFont.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgGenFont.cpp; sourceTree = "<group>"; };
-		9041B20A159EC32000D7BCC5 /* mgGenFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgGenFont.h; sourceTree = "<group>"; };
-		9041B20B159EC32000D7BCC5 /* mgGenIcon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgGenIcon.cpp; sourceTree = "<group>"; };
-		9041B20C159EC32000D7BCC5 /* mgGenIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgGenIcon.h; sourceTree = "<group>"; };
-		9041B20D159EC32000D7BCC5 /* mgGenImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgGenImage.cpp; sourceTree = "<group>"; };
-		9041B20E159EC32000D7BCC5 /* mgGenImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgGenImage.h; sourceTree = "<group>"; };
-		9041B20F159EC32000D7BCC5 /* mgGenPen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgGenPen.cpp; sourceTree = "<group>"; };
-		9041B210159EC32000D7BCC5 /* mgGenPen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgGenPen.h; sourceTree = "<group>"; };
 		9041B211159EC32000D7BCC5 /* mgGenSurface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgGenSurface.cpp; sourceTree = "<group>"; };
 		9041B212159EC32000D7BCC5 /* mgColor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgColor.cpp; sourceTree = "<group>"; };
 		9041B214159EC32000D7BCC5 /* stdafx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stdafx.h; sourceTree = "<group>"; };
+		9070D2561762CA5100081003 /* mgBrush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgBrush.h; sourceTree = "<group>"; };
+		9070D2571762CA5100081003 /* mgColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgColor.h; sourceTree = "<group>"; };
+		9070D2581762CA5100081003 /* mgContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgContext.h; sourceTree = "<group>"; };
+		9070D2591762CA5100081003 /* mgFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgFont.h; sourceTree = "<group>"; };
+		9070D25A1762CA5100081003 /* mgIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgIcon.h; sourceTree = "<group>"; };
+		9070D25B1762CA5100081003 /* mgImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgImage.h; sourceTree = "<group>"; };
+		9070D25C1762CA5100081003 /* mgPen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgPen.h; sourceTree = "<group>"; };
+		9070D25D1762CA5100081003 /* mgResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgResource.h; sourceTree = "<group>"; };
+		9070D25E1762CA5100081003 /* mgSurface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgSurface.h; sourceTree = "<group>"; };
+		9070D25F1762CA5100081003 /* mgTypes2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgTypes2D.h; sourceTree = "<group>"; };
+		9070D26B1762CA6000081003 /* mgCanvasFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgCanvasFont.h; sourceTree = "<group>"; };
+		9070D26C1762CA6000081003 /* mgFTFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgFTFont.h; sourceTree = "<group>"; };
+		9070D26D1762CA6000081003 /* mgGenContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgGenContext.h; sourceTree = "<group>"; };
+		9070D26E1762CA6000081003 /* mgGenFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgGenFont.h; sourceTree = "<group>"; };
+		9070D26F1762CA6000081003 /* mgGenIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgGenIcon.h; sourceTree = "<group>"; };
+		9070D2701762CA6000081003 /* mgGenImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgGenImage.h; sourceTree = "<group>"; };
+		9070D2711762CA6000081003 /* mgGenSurface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgGenSurface.h; sourceTree = "<group>"; };
+		9070D27B1762CA8E00081003 /* mgFTFont.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgFTFont.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,37 +92,21 @@
 		9041B1F2159EC32000D7BCC5 /* Include */ = {
 			isa = PBXGroup;
 			children = (
-				9041B1F3159EC32000D7BCC5 /* Graphics2D */,
+				9070D26A1762CA6000081003 /* Surfaces */,
+				9070D2561762CA5100081003 /* mgBrush.h */,
+				9070D2571762CA5100081003 /* mgColor.h */,
+				9070D2581762CA5100081003 /* mgContext.h */,
+				9070D2591762CA5100081003 /* mgFont.h */,
+				9070D25A1762CA5100081003 /* mgIcon.h */,
+				9070D25B1762CA5100081003 /* mgImage.h */,
+				9070D25C1762CA5100081003 /* mgPen.h */,
+				9070D25D1762CA5100081003 /* mgResource.h */,
+				9070D25E1762CA5100081003 /* mgSurface.h */,
+				9070D25F1762CA5100081003 /* mgTypes2D.h */,
 				9041B200159EC32000D7BCC5 /* mg2D.h */,
 			);
 			name = Include;
 			path = ../Include;
-			sourceTree = "<group>";
-		};
-		9041B1F3159EC32000D7BCC5 /* Graphics2D */ = {
-			isa = PBXGroup;
-			children = (
-				9041B1F4159EC32000D7BCC5 /* mgBrush.h */,
-				9041B1F5159EC32000D7BCC5 /* mgColor.h */,
-				9041B1F6159EC32000D7BCC5 /* mgContext.h */,
-				9041B1F7159EC32000D7BCC5 /* mgFont.h */,
-				9041B1F8159EC32000D7BCC5 /* mgIcon.h */,
-				9041B1F9159EC32000D7BCC5 /* mgImage.h */,
-				9041B1FA159EC32000D7BCC5 /* mgPen.h */,
-				9041B1FB159EC32000D7BCC5 /* mgResource.h */,
-				9041B1FC159EC32000D7BCC5 /* mgSurface.h */,
-				9041B1FD159EC32000D7BCC5 /* mgTypes2D.h */,
-				9041B1FE159EC32000D7BCC5 /* Surfaces */,
-			);
-			path = Graphics2D;
-			sourceTree = "<group>";
-		};
-		9041B1FE159EC32000D7BCC5 /* Surfaces */ = {
-			isa = PBXGroup;
-			children = (
-				9041B1FF159EC32000D7BCC5 /* mgGenSurface.h */,
-			);
-			path = Surfaces;
 			sourceTree = "<group>";
 		};
 		9041B201159EC32000D7BCC5 /* Source */ = {
@@ -149,23 +123,26 @@
 		9041B202159EC32000D7BCC5 /* Generic2D */ = {
 			isa = PBXGroup;
 			children = (
-				9041B203159EC32000D7BCC5 /* mgGenBrush.cpp */,
-				9041B204159EC32000D7BCC5 /* mgGenBrush.h */,
-				9041B205159EC32000D7BCC5 /* mgGenCharCache.cpp */,
-				9041B206159EC32000D7BCC5 /* mgGenCharCache.h */,
+				9070D27B1762CA8E00081003 /* mgFTFont.cpp */,
 				9041B207159EC32000D7BCC5 /* mgGenContext.cpp */,
-				9041B208159EC32000D7BCC5 /* mgGenContext.h */,
 				9041B209159EC32000D7BCC5 /* mgGenFont.cpp */,
-				9041B20A159EC32000D7BCC5 /* mgGenFont.h */,
-				9041B20B159EC32000D7BCC5 /* mgGenIcon.cpp */,
-				9041B20C159EC32000D7BCC5 /* mgGenIcon.h */,
-				9041B20D159EC32000D7BCC5 /* mgGenImage.cpp */,
-				9041B20E159EC32000D7BCC5 /* mgGenImage.h */,
-				9041B20F159EC32000D7BCC5 /* mgGenPen.cpp */,
-				9041B210159EC32000D7BCC5 /* mgGenPen.h */,
 				9041B211159EC32000D7BCC5 /* mgGenSurface.cpp */,
 			);
 			path = Generic2D;
+			sourceTree = "<group>";
+		};
+		9070D26A1762CA6000081003 /* Surfaces */ = {
+			isa = PBXGroup;
+			children = (
+				9070D26B1762CA6000081003 /* mgCanvasFont.h */,
+				9070D26C1762CA6000081003 /* mgFTFont.h */,
+				9070D26D1762CA6000081003 /* mgGenContext.h */,
+				9070D26E1762CA6000081003 /* mgGenFont.h */,
+				9070D26F1762CA6000081003 /* mgGenIcon.h */,
+				9070D2701762CA6000081003 /* mgGenImage.h */,
+				9070D2711762CA6000081003 /* mgGenSurface.h */,
+			);
+			path = Surfaces;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,26 +152,25 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9041B226159EC32000D7BCC5 /* mgBrush.h in Headers */,
-				9041B227159EC32000D7BCC5 /* mgColor.h in Headers */,
-				9041B228159EC32000D7BCC5 /* mgContext.h in Headers */,
-				9041B229159EC32000D7BCC5 /* mgFont.h in Headers */,
-				9041B22A159EC32000D7BCC5 /* mgIcon.h in Headers */,
-				9041B22B159EC32000D7BCC5 /* mgImage.h in Headers */,
-				9041B22C159EC32000D7BCC5 /* mgPen.h in Headers */,
-				9041B22D159EC32000D7BCC5 /* mgResource.h in Headers */,
-				9041B22E159EC32000D7BCC5 /* mgSurface.h in Headers */,
-				9041B22F159EC32000D7BCC5 /* mgTypes2D.h in Headers */,
-				9041B230159EC32000D7BCC5 /* mgGenSurface.h in Headers */,
 				9041B231159EC32000D7BCC5 /* mg2D.h in Headers */,
-				9041B233159EC32000D7BCC5 /* mgGenBrush.h in Headers */,
-				9041B235159EC32000D7BCC5 /* mgGenCharCache.h in Headers */,
-				9041B237159EC32000D7BCC5 /* mgGenContext.h in Headers */,
-				9041B239159EC32000D7BCC5 /* mgGenFont.h in Headers */,
-				9041B23B159EC32000D7BCC5 /* mgGenIcon.h in Headers */,
-				9041B23D159EC32000D7BCC5 /* mgGenImage.h in Headers */,
-				9041B23F159EC32000D7BCC5 /* mgGenPen.h in Headers */,
 				9041B243159EC32000D7BCC5 /* stdafx.h in Headers */,
+				9070D2601762CA5100081003 /* mgBrush.h in Headers */,
+				9070D2611762CA5100081003 /* mgColor.h in Headers */,
+				9070D2621762CA5100081003 /* mgContext.h in Headers */,
+				9070D2631762CA5100081003 /* mgFont.h in Headers */,
+				9070D2641762CA5100081003 /* mgIcon.h in Headers */,
+				9070D2651762CA5100081003 /* mgImage.h in Headers */,
+				9070D2661762CA5100081003 /* mgPen.h in Headers */,
+				9070D2671762CA5100081003 /* mgResource.h in Headers */,
+				9070D2681762CA5100081003 /* mgSurface.h in Headers */,
+				9070D2691762CA5100081003 /* mgTypes2D.h in Headers */,
+				9070D2721762CA6000081003 /* mgCanvasFont.h in Headers */,
+				9070D2731762CA6000081003 /* mgFTFont.h in Headers */,
+				9070D2741762CA6000081003 /* mgGenContext.h in Headers */,
+				9070D2751762CA6000081003 /* mgGenFont.h in Headers */,
+				9070D2761762CA6000081003 /* mgGenIcon.h in Headers */,
+				9070D2771762CA6000081003 /* mgGenImage.h in Headers */,
+				9070D2781762CA6000081003 /* mgGenSurface.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,15 +221,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9041B232159EC32000D7BCC5 /* mgGenBrush.cpp in Sources */,
-				9041B234159EC32000D7BCC5 /* mgGenCharCache.cpp in Sources */,
 				9041B236159EC32000D7BCC5 /* mgGenContext.cpp in Sources */,
 				9041B238159EC32000D7BCC5 /* mgGenFont.cpp in Sources */,
-				9041B23A159EC32000D7BCC5 /* mgGenIcon.cpp in Sources */,
-				9041B23C159EC32000D7BCC5 /* mgGenImage.cpp in Sources */,
-				9041B23E159EC32000D7BCC5 /* mgGenPen.cpp in Sources */,
 				9041B240159EC32000D7BCC5 /* mgGenSurface.cpp in Sources */,
 				9041B241159EC32000D7BCC5 /* mgColor.cpp in Sources */,
+				9070D27C1762CA8E00081003 /* mgFTFont.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

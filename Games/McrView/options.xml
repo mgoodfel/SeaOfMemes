@@ -15,7 +15,7 @@
   deskcursor = "docs/cursors/arrowCursor.xml"
   movecursor = "docs/cursors/crossCursor.xml"
 
-  world="TwentyMine"
+  world="DemoWorld"
 
   viewDistance = "160"
 
@@ -30,9 +30,9 @@
 
   brickSet = "docs/bricks/mcbricks.xml"
 
-  starTexture = "docs/textures/starpatch.jpg;docs/textures/brightStarsAlpha.jpg"
-  moonTexture = "docs/textures/moon.jpg;docs/textures/moonAlpha.jpg"
-  sunTexture = "docs/textures/sun.jpg;docs/textures/sunAlpha.gif"
+  starTexture = "docs/textures/dim-stars.png"
+  moonTexture = "docs/textures/moon.png"
+  sunTexture = "docs/textures/sun.png"
   skybox-xmin = "docs/textures/sky-xmin.jpg"
   skybox-xmax = "docs/textures/sky-xmax.jpg"
   skybox-ymin = "docs/textures/sky-ymin.jpg"

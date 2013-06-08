@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -161,7 +161,7 @@ void mgMapStringToString::removeKey(
   while (true)
   {
     mgMapStringToStringEntry *entry = (mgMapStringToStringEntry *) &m_entries[index];
-    if (strcmp(entry->key, key) == 0)
+    if (entry->key != NULL && strcmp(entry->key, key) == 0)
     {
       // remove the key
       delete m_entries[index].key;
@@ -291,8 +291,9 @@ void mgMapStringToString::grow()
     if (entry->key != NULL)
     {
       setAt(entry->key, entry->value);
-      // done with old key
+      // done with old key and value
       delete entry->key;
+      delete entry->value;
     }
   }
   // done with old table

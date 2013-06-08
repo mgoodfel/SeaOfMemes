@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -31,10 +31,10 @@ struct mgMapDWordToPtrEntry
 {
   DWORD key;
   const void* value;
+  BOOL isNull;
 };
 
 const int GROW_LIMIT = 66;  // percent
-const DWORD NULL_KEY = 0xFFFFFFFF;
 
 //--------------------------------------------------------------------
 // constructor
@@ -46,8 +46,9 @@ mgMapDWordToPtr::mgMapDWordToPtr()
   
   for (int i = 0; i < m_tableSize; i++)
   {
-    m_entries[i].key = NULL_KEY;
+    m_entries[i].key = 0;
     m_entries[i].value = NULL;
+    m_entries[i].isNull = true;
   }
 }
 
@@ -71,7 +72,7 @@ BOOL mgMapDWordToPtr::lookup(
   while (true)
   {
     mgMapDWordToPtrEntry *entry = (mgMapDWordToPtrEntry *) &m_entries[index];
-    if (entry->key == NULL_KEY)
+    if (entry->isNull)
       return false;
       
     if (entry->key == key)
@@ -106,11 +107,12 @@ void mgMapDWordToPtr::setAt(
   while (true)
   {
     mgMapDWordToPtrEntry *entry = (mgMapDWordToPtrEntry *) &m_entries[index];
-    if (entry->key == NULL_KEY)
+    if (entry->isNull)
     {
       // set entry
       entry->key = key;
       entry->value = value;
+      entry->isNull = false;
       m_tableCount++;
       return;
     }
@@ -152,8 +154,9 @@ void mgMapDWordToPtr::removeKey(
     if (entry->key == key)
     {
       // remove the key
-      m_entries[index].key = NULL_KEY;
+      m_entries[index].key = 0;
       m_entries[index].value = NULL;
+      m_entries[index].isNull = true;
       m_tableCount--;
       return;
     }
@@ -177,7 +180,7 @@ int mgMapDWordToPtr::getStartPosition() const
   for (int index = 0; index < m_tableSize; index++)
   {
     mgMapDWordToPtrEntry *entry = (mgMapDWordToPtrEntry *) &m_entries[index];
-    if (entry->key != NULL_KEY)
+    if (!entry->isNull)
       return index;
   }
   return -1;
@@ -193,7 +196,7 @@ void mgMapDWordToPtr::getNextAssoc(
   int index = posn;
   index = max(0, min(m_tableSize-1, index));
   mgMapDWordToPtrEntry *entry = (mgMapDWordToPtrEntry *) &m_entries[index];
-  if (entry->key == NULL_KEY)
+  if (entry->isNull)
     return;  // bad posn
   key = entry->key;
   value = entry->value;
@@ -203,7 +206,7 @@ void mgMapDWordToPtr::getNextAssoc(
   while (index < m_tableSize)
   {
     mgMapDWordToPtrEntry *entry = (mgMapDWordToPtrEntry *) &m_entries[index];
-    if (entry->key != NULL_KEY)
+    if (!entry->isNull)
     {
       posn = index;
       return;
@@ -222,10 +225,11 @@ void mgMapDWordToPtr::removeAll()
   for (int i = 0; i < m_tableSize; i++)
   {
     mgMapDWordToPtrEntry *entry = (mgMapDWordToPtrEntry *) &m_entries[i];
-    if (entry->key != NULL_KEY)
+    if (!entry->isNull)
     {
-      entry->key = NULL_KEY;
+      entry->key = 0;
       entry->value = NULL;
+      entry->isNull = true;
       m_tableCount--;
     }
   }
@@ -248,8 +252,9 @@ void mgMapDWordToPtr::grow()
   mgMapDWordToPtrEntry* newEntries = new mgMapDWordToPtrEntry[newSize];
   for (int i = 0; i < newSize; i++)
   {
-    newEntries[i].key = NULL_KEY;
+    newEntries[i].key = 0;
     newEntries[i].value = NULL;
+    newEntries[i].isNull = true;
   }
     
   mgMapDWordToPtrEntry* oldEntries = m_entries;
@@ -260,7 +265,7 @@ void mgMapDWordToPtr::grow()
   for (int i = 0; i < oldSize; i++)
   {
     mgMapDWordToPtrEntry *entry = &oldEntries[i];
-    if (entry->key != NULL_KEY)
+    if (!entry->isNull)
       setAt(entry->key, entry->value);
   }
   // done with old table

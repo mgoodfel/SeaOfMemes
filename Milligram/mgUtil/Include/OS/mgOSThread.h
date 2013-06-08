@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -28,10 +28,11 @@ typedef void (*mgOSThreadCallback) (
   void* threadArg1,
   void* threadArg2);
 
-// a GROUP of threads (constructor threadCount) is created.  suspend, resume, setPriority and
-// waitForEnd apply to ALL threads of the group.  All threads call the same callback with the
-// same threadArgs pointer.
-
+/*
+  A <i>group</i> of threads (constructor threadCount) is created.  suspend, resume, setPriority and
+  waitForEnd apply to ALL threads of the group.  All threads call the same callback with the
+  same threadArgs pointer.
+*/
 class mgOSThread
 {
 public:

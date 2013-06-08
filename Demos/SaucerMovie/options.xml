@@ -16,9 +16,9 @@
   deskcursor = "docs/cursors/arrowCursor.xml"
   movecursor = "docs/cursors/crossCursor.xml"
 
-  planetImage = "docs/textures/earth.jpg;docs/textures/earthAlpha.gif"
+  planetImage = "docs/textures/earth-1024.png"
 
-  ray = "docs/textures/ray.jpg;docs/textures/rayAlpha.gif"
+  ray = "docs/textures/ray.png"
   raySound = "docs/sounds/laser.ogg"
 
   skybox-xmin = "docs/textures/Nebula-xmin.jpg"
@@ -27,8 +27,8 @@
   skybox-ymax = "docs/textures/Nebula-ymax.jpg"
   skybox-zmin = "docs/textures/Nebula-zmin.jpg"
   skybox-zmax = "docs/textures/Nebula-zmax.jpg"
-  sunTexture = "docs/textures/sun.jpg;docs/textures/sunAlpha.gif"
-  starTexture = "docs/textures/starpatch.jpg;docs/textures/brightStarsAlpha.jpg"
+  sunTexture = "docs/textures/sun.png"
+  starTexture = "docs/textures/dim-stars.png"
 
   saucer0 = "docs/textures/saucer0.jpg"
   saucer1 = "docs/textures/saucer1.jpg"

@@ -1,0 +1,524 @@
+/*
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
+
+  This source code is distributed for free and may be modified, redistributed, and
+  incorporated in other projects (commercial, non-commercial and open-source)
+  without restriction.  No attribution to the author is required.  There is
+  no requirement to make the source code available (no share-alike required.)
+
+  This source code is distributed "AS IS", with no warranty expressed or implied.
+  The user assumes all risks related to quality, accuracy and fitness of use.
+
+  Except where noted, this source code is the sole work of the author, but it has 
+  not been checked for any intellectual property infringements such as copyrights, 
+  trademarks or patents.  The user assumes all legal risks.  The original version 
+  may be found at "http://www.sea-of-memes.com".  The author is not responsible 
+  for subsequent alterations.
+
+  Retain this copyright notice and add your own copyrights and revisions above
+  this notice.
+*/
+#if !defined(MGWEBGLDISPLAY_H) && defined(SUPPORT_WEBGL)
+#define MGWEBGLDISPLAY_H
+
+#include "mgWebGLTypes.h"
+
+class mgWebGLVertexBuffer;
+
+class mgWebGLTextureImage : public mgTextureImage
+{
+public:
+  mgTextureHandle m_handle;
+  int m_format;
+  BOOL m_mipmap;
+
+  // constructor
+  mgWebGLTextureImage();
+
+  // destructor
+  virtual ~mgWebGLTextureImage();
+
+  // set texture wrapping
+  virtual void setWrap(
+    int xWrap,
+    int yWrap);
+
+  // set texture filtering
+  virtual void setFilter(
+    int filter);
+
+  // update memory texture
+  virtual void updateMemory(
+    int x,
+    int y,
+    int width,
+    int height,
+    const BYTE* data);
+};
+
+class mgWebGLTextureArray : public mgTextureArray
+{
+public:
+  mgTextureHandle m_handle;
+  int m_atlasWidth;
+  int m_atlasHeight;
+
+  // constructor
+  mgWebGLTextureArray();
+
+  // destructor
+  virtual ~mgWebGLTextureArray();
+
+  // set texture wrapping
+  virtual void setWrap(
+    int xWrap,
+    int yWrap);
+
+  // set texture filtering
+  virtual void setFilter(
+    int filter);
+};
+
+class mgWebGLTextureCube : public mgTextureCube
+{
+public:
+  mgTextureHandle m_handle;
+
+  // constructor
+  mgWebGLTextureCube();
+
+  // destructor
+  virtual ~mgWebGLTextureCube();
+
+  // set texture wrapping
+  virtual void setWrap(
+    int xWrap,
+    int yWrap);
+
+  // set texture filtering
+  virtual void setFilter(
+    int filter);
+};
+
+class mgWebGLShader : public mgShader
+{
+public:
+  mgShaderHandle m_handle;
+
+  // constructor
+  mgWebGLShader(
+    const char* name);
+
+  // destructor
+  virtual ~mgWebGLShader();
+
+  // return index of a uniform variable
+  GLint uniformIndex(
+    const char* name);
+
+protected:
+  mgMapStringToDWord m_uniforms;
+};
+
+// services offered by the display framework to the application
+class mgWebGLDisplay : public mgDisplayServices
+{ 
+public:
+  //----------------------- screen management ------------------
+
+  // release device resources 
+  virtual void deleteBuffers();
+
+  // reclaim device resources
+  virtual void createBuffers();
+
+  // set cursor texture
+  virtual void setCursorTexture(
+    const char* fileName,
+    int hotX,
+    int hotY);
+
+  // draw the cursor
+  virtual void drawCursor();
+
+  //----------------------- texture methods ------------------
+
+  // load/create texture from file
+  virtual mgTextureImage* loadTexture(
+    const char* fileName);
+
+  // load texture array from file list
+  virtual mgTextureArray* loadTextureArray(
+    const mgStringArray& fileList); 
+
+  // load texture cube from files
+  virtual mgTextureCube* loadTextureCube(
+    const char* xminImage,
+    const char* xmaxImage,
+    const char* yminImage,
+    const char* ymaxImage,
+    const char* zminImage,
+    const char* zmaxImage);
+
+  // create texture to be updated from memory
+  virtual mgTextureImage* createTextureMemory(
+    int width,
+    int height,
+    int format,
+    BOOL mipmap);
+
+  // render to a texture
+  virtual void renderToTexture(
+    mgTextureImage* target,
+    BOOL withDepth);
+
+  // return to rendering to display
+  virtual void renderToDisplay();
+
+  //----------------------- rendering methods ------------------
+
+  // supports non-float shader arguments, bit operations
+  virtual BOOL supportsIntegerVertex();
+
+  // can the display repeat textures
+  virtual BOOL canRepeatTextures();
+
+  // clear the view
+  virtual void clearView();
+
+  // clear the buffer
+  virtual void clearBuffer(
+    int flags);
+
+  // load shader
+  virtual mgShader* loadShader(
+    const char* shaderName,             // name of shader
+    const mgVertexAttrib* attribs);     // vertex attributes
+
+  // delete shader
+  virtual void deleteShader(
+    mgShader* shader);                  // shader instance
+
+  // set current shader
+  virtual void setShader(
+    mgShader* shader);                  // shader instance
+
+  // set shader uniform
+  virtual void setShaderUniform(
+    mgShader* shader,                   // shader instance
+    const char* varName,                // variable name
+    const mgMatrix4& matrix);            // value
+
+  // set shader uniform
+  virtual void setShaderUniform(
+    mgShader* shader,                   // shader instance
+    const char* varName,                // variable name
+    const mgMatrix3& matrix);            // value
+
+  // set shader uniform
+  virtual void setShaderUniform(
+    mgShader* shader,                   // shader instance
+    const char* varName,                // variable name
+    float x,                            // value
+    float y);
+
+  // set shader uniform
+  virtual void setShaderUniform(
+    mgShader* shader,                   // shader instance
+    const char* varName,                // variable name
+    const mgPoint3& point);             // value
+
+  // set shader uniform
+  virtual void setShaderUniform(
+    mgShader* shader,                   // shader instance
+    const char* varName,                // variable name
+    const mgPoint4& point);             // value
+
+  // set shader uniform
+  virtual void setShaderUniform(
+    mgShader* shader,                   // shader instance
+    const char* varName,                // variable name
+    int value);                         // value
+
+  // set shader uniform
+  virtual void setShaderUniform(
+    mgShader* shader,                   // shader instance
+    const char* varName,                // variable name
+    float value);                       // value
+
+  // set shader uniform
+  virtual void setShaderUniform(
+    mgShader* shader,                   // shader instance
+    const char* varName,                // variable name
+    int count,                          // size of array
+    const mgPoint3* point);             // point array
+
+  // set shader uniform
+  virtual void setShaderUniform(
+    mgShader* shader,                   // shader instance
+    const char* varName,                // variable name
+    int count,                          // size of array
+    const float* value);                // float array
+
+  // allocate vertex buffer
+  virtual mgVertexBuffer* newVertexBuffer(
+    int vertexSize,                   // size of vertex in bytes
+    const mgVertexAttrib* attribs,    // array of attributes.  end with offset=-1
+    int maxVertexes,                  // max number of vertexes
+    BOOL dynamic);                    // support reset and reuse
+
+  // allocate an index array
+  virtual mgIndexBuffer* newIndexBuffer(
+    int size,                         // max number of indexes
+    BOOL dynamic,                     // support reset and reuse
+    BOOL longIndexes);                // support 32-bit indexes
+
+  // set the texture to use
+  virtual void setTexture(
+    const mgTextureImage* texture,
+    int unit);
+  
+  // set the texture to use
+  virtual void setTexture(
+    const mgTextureArray* texture,
+    int unit);
+  
+  // set the texture to use
+  virtual void setTexture(
+    const mgTextureCube* texture,
+    int unit);
+  
+  // draw from vertex buffer
+  virtual void draw(
+    int primType,
+    mgVertexBuffer* vertexes);
+
+  // draw from vertex buffer
+  virtual void draw(
+    int primType,
+    mgVertexBuffer* vertexes,
+    int startIndex,
+    int endIndex);
+
+  // draw from separate vertex and index buffers
+  virtual void draw(
+    int primType,
+    mgVertexBuffer* vertexes,
+    mgIndexBuffer* indexes);
+
+  // draw from separate vertex and index buffers
+  virtual void draw(
+    int primType,
+    mgVertexBuffer* vertexes,
+    mgIndexBuffer* indexes,
+    int startIndex,
+    int endIndex);
+
+  // start drawing decal background.  draw=false just writes depth buffer
+  virtual void decalBackground(
+    BOOL draw);
+
+  // background complete, start drawing decals
+  virtual void decalStart();
+
+  // end of decals
+  virtual void decalEnd();
+
+  // create surface for 2D graphics in world
+  virtual mgTextureSurface* createTextureSurface();
+
+  // create surface for 2D graphics in overlay
+  virtual mgTextureSurface* createOverlaySurface();
+
+  // draw a texture to the overlay
+  virtual void drawOverlayTexture(
+    const mgTextureImage* texture,
+    int x,
+    int y,
+    int width,
+    int height);
+
+  // draw a surface to the overlay
+  virtual void drawOverlaySurface(
+    const mgTextureSurface* surface,
+    int x,
+    int y);
+
+    // return overlay shaders
+  virtual void getOverlayShaders(
+    mgShader*& solidShader, 
+    mgShader*& imageShader, 
+    mgShader*& textShader, 
+    mgShader*& textM1Shader, 
+    mgShader*& textM2Shader);
+
+//----------------------- rendering state ------------------
+
+  // set light direction
+  virtual void setLightDir(
+    double x,
+    double y,
+    double z);
+
+  // set light ambient
+  virtual void setLightAmbient(
+    double r,
+    double g,
+    double b);
+
+  // set light color
+  virtual void setLightColor(
+    double r,
+    double g,
+    double b);
+
+  // set material color
+  virtual void setMatColor(
+    double r,
+    double g,
+    double b,
+    double a = 1.0);
+
+  // set model transform
+  virtual void setModelTransform(
+    const mgMatrix4& xform);
+
+  // append model transform
+  virtual void appendModelTransform(
+    const mgMatrix4& xform);
+
+  // get model transform
+  virtual void getModelTransform(
+    mgMatrix4& xform);
+
+  // get mvp transform
+  virtual void getMVPTransform(
+    mgMatrix4& xform);
+
+  // get mv transform
+  virtual void getMVTransform(
+    mgMatrix4& xform);
+
+  // set culling 
+  virtual void setCulling(
+    BOOL enable);
+
+  // set front face clockwise
+  virtual void setFrontCW(
+    BOOL enable);
+
+  // set zenable
+  virtual void setZEnable(
+    BOOL enable);
+
+  // set transparent
+  virtual void setTransparent(
+    BOOL enable);
+
+
+protected:
+  mgMapStringToPtr m_shaders;
+
+  mgWebGLTextureImage* m_cursorTexture;
+
+  // rendering state
+  mgMatrix4 m_worldProjection;
+  mgMatrix4 m_modelMatrix;
+  mgMatrix4 m_worldMatrix;                // view*model matrix
+
+  mgWebGLTextureArray* m_textureArray;     // current texture array
+  mgWebGLShader* m_shader;                // current shader
+  int m_maxVertexAttrib;                  // current max vertex attrib
+
+  mgMapStringToPtr m_textureImages;       // map file name to mgTextureImage* instance
+  mgPtrArray m_textureArrays;             // mgTextureArray* instances
+  mgPtrArray m_textureCubes;              // mgTextureCube* instances
+
+  mgFramebufferHandle m_framebuffer;      // render target
+  mgShader* m_overlaySolidShader;
+  mgShader* m_overlayImageShader;
+  mgShader* m_overlayTextShader;
+  mgShader* m_overlayTextM1Shader;
+  mgShader* m_overlayTextM2Shader;
+
+  // constructor
+  mgWebGLDisplay(
+    const char* shaderDir,
+    const char* fontDir);
+
+  // destructor
+  virtual ~mgWebGLDisplay();
+
+  // initialize view 
+  virtual void initView();
+
+  // set projection
+  virtual void setProjection(
+    int width,
+    int height);
+
+  // return matrix as float[16] array
+  void matrix4toGL(
+    const mgMatrix4& m,
+    float* values);
+
+  // return matrix as float[9] array
+  void matrix3toGL(
+    const mgMatrix3& m,
+    float* values);
+
+  // extract a normals matrix from world matrix
+  void normalMatrix(
+    const mgMatrix4& matrix,
+    float* result);
+
+  // set standard variables for shader
+  void setShaderStdUniforms(
+    mgWebGLShader* shader);
+
+  // set vertex buffer up for use
+  void useVertexBuffer(
+    mgWebGLVertexBuffer* vertexes);
+
+  // scale texture array down by factor of 2.
+  void scaleTextureImage(
+    int width,
+    int height,
+    BYTE* data);
+
+  // reload texture image from file list
+  void reloadTextureImage(
+    mgWebGLTextureImage* texture);
+
+  // reload texture array from file list
+  void reloadTextureArray(
+    mgWebGLTextureArray* texture);
+
+  // reload texture cube from file list
+  void reloadTextureCube(
+    mgWebGLTextureCube* texture);
+
+  // release texture display memory
+  void unloadTextures();
+
+  // reload textures into memory
+  void reloadTextures();
+
+  // initialize overlay shaders
+  virtual void loadOverlayShaders();
+
+  // load shader from source
+  virtual mgShader* loadShaderSource(
+    const char* shaderName,             // name of shader
+    const char* vertexSource,           // vertex shader source
+    const char* fragmentSource,         // fragment shader source
+    const mgVertexAttrib* attribs);     // vertex attributes
+
+  friend class mgGenSurfaceTexture;
+
+  friend void mgInitDisplayServices(
+    const char* shaderDir,
+    const char* fontDir);
+};
+
+#endif

@@ -8,12 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		9041B442159EC82300D7BCC5 /* mgApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B412159EC82300D7BCC5 /* mgApplication.h */; };
-		9041B443159EC82300D7BCC5 /* mgCursorDefn.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B413159EC82300D7BCC5 /* mgCursorDefn.h */; };
 		9041B444159EC82300D7BCC5 /* mgInputEvents.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B414159EC82300D7BCC5 /* mgInputEvents.h */; };
 		9041B445159EC82300D7BCC5 /* mgPlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B415159EC82300D7BCC5 /* mgPlatform.h */; };
 		9041B446159EC82300D7BCC5 /* mgPlatformErrorTable.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B416159EC82300D7BCC5 /* mgPlatformErrorTable.h */; };
 		9041B447159EC82300D7BCC5 /* mgPlatformServices.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B417159EC82300D7BCC5 /* mgPlatformServices.h */; };
-		9041B451159EC82300D7BCC5 /* mgCursorDefn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B425159EC82300D7BCC5 /* mgCursorDefn.cpp */; };
 		9041B452159EC82300D7BCC5 /* mgDisplaySupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B426159EC82300D7BCC5 /* mgDisplaySupport.h */; };
 		9041B453159EC82300D7BCC5 /* mgPlatformErrorTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9041B427159EC82300D7BCC5 /* mgPlatformErrorTable.cpp */; };
 		9041B454159EC82300D7BCC5 /* mgDisplayLink.h in Headers */ = {isa = PBXBuildFile; fileRef = 9041B429159EC82300D7BCC5 /* mgDisplayLink.h */; };
@@ -33,12 +31,10 @@
 /* Begin PBXFileReference section */
 		9041B405159EC7D900D7BCC5 /* libmgPlatform.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libmgPlatform.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9041B412159EC82300D7BCC5 /* mgApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgApplication.h; sourceTree = "<group>"; };
-		9041B413159EC82300D7BCC5 /* mgCursorDefn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgCursorDefn.h; sourceTree = "<group>"; };
 		9041B414159EC82300D7BCC5 /* mgInputEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgInputEvents.h; sourceTree = "<group>"; };
 		9041B415159EC82300D7BCC5 /* mgPlatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgPlatform.h; sourceTree = "<group>"; };
 		9041B416159EC82300D7BCC5 /* mgPlatformErrorTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgPlatformErrorTable.h; sourceTree = "<group>"; };
 		9041B417159EC82300D7BCC5 /* mgPlatformServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgPlatformServices.h; sourceTree = "<group>"; };
-		9041B425159EC82300D7BCC5 /* mgCursorDefn.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgCursorDefn.cpp; sourceTree = "<group>"; };
 		9041B426159EC82300D7BCC5 /* mgDisplaySupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgDisplaySupport.h; sourceTree = "<group>"; };
 		9041B427159EC82300D7BCC5 /* mgPlatformErrorTable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mgPlatformErrorTable.cpp; sourceTree = "<group>"; };
 		9041B429159EC82300D7BCC5 /* mgDisplayLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgDisplayLink.h; sourceTree = "<group>"; };
@@ -87,7 +83,6 @@
 			isa = PBXGroup;
 			children = (
 				9041B412159EC82300D7BCC5 /* mgApplication.h */,
-				9041B413159EC82300D7BCC5 /* mgCursorDefn.h */,
 				9041B414159EC82300D7BCC5 /* mgInputEvents.h */,
 				9041B415159EC82300D7BCC5 /* mgPlatform.h */,
 				9041B416159EC82300D7BCC5 /* mgPlatformErrorTable.h */,
@@ -108,7 +103,6 @@
 		9041B41B159EC82300D7BCC5 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				9041B425159EC82300D7BCC5 /* mgCursorDefn.cpp */,
 				9041B426159EC82300D7BCC5 /* mgDisplaySupport.h */,
 				9041B427159EC82300D7BCC5 /* mgPlatformErrorTable.cpp */,
 				9041B428159EC82300D7BCC5 /* OSX */,
@@ -144,7 +138,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9041B442159EC82300D7BCC5 /* mgApplication.h in Headers */,
-				9041B443159EC82300D7BCC5 /* mgCursorDefn.h in Headers */,
 				9041B444159EC82300D7BCC5 /* mgInputEvents.h in Headers */,
 				9041B445159EC82300D7BCC5 /* mgPlatform.h in Headers */,
 				9041B446159EC82300D7BCC5 /* mgPlatformErrorTable.h in Headers */,
@@ -184,6 +177,9 @@
 /* Begin PBXProject section */
 		9041B3FC159EC7D900D7BCC5 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+			};
 			buildConfigurationList = 9041B3FF159EC7D900D7BCC5 /* Build configuration list for PBXProject "mgPlatform" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -206,7 +202,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9041B451159EC82300D7BCC5 /* mgCursorDefn.cpp in Sources */,
 				9041B453159EC82300D7BCC5 /* mgPlatformErrorTable.cpp in Sources */,
 				9041B455159EC82300D7BCC5 /* mgDisplayLink.m in Sources */,
 				9041B456159EC82300D7BCC5 /* mgMain.mm in Sources */,
@@ -225,6 +220,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -239,6 +238,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
@@ -251,6 +251,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -259,6 +263,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				SDKROOT = macosx;
@@ -268,6 +273,7 @@
 		9041B40A159EC7D900D7BCC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_BUILD_DIR = ../../BuildOSX/Debug;
 				EXECUTABLE_PREFIX = lib;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
@@ -286,6 +292,7 @@
 		9041B40B159EC7D900D7BCC5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_BUILD_DIR = ../../BuildOSX/Release;
 				EXECUTABLE_PREFIX = lib;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;

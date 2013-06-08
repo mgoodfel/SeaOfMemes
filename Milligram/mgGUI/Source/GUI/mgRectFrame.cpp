@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -44,9 +44,9 @@ const mgRectFrame* mgRectFrame::createFrame(
     paintKey = paint->m_key;
     
   mgString key;
-  key.format("RectFrame/%d,%d,(%d,%d,%d),%d,%d,%d,%d:%s", 
-        edgeType, edgeWidth,
-        baseColor.m_r, baseColor.m_g, baseColor.m_b, 
+  key.format("RectFrame/%d,%d,%g,%g,%g,%g,%d,%d,%d,%d:%s", 
+        edgeType, edgeWidth, 
+        baseColor.m_r, baseColor.m_g, baseColor.m_b, baseColor.m_a, 
         margin.m_left, margin.m_top, margin.m_right, margin.m_bottom, 
         (const char*) paintKey);
   
@@ -61,17 +61,17 @@ const mgRectFrame* mgRectFrame::createFrame(
   frame->m_paint = paint;
   frame->m_margin = margin;
 
-  int r = min(255, (baseColor.m_r * 3)/2);
-  int g = min(255, (baseColor.m_g * 3)/2);
-  int b = min(255, (baseColor.m_b * 3)/2);
-  frame->m_highPen = surface->createPen(r, g, b, 1);
+  double r = min(1.0, baseColor.m_r * 1.5);
+  double g = min(1.0, baseColor.m_g * 1.5);
+  double b = min(1.0, baseColor.m_b * 1.5);
+  frame->m_highPen = surface->createPen(1.0, r, g, b);
 
-  r = (baseColor.m_r * 2)/3;
-  g = (baseColor.m_g * 2)/3;
-  b = (baseColor.m_b * 2)/3;
-  frame->m_lowPen = surface->createPen(r, g, b, 1);
-  frame->m_edgePen = surface->createPen(baseColor, edgeType == mgFlatEdge ? edgeWidth : 1);
-  frame->m_blackPen = surface->createPen("black", 1);
+  r = baseColor.m_r * 0.7;
+  g = baseColor.m_g * 0.7;
+  b = baseColor.m_b * 0.7;
+  frame->m_lowPen = surface->createPen(1.0, r, g, b);
+  frame->m_edgePen = surface->createPen(edgeType == mgFlatEdge ? edgeWidth : 1.0, baseColor);
+  frame->m_blackPen = surface->createPen(1.0, "black");
   
   surface->saveResource(frame);
   return frame;
@@ -113,6 +113,41 @@ void mgRectFrame::getOutsideSize(
     case mgLoweredEdge:
       exterior.m_width += 3;
       exterior.m_height += 3;
+      break;
+  }
+}
+
+//--------------------------------------------------------------
+// adjust rectangle to exterior of frame
+void mgRectFrame::getOutsideRect(
+  mgRectangle& bounds) const
+{
+  bounds.m_x -= m_margin.m_left;
+  bounds.m_y -= m_margin.m_top;
+  bounds.m_width += m_margin.m_left+m_margin.m_right;
+  bounds.m_height += m_margin.m_top+m_margin.m_bottom;
+
+  switch (m_edgeType)
+  {
+    case mgFlatEdge:
+      bounds.m_x -= m_edgeWidth;
+      bounds.m_y -= m_edgeWidth;
+      bounds.m_width += 2*m_edgeWidth;
+      bounds.m_height += 2*m_edgeWidth;
+      break;
+      
+    case mgRaisedEdge:
+      bounds.m_x -= 1;
+      bounds.m_y -= 1;
+      bounds.m_width += 3;
+      bounds.m_height += 3;
+      break;
+
+    case mgLoweredEdge:
+      bounds.m_x -= 2;
+      bounds.m_y -= 2;
+      bounds.m_width += 3;
+      bounds.m_height += 3;
       break;
   }
 }
@@ -169,31 +204,37 @@ void mgRectFrame::paintForeground(
       break;
       
     case mgRaisedEdge:
+      // draw top and left edge
       gc->setPen(m_highPen);
-      gc->drawLine(x, y, x+width-1, y);
-      gc->drawLine(x, y+1, x, y+height-1);
-      
+      gc->drawLine(x, y+0.5, x+width-1, y+0.5);
+      gc->drawLine(x+0.5, y+1, x+0.5, y+height-1);
+
+      // draw bottom and right inside edge
       gc->setPen(m_lowPen);
-      gc->drawLine(x+1, y+height-2, x+width-1, y+height-2);
-      gc->drawLine(x+width-2, y+1, x+width-2, y+height-1);
+      gc->drawLine(x+1, y+height-1.5, x+width-1, y+height-1.5);
+      gc->drawLine(x+width-1.5, y+1, x+width-1.5, y+height-1);
       
+      // draw bottom and right outside edge
       gc->setPen(m_blackPen);
-      gc->drawLine(x, y+height-1, x+width, y+height-1);
-      gc->drawLine(x+width-1, y, x+width-1, y+height);
+      gc->drawLine(x, y+height-0.5, x+width, y+height-0.5);
+      gc->drawLine(x+width-0.5, y, x+width-0.5, y+height);
       break;
 
     case mgLoweredEdge:
+      // draw top and left outside edge
       gc->setPen(m_blackPen);
-      gc->drawLine(x, y, x+width, y);
-      gc->drawLine(x, y+1, x, y+height);
+      gc->drawLine(x, y+0.5, x+width-1, y+0.5);
+      gc->drawLine(x+0.5, y+1, x+0.5, y+height-1);
       
+      // draw top and left inside edge
       gc->setPen(m_lowPen);
-      gc->drawLine(x+1, y+1, x+width-1, y+1);
-      gc->drawLine(x+1, y+2, x+1, y+height-1);
+      gc->drawLine(x+1, y+1.5, x+width-1, y+1.5);
+      gc->drawLine(x+1.5, y+2, x+1.5, y+height-1);
       
+      // draw bottom and right edge
       gc->setPen(m_highPen);
-      gc->drawLine(x+1, y+height-1, x+width, y+height-1);
-      gc->drawLine(x+width-1, y+1, x+width-1, y+height);
+      gc->drawLine(x+1, y+height-0.5, x+width, y+height-0.5);
+      gc->drawLine(x+width-0.5, y+1, x+width-0.5, y+height);
       break;
   }
 }

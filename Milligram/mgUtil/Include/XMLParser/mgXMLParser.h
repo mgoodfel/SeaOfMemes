@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -24,6 +24,9 @@
 #include "mgXMLScanner.h"
 #include "mgXMLTag.h"
 
+/*
+  Recognize XML tags and attributes.
+*/
 class mgXMLParser : public mgXMLScanner
 {
 public:

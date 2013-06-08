@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -23,7 +23,9 @@
 
 #include "../TextFormatter/mgTextBuffer.h"
 
-// abstract interface to whatever is needed to render text formatter output
+/*
+  Abstract interface for rendering mgTextFormat/mgTextDraw output.
+*/
 class mgTextPage
 {
 public:

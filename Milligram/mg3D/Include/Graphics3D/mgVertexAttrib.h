@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -33,6 +33,9 @@ const int MG_VERTEX_FLOAT2   = 8;
 const int MG_VERTEX_FLOAT3   = 9;
 const int MG_VERTEX_FLOAT4   = 10;
 
+/*
+  The attributes of a vertex, used to bind vertex data to vertex arrays.
+*/
 class mgVertexAttrib
 {
 public:

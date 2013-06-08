@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -21,7 +21,7 @@
 #ifndef MGDISPLAYSERVICES_H
 #define MGDISPLAYSERVICES_H
 
-// superclass of the various graphics implementations (DirectX/OpenGL)
+#include "mg2D/Include/mgSurface.h"
 
 const double MG_CUBE_RADIUS = sqrt(3.0);
 
@@ -35,9 +35,11 @@ class mgApplication;
 class mgVertexBuffer;
 class mgVertexAttrib;
 class mgIndexBuffer;
-class mgTextureSurface;
 class mgFontList;
 
+/*
+  A texture created either from an RGB or RGBA image on disk, or from memory.
+*/
 class mgTextureImage
 {
 public:
@@ -73,6 +75,9 @@ public:
     const BYTE* data) = 0;
 };
 
+/*
+  A texture array, created from multiple same-sized RGB images on disk.
+*/
 class mgTextureArray
 {
 public:
@@ -100,6 +105,9 @@ public:
     int filter) = 0;
 };
 
+/*
+  A texture cube, created from six cube face RGB images on disk.
+*/
 class mgTextureCube
 {
 public:
@@ -132,11 +140,55 @@ public:
     int filter) = 0;
 };
 
+/*
+  An mgSurface subclass, the texture is dynamic and implements the mg2D graphics model.
+  All overlay GUI and other graphics is generally done with this class.
+*/
+class mgTextureSurface
+{
+public:
+  // destructor
+  virtual ~mgTextureSurface()
+  {}
+
+  // return the rendering surface
+  virtual mgSurface* getSurface() = 0;
+
+  // return texture containing surface data
+  virtual mgTextureImage* getTexture() = 0;
+
+  // create buffers, ready to send to display
+  virtual void createBuffers() = 0;
+  
+  // delete any display buffers
+  virtual void deleteBuffers() = 0;
+  
+  // draw the surface as an overlay
+  virtual void drawOverlay(
+    int x,
+    int y) const = 0;
+};
+
+// a loaded shader
+class mgShader
+{
+public:
+  mgString m_name;
+
+  // constructor
+  mgShader(
+    const char* name);
+
+  // destructor
+  virtual ~mgShader();
+};
+
 const int MG_COLOR_BUFFER = 1;
 const int MG_DEPTH_BUFFER = 2;
 
 const int MG_MEMORY_FORMAT_RGBA = 0;
 const int MG_MEMORY_FORMAT_BGRA = 1;
+const int MG_MEMORY_FORMAT_GRAY = 2;
 
 const int MG_TRIANGLES        = 0;
 const int MG_TRIANGLE_FAN     = 1;
@@ -145,7 +197,17 @@ const int MG_LINES            = 3;
 const int MG_LINE_STRIP       = 4;
 const int MG_POINTS           = 5;
 
-// services offered by the display framework to the application
+/*
+  Implements all of the 3D graphics features I use.  It creates textures, 
+  index and vertex buffers, loads shaders, sets shader parameters, and 
+  draws primitives.  There is also support for overlay graphics, the cursor,
+  and various graphics parameters.  
+<p>
+  Note that display initialization is done in mgPlatform, not here.  There is 
+  one instance of mgDisplayServices, called mgDisplay, created by platform 
+  initialization.
+*/
+
 class mgDisplayServices
 { 
 public:
@@ -261,6 +323,14 @@ public:
     int format,
     BOOL mipmap) = 0;
 
+  // render to a texture
+  virtual void renderToTexture(
+    mgTextureImage* target,
+    BOOL withDepth) = 0;
+
+  // return to rendering to display
+  virtual void renderToDisplay() = 0;
+
   //----------------------- rendering methods ------------------
 
   // supports non-float shader arguments, bit operations
@@ -277,64 +347,71 @@ public:
     int flags) = 0;
 
   // load shader
-  virtual void loadShader(
+  virtual mgShader* loadShader(
     const char* shaderName,             // name of shader
     const mgVertexAttrib* attribs) = 0; // vertex attributes
 
   // delete shader
   virtual void deleteShader(
-    const char* shaderName) = 0;        // name of shader
+    mgShader* shader) = 0;              // shader instance
 
   // set current shader
   virtual void setShader(
-    const char* shaderName) = 0;        // name of shader
+    mgShader* shader) = 0;              // shader instance
 
   // set shader uniform
   virtual void setShaderUniform(
-    const char* shaderName,             // name of shader
+    mgShader* shader,                   // shader instance
     const char* varName,                // variable name
     const mgMatrix4& matrix) = 0;        // value
 
   // set shader uniform
   virtual void setShaderUniform(
-    const char* shaderName,             // name of shader
+    mgShader* shader,                   // shader instance
     const char* varName,                // variable name
     const mgMatrix3& matrix) = 0;        // value
 
   // set shader uniform
   virtual void setShaderUniform(
-    const char* shaderName,             // name of shader
+    mgShader* shader,                   // shader instance
+    const char* varName,                // variable name
+    float x,                            // value
+    float y) = 0;        
+
+  // set shader uniform
+  virtual void setShaderUniform(
+    mgShader* shader,                   // shader instance
     const char* varName,                // variable name
     const mgPoint3& point) = 0;        // value
 
   // set shader uniform
   virtual void setShaderUniform(
-    const char* shaderName,             // name of shader
+    mgShader* shader,                   // shader instance
     const char* varName,                // variable name
     const mgPoint4& point) = 0;         // value
 
   // set shader uniform
   virtual void setShaderUniform(
-    const char* shaderName,             // name of shader
+    mgShader* shader,                   // shader instance
     const char* varName,                // variable name
     int value) = 0;                     // value
 
   // set shader uniform
   virtual void setShaderUniform(
-    const char* shaderName,             // name of shader
+    mgShader* shader,                   // shader instance
     const char* varName,                // variable name
     float value) = 0;                   // value
 
   // set shader uniform
   virtual void setShaderUniform(
-    const char* shaderName,             // name of shader
+    mgShader* shader,                   // shader instance
     const char* varName,                // variable name
     int count,                          // size of array
     const mgPoint3* point) = 0;         // point array
 
   // set shader uniform
   virtual void setShaderUniform(
-    const char* shaderName,             // name of shader
+    mgShader* shader,                   // shader instance
     const char* varName,                // variable name
     int count,                          // size of array
     const float* value) = 0;            // float array
@@ -371,6 +448,13 @@ public:
   virtual void draw(
     int primType,
     mgVertexBuffer* vertexes) = 0;
+
+  // draw from vertex buffer
+  virtual void draw(
+    int primType,
+    mgVertexBuffer* vertexes,
+    int startIndex,
+    int endIndex) = 0;
 
   // draw from separate vertex and index buffers
   virtual void draw(
@@ -415,6 +499,14 @@ public:
     const mgTextureSurface* surface,
     int x,
     int y) = 0;
+
+  // return overlay shaders
+  virtual void getOverlayShaders(
+    mgShader*& solidShader, 
+    mgShader*& imageShader, 
+    mgShader*& textShader, 
+    mgShader*& textM1Shader, 
+    mgShader*& textM2Shader) = 0;
 
   //----------------------- rendering state ------------------
 
@@ -608,6 +700,13 @@ public:
     color = m_matColor;
   }
 
+  // find a font file
+  virtual BOOL findFont(
+    const char* faceName, 
+    BOOL bold, 
+    BOOL italic, 
+    mgString& fontFile);
+
 protected:
   mgString m_shaderDir;
   mgStringArray m_fontDirs;
@@ -675,16 +774,11 @@ protected:
   virtual void frustumBuildPlanes();
 
   // set the projection matrix
-  virtual void setProjection() = 0;
+  virtual void setProjection(
+    int width,
+    int height) = 0;
 
-  // find a font file
-  virtual BOOL findFont(
-    const char* faceName, 
-    BOOL bold, 
-    BOOL italic, 
-    mgString& fontFile);
-
-  friend class mgTextureSurface;
+  friend class mgGenSurfaceTexture;
 
   friend void mgInitDisplayServices(
     const char* shaderDir,

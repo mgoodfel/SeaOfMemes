@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -218,6 +218,9 @@ void mgReadImage(
   else if (fileType.equalsIgnoreCase(".bmp"))
     reader = new mgBMPRead(writer);
 
+  else if (fileType.equalsIgnoreCase(".png"))
+    reader = new mgPNGRead(writer);
+
   else throw new mgErrorMsg("imgBadType", "filename,type", "%s,%s", (const char*) fileName, (const char*) fileType);
 
   // try to open the image for read
@@ -282,7 +285,6 @@ void mgWriteBGRAtoJPGFile(
   // Start compressor, write complete file 
   jpeg_start_compress(&compInfo, TRUE);
 
-  // read scanlines from the screen, top to bottom
   BYTE* line = new BYTE[width*3];
   const BYTE* pSource = pData;
   for (int i = 0; i < height; i++)
@@ -343,7 +345,6 @@ void mgWriteBGRtoJPGFile(
   // Start compressor, write complete file 
   jpeg_start_compress(&compInfo, TRUE);
 
-  // read scanlines from the screen, top to bottom
   int sourceSpan = width*3;
   sourceSpan = 4*((sourceSpan+3)/4);
 

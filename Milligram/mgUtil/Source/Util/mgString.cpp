@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -1113,7 +1113,7 @@ void mgString::format(
 #ifdef WIN32
   int len = _vscprintf(fmt, args);
 #endif
-#if defined(__APPLE__) || defined(__unix__)
+#if defined(__APPLE__) || defined(__unix__) || defined(EMSCRIPTEN)
   va_list copy;
   va_copy(copy, args);
   int len = vsnprintf(NULL, 0, fmt, copy);
@@ -1135,7 +1135,7 @@ void mgString::formatV(
 #ifdef WIN32
   int len = _vscprintf(fmt, args);
 #endif
-#if defined(__APPLE__) || defined(__unix__)
+#if defined(__APPLE__) || defined(__unix__) || defined(EMSCRIPTEN)
   va_list copy;
   va_copy(copy, args);
   int len = vsnprintf(NULL, 0, fmt, copy);

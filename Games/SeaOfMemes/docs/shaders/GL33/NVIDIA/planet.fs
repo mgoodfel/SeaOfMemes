@@ -39,7 +39,7 @@ void main(void)
 
   // get cloud texture at hit point
   vec4 clouds = texture(mgTextureUnit1, hitPt);
-  fragColor = mix(fragColor, vec3(0.9), clouds.a);
+  fragColor = mix(fragColor, vec3(0.9), clouds.g);
 
   // figure diffuse lighting
   float lightInten = max(0.0, dot(hitPt, modelLightDir));
@@ -50,7 +50,7 @@ void main(void)
   halfAngle += modelLightDir;
   halfAngle = normalize(halfAngle);
 
-  float shiny = terrain.a * (1-clouds.a);
+  float shiny = terrain.a * (1-clouds.g);
   float blinn = dot(hitPt, halfAngle);
   blinn = clamp(blinn, 0.0, 1.0);
   blinn = pow(blinn, 30.0) * shiny;
@@ -60,7 +60,7 @@ void main(void)
     fragColor += blinn*specularColor;
 
   vec3 light = vec3(156/255.0, 37/255.0, 28/255.0);
-  fragColor = mix(fragColor, light, (1-clouds.a)*clouds.r);
+  fragColor = mix(fragColor, light, (1-clouds.g)*clouds.r);
 
   // set output
   outFragColor.rgb = fragColor;

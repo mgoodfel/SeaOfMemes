@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -23,6 +23,12 @@
 
 #define MG_ERROR_DELIM  ((char) 0x01)
 #define MG_ERROR_DELIM_STR "\001"
+
+/*
+  Applications can signal errors by throwing an instance of mgErrorMsg.  The
+  arguments are an error name plus varying argument list.  The actual message
+  is formatted via mgErrorTable.
+*/
 
 class mgErrorMsg
 {

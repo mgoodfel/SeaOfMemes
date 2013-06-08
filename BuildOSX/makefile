@@ -1,7 +1,7 @@
-PARTXX = part60
-DEMOS = Landscape SaucerMovie TestCube Trees GuiTestAll GuiTestGL #GuiTestSDL
+PARTXX = part83
+DEMOS = Landscape SaucerMovie TestCube Trees GuiTestAll 
 GAMES = Crafty McrView SeaOfMemes DontHitMe
-MILLIGRAM = JpegLib FreeType Ogg Vorbis ZLib mg2D mg3D mgGUI mgUtil mgPlatform mgSendLog 
+MILLIGRAM = JpegLib LibPNG FreeType Ogg Vorbis ZLib mg2D mg3D mgGUI mgUtil mgPlatform mgSendLog 
 
 all: MakeDirs $(MILLIGRAM) $(DEMOS) $(GAMES) MakeZips
 
@@ -76,9 +76,11 @@ clean:
 	-rm -rf ../Milligram/BuildOSX/Release
 	-rm -rf $(addprefix ../Milligram/FreeType/BuildOSX/,build Debug Release DerivedData) 
 	-rm -rf $(addprefix ../Milligram/JpegLib/BuildOSX/,build Debug Release DerivedData) 
+	-rm -rf $(addprefix ../Milligram/LibPNG/BuildOSX/,build Debug Release DerivedData) 
 	-rm -rf $(addprefix ../Milligram/Ogg/BuildOSX/,build Debug Release DerivedData) 
 	-rm -rf $(addprefix ../Milligram/Vorbis/BuildOSX/,build Debug Release DerivedData) 
 	-rm -rf $(addprefix ../Milligram/ZLib/BuildOSX/,build Debug Release DerivedData) 
+	-rm -rf $(addprefix ../Milligram/FreeType/BuildOSX/,build Debug Release DerivedData) 
 #
 	-rm -rf $(addprefix ../Milligram/mgSendLog/BuildOSX/,build Debug Release DerivedData) 
 #

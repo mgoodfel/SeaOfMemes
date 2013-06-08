@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -37,19 +37,7 @@ Colonization::Colonization()
 // destructor
 Colonization::~Colonization()
 {
-  for (int i = 0; i < m_branches.length(); i++)
-  {
-    Branch* branch = getBranch(i);
-    delete branch;
-  }
-  m_branches.removeAll();
-
-  for (int i = 0; i < m_leaves.length(); i++)
-  {
-    Leaf* leaf = getLeaf(i);
-    delete leaf;
-  }
-  m_leaves.removeAll();
+  reset();
 }
 
 //--------------------------------------------------------------
@@ -75,9 +63,108 @@ void Colonization::addBranch(
   branch->m_parent = parent;
   branch->m_growDir = mgPoint3(0, 0, 0);
   branch->m_growCount = 0;
+  branch->m_childCount = 0;
   branch->m_area = TWIG_AREA;
+  branch->m_path = -1;
 
   m_branches.add(branch);
+  int index = m_branches.length();  // branch index +1
+
+  int x = (int) floor(pt.x / MAX_DISTANCE);
+  int y = (int) floor(pt.y / MAX_DISTANCE);
+  int z = (int) floor(pt.z / MAX_DISTANCE);
+  DWORD key = (x << 20) ^ (y << 10) ^ z;
+  DWORD value;
+  if (m_branchLocs.lookup(key, value))
+    branch->m_next = (int) value;
+  else branch->m_next = 0;
+
+  m_branchLocs.setAt(key, (DWORD) index);
+}
+
+//--------------------------------------------------------------
+// find closest branch
+BOOL Colonization::findClosestBranch(
+  const mgPoint3& leafPt,
+  int& closest)
+{
+  closest = -1;
+  double closestDist = INT_MAX;
+
+  int checkCount = 0;
+  for (int ix = -1; ix <= 1; ix++)
+  {
+    for (int iy = -1; iy <= 1; iy++)
+    {
+      for (int iz = -1; iz <= 1; iz++)
+      {
+        int x = (int) floor(leafPt.x / MAX_DISTANCE);
+        int y = (int) floor(leafPt.y / MAX_DISTANCE);
+        int z = (int) floor(leafPt.z / MAX_DISTANCE);
+        DWORD key = ((x+ix) << 20) ^ ((y+iy) << 10) ^ (z+iz);
+        DWORD value;
+        if (!m_branchLocs.lookup(key, value))
+          continue;
+        int index = (int) value;
+
+        while (index != 0)
+        {
+          Branch* branch = getBranch(index-1);
+
+          // calculate distance
+          mgPoint3 dir(leafPt);
+          dir.subtract(branch->m_pt);
+          double dist = dir.length();
+          if (dist < MIN_DISTANCE)
+          {
+            // leaf has reached a branch point.  deactivate it.
+            return false;
+          }
+          
+          if (dist <= MAX_DISTANCE)
+          {
+            if (dist < closestDist)
+            {
+              closest = index-1;
+              closestDist = dist;
+            }
+          }
+          
+          index = branch->m_next;
+          checkCount++;
+        }
+      }
+    }
+  }
+
+/*
+  int branchCount = m_branches.length();
+  for (int j = 0; j < branchCount; j++)
+  {
+    Branch* branch = getBranch(j);
+    // calculate distance
+    mgPoint3 dir(leafPt);
+    dir.subtract(branch->m_pt);
+    double dist = dir.length();
+    if (dist < MIN_DISTANCE)
+    {
+      // leaf has reached a branch point.  deactivate it.
+      return false;
+    }
+
+    if (dist > MAX_DISTANCE)
+      continue;
+
+    if (dist < closestDist)
+    {
+      closest = j;
+      closestDist = dist;
+    }
+  }
+*/
+
+  // leaf is still active
+  return true;
 }
 
 //--------------------------------------------------------------
@@ -95,30 +182,7 @@ BOOL Colonization::colonize()
     if (!leaf->m_active)
       continue;
 
-    leaf->m_closest = -1;
-    double closestDist = INT_MAX;
-
-    for (int j = 0; j < branchCount; j++)
-    {
-      Branch* branch = getBranch(j);
-      // calculate distance
-      mgPoint3 dir(leaf->m_pt);
-      dir.subtract(branch->m_pt);
-      double dist = dir.length();
-      if (dist < MIN_DISTANCE)
-      {
-        leaf->m_active = false;
-        break; 
-      }
-      if (dist > MAX_DISTANCE)
-        continue;
-
-      if (dist < closestDist)
-      {
-        leaf->m_closest = j;
-        closestDist = dist;
-      }
-    }
+    leaf->m_active = findClosestBranch(leaf->m_pt, leaf->m_closest);
 
     // update growth of closest branch
     if (leaf->m_closest != -1)
@@ -129,8 +193,6 @@ BOOL Colonization::colonize()
       mgPoint3 dir(leaf->m_pt);
       dir.subtract(branch->m_pt);
       dir.normalize();
-//      double dist = dir.length();
-//      dist = pow(dist, 1.5);
 
       // add normalized vector
       branch->m_growDir.add(dir);
@@ -143,29 +205,24 @@ BOOL Colonization::colonize()
   {
     Branch* branch = getBranch(j);
     // if there's growth, add a new branch
-    if (branch->m_growCount != 0)
+    if (branch->m_growCount != 0 && branch->m_childCount < 3)
     {
-      // normalize the growth direction
-      branch->m_growDir.scale(1.0/branch->m_growCount);
+      // normalize direction
       branch->m_growDir.normalize();
       branch->m_growDir.scale(GROW_DISTANCE);
 
       // create a new branch
-      Branch* twig = new Branch();
-      twig->m_pt = branch->m_pt;
-      twig->m_pt.add(branch->m_growDir);
-      twig->m_parent = j;
-      twig->m_growDir = mgPoint3(0,0,0);
-      twig->m_growCount = 0;
-      twig->m_area = TWIG_AREA;
+      mgPoint3 pt(branch->m_pt);
+      pt.add(branch->m_growDir);
+      addBranch(pt, j);
 
-      m_branches.add(twig);
-
-      // reset growth vector on branch
-      branch->m_growDir = mgPoint3(0,0,0);
-      branch->m_growCount = 0;
+      branch->m_childCount++;
       active = true;
     }
+      
+    // reset growth vector on branch
+    branch->m_growDir.set(0, 0, 0);
+    branch->m_growCount = 0;
   }
 
   return active;
@@ -173,7 +230,7 @@ BOOL Colonization::colonize()
 
 //--------------------------------------------------------------
 // calculate sizes of branches
-void Colonization::branchSizes(
+void Colonization::computeBranchSizes(
   BOOL partial,               // true to scale nodes by growth
   int lastCount,              // only modify branches > lastCount
   double growth)              // growth factor
@@ -183,11 +240,11 @@ void Colonization::branchSizes(
   {
     Branch* branch = getBranch(j);
     branch->m_area = 0.0;
-    branch->m_main = -1;
-    branch->m_mainAngle = -INT_MAX;
+    branch->m_path = -1;
+    branch->m_pathArea = -1;
   }
 
-  // set the area of all the branches
+  // starting from tips, set parent area to sum of child areas.
   for (int j = m_branches.length()-1; j >= 0; j--)
   {
     Branch* branch = getBranch(j);
@@ -205,7 +262,7 @@ void Colonization::branchSizes(
     }
   }
 
-  // set the area of all the branches
+  // starting from tips, find the thickest child for each parent.
   for (int j = m_branches.length()-1; j >= 0; j--)
   {
     Branch* branch = getBranch(j);
@@ -213,12 +270,64 @@ void Colonization::branchSizes(
     if (branch->m_parent != -1)
     {
       Branch* parent = getBranch(branch->m_parent);
-      if (branch->m_area > parent->m_mainAngle)
+      if (branch->m_area > parent->m_pathArea)
       {
-        parent->m_mainAngle = branch->m_area;
-        parent->m_main = j;
+        parent->m_pathArea = branch->m_area;
+        parent->m_path = j;
       }
     }
   }
 }
 
+//--------------------------------------------------------------
+// reset list of branches and leaves
+void Colonization::reset()
+{
+  for (int i = 0; i < m_branches.length(); i++)
+  {
+    Branch* branch = getBranch(i);
+    delete branch;
+  }
+  m_branches.removeAll();
+
+  for (int i = 0; i < m_leaves.length(); i++)
+  {
+    Leaf* leaf = getLeaf(i);
+    delete leaf;
+  }
+  m_leaves.removeAll();
+
+  m_branchLocs.removeAll();
+}
+
+#ifdef STUFF
+
+  Point3 startPosn(m_lastPosn);
+  Point3 endPosn(m_avatarPt);
+  bool hit = false;
+  while (true)
+  {
+    if (!boxHitsWorld(startPosn, endPosn, avaMin, avaMax, dist, hitPosn, hitPt, hitNormal))
+      break;  // no hit
+
+    hit = true;
+
+    // get distance target extends past hit pt
+    Point3 targetPt(endPosn);
+    targetPt.subtract(hitPosn);
+    double targetDist = targetPt.dot(hitNormal);
+
+    // project this along sliding plane
+    Point3 slideDist(hitNormal);
+    slideDist.scale(targetDist);
+
+    // add to original target pt
+    Point3 slidePt(endPosn);
+    slidePt.subtract(slideDist);
+
+    // test collisions on slide movement
+    startPosn = hitPosn;
+    endPosn = slidePt;
+  }
+  m_avatarPt = endPosn;
+#endif

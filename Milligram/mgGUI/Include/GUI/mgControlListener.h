@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -22,6 +22,9 @@
 #ifndef MGCONTROLLISTENER_H
 #define MGCONTROLLISTENER_H
 
+/*
+  Abstract interface which delivers changes to control position, size, visibility, etc.
+*/
 class mgControlListener
 {
 public:
@@ -51,6 +54,14 @@ public:
 
   // control deleted
   virtual void controlDelete(
+    void* source) = 0;
+
+  // child control added
+  virtual void controlAddChild(
+    void* source) = 0;
+
+  // child control removed
+  virtual void controlRemoveChild(
     void* source) = 0;
 };
 

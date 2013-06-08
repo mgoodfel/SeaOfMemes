@@ -62,7 +62,7 @@ mgTextBuffer::~mgTextBuffer()
   unsigned int posn = 0;
   while (posn < m_bufferLen) 
   {
-    mgFormatCmd cmd = (mgFormatCmd) m_buffer[posn++];
+    mgFormatCmd cmd = (mgFormatCmd) readShort(posn);
     switch (cmd)
     {
       case mgJustifyCmd: 
@@ -84,7 +84,7 @@ mgTextBuffer::~mgTextBuffer()
       case mgColorCmd: 
       case mgAnchorCmd: 
       case mgTargetCmd: 
-        readDWORD(posn);
+        readDWord(posn);
         break;
     
       case mgFontFaceCmd: 
@@ -92,7 +92,7 @@ mgTextBuffer::~mgTextBuffer()
       {
         int textLen;
         const char* text;
-        readText(posn, textLen, text);
+        readString(posn, textLen, text);
         break;
       }
 
@@ -118,16 +118,25 @@ void mgTextBuffer::writeChild(
   mgTextAlign horzAlign,               // horizontal alignment
   mgTextAlign vertAlign)               // vertical alignment
 {
-  // add ChildCmd (byte), child (ptr) to buffer
-  checkBufferSize(1+sizeof(void*) + 2*sizeof(short));
-  m_buffer[m_bufferLen++] = (BYTE) mgChildCmd;
-  
-  *(const void**) (m_buffer+m_bufferLen) = child;
-  m_bufferLen += sizeof(void*);
-  *(short* ) (m_buffer+m_bufferLen) = (short) horzAlign;
-  m_bufferLen += sizeof(short);
-  *(short* ) (m_buffer+m_bufferLen) = (short) vertAlign;
-  m_bufferLen += sizeof(short);
+  // add child ptr, horzAlign, vertAlign to buffer
+  checkBufferSize(sizeof(void*) + sizeof(short) + sizeof(short));
+
+  writePtr(child);
+  writeShort(horzAlign);
+  writeShort(vertAlign);
+}
+
+//-----------------------------------------------------------------
+// read child box
+void mgTextBuffer::readChild(
+  unsigned int& posn,                // position in buffer
+  const void*& child,                // child box
+  mgTextAlign& horzAlign,            // horizontal alignment
+  mgTextAlign& vertAlign)            // vertical alignment
+{
+  child = readPtr(posn);
+  horzAlign = (mgTextAlign) readShort(posn);
+  vertAlign = (mgTextAlign) readShort(posn);
 }
 
 //-----------------------------------------------------------------
@@ -141,14 +150,17 @@ void mgTextBuffer::writeText(
   if (len == 0)
     return;  // nothing to do
 
-  // add TextCmd (byte), text length (short) and text to buffer
-  checkBufferSize(1+sizeof(WORD)+len);
-
-  m_buffer[m_bufferLen++] = (BYTE) mgTextCmd;
+  // add TextCmd (short), text length (short) and text to buffer
+  checkBufferSize(sizeof(short)+sizeof(short)+len);
 
   // fill in length after we remove duplicate blanks
+  unsigned oldLen = m_bufferLen;
+
+  writeShort(mgTextCmd);
+
+  m_bufferLen += m_bufferLen&1;  // align to next short
   unsigned lenPosn = m_bufferLen;
-  m_bufferLen += sizeof(WORD);
+  m_bufferLen += sizeof(short);  // leave space for len
   int outLen = 0;
 
   // if we're not wrapping, copy text as-is
@@ -187,12 +199,12 @@ void mgTextBuffer::writeText(
   // if nothing written, remove text command
   if (outLen == 0)
   {
-    m_bufferLen -= 1+sizeof(WORD);
+    m_bufferLen = oldLen;
     return;
   }
 
   // write length
-  *(WORD*) (m_buffer+lenPosn) = (WORD) outLen;
+  *(short*) (m_buffer+lenPosn) = outLen;
 }
 
 //-----------------------------------------------------------------
@@ -203,7 +215,10 @@ void mgTextBuffer::writeJustify(
   if (m_justify == justify)
     return;
   m_justify = justify;
-  writeShort(mgJustifyCmd, justify);
+
+  checkBufferSize(2*sizeof(short));
+  writeShort(mgJustifyCmd);
+  writeShort(justify);
 }
 
 //-----------------------------------------------------------------
@@ -214,7 +229,10 @@ void mgTextBuffer::writeLeftMargin(
   if (m_leftMargin == margin)
     return;
   m_leftMargin = margin;
-  writeShort(mgLeftMarginCmd, margin);
+
+  checkBufferSize(2*sizeof(short));
+  writeShort(mgLeftMarginCmd);
+  writeShort(margin);
 }
 
 //-----------------------------------------------------------------
@@ -225,7 +243,10 @@ void mgTextBuffer::writeRightMargin(
   if (m_rightMargin == margin)
     return;
   m_rightMargin = margin;
-  writeShort(mgRightMarginCmd, margin);
+
+  checkBufferSize(2*sizeof(short));
+  writeShort(mgRightMarginCmd);
+  writeShort(margin);
 }
 
 //-----------------------------------------------------------------
@@ -236,7 +257,10 @@ void mgTextBuffer::writeIndent(
   if (m_indent == margin)
     return;
   m_indent = margin;
-  writeShort(mgIndentCmd, margin);
+
+  checkBufferSize(2*sizeof(short));
+  writeShort(mgIndentCmd);
+  writeShort(margin);
 }
 
 //-----------------------------------------------------------------
@@ -249,13 +273,10 @@ void mgTextBuffer::writeFontFace(
   m_fontFace = face;
 
   int len = m_fontFace.length();
-  checkBufferSize(1+sizeof(WORD)+len);
+  checkBufferSize(sizeof(short)+sizeof(short)+len);
 
-  m_buffer[m_bufferLen++] = (BYTE) mgFontFaceCmd;
-  *(WORD*) (m_buffer+m_bufferLen) = len;
-  m_bufferLen += sizeof(WORD);
-  memcpy(m_buffer+m_bufferLen, (const char*) m_fontFace, len);
-  m_bufferLen += len;
+  writeShort(mgFontFaceCmd);
+  writeString(face, len);
 }
 
 //-----------------------------------------------------------------
@@ -266,7 +287,10 @@ void mgTextBuffer::writeFontSize(
   if (m_fontSize == size)
     return;
   m_fontSize = size;
-  writeShort(mgFontSizeCmd, m_fontSize);
+
+  checkBufferSize(2*sizeof(short));
+  writeShort(mgFontSizeCmd);
+  writeShort(m_fontSize);
 }
 
 //-----------------------------------------------------------------
@@ -277,7 +301,10 @@ void mgTextBuffer::writeFontItalic(
   if (m_fontItalic == italic)
     return;
   m_fontItalic = italic;
-  writeShort(mgFontItalicCmd, (short) m_fontItalic);
+
+  checkBufferSize(2*sizeof(short));
+  writeShort(mgFontItalicCmd);
+  writeShort(m_fontItalic);
 }
 
 //-----------------------------------------------------------------
@@ -288,7 +315,10 @@ void mgTextBuffer::writeFontBold(
   if (m_fontBold == bold)
     return;
   m_fontBold = bold;
-  writeShort(mgFontBoldCmd, (short) m_fontBold);
+
+  checkBufferSize(2*sizeof(short));
+  writeShort(mgFontBoldCmd);
+  writeShort(m_fontBold);
 }
 
 //-----------------------------------------------------------------
@@ -306,7 +336,10 @@ void mgTextBuffer::writeAnchor(
   const void* anchor)
 {
   m_anchor = anchor;
-  writePtr(mgAnchorCmd, (void*) anchor);
+
+  checkBufferSize(sizeof(short)+sizeof(void*));
+  writeShort(mgAnchorCmd);
+  writePtr(anchor);
 }
 
 //-----------------------------------------------------------------
@@ -317,7 +350,10 @@ void mgTextBuffer::writeTextColor(
   if (m_color == color)
     return;
   m_color = color;
-  writeDWORD(mgColorCmd, color);
+
+  checkBufferSize(sizeof(short)+sizeof(DWORD*));
+  writeShort(mgColorCmd);
+  writeDWORD(color);
 }
 
 //-----------------------------------------------------------------
@@ -326,7 +362,10 @@ void mgTextBuffer::writeWrap(
   mgBooleanAttr wrap)
 {
   m_wrap = wrap;
-  writeShort(mgWrapCmd, (short) wrap);
+
+  checkBufferSize(sizeof(short)+sizeof(short));
+  writeShort(mgWrapCmd);
+  writeShort(wrap);
 }
 
 //-----------------------------------------------------------------
@@ -334,7 +373,9 @@ void mgTextBuffer::writeWrap(
 void mgTextBuffer::writeTab(
   short value)
 { 
-  writeShort(mgTabCmd, value); 
+  checkBufferSize(sizeof(short)+sizeof(short));
+  writeShort(mgTabCmd);
+  writeShort(value); 
 }
 
 //-----------------------------------------------------------------
@@ -342,7 +383,9 @@ void mgTextBuffer::writeTab(
 void mgTextBuffer::writeSpace(
   short value)
 { 
-  writeShort(mgSpaceCmd, value); 
+  checkBufferSize(sizeof(short)+sizeof(short));
+  writeShort(mgSpaceCmd);
+  writeShort(value); 
 }
 
 //-----------------------------------------------------------------
@@ -350,7 +393,9 @@ void mgTextBuffer::writeSpace(
 void mgTextBuffer::writeBreak(
   short height)                  // height of break in lines*100
 { 
-  writeShort(mgBreakCmd, height); 
+  checkBufferSize(sizeof(short)+sizeof(short));
+  writeShort(mgBreakCmd);
+  writeShort(height); 
 }
 
 //-----------------------------------------------------------------
@@ -358,7 +403,9 @@ void mgTextBuffer::writeBreak(
 void mgTextBuffer::writeClear(
   mgTextAlign clear)                // Left, Right or Center (both)
 { 
-  writeShort(mgClearCmd, clear); 
+  checkBufferSize(sizeof(short)+sizeof(short));
+  writeShort(mgClearCmd);
+  writeShort(clear); 
 }
 
 //-----------------------------------------------------------------
@@ -366,23 +413,18 @@ void mgTextBuffer::writeClear(
 void mgTextBuffer::writeTarget(
   int *pnY)
 { 
-  writePtr(mgTargetCmd, pnY); 
+  checkBufferSize(sizeof(short)+sizeof(void*));
+  writeShort(mgTargetCmd);
+  writePtr(pnY); 
 }
 
 //-----------------------------------------------------------------
 // set end of input
 void mgTextBuffer::writeDone()
 { 
-  writeShort(mgDoneCmd, 0); 
-}
-
-//-----------------------------------------------------------------
-// check to see if there's room in buffer
-void mgTextBuffer::checkBufferSize(
-  int addLen)                  // additional length required
-{
-  if (m_bufferLen + addLen > m_bufferSize)
-    makeRoom(addLen);
+  checkBufferSize(sizeof(short)+sizeof(short));
+  writeShort(mgDoneCmd);
+  writeShort(0); 
 }
 
 //-----------------------------------------------------------------
@@ -401,127 +443,31 @@ void mgTextBuffer::makeRoom(
 }
 
 //-----------------------------------------------------------------
-// write a command and short value to buffer
-void mgTextBuffer::writeShort(
-  mgFormatCmd cmd, 
-  short value)
-{
-  // add command (byte) and value (short) to buffer
-  checkBufferSize(1+sizeof(short));
-
-  m_buffer[m_bufferLen++] = (BYTE) cmd;
-  *(short* ) (m_buffer+m_bufferLen) = value;
-
-  m_bufferLen += sizeof(short);
-}
-
-//-----------------------------------------------------------------
-// write a command and long value to buffer
-void mgTextBuffer::writeDWORD(
-  mgFormatCmd cmd, 
-  DWORD value)
-{
-  // add command (byte) and value (long) to buffer
-  checkBufferSize(1+sizeof(DWORD));
-
-  m_buffer[m_bufferLen++] = (BYTE) cmd;
-  *(DWORD*) (m_buffer+m_bufferLen) = value;
-
-  m_bufferLen += sizeof(DWORD);
-}
-
-//-----------------------------------------------------------------
-// write a command and ptr to buffer
-void mgTextBuffer::writePtr(
-  mgFormatCmd cmd, 
-  void* value)
-{
-  // add command (byte) and value (ptr) to buffer
-  checkBufferSize(1+sizeof(void*));
-
-  m_buffer[m_bufferLen++] = (BYTE) cmd;
-  *(void**) (m_buffer+m_bufferLen) = value;
-
-  m_bufferLen += sizeof(void*);
-}
-
-//-----------------------------------------------------------------
 // write a string to buffer
 void mgTextBuffer::writeString(
   const char* value,
   int len)
 {
   if (len == -1)
-    len = strlen(value);
+    len = (int) strlen(value);
 
   // add length plus string bytes
-  checkBufferSize(1+sizeof(short) + len);
+  checkBufferSize(sizeof(short) + len);
 
-  *(short*) (m_buffer+m_bufferLen) = (short) len;
+  writeShort(len);
   memcpy(m_buffer+m_bufferLen, value, len);
-
-  m_bufferLen += sizeof(short)+ len;
+  m_bufferLen += len;
 }
 
 //-----------------------------------------------------------------
-// read short value from buffer
-short mgTextBuffer::readShort(
-  unsigned int &posn)          // buffer position
-{                       
-  short value = *(short*) (m_buffer + posn);
-  posn += sizeof(short);
-
-  return value;
-}
-
-//-----------------------------------------------------------------
-// read long value from buffer
-DWORD mgTextBuffer::readDWORD(
-  unsigned int &posn)          // buffer position
-{
-  DWORD lValue = *(DWORD*) (m_buffer + posn);
-  posn += sizeof(DWORD);
-
-  return lValue;
-}
-
-//-----------------------------------------------------------------
-// read pointer from buffer
-void* mgTextBuffer::readPtr(
-  unsigned int &posn)          // buffer position
-{
-  void* value = *(void**) (m_buffer + posn);
-  posn += sizeof(void*);
-
-  return value;
-}
-
-//-----------------------------------------------------------------
-// read text from buffer
-void mgTextBuffer::readText(
+// read string from buffer
+void mgTextBuffer::readString(
   unsigned int &posn,                   // buffer position
   int &len,                    // length of text
-  const char* &text)          // pointer to text data
+  const char* &value)          // pointer to value data
 {
-  len = *(WORD*) (m_buffer + posn);
-  posn += sizeof(WORD);
-  text = (const char*) (m_buffer + posn);
+  len = readShort(posn);
+  value = (const char*) (m_buffer + posn);
   posn += len;
-}
-
-//-----------------------------------------------------------------
-// read child box
-void mgTextBuffer::readChild(
-  unsigned int& posn,                // position in buffer
-  const void*& child,                // child box
-  mgTextAlign& horzAlign,            // horizontal alignment
-  mgTextAlign& vertAlign)            // vertical alignment
-{
-  child = *(const void**) (m_buffer + posn);
-  posn += sizeof(void*);
-  horzAlign = (mgTextAlign) *(short*) (m_buffer + posn);
-  posn += sizeof(short);
-  vertAlign = (mgTextAlign) *(short*) (m_buffer + posn);
-  posn += sizeof(short);
 }
 

@@ -1,5 +1,5 @@
 <cursorDefn
-  texture="arrowCursorRGB.bmp;arrowCursorAlpha.bmp"
+  texture="arrowCursor.png"
   hotX = "1"
   hotY = "1"
 />

@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -21,13 +21,14 @@
 #ifndef MGAPPLICATION_H
 #define MGAPPLICATION_H
 
-// This is the interface that an application must implement to interact with
-// the framework.
-
 #include "mgInputEvents.h"
 
 class mgPlatformServices;
 
+/*
+  The abstract interface to an application.  All programs using this library must
+  be subclasses of mgApplication.
+*/
 class mgApplication
 {
 public:

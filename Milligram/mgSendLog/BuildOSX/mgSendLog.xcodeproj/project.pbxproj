@@ -177,7 +177,7 @@
 				);
 				OTHER_LDFLAGS = "-lmgUtil";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx10.7;
 			};
 			name = Debug;
 		};
@@ -195,7 +195,7 @@
 				);
 				OTHER_LDFLAGS = "-lmgUtil";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx10.7;
 			};
 			name = Release;
 		};

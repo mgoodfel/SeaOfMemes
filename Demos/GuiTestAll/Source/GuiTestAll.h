@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -136,11 +136,13 @@ protected:
   mgTextureArray* m_cubeTexture;
   mgIndexBuffer* m_cubeIndexes;
   mgVertexBuffer* m_cubeVertexes;
+  mgShader* m_cubeShader;
 
   mgTextureImage* m_floorTexture;
   mgVertexBuffer* m_floorVertexes;
+  mgShader* m_floorShader;
 
-  mgTextureSurface* m_surface;
+  mgTextureSurface* m_overlay;
   SampleUI* m_ui;
 
   // initialize movement state

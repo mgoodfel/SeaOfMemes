@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -62,7 +62,7 @@ Belt::Belt(
   const mgOptionsFile& options,
   double radius)
 {
-  mgVertex::loadShader("unlitTexture");
+  m_shader = mgVertex::loadShader("unlitTexture");
 
   m_radius = radius / SYSTEM_FAR_SCALE;
 
@@ -501,7 +501,7 @@ void Belt::renderTransparent()
 //  mgDisplay->setTexture(m_farTexture);
 //  mgDisplay->draw(MG_TRIANGLES, m_farVertexes, m_farIndexes);       
 
-  mgDisplay->setShader("unlitTexture");
+  mgDisplay->setShader(m_shader);
   mgDisplay->setTexture(m_rockTexture);
   mgDisplay->draw(MG_TRIANGLES, m_mediumVertexes, m_mediumIndexes);       
 

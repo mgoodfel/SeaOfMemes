@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -27,7 +27,7 @@ const char THIS_FILE[] = __FILE__;
 
 // identify the program for the framework log
 const char* mgProgramName = "SeaOfMemes";
-const char* mgProgramVersion = "Part 60";
+const char* mgProgramVersion = "Part 83";
 
 #include "SolarSystem/NebulaSky.h"
 #include "SolarSystem/SolarSystem.h"
@@ -239,7 +239,7 @@ void SeaOfMemes::initMovement()
   m_avatarSpeed = m_targetSpeed;
 
   m_world->setCoordSystem(COORDS_SPACE);
-  m_world->setCoordPosn(mgPoint3(PLANET_RADIUS*2, 0.0, 0.0));
+  m_world->setCoordPosn(mgPoint3(PLANET_RADIUS*1.2, 0.0, -PLANET_RADIUS/2));
 
 //  m_world->setCoordSystem(COORDS_RING);
 //  m_world->setCoordPosn(mgPoint3(RING_RADIUS-1000, 0.0, 0.0));
@@ -866,10 +866,12 @@ void SeaOfMemes::appKeyChar(
   switch (keyCode)
   {
     case 'L':
+    case 'l':
       setLandingMode(!m_landingMode);
       break;
 
     case 'K':
+    case 'k':
       setUnits(!m_unitsMetric);
       break;
 
@@ -947,6 +949,15 @@ void SeaOfMemes::debugListVariables(
   varNames.add("eyePt.z");
   helpText.add("Eye z coordinate");
 
+  varNames.add("eyeRot.x");
+  helpText.add("Eye x rotation");
+
+  varNames.add("eyeRot.y");
+  helpText.add("Eye y rotation");
+
+  varNames.add("eyeRot.z");
+  helpText.add("Eye z rotation");
+
   varNames.add("planetDayLen");
   helpText.add("Planet rotation time (seconds)");
 
@@ -978,14 +989,16 @@ void SeaOfMemes::debugGetVariable(
   const char* varName,
   mgString& value) 
 {
-  mgPoint3 eyePt;
   if (m_world == NULL)
   {
     value = "unknown";
     return;
   }
 
+  mgPoint3 eyePt;
   m_world->getEyePt(eyePt);
+  mgPoint3 eyeRot;
+  m_world->getEyeRot(eyeRot);
 
   if (_stricmp(varName, "eyePt.x") == 0)
     value.format("%g", eyePt.x);
@@ -993,6 +1006,13 @@ void SeaOfMemes::debugGetVariable(
     value.format("%g", eyePt.y);
   else if (_stricmp(varName, "eyePt.z") == 0)
     value.format("%g", eyePt.z);
+
+  else if (_stricmp(varName, "eyeRot.x") == 0)
+    value.format("%g", eyeRot.x);
+  else if (_stricmp(varName, "eyeRot.y") == 0)
+    value.format("%g", eyeRot.y);
+  else if (_stricmp(varName, "eyeRot.z") == 0)
+    value.format("%g", eyeRot.z);
 
   else if (_stricmp(varName, "planetDayLen") == 0)
     value.format("%g", m_world->m_planetDayLen);

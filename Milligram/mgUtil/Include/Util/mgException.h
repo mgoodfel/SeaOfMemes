@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -23,9 +23,10 @@
 
 #include "mgString.h"
 
-/**
- * error handling exception
- */
+/*
+  Applications can signal errors by throwing an instance of mgException.  The
+  constructor takes a printf-style format string plus varying argument list.
+*/
 class mgException
 {
 public:

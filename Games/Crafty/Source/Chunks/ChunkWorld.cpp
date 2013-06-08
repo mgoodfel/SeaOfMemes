@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -83,6 +83,9 @@ ChunkWorld::ChunkWorld(
   m_systemMemLimit *= 1024*1024; // megabytes
 
   m_threadCount = options.getInteger("threadCount", 1); 
+#ifdef EMSCRIPTEN
+  m_threadCount = 0;
+#endif
   m_viewDistance = options.getInteger("viewDistance", 300);
 
   // since the view list goes up as the cube of distance, limit it
@@ -175,11 +178,11 @@ ChunkWorld::~ChunkWorld()
 // load shaders
 void ChunkWorld::loadShaders()
 {
-  mgVertexTA::loadShader("unlitTextureArray");
-  mgVertexTA::loadShader("litTextureArray");
-  mgVertexTA::loadShader("horizon");
-  mgVertex::loadShader("unlitTexture");
-  mgVertex::loadShader("litTexture");
+//  mgVertexTA::loadShader("unlitTextureArray");
+//  mgVertexTA::loadShader("litTextureArray");
+  m_horizonShader = mgVertexTA::loadShader("horizon");
+//  mgVertex::loadShader("unlitTexture");
+//  mgVertex::loadShader("litTexture");
 
   if (mgDisplay->supportsIntegerVertex())
     BrickBlobInt::loadShaders();
@@ -901,19 +904,19 @@ void ChunkWorld::readBrickSet(
       switch (desc->m_shape)
       {
         case SHAPE_CUBE:
-          desc->m_trans[BRICK_FACE_XMIN] = brick->m_xminTexture.find(0, ';') != -1;
-          desc->m_trans[BRICK_FACE_XMAX] = brick->m_xmaxTexture.find(0, ';') != -1;
-          desc->m_trans[BRICK_FACE_YMIN] = brick->m_yminTexture.find(0, ';') != -1;
-          desc->m_trans[BRICK_FACE_YMAX] = brick->m_ymaxTexture.find(0, ';') != -1;
-          desc->m_trans[BRICK_FACE_ZMIN] = brick->m_zminTexture.find(0, ';') != -1;
-          desc->m_trans[BRICK_FACE_ZMAX] = brick->m_zmaxTexture.find(0, ';') != -1;
+          desc->m_trans[BRICK_FACE_XMIN] = brick->m_transparent;
+          desc->m_trans[BRICK_FACE_XMAX] = brick->m_transparent;
+          desc->m_trans[BRICK_FACE_YMIN] = brick->m_transparent;
+          desc->m_trans[BRICK_FACE_YMAX] = brick->m_transparent;
+          desc->m_trans[BRICK_FACE_ZMIN] = brick->m_transparent;
+          desc->m_trans[BRICK_FACE_ZMAX] = brick->m_transparent;
           break;
 
         case SHAPE_SLAB:
           desc->m_trans[BRICK_FACE_XMIN] = true;
           desc->m_trans[BRICK_FACE_XMAX] = true;
-          desc->m_trans[BRICK_FACE_YMIN] = brick->m_yminTexture.find(0, ';') != -1;
-          desc->m_trans[BRICK_FACE_YMAX] = brick->m_ymaxTexture.find(0, ';') != -1;
+          desc->m_trans[BRICK_FACE_YMIN] = brick->m_transparent;
+          desc->m_trans[BRICK_FACE_YMAX] = brick->m_transparent;
           desc->m_trans[BRICK_FACE_ZMIN] = true;
           desc->m_trans[BRICK_FACE_ZMAX] = true;
           break;
@@ -921,8 +924,8 @@ void ChunkWorld::readBrickSet(
         case SHAPE_CAP:
           desc->m_trans[BRICK_FACE_XMIN] = true;
           desc->m_trans[BRICK_FACE_XMAX] = true;
-          desc->m_trans[BRICK_FACE_YMIN] = brick->m_yminTexture.find(0, ';') != -1;
-          desc->m_trans[BRICK_FACE_YMAX] = brick->m_ymaxTexture.find(0, ';') != -1;
+          desc->m_trans[BRICK_FACE_YMIN] = brick->m_transparent;
+          desc->m_trans[BRICK_FACE_YMAX] = brick->m_transparent;
           desc->m_trans[BRICK_FACE_ZMIN] = true;
           desc->m_trans[BRICK_FACE_ZMAX] = true;
           break;
@@ -930,7 +933,7 @@ void ChunkWorld::readBrickSet(
         case SHAPE_STAIR:
           desc->m_trans[BRICK_FACE_XMIN] = true;
           desc->m_trans[BRICK_FACE_XMAX] = true;
-          desc->m_trans[BRICK_FACE_YMIN] = brick->m_yminTexture.find(0, ';') != -1;
+          desc->m_trans[BRICK_FACE_YMIN] = brick->m_transparent;
           desc->m_trans[BRICK_FACE_YMAX] = true;
           desc->m_trans[BRICK_FACE_ZMIN] = true;
           desc->m_trans[BRICK_FACE_ZMAX] = true;
@@ -1376,13 +1379,13 @@ void ChunkWorld::drawHorizon(
   mgDisplay->setModelTransform(model);
   mgDisplay->setLightColor(m_skyColor.x, m_skyColor.y, m_skyColor.z);
 
-  mgDisplay->setShader("horizon");
-  mgDisplay->setShaderUniform("horizon", "fogColor", m_fogColor);
-  mgDisplay->setShaderUniform("horizon", "fogBotHeight", (float) m_fogBotHeight);
-  mgDisplay->setShaderUniform("horizon", "fogBotInten", (float) m_fogBotInten);
-  mgDisplay->setShaderUniform("horizon", "fogTopHeight", (float) m_fogTopHeight);
-  mgDisplay->setShaderUniform("horizon", "fogTopInten", (float) m_fogTopInten);
-  mgDisplay->setShaderUniform("horizon", "fogMaxDist", (float) m_fogMaxDist);
+  mgDisplay->setShader(m_horizonShader);
+  mgDisplay->setShaderUniform(m_horizonShader, "fogColor", m_fogColor);
+  mgDisplay->setShaderUniform(m_horizonShader, "fogBotHeight", (float) m_fogBotHeight);
+  mgDisplay->setShaderUniform(m_horizonShader, "fogBotInten", (float) m_fogBotInten);
+  mgDisplay->setShaderUniform(m_horizonShader, "fogTopHeight", (float) m_fogTopHeight);
+  mgDisplay->setShaderUniform(m_horizonShader, "fogTopInten", (float) m_fogTopInten);
+  mgDisplay->setShaderUniform(m_horizonShader, "fogMaxDist", (float) m_fogMaxDist);
 
   mgDisplay->setTexture(m_waterTexture);
   mgDisplay->draw(MG_TRIANGLES, m_horizonVertexes);
@@ -1399,13 +1402,13 @@ void ChunkWorld::drawWater(
   mgDisplay->setModelTransform(model);
   mgDisplay->setLightColor(m_skyColor.x, m_skyColor.y, m_skyColor.z);
 
-  mgDisplay->setShader("horizon");
-  mgDisplay->setShaderUniform("horizon", "fogColor", m_fogColor);
-  mgDisplay->setShaderUniform("horizon", "fogBotHeight", (float) m_fogBotHeight);
-  mgDisplay->setShaderUniform("horizon", "fogBotInten", (float) m_fogBotInten);
-  mgDisplay->setShaderUniform("horizon", "fogTopHeight", (float) m_fogTopHeight);
-  mgDisplay->setShaderUniform("horizon", "fogTopInten", (float) m_fogTopInten);
-  mgDisplay->setShaderUniform("horizon", "fogMaxDist", (float) m_fogMaxDist);
+  mgDisplay->setShader(m_horizonShader);
+  mgDisplay->setShaderUniform(m_horizonShader, "fogColor", m_fogColor);
+  mgDisplay->setShaderUniform(m_horizonShader, "fogBotHeight", (float) m_fogBotHeight);
+  mgDisplay->setShaderUniform(m_horizonShader, "fogBotInten", (float) m_fogBotInten);
+  mgDisplay->setShaderUniform(m_horizonShader, "fogTopHeight", (float) m_fogTopHeight);
+  mgDisplay->setShaderUniform(m_horizonShader, "fogTopInten", (float) m_fogTopInten);
+  mgDisplay->setShaderUniform(m_horizonShader, "fogMaxDist", (float) m_fogMaxDist);
 
   mgDisplay->setTexture(m_waterTexture);
   mgDisplay->draw(MG_TRIANGLES, m_waterVertexes);

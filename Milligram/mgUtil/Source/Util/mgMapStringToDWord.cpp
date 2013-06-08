@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -46,7 +46,7 @@ mgMapStringToDWord::mgMapStringToDWord()
   for (int i = 0; i < m_tableSize; i++)
   {
     m_entries[i].key = NULL;
-    m_entries[i].value = NULL;
+    m_entries[i].value = 0;
   }
 }
 
@@ -150,7 +150,7 @@ void mgMapStringToDWord::removeKey(
   while (true)
   {
     mgMapStringToDWordEntry *entry = (mgMapStringToDWordEntry *) &m_entries[index];
-    if (strcmp(entry->key, key) == 0)
+    if (entry->key != NULL && strcmp(entry->key, key) == 0)
     {
       // remove the key
       delete m_entries[index].key;

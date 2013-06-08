@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -141,7 +141,7 @@ void mgFormPane::setForm(
   m_text = new mgTextBuffer();
 
   if (len == -1)
-    len = strlen(xml);
+    len = (int) strlen(xml);
 
   mgFormParser parser(this);
   parser.parse(len, xml);
@@ -286,7 +286,7 @@ int mgFormPane::measureString(
   int len)                      // length of string, -1 for strlen
 {
   if (len == -1)
-    len = strlen(string);
+    len = (int) strlen(string);
 
   const mgFont* realFont = (const mgFont*) font;
   return realFont->stringWidth(string, len);
@@ -303,7 +303,7 @@ void mgFormPane::drawString(
   int len)                      // length of string, -1 for strlen
 {
   if (len == -1)
-    len = strlen(string);
+    len = (int) strlen(string);
 
   const mgFont* realFont = (const mgFont*) font;
   m_drawGC->setFont(realFont);
@@ -499,7 +499,7 @@ void mgFormPane::paint(
 //#define SHOWBACK
 #ifdef SHOWBACK
   // =-= debug
-  gc->setBrush(getSurface()->createBrush(mgColor(255-m_defaultTextColor.m_r, 255-m_defaultTextColor.m_g, 255-m_defaultTextColor.m_b)));
+  gc->setBrush(getSurface()->createBrush(mgColor(1.0-m_defaultTextColor.m_r, 1.0-m_defaultTextColor.m_g, 1.0-m_defaultTextColor.m_b)));
   gc->fillRect(1, 1, size.m_width-2, size.m_height-2);
 #endif
 //#define SHOWEDGE
@@ -509,7 +509,7 @@ void mgFormPane::paint(
   gc->drawRect(1, 1, size.m_width-2, size.m_height-2);
 #endif
 
-  gc->setDrawMode(MG_DRAW_RGB);
+  gc->setAlphaMode(MG_ALPHA_MERGE);
 #ifdef TRACE_TABLES
 mgDebug("FormPane interior = (%d, %d) (%d by %d)", interior.m_x, interior.m_y, interior.m_width, interior.m_height);
 #endif

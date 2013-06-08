@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -23,7 +23,8 @@
 #define MGCONSOLECONTROL_H
 
 /*
-  The parent of all console controls.
+  The superclass of all console controls.  A console is a scrolling text
+  output window, such as a command line history.
 */
 #include "mgControl.h"
 

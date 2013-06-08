@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -22,11 +22,6 @@
 #ifndef MGSTYLE_H
 #define MGSTYLE_H
 
-/*
-  This is the parent of all UI styles.  A style must create control instances, 
-  and MAY also return fonts, colors, etc. for a set of controls.
-*/
-
 /* 
   Use these constants to set an attribute on all instances of a particular
   control type.  ex: setAttr(MG_STYLE_LABEL, "font", aFont) would set the
@@ -37,15 +32,20 @@
 
   These names are also the cntlClass argument to the get*Attr methods.
 */
-static const char* MG_STYLE_ALL       = "*ALL*";
-static const char* MG_STYLE_LABEL     = "*LABEL*";
-static const char* MG_STYLE_BUTTON    = "*BUTTON*";
-static const char* MG_STYLE_CHECKBOX  = "*CHECKBOX*";
-static const char* MG_STYLE_FIELD     = "*FIELD*";
-static const char* MG_STYLE_CONSOLE   = "*CONSOLE*";
-static const char* MG_STYLE_STACK     = "*STACK*";
-static const char* MG_STYLE_LIST      = "*LIST*";
-static const char* MG_STYLE_SCROLLBAR = "*SCROLLBAR*";
+static const char* MG_STYLE_ALL         = "*ALL*";
+static const char* MG_STYLE_LABEL       = "*LABEL*";
+static const char* MG_STYLE_BUTTON      = "*BUTTON*";
+static const char* MG_STYLE_CHECKBOX    = "*CHECKBOX*";
+static const char* MG_STYLE_FIELD       = "*FIELD*";
+static const char* MG_STYLE_LIST        = "*LIST*";
+static const char* MG_STYLE_SCROLLBAR   = "*SCROLLBAR*";
+static const char* MG_STYLE_SCROLLPANE  = "*SCROLLPANE*";
+static const char* MG_STYLE_CONSOLE     = "*CONSOLE*";
+static const char* MG_STYLE_STACK       = "*STACK*";
+static const char* MG_STYLE_SPLIT       = "*SPLIT*";
+static const char* MG_STYLE_TABBED      = "*TABBED*";
+static const char* MG_STYLE_DESKTOP     = "*DESKTOP*";
+static const char* MG_STYLE_WINDOW      = "*WINDOW*";
 
 class mgControl;
 class mgLabelControl;
@@ -54,6 +54,11 @@ class mgCheckboxControl;
 class mgFieldControl;
 class mgConsoleControl;
 class mgStackControl;
+class mgListControl;
+class mgSplitControl;
+class mgTabbedControl;
+class mgScrollPaneControl;
+class mgDesktopControl;
 
 class mgFont;
 class mgColor;
@@ -63,6 +68,17 @@ class mgIcon;
 class mgPaint;
 class mgFrame;
 
+/*
+  An abstract interface to the GUI look and feel.  The application would
+  create an instance of some mgStyle subclass, and that instance would 
+  then create all labels, buttons, checkboxes, etc.  Eventually, the
+  style should be user-selectable.  Currently, there is only one
+  mgStyle subclass -- mgSimpleStyle.
+<p>
+  The mgStyle class also maintains a table of attributes, which might include
+  items like font size.  A particuarl style may or may not honor attributes 
+  set by the programmer.
+*/
 class mgStyle
 {
 public:
@@ -96,6 +112,16 @@ public:
     const char* name, 
     const char* label) = 0;
 
+  // create a listbox control
+  virtual mgListControl* createList(
+    mgControl* parent,
+    const char* name) = 0;
+
+  // create a scrollpane control
+  virtual mgScrollPaneControl* createScrollPane(
+    mgControl* parent,
+    const char* name) = 0;
+
   // create a console control
   virtual mgConsoleControl* createConsole(
     mgControl* parent,
@@ -103,6 +129,21 @@ public:
 
   // create a stack control
   virtual mgStackControl* createStack(
+    mgControl* parent,
+    const char* name) = 0;
+
+  // create a split control
+  virtual mgSplitControl* createSplit(
+    mgControl* parent,
+    const char* name) = 0;
+
+  // create a tabbed control
+  virtual mgTabbedControl* createTabbed(
+    mgControl* parent,
+    const char* name) = 0;
+
+  // create a desktop control
+  virtual mgDesktopControl* createDesktop(
     mgControl* parent,
     const char* name) = 0;
 

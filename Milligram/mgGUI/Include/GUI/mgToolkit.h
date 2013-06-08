@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -34,6 +34,7 @@
 #include "mgSelectListener.h"
 #include "mgTimeListener.h"
 #include "mgTreeListener.h"
+#include "mgDesktopListener.h"
 
 #include "mgPaint.h"
 #include "mgSolidPaint.h"
@@ -52,19 +53,23 @@
 #include "mgFieldControl.h"
 #include "mgButtonControl.h"
 #include "mgCheckboxControl.h"
-#include "mgConsoleControl.h"
 #include "mgListControl.h"
 #include "mgScrollbarControl.h"
+
+#include "mgScrollPaneControl.h"
+#include "mgConsoleControl.h"
+#include "mgStackControl.h"
+#include "mgSplitControl.h"
+#include "mgTabbedControl.h"
+#include "mgDesktopControl.h"
 
 //#include "mgRadioControl.h"
 //#include "mgDropListControl.h"
 //#include "mgScrollPaneControl.h"
 //#include "mgFormControl.h"
 
-//#include "mgMenu.h"
-//#include "mgMenuBarControl.h"
-
-#include "mgStackControl.h"
+#include "mgMenu.h"
+#include "mgMenuBarControl.h"
 
 #include "mgStyle.h"
 

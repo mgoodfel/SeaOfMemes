@@ -614,7 +614,9 @@ void updateCursorTracksMouse(void)
       
     case 0x1b: return MG_EVENT_KEY_ESCAPE;
     case 0x0D: return MG_EVENT_KEY_RETURN;
-      //    case 0x08: return MG_EVENT_KEY_TAB;
+    case 0x7F: return MG_EVENT_KEY_BACKSPACE;
+    case 0x08: return MG_EVENT_KEY_TAB;
+    default: mgDebug("unknown key %02x", keyCode);
   }
   return 0;
 }

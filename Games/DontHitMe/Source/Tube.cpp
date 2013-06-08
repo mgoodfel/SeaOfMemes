@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -56,7 +56,7 @@ Tube::~Tube()
 //--------------------------------------------------------------------
 // set the track to follow (tube owns storage)
 void Tube::setTrack(
-  mgBezier*track)
+  mgBezier* track)
 {
   m_track = track;
   m_trackLen = track->getLength();
@@ -115,6 +115,7 @@ void Tube::getBallView(
 // create vertex and index buffers
 void Tube::createBuffers()
 {
+  m_shader = mgVertex::loadShader("unlitTexture");
   m_vertexes = mgVertex::newBuffer((m_widthSteps+1)*(m_trackSteps+1));
   m_indexes = mgDisplay->newIndexBuffer(m_widthSteps*m_trackSteps*6);
 
@@ -203,6 +204,6 @@ void Tube::animate(
 void Tube::render()
 {
   // draw triangles using texture and shader
-  mgDisplay->setShader("unlitTexture");
+  mgDisplay->setShader(m_shader);
   mgDisplay->draw(MG_TRIANGLES, m_vertexes, m_indexes);
 }

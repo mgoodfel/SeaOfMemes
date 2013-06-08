@@ -1,25 +1,26 @@
 TARGET = libmgGUI.a
 
-FORM = Form/mgBlockTag.o Form/mgBreakTag.o Form/mgButtonTag.o Form/mgCheckboxTag.o \
-	Form/mgConsoleTag.o Form/mgFieldTag.o Form/mgFormPane.o Form/mgFormParser.o Form/mgFormTag.o \
-	Form/mgHeadingTag.o Form/mgLabelTag.o Form/mgListItemTag.o Form/mgListTag.o Form/mgParaTag.o \
-	Form/mgPreTag.o Form/mgRuleTag.o Form/mgTableColTag.o Form/mgTableRowTag.o Form/mgTableTag.o \
-	Form/mgTextTag.o 
+FORM = $(addprefix Form/, mgBlockTag.o mgBreakTag.o mgButtonTag.o mgCheckboxTag.o \
+	mgConsoleTag.o mgFieldTag.o mgFormPane.o mgFormParser.o mgFormTag.o \
+	mgHeadingTag.o mgLabelTag.o mgListItemTag.o mgListTag.o mgParaTag.o \
+	mgPreTag.o mgRuleTag.o mgTableColTag.o mgTableRowTag.o mgTableTag.o \
+	mgTextTag.o )
 
-GUI = GUI/mgColumnLayout.o GUI/mgControl.o GUI/mgFrame.o GUI/mgRectFrame.o GUI/mgSolidPaint.o \
-	GUI/mgStyle.o GUI/mgTableLayout.o GUI/mgTopControl.o
+GUI = $(addprefix GUI/, mgColumnLayout.o mgControl.o mgFrame.o mgRectFrame.o mgSolidPaint.o \
+	mgStyle.o mgTableLayout.o mgTopControl.o )
 
-TEXTFORM = TextFormatter/mgTextBuffer.o TextFormatter/mgTextDraw.o TextFormatter/mgTextFormat.o \
-	TextFormatter/mgTextMeasure.o TextFormatter/mgTextScan.o
+TEXTFORM = $(addprefix TextFormatter/, mgTextBuffer.o mgTextDraw.o mgTextFormat.o \
+	mgTextMeasure.o mgTextScan.o)
 
-UGLYSTYLE = UglyStyle/mgUglyButton.o UglyStyle/mgUglyCheckbox.o UglyStyle/mgUglyConsole.o \
-	UglyStyle/mgUglyField.o UglyStyle/mgUglyLabel.o UglyStyle/mgUglyList.o \
-	UglyStyle/mgUglyScrollbar.o UglyStyle/mgUglyStack.o UglyStyle/mgUglyStyle.o
+SimpleSTYLE = $(addprefix SimpleStyle/, mgSimpleButton.o mgSimpleCheckbox.o mgSimpleConsole.o \
+	mgSimpleDesktop.o mgSimpleField.o mgSimpleLabel.o mgSimpleList.o mgSimpleMenuBar.o \
+	mgSimpleScrollbar.o mgSimpleScrollPane.o mgSimpleSplit.o mgSimpleStack.o \
+	mgSimpleStyle.o mgSimpleTabbed.o mgSimpleWindow.o )
 
 UTIL = Util/mgDebugPane.o 
 
-DIRLIST = Form GUI TextFormatter UglyStyle Util
-FILES = $(FORM) $(GUI) $(TEXTFORM) $(UGLYSTYLE) $(UTIL) 
+DIRLIST = Form GUI TextFormatter SimpleStyle Util
+FILES = $(FORM) $(GUI) $(TEXTFORM) $(SimpleSTYLE) $(UTIL) 
 
 SOURCE = ../Source
 INCDIRS = -I/usr/include -I/usr/local/include -I/user/include/GL -I./ -I$(SOURCE) -I../Include -I../../
@@ -30,8 +31,8 @@ CC = g++
 RELEASEFLAGS = -O3
 DEBUGFLAGS = -g3 -O0 -fno-inline 
 
-LIBS = -LX11 -lGL -lm -lrt -lpthread
-LIBDIRS = -L/usr/local/lib
+LIBS = -lm -lrt -lpthread
+LIBDIRS = #empty
 DEBUGTARGET = ../../BuildLinux/Debug/$(TARGET)
 RELEASETARGET = ../../BuildLinux/Release/$(TARGET)
  

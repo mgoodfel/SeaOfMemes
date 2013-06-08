@@ -288,7 +288,7 @@
 				);
 				INFOPLIST_FILE = "GuiTestAll/GuiTestAll-Info.plist";
 				LIBRARY_SEARCH_PATHS = "../../../Milligram/BuildOSX/$(CONFIGURATION)";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = (
 					"-lmgPlatform",
 					"-lmg2D",
@@ -297,6 +297,8 @@
 					"-lmgUtil",
 					"-lFreeType",
 					"-lJpegLib",
+					"-lLibPNG",
+					"-lZLib",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -319,7 +321,7 @@
 				);
 				INFOPLIST_FILE = "GuiTestAll/GuiTestAll-Info.plist";
 				LIBRARY_SEARCH_PATHS = "../../../Milligram/BuildOSX/$(CONFIGURATION)";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = (
 					"-lmgPlatform",
 					"-lmg2D",
@@ -328,6 +330,8 @@
 					"-lmgUtil",
 					"-lFreeType",
 					"-lJpegLib",
+					"-lLibPNG",
+					"-lZLib",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

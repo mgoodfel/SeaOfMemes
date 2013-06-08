@@ -1,3 +1,3 @@
 // common include files across all modules
-#include "mgPlatform.h"
+#include "mgPlatform/Include/mgPlatform.h"
 

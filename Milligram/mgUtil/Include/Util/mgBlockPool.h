@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -23,6 +23,10 @@
 
 const int MG_POOL_BLOCK_SIZE = 16384;
 
+/*
+  Manage chained blocks of fixed-sized objects in memory.  Allocation takes
+  the first free block.  Free returns a block to the head of the free list.
+*/
 class mgBlockPool
 {
 public:

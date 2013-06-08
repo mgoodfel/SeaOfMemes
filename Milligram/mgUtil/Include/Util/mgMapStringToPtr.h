@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -23,6 +23,10 @@
 
 #include "mgString.h"
 
+/*
+  Hashes string keys to pointers.  The key string is copied into the table.  The caller
+  owns the value pointer.
+*/
 class mgMapStringToPtr
 {
 public:

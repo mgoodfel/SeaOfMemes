@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -59,7 +59,7 @@ SolarSystem::SolarSystem(
     m_beltMonthLen = 1e10;  // infinity
 
   m_planet = new Planet(options, PLANET_RADIUS);
-  m_belt = new Belt(options, BELT_RADIUS);
+//  m_belt = new Belt(options, BELT_RADIUS);
   m_moon = new Moon(options, MOON_RADIUS);
   m_ring = new Ring(options, RING_RADIUS, RING_WALL_HEIGHT, RING_WALL_WIDTH);
 
@@ -89,6 +89,7 @@ SolarSystem::SolarSystem(
   mgDebug("Ring radius = %g km (%g miles)", RING_RADIUS/1000.0, RING_RADIUS/1600.0);
   val = 2*PI*RING_RADIUS*RING_WIDTH;
   mgDebug("Surface area of ring = %g million sq km (%g million sq mi)", val/1e12, (val/1e12)/1.609);
+  mgDebug("Ring width = %g m (%g ft)", RING_WIDTH, RING_WIDTH*3.16);
   mgDebug("Ring wall height = %g m (%g ft)", RING_WALL_HEIGHT, RING_WALL_HEIGHT*3.16);
   mgDebug("Ring wall width = %g m (%g ft)", RING_WALL_WIDTH, RING_WALL_WIDTH*3.16);
 }
@@ -102,8 +103,8 @@ SolarSystem::~SolarSystem()
   delete m_planet;
   m_planet = NULL;
 
-  delete m_belt;
-  m_belt = NULL;
+//  delete m_belt;
+//  m_belt = NULL;
 
   delete m_moon;
   m_moon = NULL;
@@ -117,7 +118,7 @@ SolarSystem::~SolarSystem()
 void SolarSystem::deleteBuffers()
 {
   m_planet->deleteBuffers();
-  m_belt->deleteBuffers();
+//  m_belt->deleteBuffers();
   m_moon->deleteBuffers();
   m_ring->deleteBuffers();
 }
@@ -127,7 +128,7 @@ void SolarSystem::deleteBuffers()
 void SolarSystem::createBuffers()
 {
   m_planet->createBuffers();
-  m_belt->createBuffers();
+//  m_belt->createBuffers();
   m_moon->createBuffers();
   m_ring->createBuffers();
 }
@@ -139,7 +140,7 @@ BOOL SolarSystem::animate(
   double since)                     // milliseconds since last pass
 {
   BOOL changed = m_planet->animate(now, since);
-  changed |= m_belt->animate(now, since);
+//  changed |= m_belt->animate(now, since);
   changed |= m_moon->animate(now, since);
   changed |= m_ring->animate(now, since);
 
@@ -184,21 +185,25 @@ void SolarSystem::renderPlanetAndBeltFar()
   mgMatrix4 transform;
 
   // draw back side of belt
+#ifdef BELT
   transform.loadIdentity();
   transform.rotateYDeg(m_beltMonth);
   mgDisplay->setModelTransform(transform);
   m_belt->renderBackFar();
+#endif
 
   // draw planet
   transform.loadIdentity();
   mgDisplay->setModelTransform(transform);
   m_planet->renderFar(m_planetDay);
 
+#ifdef BELT
   // draw front side of belt
   transform.loadIdentity();
   transform.rotateYDeg(m_beltMonth);
   mgDisplay->setModelTransform(transform);
   m_belt->renderFrontFar();
+#endif
 }
 
 //--------------------------------------------------------------
@@ -307,8 +312,10 @@ void SolarSystem::render()
   // only one object can be within medium dist.  render it
   if (planetDist < SYSTEM_MEDIUM_DIST)
     m_planet->renderMedium();
+#ifdef BELT
   else if (beltDist < SYSTEM_MEDIUM_DIST)
      m_belt->renderMedium();
+#endif
   else if (moonDist < SYSTEM_MEDIUM_DIST)
      m_moon->renderMedium();
   else if (ringDist < SYSTEM_MEDIUM_DIST)
@@ -319,8 +326,10 @@ void SolarSystem::render()
   // only one object can be within near dist.  render it
   if (planetDist < SYSTEM_NEAR_DIST)
     m_planet->renderNear();
+#ifdef BELT
   else if (beltDist < SYSTEM_NEAR_DIST)
      m_belt->renderNear();
+#endif
   else if (moonDist < SYSTEM_NEAR_DIST)
      m_moon->renderNear();
   else if (ringDist < SYSTEM_NEAR_DIST)
@@ -339,7 +348,7 @@ void SolarSystem::renderTransparent()
     mgDisplay->setModelTransform(transform);
 
     mgDisplay->setTransparent(true);
-    m_belt->renderTransparent();
+//    m_belt->renderTransparent();
     mgDisplay->setTransparent(false);
   }
 }

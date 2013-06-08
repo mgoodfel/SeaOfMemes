@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -73,6 +73,16 @@ void mgDWordArray::add(
   m_elements[m_elementCount++] = elm;
 }
 
+//--------------------------------------------------------------
+// add all elements of array
+void mgDWordArray::addAll(
+  const mgDWordArray& other)
+{
+  grow(m_elementCount + other.m_elementCount);
+  memcpy(m_elements+m_elementCount, other.m_elements, sizeof(DWORD)*other.m_elementCount);
+  m_elementCount += other.m_elementCount;
+}
+      
 //--------------------------------------------------------------
 // find index of element
 int mgDWordArray::find(
@@ -184,7 +194,7 @@ DWORD mgDWordArray::pop()
 //--------------------------------------------------------------
 // sort the array
 void mgDWordArray::sort(
-  int (*compareFn)(const void*, const void*))
+  mgCompareFn compare)
 {
-  qsort(m_elements, m_elementCount, sizeof(DWORD), compareFn);
+  qsort(m_elements, m_elementCount, sizeof(DWORD), compare);
 }

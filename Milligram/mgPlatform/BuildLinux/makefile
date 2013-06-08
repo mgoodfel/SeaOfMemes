@@ -1,13 +1,13 @@
 TARGET = libmgPlatform.a
 
 SOURCE = ../Source
-INCDIRS = -I/usr/include -I/usr/local/include -I/user/include/GL -I./ -I$(SOURCE) -I../Include -I../../
+INCDIRS = -I/usr/include -I/usr/local/include -I/user/include/GL -I./ -I../../ -I../Include -I$(SOURCE)
 DEFINE = 
 
-PLATFORM = mgCursorDefn.o mgPlatformErrorTable.o
+PLATFORM = mgPlatformErrorTable.o
 
 LINUX = Linux/linux_glew.o Linux/mgLinuxGL21Support.o Linux/mgLinuxGL33Support.o \
-	Linux/mgLinuxServices.o Linux/mgFontConfParser.o
+	Linux/mgLinuxPlatform.o Linux/mgFontConfParser.o
 
 FILES = $(PLATFORM) $(LINUX)
 DIRLIST = Linux
@@ -17,8 +17,8 @@ CC = g++
 RELEASEFLAGS = -O3 -Wno-invalid-offsetof
 DEBUGFLAGS = -g3 -O0 -fno-inline -Wno-invalid-offsetof
 
-LIBS = -LX11 -lGL -lm -lrt -lpthread
-LIBDIRS = -L/usr/local/lib
+LIBS = -lX11 -lGL -lm -lrt -lpthread
+LIBDIRS = #empty
 DEBUGTARGET = ../../BuildLinux/Debug/$(TARGET)
 RELEASETARGET = ../../BuildLinux/Release/$(TARGET)
  

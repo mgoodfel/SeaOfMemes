@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -79,7 +79,7 @@ BOOL mgMapXYZToPtr::lookup(
   {
     mgMapXYZToPtrEntry *entry = (mgMapXYZToPtrEntry *) &m_entries[index];
     if (entry->value == NULL)
-      return NULL;
+      return false;
       
     if (entry->x == x && entry->y == y && entry->z == z)
     {

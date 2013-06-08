@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -25,41 +25,34 @@ const char THIS_FILE[] = __FILE__;
 #define new new(THIS_FILE, __LINE__)
 #endif
 
-#include "ft2build.h"
-#include FT_FREETYPE_H
-
-#include "mgGenContext.h"
-#include "mgGenImage.h"
-#include "mgGenIcon.h"
-#include "mgGenCharCache.h"
-#include "Graphics2D/Surfaces/mgGenSurface.h"
+#include "Surfaces/mgGenContext.h"
+#include "Surfaces/mgGenFont.h"
+#include "Surfaces/mgGenImage.h"
+#include "Surfaces/mgGenIcon.h"
+#include "Surfaces/mgGenSurface.h"
 
 //--------------------------------------------------------------
 // public constructor only creates inworld-single tile images
 mgGenSurface::mgGenSurface()
 {
-  m_imageData = NULL;
   m_isDamaged = false;
 
-  m_imageWidth = 0;
-  m_imageHeight = 0;
+  m_surfaceWidth = 0;
+  m_surfaceHeight = 0;
 
-  // initialize instance of free type library
-  int error = FT_Init_FreeType((FT_Library*) &m_ftLibrary);
-  if (error != 0)
-    throw new mgException("FT_Init_FreeType returns %d", error);
-
-  m_charCache = new mgGenCharCache();
 }
 
 //--------------------------------------------------------------
 // destructor
 mgGenSurface::~mgGenSurface()
 {
-  // delete the surface data
-  delete m_imageData;
-  m_imageData = NULL;
+  removeAllResources();
+}
 
+//--------------------------------------------------------------
+// free all the resources
+void mgGenSurface::removeAllResources()
+{
   // delete the cached drawing objects
   int posn = m_resourceCache.getStartPosition();
   while (posn != -1)
@@ -70,23 +63,6 @@ mgGenSurface::~mgGenSurface()
     delete (mgResource*) value;
   }
   m_resourceCache.removeAll();
-
-  FT_Done_FreeType((FT_Library) m_ftLibrary);
-
-  delete m_charCache;
-  m_charCache = NULL;
-}
-
-//--------------------------------------------------------------
-// get surface pixels, 32-bits per pixel (DWORD=RGBA)
-void mgGenSurface::getPixels(
-  int& imageWidth,
-  int& imageHeight,
-  DWORD*& imageData) const
-{
-  imageWidth = m_imageWidth;
-  imageHeight = m_imageHeight;
-  imageData = m_imageData;
 }
 
 //--------------------------------------------------------------
@@ -184,18 +160,16 @@ const mgFont* mgGenSurface::createFont(
 //--------------------------------------------------------------
 // create a brush
 const mgBrush* mgGenSurface::createBrush(
-  int r, 
-  int g, 
-  int b)
+  const mgColor& color)
 {
   mgString key;
-  key.format("brush-%d,%d,%d", r, g, b);
+  key.format("brush-%.4f,%.4f,%.4f,%.4f", color.m_r, color.m_g, color.m_b, color.m_a);
   
   mgResource* value = findResource(key);
   if (value != NULL)
     return (mgBrush*) value;
 
-  mgGenBrush* brush = new mgGenBrush(r, g, b);
+  mgBrush* brush = new mgBrush(color);
   brush->m_key = key;
   saveResource(brush);
 
@@ -205,9 +179,12 @@ const mgBrush* mgGenSurface::createBrush(
 //--------------------------------------------------------------
 // create a brush
 const mgBrush* mgGenSurface::createBrush(
-  const mgColor& color)
+  double r, 
+  double g, 
+  double b,
+  double a)
 {
-  return createBrush(color.m_r, color.m_g, color.m_b);
+  return createBrush(mgColor(r, g, b, a));
 }
     
 //--------------------------------------------------------------
@@ -215,27 +192,24 @@ const mgBrush* mgGenSurface::createBrush(
 const mgBrush* mgGenSurface::createBrush(
   const char* colorSpec)
 {
-  mgColor color(colorSpec);
-  return createBrush(color.m_r, color.m_g, color.m_b);
+  return createBrush(mgColor(colorSpec));
 }
 
 //--------------------------------------------------------------
 // create pen from color
 const mgPen* mgGenSurface::createPen(
-  int r, 
-  int g, 
-  int b,
-  int thick)
+  double thick,
+  const mgColor& color)
 {
   mgString key;
-  key.format("pen-%d,%d,%d,%d", r, g, b, thick);
+  key.format("pen-%.4f,%.4f,%.4f,%.4f,%.4f", thick, color.m_r, color.m_g, color.m_b, color.m_a);
   
   mgResource* value = findResource(key);
   if (value != NULL)
     return (mgPen*) value;
 
   // create the pen
-  mgGenPen* pen = new mgGenPen(r, g, b, thick);
+  mgPen* pen = new mgPen(thick, color);
   pen->m_key = key;
   saveResource(pen);
   
@@ -245,20 +219,22 @@ const mgPen* mgGenSurface::createPen(
 //--------------------------------------------------------------
 // create named color pen
 const mgPen* mgGenSurface::createPen(
-  const char* colorSpec,
-  int thick)
+  double thick,
+  const char* colorSpec)
 {
-  mgColor color(colorSpec);
-  return createPen(color.m_r, color.m_g, color.m_b, thick);
+  return createPen(thick, mgColor(colorSpec));
 }
 
 //--------------------------------------------------------------
 // create pen from color
 const mgPen* mgGenSurface::createPen(
-  const mgColor& color,
-  int thick)
+  double thick,
+  double r, 
+  double g, 
+  double b,
+  double a)
 {
-  return createPen(color.m_r, color.m_g, color.m_b, thick);
+  return createPen(thick, mgColor(r, g, b, a));
 }
 
 //--------------------------------------------------------------
@@ -273,7 +249,9 @@ const mgIcon* mgGenSurface::createIcon(
     return (mgIcon*) value;
 
   // create the icon
-  mgGenIcon* icon = new mgGenIcon(fileName);
+  mgGenIcon* icon = new mgGenIcon(this);
+  icon->m_fileName = fileName;
+  icon->m_handle = loadIcon(icon);
   icon->m_key = key;
   saveResource(icon);
   
@@ -285,7 +263,10 @@ const mgIcon* mgGenSurface::createIcon(
 const mgImage* mgGenSurface::createImage(
   const char* fileName)
 {
-  return new mgGenImage(fileName);
+  mgGenImage* image = new mgGenImage(this);
+  image->m_fileName = fileName;
+  image->m_handle = loadImage(image);
+  return image;
 }
 
 //--------------------------------------------------------------
@@ -336,15 +317,15 @@ void mgGenSurface::damage(
   {
     m_damageLeft = max(0, min(m_damageLeft, x));
     m_damageTop = max(0, min(m_damageTop, y));
-    m_damageRight = min(m_imageWidth, max(m_damageRight, x+width));
-    m_damageBottom = min(m_imageHeight, max(m_damageBottom, y+height));
+    m_damageRight = min(m_surfaceWidth, max(m_damageRight, x+width));
+    m_damageBottom = min(m_surfaceHeight, max(m_damageBottom, y+height));
   }
   else
   {
     m_damageLeft = max(0, x);
     m_damageTop = max(0, y);
-    m_damageRight = min(m_imageWidth, x+width);
-    m_damageBottom = min(m_imageHeight, y+height);
+    m_damageRight = min(m_surfaceWidth, x+width);
+    m_damageBottom = min(m_surfaceHeight, y+height);
   }
   m_isDamaged = true;
 }
@@ -353,7 +334,7 @@ void mgGenSurface::damage(
 // damage entire bitmap
 void mgGenSurface::damageAll()
 {
-  damage(0, 0, m_imageWidth, m_imageHeight);
+  damage(0, 0, m_surfaceWidth, m_surfaceHeight);
 }
   
 //--------------------------------------------------------------------
@@ -397,21 +378,14 @@ void mgGenSurface::setSurfaceSize(
   int height)
 {
   // reallocate the surface data
-  if (width != m_imageWidth || height != m_imageHeight)
+  if (width != m_surfaceWidth || height != m_surfaceHeight)
   {
-    delete m_imageData;
-    m_imageData = NULL;
-
-    m_imageWidth = width;
-    m_imageHeight = height;
-    m_imageData = new DWORD[m_imageWidth * m_imageHeight];
-
-    // clear the image to black
-    memset(m_imageData, 0, m_imageWidth*m_imageHeight*sizeof(DWORD));
+    m_surfaceWidth = width;
+    m_surfaceHeight = height;
   }
 
   // set the entire image area damaged
-  damage(0, 0, m_imageWidth, m_imageHeight);
+  damage(0, 0, m_surfaceWidth, m_surfaceHeight);
 }
 
 //--------------------------------------------------------------
@@ -420,6 +394,7 @@ void mgGenSurface::getSurfaceSize(
   int& width,
   int& height) const
 {
-  width = m_imageWidth;
-  height = m_imageHeight;
+  width = m_surfaceWidth;
+  height = m_surfaceHeight;
 }
+

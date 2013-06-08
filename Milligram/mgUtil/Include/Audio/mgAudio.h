@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -33,8 +33,10 @@ const int MG_AUDIO_MAX_SOUNDS = 256;
 
 class mgAudioSound;
 
-// manage all the sound output for the application.  There should only be
-// one instance of this class
+/* 
+  Abstract interface for OS sound support.  Manages multiple active sounds and their
+  attributes.  There should be only one instance of this class.
+*/
 class mgAudio
 {
 public:

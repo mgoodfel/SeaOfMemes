@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -38,7 +38,7 @@ SampleUI::SampleUI(
   m_surface = surface;
 
   // create a style object, which creates controls
-  m_style = new mgUglyStyle(m_surface);
+  m_style = new mgSimpleStyle(m_surface);
 
   // create the top control that holds the ui
   m_top = new mgTopControl(m_surface, m_style);
@@ -145,7 +145,7 @@ mgStackControl* SampleUI::createLeftSide(
   m_help->parseFormFile(helpFile);
 
   // set the background and frame of the help
-  const mgPaint* helpBack = mgSolidPaint::createPaint(m_surface, mgColor(200, 200, 255));
+  const mgPaint* helpBack = mgSolidPaint::createPaint(m_surface, mgColor(200/255.0, 200/255.0, 255/255.0));
   const mgFrame* helpFrame = mgRectFrame::createFrame(m_surface, mgFlatEdge, 2, mgColor("black"), helpBack, mgFrameMargin(10));
   m_help->setFrame(helpFrame);
 

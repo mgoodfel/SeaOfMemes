@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -62,6 +62,8 @@ Moon::~Moon()
 // create buffers ready to send to display
 void Moon::createBuffers()
 {
+  m_shader = mgVertexTA::loadShader("litTextureCube");
+
   const mgPoint3 center(0,0,0);
   const int steps = 32;
 
@@ -279,7 +281,7 @@ BOOL Moon::animate(
 // render far version
 void Moon::renderFar()
 {
-  mgDisplay->setShader("litTextureCube");
+  mgDisplay->setShader(m_shader);
   mgDisplay->setTexture(m_farTexture);
   mgDisplay->draw(MG_TRIANGLES, m_farVertexes, m_farIndexes);
 }

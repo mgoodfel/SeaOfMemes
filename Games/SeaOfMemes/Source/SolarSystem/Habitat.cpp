@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -41,9 +41,10 @@ Habitat::Habitat(
   const mgPoint3& center,
   double radius)
 {
-  mgVertex::loadShader("litTexture");
-  mgVertex::loadShader("unlitTexture");
-  VertexTerrain::loadShader("terrain");
+  m_lightShader = mgVertex::loadShader("unlitTexture");
+  m_waterShader = mgVertex::loadShader("unlitTexture");
+  m_terrainShader = VertexTerrain::loadShader("terrain");
+  m_shellShader = VertexTerrain::loadShader("terrain");
 
   mgString fileName;
   options.getFileName("waterTexture", options.m_sourceFileName, "", fileName);
@@ -788,16 +789,16 @@ void Habitat::render()
 {
   mgDisplay->setCulling(false);
   
-  mgDisplay->setShader("terrain");
+  mgDisplay->setShader(m_shellShader);
   mgDisplay->setTexture(m_terrainTexture);
   mgDisplay->draw(MG_TRIANGLES, m_shellVertexes, m_shellIndexes);
 
-  mgDisplay->setShader("terrain");
+  mgDisplay->setShader(m_terrainShader);
   mgDisplay->setTexture(m_terrainTexture);
   mgDisplay->draw(MG_TRIANGLES, m_terrainVertexes, m_terrainIndexes);
 
   mgDisplay->setMatColor(1.0, 1.0, 1.0);
-  mgDisplay->setShader("unlitTexture");
+  mgDisplay->setShader(m_lightShader);
   mgDisplay->setTexture(m_lightTexture);
   mgDisplay->draw(MG_TRIANGLES, m_lightVertexes, m_lightIndexes);
 
@@ -808,7 +809,7 @@ void Habitat::render()
 // draw transparent data
 void Habitat::renderTransparent()
 {
-  mgDisplay->setShader("unlitTexture");
+  mgDisplay->setShader(m_waterShader);
   mgDisplay->setTexture(m_waterTexture);
   mgDisplay->draw(MG_TRIANGLES, m_waterVertexes, m_waterIndexes);
 

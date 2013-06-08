@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -42,6 +42,12 @@
 #include "OS/mgOSOSX.h"
 #endif
 
+#ifdef EMSCRIPTEN
+
+#include "OS/mgOSScript.h"
+#include "OS/mgScriptMisc.h"
+#endif
+
 // Include the entire framework.  Most apps won't need all of this
 
 // utilities
@@ -53,6 +59,7 @@
 #include "Util/mgQuat.h"
 #include "Util/mgDWordArray.h"
 #include "Util/mgPtrArray.h"
+#include "Util/mgPoint3Array.h"
 #include "Util/mgStringArray.h"
 #include "Util/mgMapStringToPtr.h"
 #include "Util/mgMapStringToDWord.h"
@@ -60,6 +67,7 @@
 #include "Util/mgMapStringToString.h"
 #include "Util/mgMapPtrToPtr.h"
 #include "Util/mgMapDWordToPtr.h"
+#include "Util/mgMapDWordToDWord.h"
 #include "Util/mgMapXYZToPtr.h"
 #include "Util/mgBlockPool.h"
 #include "Util/mgUtilErrorTable.h"
@@ -79,5 +87,6 @@
 // graphics utilities
 #include "GraphicsUtil/mgBezier.h"
 #include "GraphicsUtil/mgSimplexNoise.h"
+#include "GraphicsUtil/mgOctree.h"
 
 #endif

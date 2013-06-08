@@ -1,7 +1,7 @@
 DEMOS = GuiForms GuiTestAll GuiTestGL GuiTestSDL GuiTestWin \
 	Landscape SaucerMovie TestCube Trees BVHView
 
-GAMES = Crafty McrView SeaOfMemes DontHitMe NewCrafty WorldClient WorldServer
+GAMES = Crafty McrView SeaOfMemes DontHitMe WorldClient WorldServer
 
 MILLIGRAM = JpegLib FreeType LibPNG Ogg Vorbis ZLib \
 	mg2D mg3D mgGUI mgPlatform mgUtil \

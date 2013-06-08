@@ -40,6 +40,7 @@
     <ClInclude Include="..\Include\pngconf.h" />
     <ClInclude Include="..\Include\pngdebug.h" />
     <ClInclude Include="..\Include\pnginfo.h" />
+    <ClInclude Include="..\Include\pnglibconf.h" />
     <ClInclude Include="..\Include\pngpriv.h" />
     <ClInclude Include="..\Include\pngstruct.h" />
   </ItemGroup>

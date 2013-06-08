@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -27,10 +27,14 @@
 
 class mgTextBuffer;
 
+/*
+  A control which displays a formatted Form and is parent to all the
+  controls created by the Form.
+*/
 class mgFormPane : public mgFormControl, public mgTextPage
 {
 public:
-  mgTextBuffer* m_text;
+  mgTextBuffer* m_text;       // buffer being displayed
   
   // constructor
   mgFormPane(

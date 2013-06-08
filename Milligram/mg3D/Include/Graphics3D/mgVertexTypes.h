@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1995-2012 by Michael J. Goodfellow
+  Copyright (C) 1995-2013 by Michael J. Goodfellow
 
   This source code is distributed for free and may be modified, redistributed, and
   incorporated in other projects (commercial, non-commercial and open-source)
@@ -24,8 +24,11 @@
 #include "mgVertexAttrib.h"
 #include "mgVertexBuffer.h"
 
-//-------------------------------------------------------------------
-// vertex 
+class mgShader;
+
+/*
+  A simple vertex (point, normal, texture x, y).
+*/
 class mgVertex
 {
 public:
@@ -69,6 +72,15 @@ public:
     m_nz = (float) z;
   }
 
+  // set the normal
+  void setNormal(
+    const mgPoint3& pt)
+  {
+    m_nx = (float) pt.x;
+    m_ny = (float) pt.y;
+    m_nz = (float) pt.z;
+  }
+
   // set the texture coordinates
   void setTexture(
     double x, 
@@ -86,7 +98,7 @@ public:
   }
 
   // load a shader using this vertex type
-  static void loadShader(
+  static mgShader* loadShader(
     const char* shaderName);
 
   // create a vertex buffer of this type
@@ -95,8 +107,9 @@ public:
     BOOL dynamic = false);      // support reset and reuse
 };
 
-//-------------------------------------------------------------------
-// vertex with texture array component
+/*
+  A simple vertex for use with texture arrays (point, normal, texture x, y, z).
+*/
 class mgVertexTA
 {
 public:
@@ -145,7 +158,7 @@ public:
   void setTexture(
     double x, 
     double y, 
-    int z = 0)
+    double z = 0)
   {
     m_tx = (float) x;
     m_ty = (float) y;
@@ -160,7 +173,7 @@ public:
   }
 
   // load a shader using this vertex type
-  static void loadShader(
+  static mgShader* loadShader(
     const char* shaderName);
 
   // create a vertex buffer of this type
